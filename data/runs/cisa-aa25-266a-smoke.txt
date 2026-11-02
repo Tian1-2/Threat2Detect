@@ -1,0 +1,23 @@
+CISA observed the following discovery commands on the organization’s SQL server: 
+ whoami 
+ ipconfig /all 
+ ping -n 1 8.8.8.8 
+ systeminfo 
+ tasklist 
+ dir c:\ 
+ dir c:\Users 
+ type c:\Last.txt 
+ type c:\inetpub\wwwroot 
+ type c:\inetpub\ 
+ dir c:\inetpub\wwwroot 
+ dir c:\ 
+ dir c:\ifwapps 
+ dir d:\ 
+ dir e:\ 
+ net group "domain admins" /domain 
+ type C:\Windows\System32\inetsrv\config\applicationHost.config 
+ dir c:\ifwapps\Tier1Utilities 
+ netstat -ano 
+ curl 
+ net user 
+ tasklist

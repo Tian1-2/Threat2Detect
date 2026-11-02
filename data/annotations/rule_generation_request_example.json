@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "kind": "rule_generation_request",
+  "scenario_id": "manual-lsass-demo-01",
+  "behavior": "A suspicious process accesses LSASS memory and attempts a dump",
+  "attack_ids": [
+    "T1003.001"
+  ],
+  "logsource": {
+    "product": "windows",
+    "category": "process_access",
+    "service": null
+  },
+  "available_fields": [
+    "SourceImage",
+    "TargetImage",
+    "GrantedAccess",
+    "CallTrace"
+  ],
+  "positive_event_refs": [],
+  "negative_event_refs": [],
+  "executor_supported_features": [
+    "contains",
+    "endswith",
+    "and",
+    "or",
+    "not"
+  ],
+  "detection_goal": "Identify suspicious LSASS memory access using the stated telemetry; report untested false positives."
+}

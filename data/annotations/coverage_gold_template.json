@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "kind": "coverage_assessments",
+  "case_id": "AA25-266A",
+  "ruleset_commit": "05d1031f537e830b76da53bae2400c5814c89165",
+  "case_level_limitations": ["CISA does not provide the original process events for these commands. These judgments compare reported procedures with Sigma conditions; rule execution and event hits remain untested."],
+  "items": [
+    {
+      "coverage_id": "AA25-266A-C001", "candidate_id": "AA25-266A-R001", "behavior_id": "AA25-266A-G001",
+      "decision": "matches_procedure",
+      "supporting_conditions": ["CISA lists whoami; the rule selects Image ending in whoami.exe or OriginalFileName equal to whoami.exe."],
+      "missing_conditions": [],
+      "unknown_conditions": [],
+      "explanation": "The whoami branch fits the reported procedure. This is conditional rule fit, not a verified log hit.",
+      "review_status": "confirmed"
+    },
+    {
+      "coverage_id": "AA25-266A-C002", "candidate_id": "AA25-266A-R002", "behavior_id": "AA25-266A-G001",
+      "decision": "does_not_match",
+      "supporting_conditions": ["Both the report and the rule involve whoami."],
+      "missing_conditions": ["The report lists whoami, while the rule requires the additional -all or /all argument in CommandLine."],
+      "unknown_conditions": ["Whether the report's listed whoami command omits an unreported /all argument."],
+      "explanation": "The reported command does not meet the mandatory /all condition. A shared T1033 tag is not sufficient for coverage.",
+      "review_status": "confirmed"
+    },
+    {
+      "coverage_id": "AA25-266A-C003", "candidate_id": "AA25-266A-R003", "behavior_id": "AA25-266A-G001",
+      "decision": "insufficient_detail",
+      "supporting_conditions": ["The rule selects whoami.exe, which corresponds to the command listed by CISA."],
+      "missing_conditions": [],
+      "unknown_conditions": ["The report gives no ParentImage; the rule excludes common shells, Microsoft Monitoring Agent, and null or empty parents."],
+      "explanation": "The parent-process filters determine the result, and the report does not resolve them.",
+      "review_status": "confirmed"
+    },
+    {
+      "coverage_id": "AA25-266A-C004", "candidate_id": "AA25-266A-R004", "behavior_id": "AA25-266A-G002",
+      "decision": "matches_procedure",
+      "supporting_conditions": ["CISA lists ipconfig /all; the rule has a CommandLine regex for ipconfig followed by whitespace and /all."],
+      "missing_conditions": [],
+      "unknown_conditions": [],
+      "explanation": "The listed command meets one regex alternative if Windows process-creation telemetry captures CommandLine.",
+      "review_status": "confirmed"
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0",
+  "kind": "case_handoff",
+  "case_id": "AA25-266A",
+  "report": {
+    "case_id": "AA25-266A",
+    "title": "CISA Shares Lessons Learned from Incident Response Engagement",
+    "source_url": "https://www.cisa.gov/sites/default/files/2025-09/AA25-266A_advisory_cisa_shares_lessons_learned_from_ir_engagement.pdf",
+    "input_path": "data/reports/cisa-aa25-266a-input.txt",
+    "input_sha256": "783142658989912e8f08f1a09b10466c3a047ea133bfd183ae5a98c52948f913",
+    "annotation_basis": "answer_hidden_report_and_attack_catalog"
+  },
+  "attack_catalog": {
+    "version": "Enterprise 20.0",
+    "sha256": "81113ba98afa2928f3dcff62022539f7ce30c315c32e14422f11ff95ce534352",
+    "path": "data/attack/enterprise-attack-20.0.json"
+  },
+  "behaviors": [
+    {
+      "behavior_id": "AA25-266A-G001",
+      "evidence": {
+        "quote": "whoami",
+        "char_start": 15449,
+        "char_end": 15455,
+        "pdf_page": 8
+      },
+      "action": "identify current user",
+      "object": "current user on SQL Server",
+      "fact_status": "observed",
+      "confidence": "high",
+      "origin": "team_review",
+      "review_status": "confirmed",
+      "context_note": "Read the surrounding paragraph/list in the source PDF before confirming this row."
+    },
+    {
+      "behavior_id": "AA25-266A-G002",
+      "evidence": {
+        "quote": "ipconfig /all",
+        "char_start": 15459,
+        "char_end": 15472,
+        "pdf_page": 8
+      },
+      "action": "inspect network configuration",
+      "object": "SQL Server network configuration",
+      "fact_status": "observed",
+      "confidence": "high",
+      "origin": "team_review",
+      "review_status": "confirmed",
+      "context_note": "Read the surrounding paragraph/list in the source PDF before confirming this row."
+    },
+    {
+      "behavior_id": "AA25-266A-G003",
+      "evidence": {
+        "quote": "tasklist",
+        "char_start": 15511,
+        "char_end": 15519,
+        "pdf_page": 8
+      },
+      "action": "list running processes",
+      "object": "processes on SQL Server",
+      "fact_status": "observed",
+      "confidence": "high",
+      "origin": "team_review",
+      "review_status": "confirmed",
+      "context_note": "Read the surrounding paragraph/list in the source PDF before confirming this row."
+    },
+    {
+      "behavior_id": "AA25-266A-G004",
+      "evidence": {
+        "quote": "Stowaway",
+        "char_start": 16446,
+        "char_end": 16454,
+        "pdf_page": 9
+      },
+      "action": "proxy C2 traffic into the internal network",
+      "object": "C2 traffic",
+      "fact_status": "observed",
+      "confidence": "high",
+      "origin": "team_review",
+      "review_status": "confirmed",
+      "context_note": "Read the surrounding paragraph/list in the source PDF before confirming this row."
+    }
+  ],
+  "mappings": [
+    {
+      "mapping_id": "AA25-266A-M001",
+      "behavior_id": "AA25-266A-G001",
+      "technique_id": "T1033",
+      "technique_name": "System Owner/User Discovery",
+      "rationale": "The command whoami returns the identity of the current user on the SQL server, which fits System Owner/User Discovery (T1033).",
+      "confidence": "high",
+      "origin": "team_review",
+      "review_status": "confirmed",
+      "retrieved_candidate_ids": null
+    },
+    {
+      "mapping_id": "AA25-266A-M002",
+      "behavior_id": "AA25-266A-G002",
+      "technique_id": "T1016",
+      "technique_name": "System Network Configuration Discovery",
+      "rationale": "The command ipconfig /all requests the SQL server's network adapter configuration, which fits System Network Configuration Discovery (T1016).",
+      "confidence": "high",
+      "origin": "team_review",
+      "review_status": "confirmed",
+      "retrieved_candidate_ids": null
+    },
+    {
+      "mapping_id": "AA25-266A-M003",
+      "behavior_id": "AA25-266A-G003",
+      "technique_id": "T1057",
+      "technique_name": "Process Discovery",
+      "rationale": "The command tasklist enumerates running processes on the SQL server, which fits Process Discovery (T1057).",
+      "confidence": "high",
+      "origin": "team_review",
+      "review_status": "confirmed",
+      "retrieved_candidate_ids": null
+    },
+    {
+      "mapping_id": "AA25-266A-M004",
+      "behavior_id": "AA25-266A-G004",
+      "technique_id": "T1090",
+      "technique_name": "Proxy",
+      "rationale": "Stowaway forwarded C2 traffic through the Web Server into the internal network. Forwarding traffic through an intermediary fits Proxy (T1090); the behavior is proxying rather than merely possessing the tool.",
+      "confidence": "high",
+      "origin": "team_review",
+      "review_status": "confirmed",
+      "retrieved_candidate_ids": null
+    }
+  ],
+  "telemetry": [],
+  "warnings": [
+    "Group lead confirmed the four behavior and mapping rows; this is a small review sample, not a full-report annotation."
+  ]
+}

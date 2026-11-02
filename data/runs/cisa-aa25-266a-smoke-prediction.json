@@ -1,0 +1,473 @@
+{
+  "report_id": "AA25-266A-smoke",
+  "model": "qwen3:4b",
+  "prompt_version": "poc-1",
+  "behaviors": [
+    {
+      "behavior_id": "AA25-266A-smoke-001",
+      "quote": "whoami",
+      "location": {
+        "char_start": 84,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "system",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command observed in discovery commands",
+      "mapping": {
+        "technique_id": null,
+        "technique_name": null,
+        "evidence_quote": "tasklist",
+        "rationale": "",
+        "confidence": "low",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-001",
+      "quote": "ipconfig /all",
+      "location": {
+        "char_start": 94,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "system",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command observed in discovery commands",
+      "mapping": {
+        "technique_id": null,
+        "technique_name": null,
+        "evidence_quote": "tasklist",
+        "rationale": "",
+        "confidence": "low",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-001",
+      "quote": "ping -n 1 8.8.8.8",
+      "location": {
+        "char_start": 111,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "system",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command observed in discovery commands",
+      "mapping": {
+        "technique_id": null,
+        "technique_name": null,
+        "evidence_quote": "tasklist",
+        "rationale": "",
+        "confidence": "low",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-001",
+      "quote": "systeminfo",
+      "location": {
+        "char_start": 132,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "system",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command observed in discovery commands",
+      "mapping": {
+        "technique_id": null,
+        "technique_name": null,
+        "evidence_quote": "tasklist",
+        "rationale": "",
+        "confidence": "low",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-001",
+      "quote": "tasklist",
+      "location": {
+        "char_start": 146,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "system",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command observed in discovery commands",
+      "mapping": {
+        "technique_id": null,
+        "technique_name": null,
+        "evidence_quote": "tasklist",
+        "rationale": "",
+        "confidence": "low",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-001",
+      "quote": "dir c:\\",
+      "location": {
+        "char_start": 158,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "c:\\",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command observed in discovery commands",
+      "mapping": {
+        "technique_id": null,
+        "technique_name": null,
+        "evidence_quote": "tasklist",
+        "rationale": "",
+        "confidence": "low",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-001",
+      "quote": "dir c:\\Users",
+      "location": {
+        "char_start": 169,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "c:\\Users",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command observed in discovery commands",
+      "mapping": {
+        "technique_id": null,
+        "technique_name": null,
+        "evidence_quote": "tasklist",
+        "rationale": "",
+        "confidence": "low",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-001",
+      "quote": "type c:\\Last.txt",
+      "location": {
+        "char_start": 185,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "c:\\Last.txt",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command observed in discovery commands",
+      "mapping": {
+        "technique_id": null,
+        "technique_name": null,
+        "evidence_quote": "tasklist",
+        "rationale": "",
+        "confidence": "low",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-001",
+      "quote": "type c:\\inetpub\\wwwroot",
+      "location": {
+        "char_start": 205,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "c:\\inetpub\\wwwroot",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command observed in discovery commands",
+      "mapping": {
+        "technique_id": null,
+        "technique_name": null,
+        "evidence_quote": "tasklist",
+        "rationale": "",
+        "confidence": "low",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-001",
+      "quote": "type c:\\inetpub\\",
+      "location": {
+        "char_start": 205,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "c:\\inetpub\\",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command observed in discovery commands",
+      "mapping": {
+        "technique_id": null,
+        "technique_name": null,
+        "evidence_quote": "tasklist",
+        "rationale": "",
+        "confidence": "low",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-001",
+      "quote": "dir c:\\inetpub\\wwwroot",
+      "location": {
+        "char_start": 252,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "c:\\inetpub\\wwwroot",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command observed in discovery commands",
+      "mapping": {
+        "technique_id": null,
+        "technique_name": null,
+        "evidence_quote": "tasklist",
+        "rationale": "",
+        "confidence": "low",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-001",
+      "quote": "dir c:\\",
+      "location": {
+        "char_start": 158,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "c:\\",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command observed in discovery commands",
+      "mapping": {
+        "technique_id": null,
+        "technique_name": null,
+        "evidence_quote": "tasklist",
+        "rationale": "",
+        "confidence": "low",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-001",
+      "quote": "dir c:\\ifwapps",
+      "location": {
+        "char_start": 289,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "c:\\ifwapps",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command observed in discovery commands",
+      "mapping": {
+        "technique_id": null,
+        "technique_name": null,
+        "evidence_quote": "tasklist",
+        "rationale": "",
+        "confidence": "low",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-001",
+      "quote": "dir d:\\",
+      "location": {
+        "char_start": 307,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "d:\\",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command observed in discovery commands",
+      "mapping": {
+        "technique_id": null,
+        "technique_name": null,
+        "evidence_quote": "tasklist",
+        "rationale": "",
+        "confidence": "low",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-001",
+      "quote": "dir e:\\",
+      "location": {
+        "char_start": 318,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "e:\\",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command observed in discovery commands",
+      "mapping": {
+        "technique_id": null,
+        "technique_name": null,
+        "evidence_quote": "tasklist",
+        "rationale": "",
+        "confidence": "low",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-001",
+      "quote": "net group \"domain admins\" /domain",
+      "location": {
+        "char_start": 329,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "domain admins group",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command observed in discovery commands",
+      "mapping": {
+        "technique_id": null,
+        "technique_name": null,
+        "evidence_quote": "tasklist",
+        "rationale": "",
+        "confidence": "low",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-001",
+      "quote": "type C:\\Windows\\System32\\inetsrv\\config\\applicationHost.config",
+      "location": {
+        "char_start": 366,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "applicationHost.config",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command observed in discovery commands",
+      "mapping": {
+        "technique_id": null,
+        "technique_name": null,
+        "evidence_quote": "tasklist",
+        "rationale": "",
+        "confidence": "low",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-001",
+      "quote": "dir c:\\ifwapps\\Tier1Utilities",
+      "location": {
+        "char_start": 432,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "c:\\ifwapps\\Tier1Utilities",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command observed in discovery commands",
+      "mapping": {
+        "technique_id": null,
+        "technique_name": null,
+        "evidence_quote": "tasklist",
+        "rationale": "",
+        "confidence": "low",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-001",
+      "quote": "netstat -ano",
+      "location": {
+        "char_start": 465,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "network connections",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command observed in discovery commands",
+      "mapping": {
+        "technique_id": null,
+        "technique_name": null,
+        "evidence_quote": "tasklist",
+        "rationale": "",
+        "confidence": "low",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-001",
+      "quote": "curl",
+      "location": {
+        "char_start": 481,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "network",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command observed in discovery commands",
+      "mapping": {
+        "technique_id": null,
+        "technique_name": null,
+        "evidence_quote": "tasklist",
+        "rationale": "",
+        "confidence": "low",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-001",
+      "quote": "net user",
+      "location": {
+        "char_start": 489,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "user accounts",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command observed in discovery commands",
+      "mapping": {
+        "technique_id": null,
+        "technique_name": null,
+        "evidence_quote": "tasklist",
+        "rationale": "",
+        "confidence": "low",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-001",
+      "quote": "tasklist",
+      "location": {
+        "char_start": 146,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "system processes",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command observed in discovery commands",
+      "mapping": {
+        "technique_id": null,
+        "technique_name": null,
+        "evidence_quote": "tasklist",
+        "rationale": "",
+        "confidence": "low",
+        "alternatives": []
+      }
+    }
+  ],
+  "warnings": [
+    "AA25-266A-smoke-001: model omitted mapping",
+    "AA25-266A-smoke-001: model omitted mapping",
+    "AA25-266A-smoke-001: model omitted mapping",
+    "AA25-266A-smoke-001: model omitted mapping",
+    "AA25-266A-smoke-001: model omitted mapping",
+    "AA25-266A-smoke-001: model omitted mapping",
+    "AA25-266A-smoke-001: model omitted mapping",
+    "AA25-266A-smoke-001: model omitted mapping",
+    "AA25-266A-smoke-001: model omitted mapping",
+    "AA25-266A-smoke-001: model omitted mapping",
+    "AA25-266A-smoke-001: model omitted mapping",
+    "AA25-266A-smoke-001: model omitted mapping",
+    "AA25-266A-smoke-001: model omitted mapping",
+    "AA25-266A-smoke-001: model omitted mapping",
+    "AA25-266A-smoke-001: model omitted mapping",
+    "AA25-266A-smoke-001: model omitted mapping",
+    "AA25-266A-smoke-001: model omitted mapping",
+    "AA25-266A-smoke-001: model omitted mapping",
+    "AA25-266A-smoke-001: model omitted mapping",
+    "AA25-266A-smoke-001: model omitted mapping",
+    "AA25-266A-smoke-001: model omitted mapping",
+    "AA25-266A-smoke-001: model omitted mapping"
+  ],
+  "input_sha256": "93cfbebe4686f38e836f3a0e2eb2ff40271f330a238e7f91ff64a010853d1348",
+  "catalog_sha256": "81113ba98afa2928f3dcff62022539f7ce30c315c32e14422f11ff95ce534352"
+}

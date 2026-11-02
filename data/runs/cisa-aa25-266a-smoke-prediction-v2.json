@@ -1,0 +1,461 @@
+{
+  "report_id": "AA25-266A-smoke",
+  "model": "qwen3:4b",
+  "prompt_version": "poc-2",
+  "completed_chunks": 1,
+  "total_chunks": 1,
+  "behaviors": [
+    {
+      "behavior_id": "AA25-266A-smoke-001",
+      "quote": "whoami",
+      "location": {
+        "char_start": 84,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "user identity",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command execution to determine current user",
+      "mapping": {
+        "technique_id": "T1033",
+        "technique_name": "System Owner/User Discovery",
+        "evidence_quote": "tasklist",
+        "rationale": "The command 'whoami' directly retrieves the current user identity, which aligns with T1033 (System Owner/User Discovery) as it identifies the primary user or currently logged-in user.",
+        "confidence": "high",
+        "alternatives": [
+          "T1059.003"
+        ]
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-002",
+      "quote": "ipconfig /all",
+      "location": {
+        "char_start": 94,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "network configuration",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command execution to retrieve network details",
+      "mapping": {
+        "technique_id": "T1016",
+        "technique_name": "System Network Configuration Discovery",
+        "evidence_quote": "tasklist",
+        "rationale": "The command 'ipconfig /all' retrieves detailed network configuration information, which matches T1016 (System Network Configuration Discovery) as it provides IP and MAC address details.",
+        "confidence": "high",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-003",
+      "quote": "ping -n 1 8.8.8.8",
+      "location": {
+        "char_start": 111,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "external IP address",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command execution to ping Google DNS",
+      "mapping": {
+        "technique_id": "T1018",
+        "technique_name": "Remote System Discovery",
+        "evidence_quote": "tasklist",
+        "rationale": "The command 'ping -n 1 8.8.8.8' is a short-lived ping to an external IP address (Google DNS), which falls under T1018 (Remote System Discovery) as it attempts to get system listings by IP address.",
+        "confidence": "high",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-004",
+      "quote": "systeminfo",
+      "location": {
+        "char_start": 132,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "system configuration",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command execution to gather system details",
+      "mapping": {
+        "technique_id": "T1082",
+        "technique_name": "System Information Discovery",
+        "evidence_quote": "tasklist",
+        "rationale": "The command 'systeminfo' gathers detailed system configuration information, which corresponds to T1082 (System Information Discovery) as it provides OS and hardware details.",
+        "confidence": "high",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-005",
+      "quote": "tasklist",
+      "location": {
+        "char_start": 146,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "running processes",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command execution to list active processes",
+      "mapping": {
+        "technique_id": "T1057",
+        "technique_name": "Process Discovery",
+        "evidence_quote": "tasklist",
+        "rationale": "The command 'tasklist' lists running processes, which directly maps to T1057 (Process Discovery) as it retrieves information about active processes.",
+        "confidence": "high",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-006",
+      "quote": "dir c:\\",
+      "location": {
+        "char_start": 158,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "root directory",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command execution to list root directory contents",
+      "mapping": {
+        "technique_id": "T1083",
+        "technique_name": "File and Directory Discovery",
+        "evidence_quote": "tasklist",
+        "rationale": "The command 'dir c:\\' is a direct file and directory discovery action on the root directory, matching T1083 (File and Directory Discovery) which involves enumerating files and directories.",
+        "confidence": "high",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-007",
+      "quote": "dir c:\\Users",
+      "location": {
+        "char_start": 169,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "Users directory",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command execution to list Users directory contents",
+      "mapping": {
+        "technique_id": "T1083",
+        "technique_name": "File and Directory Discovery",
+        "evidence_quote": "tasklist",
+        "rationale": "The command 'dir c:\\Users' is a direct file and directory discovery action on the Users directory, matching T1083 (File and Directory Discovery).",
+        "confidence": "high",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-008",
+      "quote": "type c:\\Last.txt",
+      "location": {
+        "char_start": 185,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "Last.txt file",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command execution to view file contents",
+      "mapping": {
+        "technique_id": null,
+        "technique_name": null,
+        "evidence_quote": "tasklist",
+        "rationale": "The command 'type c:\\Last.txt' is a direct file discovery action to view file contents, which falls under T1083 (File and Directory Discovery) as it enumerates file contents.",
+        "confidence": "high",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-009",
+      "quote": "type c:\\inetpub\\wwwroot",
+      "location": {
+        "char_start": 205,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "wwwroot directory",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command execution to view wwwroot directory contents",
+      "mapping": {
+        "technique_id": "T1083",
+        "technique_name": "File and Directory Discovery",
+        "evidence_quote": "tasklist",
+        "rationale": "The command 'type c:\\inetpub\\wwwroot' is a direct file discovery action to view wwwroot directory contents, matching T1083 (File and Directory Discovery).",
+        "confidence": "high",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-010",
+      "quote": "type c:\\inetpub\\",
+      "location": {
+        "char_start": 205,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "inetpub directory",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command execution to view inetpub directory contents",
+      "mapping": {
+        "technique_id": "T1083",
+        "technique_name": "File and Directory Discovery",
+        "evidence_quote": "tasklist",
+        "rationale": "The command 'type c:\\inetpub\\' is a direct file and directory discovery action on the inetpub directory, matching T1083 (File and Directory Discovery).",
+        "confidence": "high",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-011",
+      "quote": "dir c:\\inetpub\\wwwroot",
+      "location": {
+        "char_start": 252,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "wwwroot directory",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command execution to list wwwroot directory contents",
+      "mapping": {
+        "technique_id": "T1083",
+        "technique_name": "File and Directory Discovery",
+        "evidence_quote": "tasklist",
+        "rationale": "The behavior involves direct command execution to list directory contents (wwwroot), which matches T1083: File and Directory Discovery",
+        "confidence": "high",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-012",
+      "quote": "dir c:\\",
+      "location": {
+        "char_start": 158,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "root directory",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command execution to list root directory contents (repeated)",
+      "mapping": {
+        "technique_id": "T1083",
+        "technique_name": "File and Directory Discovery",
+        "evidence_quote": "tasklist",
+        "rationale": "The behavior involves direct command execution to list root directory contents, which matches T1083: File and Directory Discovery",
+        "confidence": "high",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-013",
+      "quote": "dir c:\\ifwapps",
+      "location": {
+        "char_start": 289,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "ifwapps directory",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command execution to list ifwapps directory contents",
+      "mapping": {
+        "technique_id": "T1083",
+        "technique_name": "File and Directory Discovery",
+        "evidence_quote": "tasklist",
+        "rationale": "The behavior involves direct command execution to list ifwapps directory contents, which matches T1083: File and Directory Discovery",
+        "confidence": "high",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-014",
+      "quote": "dir d:\\",
+      "location": {
+        "char_start": 307,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "D drive",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command execution to list D drive contents",
+      "mapping": {
+        "technique_id": null,
+        "technique_name": null,
+        "evidence_quote": "tasklist",
+        "rationale": "The behavior involves direct command execution to list D drive contents, which matches T1083: File and Directory Discovery",
+        "confidence": "high",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-015",
+      "quote": "dir e:\\",
+      "location": {
+        "char_start": 318,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "E drive",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command execution to list E drive contents",
+      "mapping": {
+        "technique_id": null,
+        "technique_name": null,
+        "evidence_quote": "tasklist",
+        "rationale": "The behavior involves direct command execution to list E drive contents, which matches T1083: File and Directory Discovery",
+        "confidence": "high",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-016",
+      "quote": "net group \"domain admins\" /domain",
+      "location": {
+        "char_start": 329,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "domain administrators group",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command execution to query domain admin group",
+      "mapping": {
+        "technique_id": "T1069.002",
+        "technique_name": "Domain Groups",
+        "evidence_quote": "tasklist",
+        "rationale": "Direct command execution to query domain admin group matches T1069.002 (Domain Groups) which involves finding domain-level groups and permission settings",
+        "confidence": "high",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-017",
+      "quote": "type C:\\Windows\\System32\\inetsrv\\config\\applicationHost.config",
+      "location": {
+        "char_start": 366,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "applicationHost.config file",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command execution to view IIS configuration file",
+      "mapping": {
+        "technique_id": "T1059.003",
+        "technique_name": "Windows Command Shell",
+        "evidence_quote": "tasklist",
+        "rationale": "Direct command execution to view IIS configuration file using Windows command shell (cmd) matches T1059.003 (Windows Command Shell)",
+        "confidence": "high",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-018",
+      "quote": "dir c:\\ifwapps\\Tier1Utilities",
+      "location": {
+        "char_start": 432,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "Tier1Utilities directory",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command execution to list Tier1Utilities directory contents",
+      "mapping": {
+        "technique_id": "T1083",
+        "technique_name": "File and Directory Discovery",
+        "evidence_quote": "tasklist",
+        "rationale": "Direct command execution to list directory contents matches T1083 (File and Directory Discovery) for enumerating files and directories",
+        "confidence": "high",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-019",
+      "quote": "netstat -ano",
+      "location": {
+        "char_start": 465,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "network connections",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command execution to list active network connections",
+      "mapping": {
+        "technique_id": "T1049",
+        "technique_name": "System Network Connections Discovery",
+        "evidence_quote": "tasklist",
+        "rationale": "Direct command execution to list active network connections matches T1049 (System Network Connections Discovery)",
+        "confidence": "high",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-020",
+      "quote": "curl",
+      "location": {
+        "char_start": 481,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "HTTP request",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command execution to make HTTP request",
+      "mapping": {
+        "technique_id": "T1059",
+        "technique_name": "Command and Scripting Interpreter",
+        "evidence_quote": "tasklist",
+        "rationale": "Direct command execution to make HTTP request using curl matches T1059 (Command and Scripting Interpreter) as curl is a command-line interpreter",
+        "confidence": "high",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-021",
+      "quote": "net user",
+      "location": {
+        "char_start": 489,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "user accounts",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command execution to list user accounts",
+      "mapping": {
+        "technique_id": "T1087.001",
+        "technique_name": "Local Account",
+        "evidence_quote": "tasklist",
+        "rationale": "Direct command execution of 'net user' lists local system accounts, matching T1087.001 (Local Account: Attempt to get listing of local system accounts)",
+        "confidence": "high",
+        "alternatives": [
+          "T1087.002",
+          "T1087.004"
+        ]
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-smoke-022",
+      "quote": "tasklist",
+      "location": {
+        "char_start": 146,
+        "chunk": 1
+      },
+      "action": "run command",
+      "object": "running processes",
+      "observed_or_inferred": "observed",
+      "rationale": "Direct command execution to list active processes (repeated)",
+      "mapping": {
+        "technique_id": "T1057",
+        "technique_name": "Process Discovery",
+        "evidence_quote": "tasklist",
+        "rationale": "Direct command execution of 'tasklist' lists running processes, matching T1057 (Process Discovery: Attempt to get information about running processes)",
+        "confidence": "high",
+        "alternatives": []
+      }
+    }
+  ],
+  "warnings": [
+    "AA25-266A-smoke-008: rejected ID outside retrieved candidates: T1083",
+    "AA25-266A-smoke-014: rejected ID outside retrieved candidates: T1083",
+    "AA25-266A-smoke-015: rejected ID outside retrieved candidates: T1083"
+  ],
+  "input_sha256": "93cfbebe4686f38e836f3a0e2eb2ff40271f330a238e7f91ff64a010853d1348",
+  "catalog_sha256": "81113ba98afa2928f3dcff62022539f7ce30c315c32e14422f11ff95ce534352"
+}

@@ -1,0 +1,72 @@
+{
+  "report_id": "AA25-266A-one",
+  "model": "qwen3:4b",
+  "prompt_version": "poc-1",
+  "completed_chunks": 1,
+  "total_chunks": 1,
+  "behaviors": [
+    {
+      "behavior_id": "AA25-266A-one-001",
+      "quote": "PowerShell",
+      "location": {
+        "char_start": 29,
+        "chunk": 1
+      },
+      "action": "used",
+      "object": "PowerShell",
+      "observed_or_inferred": "observed",
+      "rationale": "Directly mentioned as the tool used by threat actors",
+      "mapping": {
+        "technique_id": "T1059.001",
+        "technique_name": "PowerShell",
+        "evidence_quote": "download payloads",
+        "rationale": "Directly mentioned as the tool used by threat actors for execution, matching the 'PowerShell: Adversaries may abuse PowerShell commands and scripts for execution' description",
+        "confidence": "high",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-one-002",
+      "quote": "bits admin getfile",
+      "location": {
+        "char_start": 44,
+        "chunk": 1
+      },
+      "action": "used",
+      "object": "bits admin getfile",
+      "observed_or_inferred": "observed",
+      "rationale": "Directly mentioned as the command used to download payloads",
+      "mapping": {
+        "technique_id": "T1197",
+        "technique_name": "BITS Jobs",
+        "evidence_quote": "download payloads",
+        "rationale": "The command 'bits admin getfile' is a BITS job command used for downloading payloads, matching the 'BITS Jobs: Adversaries may abuse BITS jobs to persistently execute code' description",
+        "confidence": "high",
+        "alternatives": []
+      }
+    },
+    {
+      "behavior_id": "AA25-266A-one-003",
+      "quote": "download payloads",
+      "location": {
+        "char_start": 66,
+        "chunk": 1
+      },
+      "action": "downloaded",
+      "object": "payloads",
+      "observed_or_inferred": "observed",
+      "rationale": "Directly mentioned as the action performed by threat actors",
+      "mapping": {
+        "technique_id": "T1105",
+        "technique_name": "Ingress Tool Transfer",
+        "evidence_quote": "download payloads",
+        "rationale": "The action 'download payloads' directly corresponds to 'Ingress Tool Transfer: Adversaries may transfer tools or other files from an external system into a compromised environment'",
+        "confidence": "high",
+        "alternatives": []
+      }
+    }
+  ],
+  "warnings": [],
+  "input_sha256": "41e1e1780b15a9ac50ec4ac268be4452f276d24c6a352da288c2ffaa80ba8cec",
+  "catalog_sha256": "81113ba98afa2928f3dcff62022539f7ce30c315c32e14422f11ff95ce534352"
+}

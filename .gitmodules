@@ -1,0 +1,6 @@
+[submodule "data/sigma"]
+	path = data/sigma
+	url = https://github.com/SigmaHQ/sigma.git
+[submodule "data/Security-Datasets"]
+	path = data/Security-Datasets
+	url = https://github.com/OTRF/Security-Datasets.git
