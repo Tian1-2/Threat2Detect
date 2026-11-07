@@ -9,3 +9,4 @@ venv/
 !.env.example
 .DS_Store
 Thumbs.db
+artifacts/runs/*_normalized.json

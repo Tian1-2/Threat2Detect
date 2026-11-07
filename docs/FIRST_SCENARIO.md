@@ -30,7 +30,7 @@
 ## 人工走通的顺序
 
 1. 读本页的六行证据，再打开元数据 YAML，确认技术标签和模拟描述。把“元数据声称”和“事件实际显示”分开记。
-2. 在项目根目录用 `python inspect_dataset.py` 直接读取 ZIP；若已经解压，用 `python inspect_dataset.py data/Security-Datasets/datasets/compound/LSASS_campaign_06/metasploit_outflank-dumpert_lsass_memory_dump.json`。脚本会打印各事件源/EventID 的数量及关键事件样例；它是一次性盘点工具，不执行检测规则。
+2. 在项目根目录用 `python tools/inspect_dataset.py` 直接读取 ZIP；若已经解压，用 `python tools/inspect_dataset.py data/Security-Datasets/datasets/compound/LSASS_campaign_06/metasploit_outflank-dumpert_lsass_memory_dump.json`。脚本会打印各事件源/EventID 的数量及关键事件样例；它是一次性盘点工具，不执行检测规则。
 3. 为三个行为各写一句可观察条件：T1082/T1033 看 Sysmon 1 的 `Image`、`CommandLine`；T1003.001 看同一进程的 Sysmon 10（访问 LSASS）和 11（创建 `.dmp`）。
 4. 再找一篇**独立的**公开威胁报告，从报告抽行为并映射 ATT&CK；不要把 OTRF 的场景标题当作报告输入。
 5. 查现有 Sigma 规则，逐条检查 `logsource` 是否支持 Sysmon 1/10/11、字段是否能从这份 JSON 映射。只在字段兼容后执行规则。
@@ -52,4 +52,4 @@
 
 命中的事件：`TimeCreated=2023-09-05T10:47:42.663Z`，`SourceImage=C:\Windows\Temp\Outflank-Dumpert.exe`，`TargetImage=C:\Windows\system32\lsass.exe`，`GrantedAccess=0x1FFFFF`，`CallTrace` 含 `dbgcore.DLL`。同一工具稍早的另一条 LSASS 访问事件满足前四项，但 `CallTrace` 不含这两个 DLL，因此未命中。`2023-09-05T10:47:42.663Z` 同时还有 Sysmon 11 文件创建事件，进一步佐证转储文件落地，但它不是本条规则的条件。
 
-复核命令：`python check_lsass_rule.py`。此脚本从 JSON 的 `Message` 解析字段，逐项模拟**这一条规则**的条件；它不是通用 Sigma 执行器。数据是同一次已知攻击模拟的正样本，1 条命中只能证明对这个样例有效，不能据此估计误报率，也不能证明覆盖所有 T1003.001 变体或 Unit 42 报告中的 Task Manager 做法。
+复核命令：`python tools/check_lsass_rule.py`。此脚本从 JSON 的 `Message` 解析字段，逐项模拟**这一条规则**的条件；它不是通用 Sigma 执行器。数据是同一次已知攻击模拟的正样本，1 条命中只能证明对这个样例有效，不能据此估计误报率，也不能证明覆盖所有 T1003.001 变体或 Unit 42 报告中的 Task Manager 做法。

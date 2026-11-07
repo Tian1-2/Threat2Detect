@@ -1,6 +1,6 @@
 # 首轮真实运行：CISA AA25-266A
 
-日期：2026-11-01。首轮输入已保存为 `data/runs/cisa-aa25-266a-input-poc1.txt`：它移除了映射表和可识别的内嵌 ID，**同时错误地截掉了映射表后面的缓解建议和事件时间线**。因此下列数字只能用于诊断早期原型，不能作为完整报告的最终评估。现行 `data/reports/cisa-aa25-266a-input.txt` 已修正清洗逻辑，仅移除映射章节并保留后续正文。参考答案为 `data/reports/cisa-aa25-266a-reference.json`（CISA PDF 第 12–14 页）。模型为本地 Ollama `qwen3:4b`；首轮结果见 `data/runs/cisa-aa25-266a-prediction.json`，报告级对照见 `data/runs/cisa-aa25-266a-evaluation.json`。原型使用 ATT&CK Enterprise v20.0 目录，CISA 原报告使用 v17。
+日期：2026-11-01。首轮输入已保存为 `artifacts/runs/cisa-aa25-266a-input-poc1.txt`：它移除了映射表和可识别的内嵌 ID，**同时错误地截掉了映射表后面的缓解建议和事件时间线**。因此下列数字只能用于诊断早期原型，不能作为完整报告的最终评估。现行 `data/reports/cisa-aa25-266a-input.txt` 已修正清洗逻辑，仅移除映射章节并保留后续正文。参考答案为 `data/reports/cisa-aa25-266a-reference.json`（CISA PDF 第 12–14 页）。模型为本地 Ollama `qwen3:4b`；首轮结果见 `artifacts/runs/cisa-aa25-266a-prediction.json`，报告级对照见 `artifacts/runs/cisa-aa25-266a-evaluation.json`。原型使用 ATT&CK Enterprise v20.0 目录，CISA 原报告使用 v17。
 
 ## 结果的正确读法
 
@@ -27,7 +27,7 @@
 
 提示词 `poc-2` 要求把同一行动里的工具和目的合并。单句“使用 PowerShell 和 bitsadmin 下载载荷”的试验从 3 条碎片降为 1 条，但模型只给了 `T1059.001`，没有给下载动作的 `T1105`。对 509 字的命令列表片段仍提取 22 条，未改善列表过度拆分。由此可见，单靠这次提示词修改无法解决问题。
 
-`poc-2` 又在修正后的完整输入 `data/reports/cisa-aa25-266a-input.txt` 上运行，结果见 `data/runs/cisa-aa25-266a-prediction-v2.json` 和 `data/runs/cisa-aa25-266a-evaluation-v2.json`：7 个分段，约 395 秒，提取 89 项行为；官方 22 个 ID 找到 14 个，漏 8 个，额外 22 个 ID 待审。这与首轮使用的输入范围不同，**不能把 15/22 与 14/22 当作纯提示词 A/B 测试**。程序校验全部保留引句的位置与 ID 合法性通过。
+`poc-2` 又在修正后的完整输入 `data/reports/cisa-aa25-266a-input.txt` 上运行，结果见 `artifacts/runs/cisa-aa25-266a-prediction-v2.json` 和 `artifacts/runs/cisa-aa25-266a-evaluation-v2.json`：7 个分段，约 395 秒，提取 89 项行为；官方 22 个 ID 找到 14 个，漏 8 个，额外 22 个 ID 待审。这与首轮使用的输入范围不同，**不能把 15/22 与 14/22 当作纯提示词 A/B 测试**。程序校验全部保留引句的位置与 ID 合法性通过。
 
 新版输入保留了映射表之后的缓解建议和事件时间线。抽查发现第 6 段中的 12 项均是面向防守方的建议，虽然模型多数给了空 ID，却仍把它们放进攻击行为清单。第 7 段也有把建议性描述和时间线标签当成攻击行为的情况。后续应在送入提取器前按章节过滤**防守建议**，同时保留真正的攻击时间线，并给过滤结果留出处。
 

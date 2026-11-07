@@ -28,6 +28,8 @@
 
 最小交付是：可复现的规则检索函数、候选 JSON、逐条件覆盖 JSON、所用 Sigma commit/规则哈希，以及一份错误与争议清单。成员 A 的实验输出格式尚未等同正式 `case_handoff`；集成时请按接口契约接收 `behaviors[]` 与 `mappings[]`，不要直接解析 `agent_poc.py` 的嵌套实验 JSON。
 
+完整的独立运行命令与当前实验结果位置见[第二部分运行说明](SECOND_STAGE_RUNBOOK.md)。当前模型条件对照仍会把必需参数和父进程过滤项判断错；开发进展见仓库根目录 `DEVELOPMENT_LOG.md`。
+
 ## 校验
 
 首次运行：`python -m pip install -r requirements-poc.txt`。下面的路径以你的实际输出文件替换：

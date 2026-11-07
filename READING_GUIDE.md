@@ -2,14 +2,18 @@
 
 从项目根目录运行下列命令。组内交换 JSON 时，路径均相对项目根目录。先读本页，再按当前任务打开对应文件。
 
-## 先读什么
+## 按角色阅读，不必读完整个仓库
 
-1. [项目总说明](docs/PROJECT_HANDOFF.md)：目标、架构、四人分工和边界。
-2. [接口契约](docs/INTERFACE_CONTRACT.md)：模块交接所用的 JSON 字段、状态和 ID。并行开发以它为准。
-3. [人工审核方法](docs/REVIEW_PROTOCOL.md)：行为与 ATT&CK 映射、Sigma 适用性各怎么判。
-4. [数据版本](docs/DATA_VERSIONS.md)：ATT&CK v20.0 与本地 SigmaHQ commit。
+所有人先看[项目总说明](docs/PROJECT_HANDOFF.md)的目标与分工，以及[接口契约](docs/INTERFACE_CONTRACT.md)中自己的输入输出。各角色的第一项交付见[组员启动清单](docs/TEAM_START.md)。[目录约定](docs/PROJECT_STRUCTURE.md)解释文件归属和后续结构。数据版本与固定 commit 见[数据版本](docs/DATA_VERSIONS.md)。每轮开发变动与未解决问题记在[开发日志](DEVELOPMENT_LOG.md)；规则召回与条件对照见[Sigma 检索说明](docs/SECOND_STAGE_RUNBOOK.md)，静态日志执行见[离线执行说明](docs/OFFLINE_SIGMA_RUNBOOK.md)。
 
-其余材料按用途读：[首个 Agent 原型运行](docs/POC_RUNBOOK.md)、[首轮实验复盘](docs/BASELINE_REVIEW.md)、[三篇报告的全篇梳理](docs/GOLDEN_REPORTS_FULL.md)、[初选报告概览](docs/GOLDEN_REPORTS.md)、[OTRF LSASS 场景](docs/FIRST_SCENARIO.md)、[OTRF 日志盘点](docs/OTRF_LOG_ANALYSIS.md)及[事件 × 规则判定样本](data/annotations/otrf_lsass_event_judgement_reviewed.md)、[成员 B 操作指引](docs/MEMBER_B_GUIDE.md)。`docs/mermaid-diagram.png` 是先前保存的流程图。
+| 角色 | 接着读 | 开发时使用的数据 | 暂时不要拿来当输入 |
+|---|---|---|---|
+| A：报告理解 | [人工审核方法](docs/REVIEW_PROTOCOL.md)、[原型运行](docs/POC_RUNBOOK.md) | `data/reports/cisa-aa25-266a-input.txt`、`data/attack/enterprise-attack-20.0.json`；4 条已确认行为供开发评估 | `*-reference.json` 不进模型；AA24-193A 是封存案例 |
+| B：Sigma 检索与条件分析 | [B 操作指引](docs/MEMBER_B_GUIDE.md) | 已确认 `case_handoff`、`data/sigma`、4 条覆盖判定样本；6 组 OTRF 事件样本用于练 YAML 条件 | OTRF 命中不能证明 CISA 事件被检测；不把 tag 当覆盖结论 |
+| C：日志整理 | [OTRF 日志盘点](docs/OTRF_LOG_ANALYSIS.md)、[首个场景](docs/FIRST_SCENARIO.md) | `data/Security-Datasets/` 的 LSASS_campaign_06 元数据与 ZIP/JSONL | 背景候选不能直接标成已证实良性 |
+| 组长：集成 | [接口契约](docs/INTERFACE_CONTRACT.md)、上述各角色交付 | 全部已确认样本及模块输出 | 不把规则纸面适用性写成实际日志命中 |
+
+[首轮实验复盘](docs/BASELINE_REVIEW.md)与 `artifacts/runs/` 是旧原型诊断资料；[全篇候选梳理](docs/GOLDEN_REPORTS_FULL.md)、[初选报告概览](docs/GOLDEN_REPORTS.md)和 `docs/mermaid-diagram.png` 是研究背景材料，**不是当前必读或已复核的黄金数据**。只在需要追溯早期选择时打开。
 
 ## 数据放在哪里
 
@@ -18,11 +22,11 @@
 | `data/reports/` | 三篇 CISA PDF、`-extracted.txt`、去答案的 `-input.txt`、官方报告级 `-reference.json` | 开发案例 AA25-266A、AA23-319A；AA24-193A 为封存测试 |
 | `data/attack/enterprise-attack-20.0.json` | 固定 ATT&CK Enterprise v20.0 目录 | ID、技术名称校验 |
 | `data/sigma/` | 本地 SigmaHQ 仓库 | 检索完整 YAML 检测条件；当前 commit 见版本文档 |
-| `data/annotations/` | 行为黄金草稿、规则候选、覆盖判定样本、规则生成请求示例 | 组长审核与 A/B 调优交接 |
+| `data/annotations/` | 已确认的 4 条行为映射、4 条覆盖判定、6 组 OTRF 条件样本及规则生成示例 | A/B 调优与组长集成；文件名中保留的 `draft` / `template` 是历史命名，以行内状态为准 |
 | `data/Security-Datasets/` | OTRF 原仓库及 LSASS 活动日志 | 静态日志实验；与 CISA 案例不是同一攻击 |
-| `data/runs/` | 早期与当前 Agent 预测、评估、烟测和旧输入 | 原型诊断，不当作人工黄金答案 |
+| `artifacts/runs/` | Agent 预测与评估、Sigma 候选、覆盖草稿、标准化日志及离线规则运行结果 | 可重建的实验产物，不当作人工黄金答案；大型标准化 JSON 不纳入 Git |
 
-`agent_poc.py` 等脚本和 `tests/` 留在项目根目录。`.deps/` 是本机依赖副本。
+当前主流程命令脚本仍在项目根目录，一次性数据准备与分析脚本在 `tools/`，测试在 `tests/`。`.deps/` 是本机依赖副本。
 
 ## 组长现在核对的两张表
 
@@ -60,4 +64,4 @@ python validate_contract.py data/annotations/coverage_gold_template.json --hando
 python -m pytest -q tests/test_agent_poc.py tests/test_contract.py
 ```
 
-`python make_contract_examples.py` 只补建缺少的示例文件，不覆盖现有审核结果。`python build_cisa_cases.py` 会从 PDF **重建** `data/reports/` 中的提取文本、去答案输入和报告级参考文件，运行前先确认你需要重建。OTRF 日志概览可运行 `python inspect_dataset.py`；已解压文件可显式传给它 `data/Security-Datasets/datasets/compound/LSASS_campaign_06/metasploit_outflank-dumpert_lsass_memory_dump.json`。本地 Agent 的 Ollama 运行方式见原型运行文档。
+`python tools/make_contract_examples.py` 只补建缺少的示例文件，不覆盖现有审核结果。`python tools/build_cisa_cases.py` 会从 PDF **重建** `data/reports/` 中的提取文本、去答案输入和报告级参考文件，运行前先确认你需要重建。OTRF 日志概览可运行 `python tools/inspect_dataset.py`；已解压文件可显式传给它 `data/Security-Datasets/datasets/compound/LSASS_campaign_06/metasploit_outflank-dumpert_lsass_memory_dump.json`。本地 Agent 的 Ollama 运行方式见原型运行文档。

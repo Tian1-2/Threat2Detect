@@ -9,13 +9,14 @@ import re
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent / ".deps"))
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / ".deps"))
+sys.path.insert(0, str(ROOT))
 from pypdf import PdfReader  # noqa: E402
 
 from agent_poc import load_catalog, prepare_report
 
 
-ROOT = Path(__file__).parent
 REPORTS = ROOT / "data" / "reports"
 CASES = [
     {

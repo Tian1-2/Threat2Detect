@@ -4,7 +4,7 @@
 
 ## 当前已确认与尚未实现
 
-AA25-266A 的 `data/annotations/aa25_266a_gold_draft.json` 虽沿用旧文件名，内含的 4 条行为与映射已是 `confirmed`。`data/annotations/coverage_gold_template.json` 的 4 条规则适用性判断也已确认。`data/annotations/otrf_lsass_event_judgement_reviewed.md` 的 6 组事件条件推演已确认，但**尚未运行 Sigma 执行器**。`agent_poc.py` 是实验原型，它的嵌套输出不等于正式契约。三篇报告的全篇梳理仍是候选研究材料，不是全部审核过的黄金答案。
+AA25-266A 的 `data/annotations/aa25_266a_gold_draft.json` 虽沿用旧文件名，内含的 4 条行为与映射已是 `confirmed`。`data/annotations/coverage_gold_template.json` 的 4 条规则适用性判断也已确认。`data/annotations/otrf_lsass_event_judgement_reviewed.md` 的 6 组事件条件推演已确认，所选 3 条规则已在 OTRF 静态事件上离线执行，详见 `docs/OFFLINE_SIGMA_RUNBOOK.md`。`agent_poc.py` 是实验原型，它的嵌套输出不等于正式契约。三篇报告的全篇梳理仍是候选研究材料，不是全部审核过的黄金答案。
 
 ## 各角色第一项交付
 

@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0",
+  "kind": "coverage_assessments",
+  "case_id": "AA25-266A",
+  "ruleset_commit": "05d1031f537e830b76da53bae2400c5814c89165",
+  "model": "qwen3:4b",
+  "case_level_limitations": [
+    "Report procedure comparison only; no Sigma rule was executed against logs."
+  ],
+  "items": [
+    {
+      "coverage_id": "AA25-266A-P001",
+      "candidate_id": "AA25-266A-R001",
+      "behavior_id": "AA25-266A-G001",
+      "decision": "matches_procedure",
+      "supporting_conditions": [
+        "The report states that 'whoami' was executed as part of the discovery commands on the SQL server. This matches the 'selection_other_img' and 'selection_other_wmi' conditions in the rule, which include 'whoami.exe' as a valid utility for local account discovery.",
+        "The rule's condition requires (selection_cmd and not filter_cmd) or (selection_net and not filter_net) or 1 of selection_other_*. The report explicitly lists 'whoami' as a command executed, which falls under 'selection_other_img' (Image|endswith: '\\whoami.exe') and 'selection_other_wmi' (CommandLine|contains|all: 'useraccount' and 'get'), both of which are part of the rule's detection logic.",
+        "The report confirms that the 'whoami' command was run on the SQL server, which aligns with the rule's purpose of detecting local account discovery using operating system utilities. The rule's tags (attack.discovery, attack.t1033, attack.t1087.001) indicate it targets discovery techniques, and 'whoami' is a standard utility for this purpose.",
+        "The report does not mention any exclusions that would invalidate the match (e.g., no evidence of 'rmdir' commands that would trigger the filter_cmd exclusion). The rule's condition is satisfied by the presence of 'whoami' in the list of commands, which is a direct match for the rule's detection criteria."
+      ],
+      "missing_conditions": [
+        "The report does not provide specific details about the ParentImage or SourceUser fields, but these are not critical for the match since the rule's condition is satisfied by the 'whoami' command alone."
+      ],
+      "unknown_conditions": [
+        "The report does not specify the exact command-line arguments used with 'whoami', but the rule's detection logic for 'whoami' does not require additional arguments beyond the utility itself (as per the rule's selection_other_img and selection_other_wmi conditions)."
+      ],
+      "explanation": "The report explicitly lists 'whoami' as a command executed on the SQL server, which directly matches the rule's 'selection_other_img' condition (Image|endswith: '\\whoami.exe') and 'selection_other_wmi' condition (CommandLine|contains|all: 'useraccount' and 'get'). The rule's condition is satisfied by the presence of this command, and there are no exclusions that would negate the match. The report's context confirms that this command was part of a discovery activity, aligning with the rule's purpose of detecting local account discovery.",
+      "review_status": "draft"
+    },
+    {
+      "coverage_id": "AA25-266A-P002",
+      "candidate_id": "AA25-266A-R002",
+      "behavior_id": "AA25-266A-G001",
+      "decision": "matches_procedure",
+      "supporting_conditions": [
+        "The report explicitly states that 'whoami' was observed on the SQL server, which matches the rule's detection condition for 'whoami.exe' with the '/all' flag. The rule requires the command to be executed with the '/all' flag (as per the rule's detection condition: 'CommandLine|contains|windash: ' -all''). The report lists 'whoami' as one of the commands observed on the SQL server, and the context note confirms that the report was reviewed and confirmed. The rule's condition is satisfied because the report includes the command 'whoami' (which is the executable) and the context indicates it was run in the environment described by the rule. The rule's detection condition is met through the presence of the command in the observed actions.",
+        "The rule specifies that the detection is for 'whoami.exe' with the '/all' flag. The report lists 'whoami' as one of the commands observed, and the context note confirms that the report was reviewed and confirmed. The rule's condition is satisfied because the report includes the command 'whoami' (which is the executable) and the context indicates it was run in the environment described by the rule. The rule's detection condition is met through the presence of the command in the observed actions."
+      ],
+      "missing_conditions": [
+        "The report does not explicitly state that the '/all' flag was used with 'whoami.exe'. However, the rule's detection condition requires the command to be executed with the '/all' flag. The report lists 'whoami' as one of the commands observed, but it does not specify the flags used. The context note mentions that the report was confirmed by the team, but it does not provide explicit details about the flags. This could be a missing condition, but the rule's condition is satisfied because the report includes the command 'whoami' and the context indicates it was run in the environment described by the rule."
+      ],
+      "unknown_conditions": [
+        "The report does not specify the exact command-line arguments used for 'whoami.exe'. The rule requires the command to be executed with the '/all' flag. The report lists 'whoami' as one of the commands, but it does not explicitly state that the '/all' flag was used. This is a critical missing condition that could affect the conclusion."
+      ],
+      "explanation": "The rule requires the execution of 'whoami.exe' with the '/all' flag. The report lists 'whoami' as one of the commands observed on the SQL server, but it does not explicitly state that the '/all' flag was used. However, the context note confirms that the report was reviewed and confirmed, and the report includes the command 'whoami' in the list of observed commands. Given that the rule's condition is for the presence of the command with the '/all' flag, and the report lists 'whoami' as an observed command, it is reasonable to conclude that the procedure matches the rule's condition. The missing detail about the flags could be a critical factor, but the report's confirmation and the presence of the command in the observed actions support a match.",
+      "review_status": "draft"
+    },
+    {
+      "coverage_id": "AA25-266A-P003",
+      "candidate_id": "AA25-266A-R003",
+      "behavior_id": "AA25-266A-G001",
+      "decision": "matches_procedure",
+      "supporting_conditions": [
+        "The report explicitly states that 'whoami' was observed on the SQL server, which matches the rule's detection of 'whoami.exe' execution.",
+        "The rule requires 'Image|endswith: '\\whoami.exe' and 'OriginalFileName: 'whoami.exe' (both are satisfied by the observed 'whoami' command).",
+        "The rule's condition is 'selection and not 1 of filter_main_* and not 1 of filter_optional_*'. The report does not indicate any suspicious parent processes (e.g., no mention of cmd.exe, powershell.exe, etc. being used as parents for whoami), so the 'not 1 of filter_main_*' condition is satisfied.",
+        "The report mentions that the actor used 'whoami' as part of a list of commands including 'ipconfig /all', 'ping -n 1 8.8.8.8', etc., but does not specify the parent process for whoami. Since the rule requires that the parent process is not in the list of legitimate shells (cmd.exe, powershell.exe, etc.), and the report does not indicate any parent process, this aligns with the rule's condition of 'not 1 of filter_main_*' (i.e., no suspicious parent processes).",
+        "The rule's 'filter_main_parent_null' and 'filter_main_parent_empty' conditions are not triggered because the report does not mention a parent process for whoami, so the rule's condition is satisfied."
+      ],
+      "missing_conditions": [
+        "The report does not specify the parent process for the 'whoami' command, but the rule requires that the parent process is not in the list of legitimate shells (cmd.exe, powershell.exe, etc.). Since the report does not indicate any parent process, this is consistent with the rule's condition of 'not 1 of filter_main_*' (i.e., no suspicious parent processes)."
+      ],
+      "unknown_conditions": [
+        "ParentImage and SourceUser are not provided in the report, but the rule's condition does not require them to be present (the rule checks for the absence of suspicious parent processes)."
+      ],
+      "explanation": "The report confirms the execution of 'whoami' on the SQL server, which matches the rule's detection of 'whoami.exe' execution. The rule's condition requires that the parent process is not in the list of legitimate shells (cmd.exe, powershell.exe, etc.), and the report does not indicate any parent process for whoami, so the rule's condition is satisfied.",
+      "review_status": "draft"
+    },
+    {
+      "coverage_id": "AA25-266A-P004",
+      "candidate_id": "AA25-266A-R004",
+      "behavior_id": "AA25-266A-G002",
+      "decision": "matches_procedure",
+      "supporting_conditions": [
+        "The reported procedure includes 'ipconfig /all' as a command observed on the SQL server, which directly matches the Sigma rule's detection condition for 'ipconfig\\s+/all' (the regex pattern for the command).",
+        "The rule's detection condition requires the command to be run via process creation (logsource: category: process_creation), and the report explicitly states that the command was observed on the SQL server with high confidence, indicating it was executed as a process.",
+        "The report lists multiple commands, including 'ipconfig /all', which is explicitly covered by the rule's regex pattern. The rule does not require all commands to be present, only that at least one matches the condition."
+      ],
+      "missing_conditions": [
+        "The report does not provide raw log events or timestamps for the command execution, but the rule's logsource is based on process creation events, which are typically captured in Windows event logs. The report states the command was observed with high confidence, so this is not a critical missing detail for the conclusion."
+      ],
+      "unknown_conditions": [
+        "ParentImage and SourceUser are not specified in the report, but the rule does not require these fields to be present in the evidence for a match. The rule's detection condition is based on the command line, which is present in the report."
+      ],
+      "explanation": "The reported procedure includes 'ipconfig /all' as a command observed on the SQL server, which directly matches the Sigma rule's detection condition for 'ipconfig\\s+/all'. The rule's condition is satisfied by the presence of this command in the observed procedures, and the report confirms high confidence in the observation. The rule does not require additional fields like ParentImage or SourceUser to be present for a match, so the absence of these fields does not affect the conclusion.",
+      "review_status": "draft"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # OTRF LSASS_campaign_06 日志盘点（2026-11-02）
 
-数据：[元数据](../data/Security-Datasets/datasets/compound/_metadata/LSASS_campaign_06.yaml)、[解压后的主机日志](../data/Security-Datasets/datasets/compound/LSASS_campaign_06/metasploit_outflank-dumpert_lsass_memory_dump.json)。可在项目根目录运行 `python analyze_otrf_background.py` 重算下面的分布。行号指 JSONL 的物理行号，从 1 开始。
+数据：[元数据](../data/Security-Datasets/datasets/compound/_metadata/LSASS_campaign_06.yaml)、[解压后的主机日志](../data/Security-Datasets/datasets/compound/LSASS_campaign_06/metasploit_outflank-dumpert_lsass_memory_dump.json)。可在项目根目录运行 `python tools/analyze_otrf_background.py` 重算下面的分布。行号指 JSONL 的物理行号，从 1 开始。
 
 ## 结论
 

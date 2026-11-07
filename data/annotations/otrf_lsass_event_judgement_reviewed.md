@@ -1,6 +1,6 @@
 # OTRF 事件 × Sigma 规则：人工判定样本（已复核）
 
-组长已复核事件引用与人工条件推演；供组员 B 开发与回归使用。数据为 `data/Security-Datasets/datasets/compound/LSASS_campaign_06/metasploit_outflank-dumpert_lsass_memory_dump.json`，事件引用 `L数字` 表示 JSONL 物理行号。SigmaHQ commit：`05d1031f537e830b76da53bae2400c5814c89165`。下表是**依据 YAML 的人工静态推演**，尚未用 Sigma 引擎执行；`match` / `miss` 指规则条件，不是对事件恶意性的判决。
+组长已复核事件引用与人工条件推演；供组员 B 开发与回归使用。数据为 `data/Security-Datasets/datasets/compound/LSASS_campaign_06/metasploit_outflank-dumpert_lsass_memory_dump.json`，事件引用 `L数字` 表示 JSONL 物理行号。SigmaHQ commit：`05d1031f537e830b76da53bae2400c5814c89165`。下表是**依据 YAML 的人工静态推演**，现已另由受限离线执行器验证，运行结果见 `docs/OFFLINE_SIGMA_RUNBOOK.md`；`match` / `miss` 指规则条件，不是对事件恶意性的判决。
 
 | 样本 | 事件与背景标签 | 规则 | 预期条件结果 | 核对理由 |
 |---|---|---|---|---|
@@ -11,4 +11,4 @@
 | E05 | L2090，Sysmon 1，Edge 浏览器启动；背景候选 | [Local Accounts Discovery](../sigma/rules/windows/process_creation/proc_creation_win_susp_local_system_owner_account_discovery.yml) | `miss` | `Image=msedge.exe`，命令行是浏览器 profile 参数，不满足该规则的账户发现命令分支。 |
 | E06 | L17255，Sysmon 1，`systeminfo`；元数据支持攻击链中的发现步骤 | [Local Accounts Discovery](../sigma/rules/windows/process_creation/proc_creation_win_susp_local_system_owner_account_discovery.yml) | `miss` | 该规则不选 `systeminfo`。这是**攻击相关事件上的规则未命中**，说明 `miss` 不能解释成“事件良性”。 |
 
-复核时请逐行打开原事件和完整 YAML，尤其确认 E01 的 `CallTrace` OR 条件、E03 的排除项以及 E02 的 `endswith: FF`。这些样本用于练规则条件与字段匹配；要报告真正的 `rule_tests.status=hit/miss`，还需由执行器运行规则并保存匹配事件 ID、跳过数与引擎版本。背景候选若用作正式误报评估，须进一步核对上下文，最好再引入独立良性数据。
+复核时请逐行打开原事件和完整 YAML，尤其确认 E01 的 `CallTrace` OR 条件、E03 的排除项以及 E02 的 `endswith: FF`。这些样本用于练规则条件与字段匹配；所选规则的 `rule_tests.status`、匹配事件 ID、跳过数与引擎版本已由离线执行器保存，见 `artifacts/runs/otrf_lsass_rule_tests.json`。背景候选若用作正式误报评估，须进一步核对上下文，最好再引入独立良性数据。

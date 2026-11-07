@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "kind": "rule_tests",
+  "case_id": "OTRF-LSASS_campaign_06",
+  "items": [
+    {
+      "candidate_id": "proc_access_win_lsass_memdump",
+      "dataset_id": "OTRF-LSASS_campaign_06",
+      "status": "hit",
+      "matched_event_uids": [
+        "OTRF-LSASS_campaign_06:L33808",
+        "OTRF-LSASS_campaign_06:L34151"
+      ],
+      "events_evaluated": 31522,
+      "events_skipped": 2207,
+      "unsupported_features": [],
+      "reason": "Evaluated 31522 compatible events; skipped 2207 others",
+      "engine_version": "sigma-offline-subset-0.1",
+      "rule_path": "data/sigma/rules/windows/process_access/proc_access_win_lsass_memdump.yml"
+    },
+    {
+      "candidate_id": "proc_access_win_lsass_dump_keyword_image",
+      "dataset_id": "OTRF-LSASS_campaign_06",
+      "status": "hit",
+      "matched_event_uids": [
+        "OTRF-LSASS_campaign_06:L33808",
+        "OTRF-LSASS_campaign_06:L34151"
+      ],
+      "events_evaluated": 31522,
+      "events_skipped": 2207,
+      "unsupported_features": [],
+      "reason": "Evaluated 31522 compatible events; skipped 2207 others",
+      "engine_version": "sigma-offline-subset-0.1",
+      "rule_path": "data/sigma/rules/windows/process_access/proc_access_win_lsass_dump_keyword_image.yml"
+    },
+    {
+      "candidate_id": "proc_creation_win_susp_local_system_owner_account_discovery",
+      "dataset_id": "OTRF-LSASS_campaign_06",
+      "status": "hit",
+      "matched_event_uids": [
+        "OTRF-LSASS_campaign_06:L20542",
+        "OTRF-LSASS_campaign_06:L20570"
+      ],
+      "events_evaluated": 77,
+      "events_skipped": 33652,
+      "unsupported_features": [],
+      "reason": "Evaluated 77 compatible events; skipped 33652 others",
+      "engine_version": "sigma-offline-subset-0.1",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_susp_local_system_owner_account_discovery.yml"
+    }
+  ]
+}
