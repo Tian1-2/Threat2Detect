@@ -102,18 +102,19 @@ def score_rule(behavior: dict, rule: dict) -> tuple[int, list[str]]:
     return score, reasons
 
 
-def retrieve(handoff: dict, rules_root: Path, limit: int) -> dict:
+def retrieve(handoff: dict, rules_root: Path, limit: int, include_draft: bool = False) -> dict:
     if handoff.get("kind") != "case_handoff":
         raise ValueError("Expected kind=case_handoff")
     if limit < 1:
         raise ValueError("limit must be at least 1")
     commit = ruleset_commit(rules_root)
     index, warnings = index_rules(rules_root)
-    behaviors = {item["behavior_id"]: item for item in handoff["behaviors"] if item["review_status"] == "confirmed"}
+    allowed = {"confirmed", "draft"} if include_draft else {"confirmed"}
+    behaviors = {item["behavior_id"]: item for item in handoff["behaviors"] if item["review_status"] in allowed}
     items = []
     for mapping in handoff["mappings"]:
         behavior = behaviors.get(mapping["behavior_id"])
-        if not behavior or mapping["review_status"] != "confirmed":
+        if not behavior or mapping["review_status"] not in allowed:
             continue
         technique_id = mapping["technique_id"]
         ranked = sorted(((*score_rule(behavior, rule), rule) for rule in index.get(technique_id, [])),

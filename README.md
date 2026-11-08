@@ -1,10 +1,10 @@
 # Threat2Detect
 
-课程项目：从威胁报告提取有原文证据的行为，映射 ATT&CK，检索并逐条件分析 Sigma 规则；对另行取得的静态日志运行所选规则，分别报告“做法适用”与“日志实际命中”。目前是可运行的原型与已确认的小规模样本，**不是完整的端到端检测系统**。
+课程项目：从威胁报告提取有原文证据的行为，映射 ATT&CK，检索并逐条件分析 Sigma 规则；对另行取得的静态日志运行所选规则，分别报告“做法适用”与“日志实际命中”。目前已有通过固定 JSON 接口串联的命令行原型和小规模已确认样本，判断仍需人工复核。
 
 ## 从这里开始
 
-先读[阅读指引](READING_GUIDE.md)，再按角色读[项目总说明](docs/PROJECT_HANDOFF.md)、[接口契约](docs/INTERFACE_CONTRACT.md)和[组员启动清单](docs/TEAM_START.md)。[目录约定](docs/PROJECT_STRUCTURE.md)说明当前文件归属与后续主流程结构。[开发日志](DEVELOPMENT_LOG.md)记录每轮改动与遗留问题；第二部分的独立命令见[运行说明](docs/SECOND_STAGE_RUNBOOK.md)。成员 B 另有[操作指引](docs/MEMBER_B_GUIDE.md)。
+先读[阅读指引](READING_GUIDE.md)，再按角色读[项目总说明](docs/PROJECT_HANDOFF.md)、[接口契约](docs/INTERFACE_CONTRACT.md)和[组员启动清单](docs/TEAM_START.md)。[目录约定](docs/PROJECT_STRUCTURE.md)说明文件归属；[三段流水线](docs/PIPELINE_RUNBOOK.md)给出统一运行命令，[Sigma Agent](docs/SIGMA_AGENT_RUNBOOK.md)说明工具决策循环。[开发日志](DEVELOPMENT_LOG.md)记录每轮改动与遗留问题。
 
 ## 获取数据与运行
 
@@ -12,7 +12,7 @@
 git clone --recurse-submodules https://github.com/Tian1-2/Threat2Detect.git
 cd Threat2Detect
 python -m pip install -r requirements-poc.txt
-python -m pytest -q tests/test_agent_poc.py tests/test_contract.py
+python -m pytest -q
 python validate_contract.py data/annotations/aa25_266a_gold_draft.json
 python tools/inspect_dataset.py
 python tools/analyze_otrf_background.py

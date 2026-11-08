@@ -27,6 +27,6 @@ Threat2Detect/
 
 **现在已经执行的整理**：`data/` 只放可追溯输入、版本锁定的上游仓库与人工标注；原 `data/runs/` 已移到 `artifacts/runs/`。两处都不要把模型输出当作人工黄金答案。标准化后的 45 MB OTRF JSON 可按命令重建，Git 忽略该文件；小型运行结果可以保留供复核。
 
-**下一次代码迁移**：目前根目录的 `agent_poc.py`、`sigma_retrieval.py`、`sigma_coverage.py`、`normalize_otrf.py`、`run_sigma_offline.py` 是可运行脚本。等主控 `pipeline/` 接口稳定后，再把其逻辑逐个移入 `src/threat2detect/`，根目录保留短的兼容入口或统一 `python -m threat2detect` 命令，同时改测试和文档。一次只迁一个模块并验证，不在本轮一次性改动所有导入路径。
+**下一次代码迁移**：根目录的 `pipeline.py` 现按固定 JSON 契约编排 `agent_poc.py`、`sigma_retrieval.py`、`sigma_coverage.py`、`normalize_otrf.py` 和 `run_sigma_offline.py`。等接口在更多案例上稳定后，再把逻辑逐个移入 `src/threat2detect/`，根目录保留短的兼容入口或统一 `python -m threat2detect` 命令，同时改测试和文档。一次只迁一个模块并验证。
 
 **文件归属规则**：输入或人工复核真值放 `data/`；程序产生、可重建的结果放 `artifacts/`；可复用实现逐步放入 `src/`；一次性数据准备工具放 `tools/`；用户与组员操作说明放 `docs/`；每轮结果与未解决问题追加到根目录 `DEVELOPMENT_LOG.md`。前端只有在命令行端到端流程稳定后进入 `web/`。

@@ -61,6 +61,24 @@
 
 **仍有问题**：根目录仍有历史原型与新模块脚本。待主控编排接口稳定后逐个迁移，届时同步更新导入路径、命令与测试。本地工作树含此前未同步到 GitHub 的文档和代码改动。
 
+## 2026-11-07 / 固定接口串联
+
+**改动**：新增 `pipeline.py`，把报告 Agent 的实验 JSON 转为 `case_handoff`（行为、映射均为 `draft`），再通过 `rule_candidates`、`coverage_assessments`、`normalized_events`、`rule_tests` 汇总到 `case_result`。每步校验契约与外键；规则召回和条件对照增加只供流水线显式使用的草稿输入开关。新增 `docs/PIPELINE_RUNBOOK.md` 与转换、矛盾判断测试。
+
+**输入与版本**：AA25-266A 已确认的 4 条行为；ATT&CK Enterprise 20.0；SigmaHQ commit `05d1031f537e830b76da53bae2400c5814c89165`；OTRF LSASS_campaign_06；条件对照模型 `qwen3:4b`。A 阶段旧预测另用作适配器检查，不作为人工答案。
+
+**运行与验证**：使用 `--limit 1 --max-coverage 1 --max-rules 1` 的完整演示，得到 4 个候选、1 条条件判断和 1 条 OTRF 规则运行记录。模型把含未知必需字段的结果说成 `matches_procedure`；新增保守校验后输出 `insufficient_detail` 并保留原判。离线规则在 77 条兼容 OTRF 事件上为 `miss`。旧 A 预测中的 89 条行为、63 条映射通过转换契约，作为草稿进入检索，得到 54 个候选。`case_result` 外键校验通过；全部 33 个测试通过。
+
+**仍有问题**：当前 A 原型每行为只输出一个 ATT&CK ID，尚未支持一对多；覆盖判断仍有模型错误，需人工复核和继续调优。首轮仅执行有限候选，未运行的状态保留为未知。OTRF 与报告属于不同事件，日志命中不能证明报告中的攻击被检测。
+
+## 2026-11-08 / Sigma 条件分析 Agent 首版
+
+**改动**：新增 `sigma_agent.py`，将单次条件判断改为有步骤上限的工具决策循环。可选择查看 YAML、读取报告上下文、查看所需字段，再提交 `coverage_assessments`。每个候选生成 JSONL 决策轨迹；统一入口 `pipeline.py` 加入 `--agent-coverage`。禁止重复工具调用，无法形成合格判断时以 `insufficient_detail` 停止。
+
+**验证与发现**：在人工确认的 R001、R003 案例上运行。R001 经 `inspect_rule → finish` 得到 `matches_procedure`。R003 初次将缺失的 `ParentImage` 错当成排除条件不成立；加入否定过滤字段反馈后，轨迹为 `inspect_rule → 被退回的 finish → 修正的 finish`，最终 `insufficient_detail`，与人工判定一致。统一流水线加 Agent 选项后成功生成覆盖、日志规则运行和 `case_result`。这些只是首轮功能验证，不代表总体准确率。
+
+**仍有问题**：当前字段护栏主要处理否定过滤中的 `ParentImage`；复杂 Sigma 条件仍可能误解。R001 解释曾混淆选择器列表中的 OR 与字段内 AND，需下一轮调优。暂未对全部人工判定样本和封存报告做量化评估。
+
 ## 每次新改动的记录格式
 
 ```text

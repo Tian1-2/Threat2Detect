@@ -243,6 +243,8 @@ def validate_links(data: dict, handoff: dict | None = None, candidates: dict | N
             for assessment in data["items"]:
                 if assessment["behavior_id"] not in behavior_ids:
                     raise ValueError(f"{assessment['coverage_id']}: missing behavior_id in handoff")
+        if kind == "case_result" and set(data["behavior_ids"]) - behavior_ids:
+            raise ValueError("case_result contains behavior_id absent from handoff")
     if candidates:
         if candidates["kind"] != "rule_candidates" or candidates["case_id"] != data.get("case_id"):
             raise ValueError("Rule candidates kind or case_id does not match")
@@ -256,6 +258,13 @@ def validate_links(data: dict, handoff: dict | None = None, candidates: dict | N
             for result in data["items"]:
                 if result["candidate_id"] not in candidate_by_id:
                     raise ValueError(f"{result['candidate_id']}: missing candidate_id in rule candidates")
+        if kind == "case_result":
+            for row in data.get("items", []):
+                candidate = candidate_by_id.get(row["candidate_id"])
+                if not candidate or row["behavior_id"] != candidate["behavior_id"] or row["technique_id"] != candidate["technique_id"]:
+                    raise ValueError(f"{row['candidate_id']}: case_result candidate link mismatch")
+            if set(data["rule_test_candidate_ids"]) - candidate_by_id.keys():
+                raise ValueError("case_result contains rule test ID absent from candidates")
     if events:
         if events["kind"] != "normalized_events":
             raise ValueError("Events file must be normalized_events")
@@ -267,6 +276,12 @@ def validate_links(data: dict, handoff: dict | None = None, candidates: dict | N
                 unknown = set(result["matched_event_uids"]) - event_ids
                 if unknown:
                     raise ValueError(f"{result['candidate_id']}: matched_event_uids not in normalized events: {sorted(unknown)}")
+        if kind == "case_result":
+            for row in data.get("items", []):
+                if row["dataset_id"] != events["dataset_id"]:
+                    raise ValueError(f"{row['candidate_id']}: case_result dataset_id mismatch")
+                if set(row.get("matched_event_uids") or []) - event_ids:
+                    raise ValueError(f"{row['candidate_id']}: case_result references absent events")
 
 
 def main() -> None:

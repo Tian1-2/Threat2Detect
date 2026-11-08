@@ -4,7 +4,7 @@
 
 ## 按角色阅读，不必读完整个仓库
 
-所有人先看[项目总说明](docs/PROJECT_HANDOFF.md)的目标与分工，以及[接口契约](docs/INTERFACE_CONTRACT.md)中自己的输入输出。各角色的第一项交付见[组员启动清单](docs/TEAM_START.md)。[目录约定](docs/PROJECT_STRUCTURE.md)解释文件归属和后续结构。数据版本与固定 commit 见[数据版本](docs/DATA_VERSIONS.md)。每轮开发变动与未解决问题记在[开发日志](DEVELOPMENT_LOG.md)；规则召回与条件对照见[Sigma 检索说明](docs/SECOND_STAGE_RUNBOOK.md)，静态日志执行见[离线执行说明](docs/OFFLINE_SIGMA_RUNBOOK.md)。
+所有人先看[项目总说明](docs/PROJECT_HANDOFF.md)的目标与分工，以及[接口契约](docs/INTERFACE_CONTRACT.md)中自己的输入输出。各角色的第一项交付见[组员启动清单](docs/TEAM_START.md)。[目录约定](docs/PROJECT_STRUCTURE.md)解释文件归属和后续结构；[三段流水线](docs/PIPELINE_RUNBOOK.md)说明统一入口，[Sigma Agent 运行说明](docs/SIGMA_AGENT_RUNBOOK.md)说明工具决策循环。数据版本与固定 commit 见[数据版本](docs/DATA_VERSIONS.md)。每轮开发变动与未解决问题记在[开发日志](DEVELOPMENT_LOG.md)；规则召回与条件对照见[Sigma 检索说明](docs/SECOND_STAGE_RUNBOOK.md)，静态日志执行见[离线执行说明](docs/OFFLINE_SIGMA_RUNBOOK.md)。
 
 | 角色 | 接着读 | 开发时使用的数据 | 暂时不要拿来当输入 |
 |---|---|---|---|

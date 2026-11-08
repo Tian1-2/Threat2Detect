@@ -47,12 +47,23 @@ SCHEMA = {
 }
 
 
-def prepare(handoff: dict, candidates: dict) -> list[dict]:
+def guard_decision(proposal: dict) -> dict:
+    """Do not report a complete match while the model lists unresolved conditions."""
+    if proposal["decision"] == "matches_procedure" and (proposal["missing_conditions"] or proposal["unknown_conditions"]):
+        proposal = dict(proposal)
+        proposal["model_decision"] = proposal["decision"]
+        proposal["decision"] = "insufficient_detail"
+        proposal["decision_guard"] = "Model listed missing or unknown conditions alongside a complete-match claim."
+    return proposal
+
+
+def prepare(handoff: dict, candidates: dict, include_draft: bool = False) -> list[dict]:
     if handoff["case_id"] != candidates["case_id"]:
         raise ValueError("Case IDs differ")
     validate_links(candidates, handoff=handoff)
-    behaviors = {b["behavior_id"]: b for b in handoff["behaviors"] if b["review_status"] == "confirmed"}
-    mappings = {(m["behavior_id"], m["technique_id"]) for m in handoff["mappings"] if m["review_status"] == "confirmed"}
+    allowed = {"confirmed", "draft"} if include_draft else {"confirmed"}
+    behaviors = {b["behavior_id"]: b for b in handoff["behaviors"] if b["review_status"] in allowed}
+    mappings = {(m["behavior_id"], m["technique_id"]) for m in handoff["mappings"] if m["review_status"] in allowed}
     report = workspace_path(handoff["report"]["input_path"]).read_text(encoding="utf-8")
     prepared = []
     for candidate in candidates["items"]:
@@ -71,8 +82,8 @@ def prepare(handoff: dict, candidates: dict) -> list[dict]:
     return prepared
 
 
-def run(handoff: dict, candidates: dict, output: Path, model: str, endpoint: str, max_items: int | None) -> dict:
-    prepared = prepare(handoff, candidates)
+def run(handoff: dict, candidates: dict, output: Path, model: str, endpoint: str, max_items: int | None, include_draft: bool = False) -> dict:
+    prepared = prepare(handoff, candidates, include_draft=include_draft)
     if max_items is not None:
         prepared = prepared[:max_items]
     result = {"schema_version": "1.0", "kind": "coverage_assessments", "case_id": handoff["case_id"],
@@ -85,7 +96,7 @@ def run(handoff: dict, candidates: dict, output: Path, model: str, endpoint: str
                    "report_context": item["report_context"],
                    "technique_id": candidate["technique_id"], "rule_id": candidate["rule_id"],
                    "rule_path": candidate["rule_path"], "sigma_yaml": item["sigma_yaml"]}
-        proposal = ollama_json(model, SYSTEM, json.dumps(payload, ensure_ascii=False), endpoint, SCHEMA)
+        proposal = guard_decision(ollama_json(model, SYSTEM, json.dumps(payload, ensure_ascii=False), endpoint, SCHEMA))
         row = {"coverage_id": f"{handoff['case_id']}-P{index:03d}",
                "candidate_id": candidate["candidate_id"], "behavior_id": candidate["behavior_id"],
                **proposal, "review_status": "draft"}
