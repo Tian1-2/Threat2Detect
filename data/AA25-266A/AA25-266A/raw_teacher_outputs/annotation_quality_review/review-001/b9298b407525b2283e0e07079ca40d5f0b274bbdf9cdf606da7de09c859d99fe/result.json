@@ -1,0 +1,55 @@
+{
+  "output": {
+    "flags": [
+      {
+        "row_id": "AA25-266A-P001",
+        "issue": "duplicate",
+        "note": "This summary of CVE-2024-36401 exploitation for initial access on both GeoServers repeats P005 on page 6. Prefer the more detailed P005 evidence; keep the GeoServer 1 and GeoServer 2 occurrences distinct from each other.",
+        "expected_technique_id": null
+      },
+      {
+        "row_id": "AA25-266A-P007",
+        "issue": "incorrect_fact_status",
+        "note": "The same evidence says the actors attempted escalation with dirtycow and later did escalate local privileges, with the method unknown. A single attempted label understates the explicit successful escalation; split the attempted method from the observed outcome or represent both accurately.",
+        "expected_technique_id": null
+      },
+      {
+        "row_id": "",
+        "issue": "missed_behavior",
+        "note": "Page 6 reports an unsuccessful or likely unsuccessful attempt to load a JavaScript extension on GeoServer 1 to obtain webserver information; no supplied behavior row captures that distinct attempt.",
+        "expected_technique_id": null
+      },
+      {
+        "row_id": "",
+        "issue": "missed_behavior",
+        "note": "Page 6 reports creation of accounts that were later deleted, with no evidence of further use. P006 mentions valid accounts used for persistence but does not capture this distinct account-creation event.",
+        "expected_technique_id": "T1136.001"
+      },
+      {
+        "row_id": "",
+        "issue": "missed_behavior",
+        "note": "Page 7 says the actors accessed service accounts by exploiting their associated services. P015 captures brute-force attempts but not this separate observed service-account access behavior.",
+        "expected_technique_id": null
+      },
+      {
+        "row_id": "",
+        "issue": "missed_behavior",
+        "note": "Page 6 identifies use of a commercially available VPS from a cloud infrastructure provider during the operation; the inventory has no behavior for this infrastructure use.",
+        "expected_technique_id": null
+      },
+      {
+        "row_id": "AA25-266A-P002",
+        "issue": "other",
+        "note": "P002 combines the initial-access event with persistence establishment. Initial access is separately summarized in P001/P005, while specific persistence mechanisms are detailed in P006; consider separating the actions to avoid duplicating access and to keep persistence evidence precise.",
+        "expected_technique_id": null
+      }
+    ]
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-3b1bbd9b0c134635a5bedce1f958fc04.json"
+}

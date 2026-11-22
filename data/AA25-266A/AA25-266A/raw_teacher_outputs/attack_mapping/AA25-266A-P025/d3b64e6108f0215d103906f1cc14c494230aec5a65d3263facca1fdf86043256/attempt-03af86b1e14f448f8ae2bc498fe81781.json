@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:33:35.092593+00:00",
+  "response": "{\"job_id\": \"000853e375d7ffe0f6aca9f05e098aabcf1562e856cee29f37cf14607db95b2e\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1059.004\", \"rationale\": \"The report says a shell script was executed on the Web Server. Unix Shell is supported by the identified shell script execution.\", \"confidence\": \"high\"}], \"additional_ids\": [], \"assessment\": \"The evidence supports Unix shell command and scripting interpreter activity.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

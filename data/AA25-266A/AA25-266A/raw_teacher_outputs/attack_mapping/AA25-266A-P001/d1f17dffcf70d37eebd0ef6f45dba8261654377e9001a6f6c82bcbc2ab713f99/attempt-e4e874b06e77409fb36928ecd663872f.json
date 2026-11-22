@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:32:27.043060+00:00",
+  "response": "{\"job_id\": \"0b44ce8c52f6ef8d760dae587e0b22fd930b44ea90dbf366cb28e74a9bd42194\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1190\", \"confidence\": \"high\", \"rationale\": \"The report identifies exploitation of a vulnerability in public-facing GeoServers to gain initial access, matching exploitation of a public-facing application.\"}], \"additional_ids\": [], \"assessment\": \"The evidence supports public-facing application exploitation. The cited activity does not establish exploitation of remote services, client execution, or any other candidate behavior.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

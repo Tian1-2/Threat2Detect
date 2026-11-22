@@ -1,0 +1,934 @@
+{
+  "proposal_hash": "92c267c531aad05e479ac0ba80effc3084efd45229d5aa4378c885d5d4d52af9",
+  "evidence_queue_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "reviewer": "project_lead_via_chat_2026-11-22",
+  "decisions": {
+    "AA25-266A-P001": {
+      "action": "edit",
+      "reason": "Apply approved split, deduplication and evidence-specific mapping review; see replacement records.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P028",
+        "AA25-266A-P029"
+      ]
+    },
+    "AA25-266A-P003": {
+      "action": "edit",
+      "reason": "Apply approved split, deduplication and evidence-specific mapping review; see replacement records.",
+      "replacement_behavior_ids": [
+        "AA25-266A-R003",
+        "AA25-266A-R004"
+      ]
+    },
+    "AA25-266A-P005": {
+      "action": "edit",
+      "reason": "Apply approved split, deduplication and evidence-specific mapping review; see replacement records.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P028",
+        "AA25-266A-P029"
+      ]
+    },
+    "AA25-266A-P006": {
+      "action": "edit",
+      "reason": "Apply approved split, deduplication and evidence-specific mapping review; see replacement records.",
+      "replacement_behavior_ids": [
+        "AA25-266A-R005",
+        "AA25-266A-R006",
+        "AA25-266A-R007"
+      ]
+    },
+    "AA25-266A-P007": {
+      "action": "accept",
+      "reason": "Retained unchanged as explicitly accepted by the user.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P007"
+      ]
+    },
+    "AA25-266A-P012": {
+      "action": "edit",
+      "reason": "Apply approved split, deduplication and evidence-specific mapping review; see replacement records.",
+      "replacement_behavior_ids": [
+        "AA25-266A-R008",
+        "AA25-266A-R009",
+        "AA25-266A-R010",
+        "AA25-266A-R011",
+        "AA25-266A-R012"
+      ]
+    },
+    "AA25-266A-P017": {
+      "action": "edit",
+      "reason": "Apply approved split, deduplication and evidence-specific mapping review; see replacement records.",
+      "replacement_behavior_ids": [
+        "AA25-266A-G001",
+        "AA25-266A-G002",
+        "AA25-266A-G003",
+        "AA25-266A-R013",
+        "AA25-266A-R014",
+        "AA25-266A-R015"
+      ]
+    },
+    "AA25-266A-P021": {
+      "action": "edit",
+      "reason": "Apply approved split, deduplication and evidence-specific mapping review; see replacement records.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P021"
+      ]
+    },
+    "AA25-266A-P024": {
+      "action": "edit",
+      "reason": "Apply approved split, deduplication and evidence-specific mapping review; see replacement records.",
+      "replacement_behavior_ids": [
+        "AA25-266A-R001",
+        "AA25-266A-R002"
+      ]
+    },
+    "AA25-266A-P028": {
+      "action": "edit",
+      "reason": "Apply approved split, deduplication and evidence-specific mapping review; see replacement records.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P028"
+      ]
+    },
+    "AA25-266A-P029": {
+      "action": "edit",
+      "reason": "Apply approved split, deduplication and evidence-specific mapping review; see replacement records.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P029"
+      ]
+    },
+    "AA25-266A-PM001": {
+      "action": "edit",
+      "reason": "Original mapping superseded by evidence-specific replacement rows; original IDs remain in the proposal file.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P028",
+        "AA25-266A-P029"
+      ]
+    },
+    "AA25-266A-PM003": {
+      "action": "insufficient_evidence",
+      "reason": "Original evidence does not establish the claimed specificity; not included as a confirmed mapping.",
+      "replacement_behavior_ids": [
+        "AA25-266A-R003",
+        "AA25-266A-R004"
+      ]
+    },
+    "AA25-266A-PM004": {
+      "action": "insufficient_evidence",
+      "reason": "Original evidence does not establish the claimed specificity; not included as a confirmed mapping.",
+      "replacement_behavior_ids": [
+        "AA25-266A-R003",
+        "AA25-266A-R004"
+      ]
+    },
+    "AA25-266A-PM006": {
+      "action": "edit",
+      "reason": "Original mapping superseded by evidence-specific replacement rows; original IDs remain in the proposal file.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P028",
+        "AA25-266A-P029"
+      ]
+    },
+    "AA25-266A-PM007": {
+      "action": "edit",
+      "reason": "Original mapping superseded by evidence-specific replacement rows; original IDs remain in the proposal file.",
+      "replacement_behavior_ids": [
+        "AA25-266A-R005",
+        "AA25-266A-R006",
+        "AA25-266A-R007"
+      ]
+    },
+    "AA25-266A-PM008": {
+      "action": "edit",
+      "reason": "Original mapping superseded by evidence-specific replacement rows; original IDs remain in the proposal file.",
+      "replacement_behavior_ids": [
+        "AA25-266A-R005",
+        "AA25-266A-R006",
+        "AA25-266A-R007"
+      ]
+    },
+    "AA25-266A-PM009": {
+      "action": "edit",
+      "reason": "Original mapping superseded by evidence-specific replacement rows; original IDs remain in the proposal file.",
+      "replacement_behavior_ids": [
+        "AA25-266A-R005",
+        "AA25-266A-R006",
+        "AA25-266A-R007"
+      ]
+    },
+    "AA25-266A-PM010": {
+      "action": "accept",
+      "reason": "Retained with original substantive fields.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P007"
+      ]
+    },
+    "AA25-266A-PM019": {
+      "action": "insufficient_evidence",
+      "reason": "Original evidence does not establish the claimed specificity; not included as a confirmed mapping.",
+      "replacement_behavior_ids": [
+        "AA25-266A-R008",
+        "AA25-266A-R009",
+        "AA25-266A-R010",
+        "AA25-266A-R011",
+        "AA25-266A-R012"
+      ]
+    },
+    "AA25-266A-PM020": {
+      "action": "insufficient_evidence",
+      "reason": "Original evidence does not establish the claimed specificity; not included as a confirmed mapping.",
+      "replacement_behavior_ids": [
+        "AA25-266A-R008",
+        "AA25-266A-R009",
+        "AA25-266A-R010",
+        "AA25-266A-R011",
+        "AA25-266A-R012"
+      ]
+    },
+    "AA25-266A-PM021": {
+      "action": "insufficient_evidence",
+      "reason": "Original evidence does not establish the claimed specificity; not included as a confirmed mapping.",
+      "replacement_behavior_ids": [
+        "AA25-266A-R008",
+        "AA25-266A-R009",
+        "AA25-266A-R010",
+        "AA25-266A-R011",
+        "AA25-266A-R012"
+      ]
+    },
+    "AA25-266A-PM022": {
+      "action": "edit",
+      "reason": "Original mapping superseded by evidence-specific replacement rows; original IDs remain in the proposal file.",
+      "replacement_behavior_ids": [
+        "AA25-266A-R008",
+        "AA25-266A-R009",
+        "AA25-266A-R010",
+        "AA25-266A-R011",
+        "AA25-266A-R012"
+      ]
+    },
+    "AA25-266A-PM029": {
+      "action": "edit",
+      "reason": "Original mapping superseded by evidence-specific replacement rows; original IDs remain in the proposal file.",
+      "replacement_behavior_ids": [
+        "AA25-266A-G001",
+        "AA25-266A-G002",
+        "AA25-266A-G003",
+        "AA25-266A-R013",
+        "AA25-266A-R014",
+        "AA25-266A-R015"
+      ]
+    },
+    "AA25-266A-PM030": {
+      "action": "edit",
+      "reason": "Original mapping superseded by evidence-specific replacement rows; original IDs remain in the proposal file.",
+      "replacement_behavior_ids": [
+        "AA25-266A-G001",
+        "AA25-266A-G002",
+        "AA25-266A-G003",
+        "AA25-266A-R013",
+        "AA25-266A-R014",
+        "AA25-266A-R015"
+      ]
+    },
+    "AA25-266A-PM031": {
+      "action": "edit",
+      "reason": "Original mapping superseded by evidence-specific replacement rows; original IDs remain in the proposal file.",
+      "replacement_behavior_ids": [
+        "AA25-266A-G001",
+        "AA25-266A-G002",
+        "AA25-266A-G003",
+        "AA25-266A-R013",
+        "AA25-266A-R014",
+        "AA25-266A-R015"
+      ]
+    },
+    "AA25-266A-PM032": {
+      "action": "edit",
+      "reason": "Original mapping superseded by evidence-specific replacement rows; original IDs remain in the proposal file.",
+      "replacement_behavior_ids": [
+        "AA25-266A-G001",
+        "AA25-266A-G002",
+        "AA25-266A-G003",
+        "AA25-266A-R013",
+        "AA25-266A-R014",
+        "AA25-266A-R015"
+      ]
+    },
+    "AA25-266A-PM033": {
+      "action": "edit",
+      "reason": "Original mapping superseded by evidence-specific replacement rows; original IDs remain in the proposal file.",
+      "replacement_behavior_ids": [
+        "AA25-266A-G001",
+        "AA25-266A-G002",
+        "AA25-266A-G003",
+        "AA25-266A-R013",
+        "AA25-266A-R014",
+        "AA25-266A-R015"
+      ]
+    },
+    "AA25-266A-PM034": {
+      "action": "edit",
+      "reason": "Original mapping superseded by evidence-specific replacement rows; original IDs remain in the proposal file.",
+      "replacement_behavior_ids": [
+        "AA25-266A-G001",
+        "AA25-266A-G002",
+        "AA25-266A-G003",
+        "AA25-266A-R013",
+        "AA25-266A-R014",
+        "AA25-266A-R015"
+      ]
+    },
+    "AA25-266A-PM041": {
+      "action": "edit",
+      "reason": "Original mapping superseded by evidence-specific replacement rows; original IDs remain in the proposal file.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P021"
+      ]
+    },
+    "AA25-266A-PM042": {
+      "action": "insufficient_evidence",
+      "reason": "Original evidence does not establish the claimed specificity; not included as a confirmed mapping.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P021"
+      ]
+    },
+    "AA25-266A-PM045": {
+      "action": "edit",
+      "reason": "Original mapping superseded by evidence-specific replacement rows; original IDs remain in the proposal file.",
+      "replacement_behavior_ids": [
+        "AA25-266A-R001",
+        "AA25-266A-R002"
+      ]
+    },
+    "AA25-266A-PM046": {
+      "action": "edit",
+      "reason": "Original mapping superseded by evidence-specific replacement rows; original IDs remain in the proposal file.",
+      "replacement_behavior_ids": [
+        "AA25-266A-R001",
+        "AA25-266A-R002"
+      ]
+    },
+    "AA25-266A-PM047": {
+      "action": "edit",
+      "reason": "Original mapping superseded by evidence-specific replacement rows; original IDs remain in the proposal file.",
+      "replacement_behavior_ids": [
+        "AA25-266A-R001",
+        "AA25-266A-R002"
+      ]
+    },
+    "AA25-266A-PM051": {
+      "action": "edit",
+      "reason": "Original mapping superseded by evidence-specific replacement rows; original IDs remain in the proposal file.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P028"
+      ]
+    },
+    "AA25-266A-PM052": {
+      "action": "edit",
+      "reason": "Original mapping superseded by evidence-specific replacement rows; original IDs remain in the proposal file.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P029"
+      ]
+    },
+    "AA25-266A-PM002": {
+      "action": "accept",
+      "scope": "report_level_technique_id_match_only",
+      "reason": "User authorized retaining existing mappings whose exact ATT&CK ID appears in the report. This does not confirm behavior-level evidence, fact status, or uniqueness.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P002"
+      ],
+      "applied": true
+    },
+    "AA25-266A-PM005": {
+      "action": "accept",
+      "scope": "report_level_technique_id_match_only",
+      "reason": "User authorized retaining existing mappings whose exact ATT&CK ID appears in the report. This does not confirm behavior-level evidence, fact status, or uniqueness.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P004"
+      ],
+      "applied": true
+    },
+    "AA25-266A-PM011": {
+      "action": "accept",
+      "scope": "report_level_technique_id_match_only",
+      "reason": "User authorized retaining existing mappings whose exact ATT&CK ID appears in the report. This does not confirm behavior-level evidence, fact status, or uniqueness.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P008"
+      ],
+      "applied": true
+    },
+    "AA25-266A-PM012": {
+      "action": "accept",
+      "scope": "report_level_technique_id_match_only",
+      "reason": "User authorized retaining existing mappings whose exact ATT&CK ID appears in the report. This does not confirm behavior-level evidence, fact status, or uniqueness.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P008"
+      ],
+      "applied": true
+    },
+    "AA25-266A-PM014": {
+      "action": "accept",
+      "scope": "report_level_technique_id_match_only",
+      "reason": "User authorized retaining existing mappings whose exact ATT&CK ID appears in the report. This does not confirm behavior-level evidence, fact status, or uniqueness.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P009"
+      ],
+      "applied": true
+    },
+    "AA25-266A-PM015": {
+      "action": "accept",
+      "scope": "report_level_technique_id_match_only",
+      "reason": "User authorized retaining existing mappings whose exact ATT&CK ID appears in the report. This does not confirm behavior-level evidence, fact status, or uniqueness.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P009"
+      ],
+      "applied": true
+    },
+    "AA25-266A-PM017": {
+      "action": "accept",
+      "scope": "report_level_technique_id_match_only",
+      "reason": "User authorized retaining existing mappings whose exact ATT&CK ID appears in the report. This does not confirm behavior-level evidence, fact status, or uniqueness.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P010"
+      ],
+      "applied": true
+    },
+    "AA25-266A-PM018": {
+      "action": "accept",
+      "scope": "report_level_technique_id_match_only",
+      "reason": "User authorized retaining existing mappings whose exact ATT&CK ID appears in the report. This does not confirm behavior-level evidence, fact status, or uniqueness.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P011"
+      ],
+      "applied": true
+    },
+    "AA25-266A-PM023": {
+      "action": "accept",
+      "scope": "report_level_technique_id_match_only",
+      "reason": "User authorized retaining existing mappings whose exact ATT&CK ID appears in the report. This does not confirm behavior-level evidence, fact status, or uniqueness.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P013"
+      ],
+      "applied": true
+    },
+    "AA25-266A-PM024": {
+      "action": "accept",
+      "scope": "report_level_technique_id_match_only",
+      "reason": "User authorized retaining existing mappings whose exact ATT&CK ID appears in the report. This does not confirm behavior-level evidence, fact status, or uniqueness.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P014"
+      ],
+      "applied": true
+    },
+    "AA25-266A-PM025": {
+      "action": "accept",
+      "scope": "report_level_technique_id_match_only",
+      "reason": "User authorized retaining existing mappings whose exact ATT&CK ID appears in the report. This does not confirm behavior-level evidence, fact status, or uniqueness.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P014"
+      ],
+      "applied": true
+    },
+    "AA25-266A-PM026": {
+      "action": "accept",
+      "scope": "report_level_technique_id_match_only",
+      "reason": "User authorized retaining existing mappings whose exact ATT&CK ID appears in the report. This does not confirm behavior-level evidence, fact status, or uniqueness.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P015"
+      ],
+      "applied": true
+    },
+    "AA25-266A-PM028": {
+      "action": "accept",
+      "scope": "report_level_technique_id_match_only",
+      "reason": "User authorized retaining existing mappings whose exact ATT&CK ID appears in the report. This does not confirm behavior-level evidence, fact status, or uniqueness.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P016"
+      ],
+      "applied": true
+    },
+    "AA25-266A-PM036": {
+      "action": "accept",
+      "scope": "report_level_technique_id_match_only",
+      "reason": "User authorized retaining existing mappings whose exact ATT&CK ID appears in the report. This does not confirm behavior-level evidence, fact status, or uniqueness.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P018"
+      ],
+      "applied": true
+    },
+    "AA25-266A-PM037": {
+      "action": "accept",
+      "scope": "report_level_technique_id_match_only",
+      "reason": "User authorized retaining existing mappings whose exact ATT&CK ID appears in the report. This does not confirm behavior-level evidence, fact status, or uniqueness.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P018"
+      ],
+      "applied": true
+    },
+    "AA25-266A-PM039": {
+      "action": "accept",
+      "scope": "report_level_technique_id_match_only",
+      "reason": "User authorized retaining existing mappings whose exact ATT&CK ID appears in the report. This does not confirm behavior-level evidence, fact status, or uniqueness.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P020"
+      ],
+      "applied": true
+    },
+    "AA25-266A-PM040": {
+      "action": "accept",
+      "scope": "report_level_technique_id_match_only",
+      "reason": "User authorized retaining existing mappings whose exact ATT&CK ID appears in the report. This does not confirm behavior-level evidence, fact status, or uniqueness.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P020"
+      ],
+      "applied": true
+    },
+    "AA25-266A-PM044": {
+      "action": "accept",
+      "scope": "report_level_technique_id_match_only",
+      "reason": "User authorized retaining existing mappings whose exact ATT&CK ID appears in the report. This does not confirm behavior-level evidence, fact status, or uniqueness.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P023"
+      ],
+      "applied": true
+    },
+    "AA25-266A-PM050": {
+      "action": "accept",
+      "scope": "report_level_technique_id_match_only",
+      "reason": "User authorized retaining existing mappings whose exact ATT&CK ID appears in the report. This does not confirm behavior-level evidence, fact status, or uniqueness.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P027"
+      ],
+      "applied": true
+    },
+    "AA25-266A-PM013": {
+      "action": "reject",
+      "reason": "Post-compromise internal ping sweep is supported by T1018, not reconnaissance T1595.",
+      "original_mapping": {
+        "technique_id": "T1595",
+        "confidence": "high",
+        "rationale": "Ping sweeps and use of a scanning tool against the organization network are active scanning behavior.",
+        "origin": "agent_proposal",
+        "review_status": "draft",
+        "behavior_id": "AA25-266A-P009",
+        "mapping_id": "AA25-266A-PM013",
+        "technique_name": "Active Scanning",
+        "retrieved_candidate_ids": [
+          "T1595",
+          "T1018",
+          "T1595.001",
+          "T1596.004",
+          "T1595.002",
+          "T1596.005",
+          "T1669",
+          "T1016.001",
+          "T1078",
+          "T1213",
+          "T1588.002",
+          "T1547.001",
+          "T1592.002",
+          "T1105",
+          "T1210",
+          "T1049",
+          "T1592",
+          "T1189",
+          "T1553.001",
+          "T1553.005",
+          "T1119",
+          "T1078.004",
+          "T1021.005",
+          "T1216.001"
+        ]
+      },
+      "replacement_behavior_ids": [
+        "AA25-266A-P009"
+      ],
+      "applied": true
+    },
+    "AA25-266A-PM016": {
+      "action": "insufficient_evidence",
+      "reason": "Tool transfer into the victim is established; separate resource acquisition is not.",
+      "original_mapping": {
+        "technique_id": "T1588.002",
+        "confidence": "medium",
+        "rationale": "Downloading fscan supports acquisition of a software tool for the operation, matching the Tool sub-technique.",
+        "origin": "agent_proposal",
+        "review_status": "draft",
+        "behavior_id": "AA25-266A-P009",
+        "mapping_id": "AA25-266A-PM016",
+        "technique_name": "Tool",
+        "retrieved_candidate_ids": [
+          "T1595",
+          "T1018",
+          "T1595.001",
+          "T1596.004",
+          "T1595.002",
+          "T1596.005",
+          "T1669",
+          "T1016.001",
+          "T1078",
+          "T1213",
+          "T1588.002",
+          "T1547.001",
+          "T1592.002",
+          "T1105",
+          "T1210",
+          "T1049",
+          "T1592",
+          "T1189",
+          "T1553.001",
+          "T1553.005",
+          "T1119",
+          "T1078.004",
+          "T1021.005",
+          "T1216.001"
+        ]
+      },
+      "replacement_behavior_ids": [
+        "AA25-266A-P009"
+      ],
+      "applied": true
+    },
+    "AA25-266A-PM027": {
+      "action": "insufficient_evidence",
+      "reason": "Brute force is established but password-guessing subtype is not distinguished.",
+      "original_mapping": {
+        "technique_id": "T1110.001",
+        "rationale": "The described brute force effort against login credentials is password guessing; no evidence indicates password spraying.",
+        "confidence": "high",
+        "origin": "agent_proposal",
+        "review_status": "draft",
+        "behavior_id": "AA25-266A-P015",
+        "mapping_id": "AA25-266A-PM027",
+        "technique_name": "Password Guessing",
+        "retrieved_candidate_ids": [
+          "T1110",
+          "T1187",
+          "T1210",
+          "T1078.004",
+          "T1557.001",
+          "T1072",
+          "T1133",
+          "T1110.003",
+          "T1212",
+          "T1552.004",
+          "T1110.001",
+          "T1677",
+          "T1555.003",
+          "T1550.001",
+          "T1078.001",
+          "T1563.001",
+          "T1539",
+          "T1201",
+          "T1598.003",
+          "T1595.003",
+          "T1486",
+          "T1021",
+          "T1528",
+          "T1190"
+        ]
+      },
+      "replacement_behavior_ids": [
+        "AA25-266A-P015"
+      ],
+      "applied": true
+    },
+    "AA25-266A-PM035": {
+      "action": "insufficient_evidence",
+      "reason": "Encoded command details are absent; obfuscation versus transport encoding is unresolved.",
+      "original_mapping": {
+        "technique_id": "T1027",
+        "rationale": "The report explicitly describes the host and network discovery commands as encoded, supporting obfuscation of command content.",
+        "confidence": "high",
+        "origin": "agent_proposal",
+        "review_status": "draft",
+        "behavior_id": "AA25-266A-P018",
+        "mapping_id": "AA25-266A-PM035",
+        "technique_name": "Obfuscated Files or Information",
+        "retrieved_candidate_ids": [
+          "T1070.003",
+          "T1690",
+          "T1552.003",
+          "T1546.004",
+          "T1027",
+          "T1059.013",
+          "T1497.002",
+          "T1610",
+          "T1018",
+          "T1583.001",
+          "T1016",
+          "T1027.012",
+          "T1564.014",
+          "T1027.009",
+          "T1548.003",
+          "T1559.002",
+          "T1689",
+          "T1189",
+          "T1059",
+          "T1027.013",
+          "T1546.005",
+          "T1098.004",
+          "T1574.008",
+          "T1205.002"
+        ]
+      },
+      "replacement_behavior_ids": [
+        "AA25-266A-P018"
+      ],
+      "applied": true
+    },
+    "AA25-266A-PM038": {
+      "action": "reject",
+      "reason": "Enabling xp_cmdshell does not establish exploitation of a software vulnerability.",
+      "original_mapping": {
+        "technique_id": "T1210",
+        "rationale": "The report attributes lateral movement between servers to enabling a remote SQL execution capability, consistent with exploitation of a remote service.",
+        "confidence": "high",
+        "origin": "agent_proposal",
+        "review_status": "draft",
+        "behavior_id": "AA25-266A-P019",
+        "mapping_id": "AA25-266A-PM038",
+        "technique_name": "Exploitation of Remote Services",
+        "retrieved_candidate_ids": [
+          "T1505.001",
+          "T1210",
+          "T1489",
+          "T1681",
+          "T1677",
+          "T1686.002",
+          "T1564.006",
+          "T1204.003",
+          "T1552.005",
+          "T1021.003",
+          "T1608.006",
+          "T1480.001",
+          "T1195.001",
+          "T1190",
+          "T1134.004",
+          "T1082",
+          "T1578.003",
+          "T1654",
+          "T1059.013",
+          "T1133",
+          "T1072",
+          "T1578.001",
+          "T1668",
+          "T1124"
+        ]
+      },
+      "replacement_behavior_ids": [
+        "AA25-266A-P019"
+      ],
+      "applied": true
+    },
+    "AA25-266A-PM043": {
+      "action": "edit",
+      "reason": "Use report-supported parent Proxy instead of Internal Proxy.",
+      "original_mapping": {
+        "technique_id": "T1090.001",
+        "rationale": "The report states that C2 traffic was forwarded through the Web Server to access internal resources, supporting use of an internal proxy.",
+        "confidence": "high",
+        "origin": "agent_proposal",
+        "review_status": "draft",
+        "behavior_id": "AA25-266A-P022",
+        "mapping_id": "AA25-266A-PM043",
+        "technique_name": "Internal Proxy",
+        "retrieved_candidate_ids": [
+          "T1572",
+          "T1187",
+          "T1133",
+          "T1539",
+          "T1090.002",
+          "T1499",
+          "T1210",
+          "T1599",
+          "T1176.001",
+          "T1528",
+          "T1090.001",
+          "T1090.003",
+          "T1601.001",
+          "T1556.007",
+          "T1598.003",
+          "T1114.003",
+          "T1548.005",
+          "T1608",
+          "T1550.004",
+          "T1659",
+          "T1098.001",
+          "T1078",
+          "T1111",
+          "T1666"
+        ]
+      },
+      "replacement_mapping": {
+        "technique_id": "T1090",
+        "rationale": "The report describes forwarding C2 traffic through the Web Server to access internal resources. Retain parent Proxy; internal C2 topology is insufficiently specified for T1090.001.",
+        "confidence": "high",
+        "origin": "team_review",
+        "review_status": "confirmed",
+        "behavior_id": "AA25-266A-P022",
+        "mapping_id": "AA25-266A-PM043",
+        "technique_name": "Proxy",
+        "retrieved_candidate_ids": [
+          "T1572",
+          "T1187",
+          "T1133",
+          "T1539",
+          "T1090.002",
+          "T1499",
+          "T1210",
+          "T1599",
+          "T1176.001",
+          "T1528",
+          "T1090.001",
+          "T1090.003",
+          "T1601.001",
+          "T1556.007",
+          "T1598.003",
+          "T1114.003",
+          "T1548.005",
+          "T1608",
+          "T1550.004",
+          "T1659",
+          "T1098.001",
+          "T1078",
+          "T1111",
+          "T1666"
+        ],
+        "reviewer": "project_lead_via_chat_2026-11-22",
+        "annotation_method": "assisted_review_of_agent_proposal"
+      },
+      "replacement_behavior_ids": [
+        "AA25-266A-P022"
+      ],
+      "applied": true
+    },
+    "AA25-266A-PM048": {
+      "action": "accept",
+      "reason": "Reported execution of the shell script supports Unix Shell; script contents remain unknown.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P025"
+      ],
+      "applied": true
+    },
+    "AA25-266A-PM049": {
+      "action": "edit",
+      "reason": "Separate observed connection establishment from inferred fallback purpose.",
+      "original_mapping": {
+        "technique_id": "T1008",
+        "rationale": "The second C2 connection is described as likely serving as a backup channel, which matches fallback communication when a primary channel is unavailable.",
+        "confidence": "medium",
+        "origin": "agent_proposal",
+        "review_status": "draft",
+        "behavior_id": "AA25-266A-P026",
+        "mapping_id": "AA25-266A-PM049",
+        "technique_name": "Fallback Channels",
+        "retrieved_candidate_ids": [
+          "T1104",
+          "T1110.001",
+          "T1219",
+          "T1574.001",
+          "T1550.001",
+          "T1187",
+          "T1546.004",
+          "T1110.003",
+          "T1011",
+          "T1041",
+          "T1008",
+          "T1568.002",
+          "T1499.001",
+          "T1027.013",
+          "T1011.001",
+          "T1601.001",
+          "T1216.001",
+          "T1049",
+          "T1553.003",
+          "T1102.003",
+          "T1048.002",
+          "T1574.005",
+          "T1220",
+          "T1189"
+        ]
+      },
+      "replacement_mapping": {
+        "technique_id": "T1008",
+        "rationale": "The report says the second C2 likely served as backup. T1008 is retained as an inferred purpose, not proof of actual failover.",
+        "confidence": "medium",
+        "origin": "team_review",
+        "review_status": "confirmed",
+        "behavior_id": "AA25-266A-R016",
+        "mapping_id": "AA25-266A-PM049",
+        "technique_name": "Fallback Channels",
+        "retrieved_candidate_ids": [
+          "T1104",
+          "T1110.001",
+          "T1219",
+          "T1574.001",
+          "T1550.001",
+          "T1187",
+          "T1546.004",
+          "T1110.003",
+          "T1011",
+          "T1041",
+          "T1008",
+          "T1568.002",
+          "T1499.001",
+          "T1027.013",
+          "T1011.001",
+          "T1601.001",
+          "T1216.001",
+          "T1049",
+          "T1553.003",
+          "T1102.003",
+          "T1048.002",
+          "T1574.005",
+          "T1220",
+          "T1189"
+        ],
+        "reviewer": "project_lead_via_chat_2026-11-22",
+        "annotation_method": "assisted_review_of_agent_proposal"
+      },
+      "replacement_behavior_ids": [
+        "AA25-266A-P026",
+        "AA25-266A-R016"
+      ],
+      "applied": true
+    },
+    "AA25-266A-P026": {
+      "action": "edit",
+      "reason": "Split observed second connection and inferred backup purpose.",
+      "original_behavior": {
+        "action": "Established a second C2 connection",
+        "object": "Stowaway channel",
+        "fact_status": "observed",
+        "confidence": "high",
+        "context_note": "The report says it likely served as a backup channel.",
+        "scope": "actor behavior",
+        "behavior_id": "AA25-266A-P026",
+        "evidence": {
+          "quote": "encoded command to execute Stowaway. The contents of this file could not be recovered. Additionally, they \nused Stowaway to establish a second C2 connection over TCP/50012, likely serving as a backup C2 \nchannel.",
+          "pdf_page": 9,
+          "char_start": 17344,
+          "char_end": 17556
+        },
+        "origin": "agent_proposal",
+        "review_status": "draft"
+      },
+      "replacement_behavior_ids": [
+        "AA25-266A-P026",
+        "AA25-266A-R016"
+      ],
+      "applied": true
+    },
+    "AA25-266A-P025": {
+      "action": "accept",
+      "reason": "Shell script execution accepted; script contents remain unknown.",
+      "replacement_behavior_ids": [
+        "AA25-266A-P025"
+      ],
+      "applied": true
+    }
+  },
+  "evidence_decisions": {},
+  "decision_format": "Project-local audit record; no decision importer is present in this repository.",
+  "review_basis": "User accepted P007 unchanged and authorized the previously proposed changes for the other selected groups. Assisted review of model proposals, not independent blind annotation."
+}

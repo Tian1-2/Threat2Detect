@@ -1,0 +1,25 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1197",
+        "confidence": "high",
+        "rationale": "The report explicitly states that the actors abused BITS jobs, directly matching BITS Jobs."
+      },
+      {
+        "technique_id": "T1202",
+        "confidence": "high",
+        "rationale": "The report explicitly describes indirect command execution through web shells and xp_cmdshell, matching Indirect Command Execution."
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "Both the BITS abuse and indirect command execution are explicit in the behavior; the mapping does not infer other evasion techniques."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-bdc61bdf8d1a474f9e39f1b487e2e6dc.json"
+}

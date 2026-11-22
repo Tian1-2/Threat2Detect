@@ -1,0 +1,12 @@
+{
+  "output": {
+    "behaviors": []
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-650b215f14eb40f9960bc4c637e839b7.json"
+}

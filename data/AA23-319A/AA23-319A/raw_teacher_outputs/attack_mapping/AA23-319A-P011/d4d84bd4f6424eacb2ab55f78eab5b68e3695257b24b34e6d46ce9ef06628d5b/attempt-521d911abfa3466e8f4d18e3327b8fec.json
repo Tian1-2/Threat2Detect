@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:43:15.870960+00:00",
+  "response": "{\"job_id\": \"2a1e806d12fc3c9e60dc4e2b84c4e4ff6f92a00c4ac44f00f2cae1660774c0de\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1074.001\", \"rationale\": \"The host-named files were stored in the in folder inside the local C: drive staging directory, supporting local data staging.\", \"confidence\": \"medium\"}], \"additional_ids\": [], \"assessment\": \"The files' placement is explicit, but their import through a scanning tool is only inferred. No specific transfer mechanism is established.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

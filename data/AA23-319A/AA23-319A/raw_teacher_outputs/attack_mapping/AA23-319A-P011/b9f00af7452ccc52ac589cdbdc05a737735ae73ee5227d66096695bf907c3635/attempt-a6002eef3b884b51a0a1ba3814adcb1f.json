@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:42:24.050422+00:00",
+  "response": "{\"job_id\": \"bfca629cc6bf0980058831594408bf2aca3de2ce3f2828584b802fb7f7b150fd\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1074.001\", \"rationale\": \"The report describes host-named files stored in the in folder within a C: drive staging directory, supporting local data staging.\", \"confidence\": \"medium\"}], \"additional_ids\": [], \"assessment\": \"The placement in the staging directory is explicit, while import through a scanning tool is only inferred by the advisory; no transfer technique is asserted.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

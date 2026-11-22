@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:33:47.165381+00:00",
+  "response": "{\"job_id\": \"8501aa5513e46747cdfdf8ec30bb69a70530367135dcddaa81f8fa6af4b0c129\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1082\", \"confidence\": \"medium\", \"rationale\": \"The behavior identifies host-discovery commands run on GeoServer 1, consistent with gathering information about the host; the command details are omitted, limiting confidence.\"}], \"additional_ids\": [], \"assessment\": \"The expanded set provides a plausible host-information discovery mapping, but the report omits the commands, so no more specific discovery technique can be confirmed.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

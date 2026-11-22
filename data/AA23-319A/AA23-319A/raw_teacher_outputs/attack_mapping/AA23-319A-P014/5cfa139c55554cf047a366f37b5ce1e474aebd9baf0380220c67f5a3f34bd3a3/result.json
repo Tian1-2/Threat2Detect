@@ -1,0 +1,20 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1070.004",
+        "rationale": "The report describes deleting the ransomware binary after encryption, consistent with file deletion used to remove an artifact.",
+        "confidence": "medium"
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "File deletion is supported. This action concerns the ransomware binary after encryption, not deletion of victim data."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-6d2f60ea2bbd42d38ff35099f3c0bf4a.json"
+}

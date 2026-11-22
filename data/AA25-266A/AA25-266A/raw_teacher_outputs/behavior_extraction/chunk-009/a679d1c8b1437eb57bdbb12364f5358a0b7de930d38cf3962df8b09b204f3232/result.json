@@ -1,0 +1,103 @@
+{
+  "output": {
+    "behaviors": [
+      {
+        "action": "Moved laterally",
+        "object": "Web Server to SQL Server",
+        "fact_status": "observed",
+        "confidence": "high",
+        "context_note": "Incident report describes this movement; procedural detail omitted.",
+        "scope": "actor behavior",
+        "quote": "In one instance, the cyber threat actors moved laterally from the Web Server to the SQL Server by enabling \nxp_cmdshell for RCE on GeoServer 1.",
+        "pdf_page": 9
+      },
+      {
+        "action": "Downloaded payloads using built-in utilities",
+        "object": "compromised systems",
+        "fact_status": "observed",
+        "confidence": "high",
+        "context_note": "Payload contents omitted.",
+        "scope": "actor behavior",
+        "quote": "The cyber threat actors used PowerShell and bits admin getfile to download payloads.",
+        "pdf_page": 9
+      },
+      {
+        "action": "Used Stowaway to establish command and control",
+        "object": "Stowaway",
+        "fact_status": "observed",
+        "confidence": "high",
+        "context_note": "A publicly available proxy tool was used for C2.",
+        "scope": "actor behavior",
+        "quote": "They used Stowaway,  a  publicly available multi- level proxy tool, to establish C2. Stowaway",
+        "pdf_page": 9
+      },
+      {
+        "action": "Routed access to internal network resources and wrote proxy tool to disk",
+        "object": "Web Server",
+        "fact_status": "observed",
+        "confidence": "high",
+        "context_note": "Tool used a service account; network details summarized.",
+        "scope": "actor behavior",
+        "quote": "network resources by forwarding traffic from their C2 server through the Web Server. They wrote Stowaway \nto disk using a tomcat service account.",
+        "pdf_page": 9
+      },
+      {
+        "action": "Performed a ping sweep",
+        "object": "multiple hosts in an organization subnet",
+        "fact_status": "observed",
+        "confidence": "high",
+        "context_note": "Discovery activity to assess access.",
+        "scope": "actor behavior",
+        "quote": "To test their level of access, the cyber th reat actors performed a ping sweep of multiple hosts in a",
+        "pdf_page": 9
+      },
+      {
+        "action": "Downloaded a modified proxy tool and established outbound C2",
+        "object": "Stowaway and C2 server",
+        "fact_status": "observed",
+        "confidence": "high",
+        "context_note": "The report states the outbound connection succeeded.",
+        "scope": "actor behavior",
+        "quote": "particular subnet of the organization’s network. Next, the cyber threat actors downloaded a modified \nversion of Stowaway using a curl command, successfully establishing an outbound connection with their \nC2 server using HTTP over TCP/4441.",
+        "pdf_page": 9
+      },
+      {
+        "action": "Executed a script",
+        "object": "Web Server",
+        "fact_status": "observed",
+        "confidence": "high",
+        "context_note": "Script contents were unrecovered; encoded command omitted.",
+        "scope": "actor behavior",
+        "quote": "On July 14, 2024, the cyber threat actors executed /tmp/mm.sh on the Web Server followed by an",
+        "pdf_page": 9
+      },
+      {
+        "action": "Established a second C2 connection",
+        "object": "Stowaway channel",
+        "fact_status": "observed",
+        "confidence": "high",
+        "context_note": "The report says it likely served as a backup channel.",
+        "scope": "actor behavior",
+        "quote": "encoded command to execute Stowaway. The contents of this file could not be recovered. Additionally, they \nused Stowaway to establish a second C2 connection over TCP/50012, likely serving as a backup C2 \nchannel.",
+        "pdf_page": 9
+      },
+      {
+        "action": "Transferred a file to the SQL Server",
+        "object": "SQL Server",
+        "fact_status": "observed",
+        "confidence": "high",
+        "context_note": "EDR alert context identifies the file as suspected malware.",
+        "scope": "actor behavior",
+        "quote": "additional alerts when the cyber threat actors transferred 1.txt to the SQL Server through bitsadmin",
+        "pdf_page": 9
+      }
+    ]
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-42d016469c2b405a87015b93021c8879.json"
+}

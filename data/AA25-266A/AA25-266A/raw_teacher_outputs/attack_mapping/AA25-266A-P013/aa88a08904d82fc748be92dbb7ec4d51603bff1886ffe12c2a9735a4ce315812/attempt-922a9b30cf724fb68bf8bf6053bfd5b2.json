@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:32:27.175354+00:00",
+  "response": "{\"job_id\": \"be4d9b2c19d0cca95cd2e2d04c7cbc74b075ee3c7ed3e8bea0a634380186ef10\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1105\", \"rationale\": \"The report explicitly describes downloading a shell script and archive to the compromised host, which is ingress transfer of tools or files.\", \"confidence\": \"high\"}], \"additional_ids\": [], \"assessment\": \"Download is directly stated. The evidence does not establish execution, persistence, or a specific shell technique.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

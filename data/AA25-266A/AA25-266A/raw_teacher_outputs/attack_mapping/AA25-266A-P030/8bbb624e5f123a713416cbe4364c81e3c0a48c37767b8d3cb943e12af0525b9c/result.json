@@ -1,0 +1,14 @@
+{
+  "output": {
+    "mappings": [],
+    "additional_ids": [],
+    "assessment": "The timeline identifies initial access to the Web Server but does not specify the access method. The broader report describes movement from GeoServer 1 to the Web Server, but this row does not support any supplied technique specifically."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-f9fd467b2bdf4a0482d0b7e67c604002.json"
+}

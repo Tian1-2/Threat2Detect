@@ -1,0 +1,35 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1595",
+        "confidence": "high",
+        "rationale": "Ping sweeps and use of a scanning tool against the organization network are active scanning behavior."
+      },
+      {
+        "technique_id": "T1018",
+        "confidence": "high",
+        "rationale": "Ping sweeps of hosts within specific subnets directly support remote system discovery."
+      },
+      {
+        "technique_id": "T1105",
+        "confidence": "high",
+        "rationale": "The behavior explicitly says the actors downloaded fscan into the environment, matching ingress tool transfer."
+      },
+      {
+        "technique_id": "T1588.002",
+        "confidence": "medium",
+        "rationale": "Downloading fscan supports acquisition of a software tool for the operation, matching the Tool sub-technique."
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "The behavior supports active scanning and host discovery, plus downloading a tool. The report does not specify IP-block enumeration or exploitation of the discovered systems."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-06eb56af3835483686b8a303a1b2d868.json"
+}

@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:31:58.857030+00:00",
+  "response": "{\"job_id\": \"684b8be52c82be321217f6e09bf500f972b6672852ad8196914dab081d0e1168\", \"output\": {\"mappings\": [], \"additional_ids\": [], \"assessment\": \"The timeline labels this as initial access to the Web Server, but gives no technique or method for this event. The report separately describes lateral movement; the evidence does not support a specific ATT&CK technique for this row.\"}, \"worker\": \"gpt-6-luna\", \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

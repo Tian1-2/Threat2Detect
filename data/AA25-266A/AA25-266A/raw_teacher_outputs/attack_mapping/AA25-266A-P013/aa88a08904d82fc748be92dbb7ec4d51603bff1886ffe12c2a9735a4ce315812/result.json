@@ -1,0 +1,20 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1105",
+        "rationale": "The report explicitly describes downloading a shell script and archive to the compromised host, which is ingress transfer of tools or files.",
+        "confidence": "high"
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "Download is directly stated. The evidence does not establish execution, persistence, or a specific shell technique."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-922a9b30cf724fb68bf8bf6053bfd5b2.json"
+}

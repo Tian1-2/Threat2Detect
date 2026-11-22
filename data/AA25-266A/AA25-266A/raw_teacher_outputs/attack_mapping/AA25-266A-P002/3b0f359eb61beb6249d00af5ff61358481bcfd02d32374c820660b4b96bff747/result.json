@@ -1,0 +1,20 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1190",
+        "confidence": "high",
+        "rationale": "The behavior states that the actors exploited a vulnerability in a public-facing GeoServer to gain access, matching Exploit Public-Facing Application."
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "The evidence supports exploitation of the public-facing GeoServer. Although the behavior also says persistence was established, it does not identify the mechanism, so no persistence technique is assigned."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-ed392223ef2c43548d3c2d32ac7102d8.json"
+}

@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:33:35.061833+00:00",
+  "response": "{\"job_id\": \"e73032ee99dc29a1a4e66d787cac2a09c08ebe7f70c867a6343f3786707dcbaf\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1090\", \"rationale\": \"The report identifies Stowaway as a proxy used to establish command and control, supporting the proxy technique.\", \"confidence\": \"high\"}, {\"technique_id\": \"T1090.003\", \"rationale\": \"Stowaway is described as a multi-level proxy tool, which supports multi-hop proxying at medium confidence.\", \"confidence\": \"medium\"}], \"additional_ids\": [], \"assessment\": \"Proxy use is explicit. The text identifies the tool as multi-level but does not independently detail every proxy hop in this behavior.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

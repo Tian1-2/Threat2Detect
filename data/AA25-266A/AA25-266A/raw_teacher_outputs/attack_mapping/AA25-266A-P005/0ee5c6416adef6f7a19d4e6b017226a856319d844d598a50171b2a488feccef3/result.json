@@ -1,0 +1,20 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1190",
+        "confidence": "high",
+        "rationale": "The report states that the actors exploited a vulnerability on public-facing GeoServers to obtain initial access, matching public-facing application exploitation."
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "The evidence describes exploitation for initial access. Code injection is the vulnerability mechanism, not evidence for client-side exploitation or privilege escalation."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-839b98ee1ed3458ea694fd495c8e197b.json"
+}

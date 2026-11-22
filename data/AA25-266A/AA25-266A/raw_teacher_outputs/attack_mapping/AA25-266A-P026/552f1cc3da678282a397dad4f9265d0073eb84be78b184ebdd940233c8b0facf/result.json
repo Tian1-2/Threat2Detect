@@ -1,0 +1,20 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1008",
+        "rationale": "The second C2 connection is described as likely serving as a backup channel, which matches fallback communication when a primary channel is unavailable.",
+        "confidence": "medium"
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "Fallback Channels best fits the explicitly described backup C2 connection; the report does not establish a multistage C2 architecture."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-229fdc45d5f34e68895bbfdaf892d1ec.json"
+}

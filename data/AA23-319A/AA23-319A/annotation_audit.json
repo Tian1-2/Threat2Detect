@@ -1,0 +1,1357 @@
+{
+  "evidence_failures": [],
+  "quote_repairs": [],
+  "duplicates": [
+    {
+      "keep": "AA23-319A-P013",
+      "drop": "AA23-319A-P012",
+      "reason": "Both describe Rhysida encrypting victim files in the same ransomware operation; P012 is a page 7 summary and P013 gives the page 8 targeted-file and extension detail.",
+      "applied": false
+    }
+  ],
+  "mapping_checks": [
+    {
+      "behavior_id": "AA23-319A-P001",
+      "initial_candidates": [
+        "T1133",
+        "T1078",
+        "T1187",
+        "T1650",
+        "T1056.003",
+        "T1499",
+        "T1110",
+        "T1213",
+        "T1210",
+        "T1199"
+      ],
+      "final_candidates": [
+        "T1133",
+        "T1078",
+        "T1187",
+        "T1650",
+        "T1056.003",
+        "T1499",
+        "T1110",
+        "T1213",
+        "T1210",
+        "T1199",
+        "T1078.004",
+        "T1557.001",
+        "T1589.001",
+        "T1550.001",
+        "T1649",
+        "T1110.001",
+        "T1114.003",
+        "T1078.001",
+        "T1589.002",
+        "T1136.003",
+        "T1556.006",
+        "T1098.001",
+        "T1556",
+        "T1598.003"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1133",
+            "confidence": "high",
+            "rationale": "The report explicitly identifies VPN access points as the external-facing remote service used to connect to internal network resources."
+          },
+          {
+            "technique_id": "T1078",
+            "confidence": "high",
+            "rationale": "The report states the actors authenticated with compromised valid credentials, directly matching Valid Accounts."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The evidence directly supports VPN-based external remote service use and compromised valid accounts. It does not establish brute force or forced authentication."
+      },
+      "assessment": "The more specific account sub-techniques in the expanded set are not supported: the report does not identify default or cloud accounts. It also does not describe brute force or credential theft.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1133",
+            "confidence": "high",
+            "rationale": "The report explicitly describes authentication to internal VPN access points, matching use of external remote services."
+          },
+          {
+            "technique_id": "T1078",
+            "confidence": "high",
+            "rationale": "Compromised valid credentials were used to authenticate, directly matching Valid Accounts."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The more specific account sub-techniques in the expanded set are not supported: the report does not identify default or cloud accounts. It also does not describe brute force or credential theft."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA23-319A-P002",
+      "initial_candidates": [
+        "T1563.002",
+        "T1021",
+        "T1021.001",
+        "T1072",
+        "T1219",
+        "T1187",
+        "T1570",
+        "T1505.005",
+        "T1070.007",
+        "T1098.007"
+      ],
+      "final_candidates": [
+        "T1563.002",
+        "T1021",
+        "T1021.001",
+        "T1072",
+        "T1219",
+        "T1187",
+        "T1570",
+        "T1505.005",
+        "T1070.007",
+        "T1098.007",
+        "T1105",
+        "T1003.001",
+        "T1563",
+        "T1133",
+        "T1574.001",
+        "T1572",
+        "T1059.013",
+        "T1049",
+        "T1210",
+        "T1665",
+        "T1021.008",
+        "T1543.003",
+        "T1136.003",
+        "T1040"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1021.001",
+            "confidence": "high",
+            "rationale": "The report explicitly describes creating RDP connections for lateral movement, directly matching the Remote Desktop Protocol sub-technique."
+          },
+          {
+            "technique_id": "T1133",
+            "confidence": "high",
+            "rationale": "The report also explicitly describes establishing VPN access to the victim network, matching use of an external remote service."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "RDP lateral movement and VPN access are both directly described. RDP hijacking, transfer of tools, and terminal-services persistence are not established."
+      },
+      "assessment": "The expanded candidates do not support session hijacking, tool transfer, or persistence through terminal-services components. VPN and RDP use are directly stated.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1021.001",
+            "confidence": "high",
+            "rationale": "The report explicitly states that the actors created RDP connections for lateral movement, matching Remote Desktop Protocol."
+          },
+          {
+            "technique_id": "T1133",
+            "confidence": "high",
+            "rationale": "The report separately describes establishing VPN access, matching External Remote Services."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The expanded candidates do not support session hijacking, tool transfer, or persistence through terminal-services components. VPN and RDP use are directly stated."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA23-319A-P003",
+      "initial_candidates": [
+        "T1087",
+        "T1033",
+        "T1528",
+        "T1021",
+        "T1049",
+        "T1482",
+        "T1069.003",
+        "T1598.003",
+        "T1580",
+        "T1590.001"
+      ],
+      "final_candidates": [
+        "T1087",
+        "T1033",
+        "T1528",
+        "T1021",
+        "T1049",
+        "T1482",
+        "T1069.003",
+        "T1598.003",
+        "T1580",
+        "T1590.001",
+        "T1484",
+        "T1550.001",
+        "T1187",
+        "T1548.005",
+        "T1201",
+        "T1591.002",
+        "T1654",
+        "T1087.002",
+        "T1484.002",
+        "T1586.002",
+        "T1564.006",
+        "T1681",
+        "T1098.001",
+        "T1597.002"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1087",
+            "confidence": "high",
+            "rationale": "The actors used domain and network-account commands to perform account reconnaissance, directly matching Account Discovery."
+          },
+          {
+            "technique_id": "T1033",
+            "confidence": "high",
+            "rationale": "The report explicitly says they identified logged-in users, matching System Owner/User Discovery."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The behavior supports account enumeration and identifying logged-in users. It does not state that the actors discovered domain trust relationships."
+      },
+      "assessment": "The expanded set supports the more specific domain-account discovery mapping. The report does not say the actors discovered or modified domain trust relationships.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1087.002",
+            "confidence": "high",
+            "rationale": "The report describes reconnaissance on network/domain accounts, directly matching Domain Account discovery."
+          },
+          {
+            "technique_id": "T1033",
+            "confidence": "high",
+            "rationale": "The report explicitly states that actors identified logged-in users, matching System Owner/User Discovery."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The expanded set supports the more specific domain-account discovery mapping. The report does not say the actors discovered or modified domain trust relationships."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA23-319A-P004",
+      "initial_candidates": [
+        "T1546.013",
+        "T1059.007",
+        "T1547.001",
+        "T1564.006",
+        "T1574.011",
+        "T1059.001",
+        "T1546.008",
+        "T1546.012",
+        "T1220",
+        "T1218.011"
+      ],
+      "final_candidates": [
+        "T1546.013",
+        "T1059.007",
+        "T1547.001",
+        "T1564.006",
+        "T1574.011",
+        "T1059.001",
+        "T1546.008",
+        "T1546.012",
+        "T1220",
+        "T1218.011",
+        "T1546.004",
+        "T1574.007",
+        "T1608.004",
+        "T1689",
+        "T1548.003",
+        "T1497.001",
+        "T1546.015",
+        "T1546.016",
+        "T1059",
+        "T1574.005",
+        "T1547.015",
+        "T1553.006",
+        "T1195.001",
+        "T1055.011"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1059.001",
+            "confidence": "high",
+            "rationale": "The report identifies launching Windows PowerShell ISE before executing a malicious script, directly supporting PowerShell execution."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The evidence describes PowerShell execution. It does not establish PowerShell profile modification or another persistence mechanism."
+      },
+      "assessment": "No expanded candidate for PowerShell profiles or other persistence mechanisms is supported; the behavior describes script execution.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1059.001",
+            "confidence": "high",
+            "rationale": "The behavior explicitly describes launching PowerShell ISE before executing a malicious script, supporting PowerShell execution."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "No expanded candidate for PowerShell profiles or other persistence mechanisms is supported; the behavior describes script execution."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA23-319A-P005",
+      "initial_candidates": [
+        "T1021.003",
+        "T1072",
+        "T1677",
+        "T1559.002",
+        "T1210",
+        "T1569.002",
+        "T1570",
+        "T1021.002",
+        "T1588.002",
+        "T1021.005"
+      ],
+      "final_candidates": [
+        "T1021.003",
+        "T1072",
+        "T1677",
+        "T1559.002",
+        "T1210",
+        "T1569.002",
+        "T1570",
+        "T1021.002",
+        "T1588.002",
+        "T1021.005",
+        "T1021",
+        "T1195.001",
+        "T1574.001",
+        "T1105",
+        "T1550.001",
+        "T1564.001",
+        "T1528",
+        "T1187",
+        "T1608.002",
+        "T1546.012",
+        "T1053.002",
+        "T1112",
+        "T1557.001",
+        "T1124"
+      ],
+      "first_output": {
+        "mappings": [],
+        "additional_ids": [
+          "T1021"
+        ],
+        "assessment": "The report explicitly describes PsExec being used for lateral movement and remote execution, but this pass lacks a matching general Remote Services candidate. The specific SMB, service-execution, software-deployment, or file-transfer mechanisms are not stated in the behavior and should not be inferred from the tool name."
+      },
+      "assessment": "The expanded candidates include specific SMB and service-execution techniques, but the behavior does not state those mechanisms. The report supports general remote service use without a defensible sub-technique.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1021",
+            "confidence": "medium",
+            "rationale": "The report explicitly says PsExec was used for lateral movement and remote execution, supporting the general Remote Services technique. It does not specify the underlying protocol or service mechanism."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The expanded candidates include specific SMB and service-execution techniques, but the behavior does not state those mechanisms. The report supports general remote service use without a defensible sub-technique."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA23-319A-P006",
+      "initial_candidates": [
+        "T1563.001",
+        "T1021",
+        "T1021.008",
+        "T1098.004",
+        "T1078.001",
+        "T1550.001",
+        "T1021.004",
+        "T1070.007",
+        "T1546.004",
+        "T1552.003"
+      ],
+      "final_candidates": [
+        "T1563.001",
+        "T1021",
+        "T1021.008",
+        "T1098.004",
+        "T1078.001",
+        "T1550.001",
+        "T1021.004",
+        "T1070.007",
+        "T1546.004",
+        "T1552.003",
+        "T1098.001",
+        "T1070.003",
+        "T1563.002",
+        "T1547.001",
+        "T1563",
+        "T1528",
+        "T1564.006",
+        "T1021.003",
+        "T1550.004",
+        "T1547.015",
+        "T1021.007",
+        "T1564.003",
+        "T1095",
+        "T1574.011"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1021.004",
+            "confidence": "high",
+            "rationale": "The report explicitly describes PuTTY connections used to remotely connect to systems via SSH, directly matching the SSH sub-technique."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The evidence supports SSH remote services. It does not describe hijacking an existing SSH session, adding authorized keys, or clearing connection history."
+      },
+      "assessment": "The expanded candidates do not establish SSH session hijacking, authorized-key modification, or command-history clearing; only SSH remote connections are explicitly reported.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1021.004",
+            "confidence": "high",
+            "rationale": "The report explicitly describes PuTTY connections used to remotely connect to systems via SSH, directly matching the SSH sub-technique."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The expanded candidates do not establish SSH session hijacking, authorized-key modification, or command-history clearing; only SSH remote connections are explicitly reported."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA23-319A-P007",
+      "initial_candidates": [
+        "T1003.003",
+        "T1003.005",
+        "T1556.007",
+        "T1003.002",
+        "T1003.001",
+        "T1484.001",
+        "T1552.001",
+        "T1558.001",
+        "T1003.006",
+        "T1003.008"
+      ],
+      "final_candidates": [
+        "T1003.003",
+        "T1003.005",
+        "T1556.007",
+        "T1003.002",
+        "T1003.001",
+        "T1484.001",
+        "T1552.001",
+        "T1558.001",
+        "T1003.006",
+        "T1003.008",
+        "T1207",
+        "T1558.005",
+        "T1528",
+        "T1550.003",
+        "T1486",
+        "T1555.003",
+        "T1556.005",
+        "T1558.004",
+        "T1649",
+        "T1484.002",
+        "T1484",
+        "T1003.004",
+        "T1187",
+        "T1222.001"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1003.003",
+            "rationale": "The report explicitly states actors used ntdsutil to extract and dump NTDS.dit from a domain controller, matching NTDS credential dumping.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The action and data source are explicit. Other credential dumping sub-techniques are not supported by this evidence."
+      },
+      "assessment": "The data source and extraction are explicit. No other credential dumping method is supported.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1003.003",
+            "rationale": "The report explicitly states that actors used ntdsutil to extract and dump NTDS.dit from a domain controller, matching NTDS credential dumping.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The data source and extraction are explicit. No other credential dumping method is supported."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA23-319A-P008",
+      "initial_candidates": [
+        "T1685.005",
+        "T1685.001",
+        "T1654",
+        "T1070.008",
+        "T1220",
+        "T1543.003",
+        "T1685",
+        "T1070.007",
+        "T1218.013",
+        "T1218.011"
+      ],
+      "final_candidates": [
+        "T1685.005",
+        "T1685.001",
+        "T1654",
+        "T1070.008",
+        "T1220",
+        "T1543.003",
+        "T1685",
+        "T1070.007",
+        "T1218.013",
+        "T1218.011",
+        "T1070.003",
+        "T1685.006",
+        "T1685.004",
+        "T1070.006",
+        "T1553.006",
+        "T1082",
+        "T1127.002",
+        "T1218.005",
+        "T1012",
+        "T1027.011",
+        "T1546.012",
+        "T1036.003",
+        "T1690",
+        "T1550.001"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1685.005",
+            "rationale": "The report explicitly says actors used wevtutil to clear Windows system, application, and security event logs.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "This is direct evidence of clearing Windows event logs. Log enumeration or mailbox clearing is not supported."
+      },
+      "assessment": "Direct Windows event log clearing is supported. Other log or history clearing behaviors are not.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1685.005",
+            "rationale": "The report explicitly says actors used wevtutil to clear Windows system, application, and security event logs.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "Direct Windows event log clearing is supported. Other log or history clearing behaviors are not."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA23-319A-P009",
+      "initial_candidates": [
+        "T1685.005",
+        "T1078.004",
+        "T1070.003",
+        "T1003.001",
+        "T1497.001",
+        "T1195.001",
+        "T1685.001",
+        "T1021",
+        "T1484.002",
+        "T1596.005"
+      ],
+      "final_candidates": [
+        "T1685.005",
+        "T1078.004",
+        "T1070.003",
+        "T1003.001",
+        "T1497.001",
+        "T1195.001",
+        "T1685.001",
+        "T1021",
+        "T1484.002",
+        "T1596.005",
+        "T1087.002",
+        "T1059.001",
+        "T1555",
+        "T1548.005",
+        "T1677",
+        "T1654",
+        "T1552.003",
+        "T1033",
+        "T1598.003",
+        "T1003.005",
+        "T1528",
+        "T1482",
+        "T1555.003",
+        "T1690"
+      ],
+      "first_output": {
+        "mappings": [],
+        "additional_ids": [
+          "T1087.002",
+          "T1059.001",
+          "T1555"
+        ],
+        "assessment": "PowerView use is explicit, and the report says it supported reconnaissance and credential harvesting. The evidence does not identify the specific discovery commands or credential access mechanism needed to select a supplied technique confidently."
+      },
+      "assessment": "PowerShell use and domain reconnaissance are supported. Credential harvesting is stated, but the report does not identify whether credentials came from memory, files, or password stores.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1059.001",
+            "rationale": "PowerShell event logs identified actors using PowerView, a PowerShell tool, for reconnaissance and credential harvesting.",
+            "confidence": "high"
+          },
+          {
+            "technique_id": "T1087.002",
+            "rationale": "The report describes PowerView use for Windows domain reconnaissance, supporting domain account discovery at medium confidence.",
+            "confidence": "medium"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "PowerShell use and domain reconnaissance are supported. Credential harvesting is stated, but the report does not identify whether credentials came from memory, files, or password stores."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA23-319A-P010",
+      "initial_candidates": [
+        "T1547.001",
+        "T1564.006",
+        "T1189",
+        "T1218.011",
+        "T1553.001",
+        "T1574.001",
+        "T1074.001",
+        "T1564.012",
+        "T1074.002",
+        "T1601.001"
+      ],
+      "final_candidates": [
+        "T1547.001",
+        "T1564.006",
+        "T1189",
+        "T1218.011",
+        "T1553.001",
+        "T1574.001",
+        "T1074.001",
+        "T1564.012",
+        "T1074.002",
+        "T1601.001",
+        "T1105",
+        "T1570",
+        "T1027.011",
+        "T1608",
+        "T1677",
+        "T1608.002",
+        "T1197",
+        "T1195.001",
+        "T1059.013",
+        "T1220",
+        "T1608.004",
+        "T1564.001",
+        "T1497.001",
+        "T1659"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1074.001",
+            "rationale": "The report says actors created a central C: drive staging directory to host malicious executables, supporting local data staging.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [
+          "T1105"
+        ],
+        "assessment": "Local staging is explicit. The report also says tools and scripts were deployed to support encryption, but the provided candidates do not include ingress tool transfer."
+      },
+      "assessment": "Local staging is explicit. Deployment to support network-wide encryption is reported, but the evidence does not specify how tools were transferred to other hosts.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1074.001",
+            "rationale": "The report says actors created a central C: drive staging directory to host malicious executables, supporting local data staging.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "Local staging is explicit. Deployment to support network-wide encryption is reported, but the evidence does not specify how tools were transferred to other hosts."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA23-319A-P011",
+      "initial_candidates": [
+        "T1574.001",
+        "T1027.011",
+        "T1564.009",
+        "T1074",
+        "T1074.002",
+        "T1555.004",
+        "T1074.001",
+        "T1553.005",
+        "T1564.012",
+        "T1608.002"
+      ],
+      "final_candidates": [
+        "T1574.001",
+        "T1027.011",
+        "T1564.009",
+        "T1074",
+        "T1074.002",
+        "T1555.004",
+        "T1074.001",
+        "T1553.005",
+        "T1564.012",
+        "T1608.002",
+        "T1105",
+        "T1197",
+        "T1124",
+        "T1677",
+        "T1080",
+        "T1119",
+        "T1601.001",
+        "T1608",
+        "T1480",
+        "T1195.001",
+        "T1220",
+        "T1570",
+        "T1176.001",
+        "T1564.006"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1074.001",
+            "rationale": "The report describes host-named files stored in the in folder within a C: drive staging directory, supporting local data staging.",
+            "confidence": "medium"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The placement in the staging directory is explicit, while import through a scanning tool is only inferred by the advisory; no transfer technique is asserted."
+      },
+      "assessment": "The files' placement is explicit, but their import through a scanning tool is only inferred. No specific transfer mechanism is established.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1074.001",
+            "rationale": "The host-named files were stored in the in folder inside the local C: drive staging directory, supporting local data staging.",
+            "confidence": "medium"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The files' placement is explicit, but their import through a scanning tool is only inferred. No specific transfer mechanism is established."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA23-319A-P012",
+      "initial_candidates": [
+        "T1486",
+        "T1657",
+        "T1490",
+        "T1027.013",
+        "T1036.010",
+        "T1659",
+        "T1187",
+        "T1588.004",
+        "T1546",
+        "T1555.002"
+      ],
+      "final_candidates": [
+        "T1486",
+        "T1657",
+        "T1490",
+        "T1027.013",
+        "T1036.010",
+        "T1659",
+        "T1187",
+        "T1588.004",
+        "T1546",
+        "T1555.002",
+        "T1680",
+        "T1681",
+        "T1572",
+        "T1048.001",
+        "T1082",
+        "T1667",
+        "T1679",
+        "T1480.001",
+        "T1548.003",
+        "T1600",
+        "T1027.011",
+        "T1048.002",
+        "T1027.009",
+        "T1573.002"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1486",
+            "rationale": "The report directly states that ransomware encrypts victim data after mapping the network, matching data encryption for impact.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "Encryption of victim data is explicit; the other supplied techniques do not describe this behavior."
+      },
+      "assessment": "Victim data encryption is explicit. No financial theft, recovery inhibition, or content injection behavior is stated.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1486",
+            "rationale": "The report directly states that ransomware encrypts victim data after mapping the network, matching data encryption for impact.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "Victim data encryption is explicit. No financial theft, recovery inhibition, or content injection behavior is stated."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA23-319A-P013",
+      "initial_candidates": [
+        "T1486",
+        "T1176.001",
+        "T1036.007",
+        "T1195.001",
+        "T1490",
+        "T1505.004",
+        "T1601.001",
+        "T1548.003",
+        "T1222",
+        "T1679"
+      ],
+      "final_candidates": [
+        "T1486",
+        "T1176.001",
+        "T1036.007",
+        "T1195.001",
+        "T1490",
+        "T1505.004",
+        "T1601.001",
+        "T1548.003",
+        "T1222",
+        "T1679",
+        "T1027.009",
+        "T1070.006",
+        "T1137.001",
+        "T1565.003",
+        "T1546.001",
+        "T1574.001",
+        "T1681",
+        "T1187",
+        "T1548.004",
+        "T1036.006",
+        "T1070.010",
+        "T1203",
+        "T1036.008",
+        "T1036.002"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1486",
+            "rationale": "The ransomware encrypts targeted victim files, directly matching Data Encrypted for Impact.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The observed file encryption and extension change are part of the same impact behavior; the extension change alone does not establish masquerading."
+      },
+      "assessment": "The file encryption and extension change are one impact behavior; the extension change alone does not establish masquerading.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1486",
+            "rationale": "The ransomware encrypts targeted victim files, directly matching Data Encrypted for Impact.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The file encryption and extension change are one impact behavior; the extension change alone does not establish masquerading."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA23-319A-P014",
+      "initial_candidates": [
+        "T1485.001",
+        "T1485",
+        "T1070.004",
+        "T1490",
+        "T1036.010",
+        "T1070.003",
+        "T1218.014",
+        "T1102.001",
+        "T1556.005",
+        "T1680"
+      ],
+      "final_candidates": [
+        "T1485.001",
+        "T1485",
+        "T1070.004",
+        "T1490",
+        "T1036.010",
+        "T1070.003",
+        "T1218.014",
+        "T1102.001",
+        "T1556.005",
+        "T1680",
+        "T1486",
+        "T1657",
+        "T1105",
+        "T1681",
+        "T1080",
+        "T1601.001",
+        "T1546.017",
+        "T1053.005",
+        "T1685.005",
+        "T1552.003",
+        "T1070.010",
+        "T1546.014",
+        "T1195.001",
+        "T1659"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1070.004",
+            "rationale": "The report describes deleting the ransomware binary after encryption, consistent with file deletion used to remove an artifact.",
+            "confidence": "medium"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "File deletion is supported. This action concerns the ransomware binary after encryption, not deletion of victim data."
+      },
+      "assessment": "This is deletion of the ransomware binary after its task, not destruction of victim data or inhibition of recovery.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1070.004",
+            "rationale": "The report describes deleting the ransomware binary after encryption, consistent with File Deletion to remove an artifact.",
+            "confidence": "medium"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "This is deletion of the ransomware binary after its task, not destruction of victim data or inhibition of recovery."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA23-319A-P015",
+      "initial_candidates": [
+        "T1053.005",
+        "T1205",
+        "T1564.014",
+        "T1218.002",
+        "T1485.001",
+        "T1485",
+        "T1222.002",
+        "T1218.011",
+        "T1222",
+        "T1027.010"
+      ],
+      "final_candidates": [
+        "T1053.005",
+        "T1205",
+        "T1564.014",
+        "T1218.002",
+        "T1485.001",
+        "T1485",
+        "T1222.002",
+        "T1218.011",
+        "T1222",
+        "T1027.010",
+        "T1070.004",
+        "T1578.003",
+        "T1574.005",
+        "T1480.001",
+        "T1055.013",
+        "T1070.010",
+        "T1666",
+        "T1548.002",
+        "T1574.001",
+        "T1027.013",
+        "T1027.015",
+        "T1480",
+        "T1055.001",
+        "T1070.003"
+      ],
+      "first_output": {
+        "mappings": [],
+        "additional_ids": [
+          "T1070.004"
+        ],
+        "assessment": "The report describes completed binary strings deleting themselves to evade detection. File Deletion is a plausible mapping, but it is not among the supplied candidates; the Control Panel technique does not fit the stated behavior."
+      },
+      "assessment": "File Deletion fits better than Control Panel, which does not describe this deletion behavior.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1070.004",
+            "rationale": "The report describes completed binary strings deleting themselves to evade detection, consistent with File Deletion to remove artifacts.",
+            "confidence": "medium"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "File Deletion fits better than Control Panel, which does not describe this deletion behavior."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA23-319A-P016",
+      "initial_candidates": [
+        "T1657",
+        "T1070.006",
+        "T1195.001",
+        "T1564.004",
+        "T1027.006",
+        "T1684.002",
+        "T1530",
+        "T1666",
+        "T1559.002",
+        "T1595.003"
+      ],
+      "final_candidates": [
+        "T1657",
+        "T1070.006",
+        "T1195.001",
+        "T1564.004",
+        "T1027.006",
+        "T1684.002",
+        "T1530",
+        "T1666",
+        "T1559.002",
+        "T1595.003",
+        "T1681",
+        "T1667",
+        "T1187",
+        "T1082",
+        "T1485.001",
+        "T1218.011",
+        "T1684.001",
+        "T1027.011",
+        "T1564.009",
+        "T1677",
+        "T1596.004",
+        "T1608.004",
+        "T1597.001",
+        "T1597.002"
+      ],
+      "first_output": {
+        "mappings": [],
+        "additional_ids": [],
+        "assessment": "The reported demand and threat to publish data describe extortion, but none of the supplied ATT&CK definitions directly represents that coercive behavior. Do not force-map it to Financial Theft or data theft."
+      },
+      "assessment": "The reported demand and threat to publish data describe extortion, but none of the supplied ATT&CK definitions directly represents this coercive behavior. Do not force-map it to Financial Theft or data theft.",
+      "final_output": {
+        "mappings": [],
+        "additional_ids": [],
+        "assessment": "The reported demand and threat to publish data describe extortion, but none of the supplied ATT&CK definitions directly represents this coercive behavior. Do not force-map it to Financial Theft or data theft."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA23-319A-P017",
+      "initial_candidates": [
+        "T1666",
+        "T1496.003",
+        "T1583.008",
+        "T1657",
+        "T1598.003",
+        "T1684.001",
+        "T1598",
+        "T1684.002",
+        "T1681",
+        "T1659"
+      ],
+      "final_candidates": [
+        "T1666",
+        "T1496.003",
+        "T1583.008",
+        "T1657",
+        "T1598.003",
+        "T1684.001",
+        "T1598",
+        "T1684.002",
+        "T1681",
+        "T1659",
+        "T1684",
+        "T1480.001",
+        "T1683.001",
+        "T1485.001",
+        "T1027.018",
+        "T1195.001",
+        "T1559.002",
+        "T1683",
+        "T1601.001",
+        "T1218.011",
+        "T1574.011",
+        "T1683.002",
+        "T1486",
+        "T1667"
+      ],
+      "first_output": {
+        "mappings": [],
+        "additional_ids": [],
+        "assessment": "Directing victims to pay ransom in Bitcoin is an extortion payment demand, not evidence of financial theft by the actors through a technique represented in the supplied candidates."
+      },
+      "assessment": "Directing victims to pay ransom in Bitcoin is an extortion payment demand, not evidence of financial theft by the actors through a technique represented in the supplied candidates.",
+      "final_output": {
+        "mappings": [],
+        "additional_ids": [],
+        "assessment": "Directing victims to pay ransom in Bitcoin is an extortion payment demand, not evidence of financial theft by the actors through a technique represented in the supplied candidates."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA23-319A-P018",
+      "initial_candidates": [
+        "T1553.003",
+        "T1486",
+        "T1564.006",
+        "T1490",
+        "T1601.001",
+        "T1055.009",
+        "T1583.001",
+        "T1650",
+        "T1059.002",
+        "T1679"
+      ],
+      "final_candidates": [
+        "T1553.003",
+        "T1486",
+        "T1564.006",
+        "T1490",
+        "T1601.001",
+        "T1055.009",
+        "T1583.001",
+        "T1650",
+        "T1059.002",
+        "T1679",
+        "T1497.001",
+        "T1036.010",
+        "T1027.016",
+        "T1574.005",
+        "T1689",
+        "T1036.002",
+        "T1548.002",
+        "T1055.011",
+        "T1684.002",
+        "T1548.003",
+        "T1543.003",
+        "T1564.001",
+        "T1480.001",
+        "T1518.001"
+      ],
+      "first_output": {
+        "mappings": [],
+        "additional_ids": [],
+        "assessment": "Dropping a ransom note is part of the ransomware operation, but none of the supplied techniques specifically describes the note delivery behavior. The evidence does not support a more specific technique."
+      },
+      "assessment": "Dropping a ransom note is part of the ransomware operation, but none of the supplied techniques specifically describes note delivery. The evidence does not support a more specific technique.",
+      "final_output": {
+        "mappings": [],
+        "additional_ids": [],
+        "assessment": "Dropping a ransom note is part of the ransomware operation, but none of the supplied techniques specifically describes note delivery. The evidence does not support a more specific technique."
+      },
+      "rejected": []
+    }
+  ],
+  "quality_flags": [
+    {
+      "row_id": "AA23-319A-P010",
+      "issue": "wrong_mapping",
+      "note": "The supplied T1074.001 definition is for staging collected data locally before exfiltration. P010 describes staging malicious executables and scripts to support encryption, not staging collected victim data for exfiltration; this mapping is not supported.",
+      "expected_technique_id": null,
+      "valid_target": true
+    },
+    {
+      "row_id": "AA23-319A-P011",
+      "issue": "wrong_mapping",
+      "note": "The supplied T1074.001 definition concerns staging collected data before exfiltration. Host-name entries in the in folder are described as scan-derived staging context, not collected victim data staged for exfiltration.",
+      "expected_technique_id": null,
+      "valid_target": true
+    },
+    {
+      "row_id": "AA23-319A-P013",
+      "issue": "duplicate",
+      "note": "P013 and P012 describe the same ransomware encryption behavior in the same report operation: P012 is the page 7 summary after network mapping, while P013 gives page 8 detail about target files and their extension. Retain one behavior with the more specific evidence.",
+      "expected_technique_id": null,
+      "valid_target": true
+    },
+    {
+      "row_id": "",
+      "issue": "missed_behavior",
+      "note": "Page 7 states that the cryptographic ransomware application injects its executable into running processes on compromised systems. This process-injection behavior is not represented in the inventory.",
+      "expected_technique_id": "T1055",
+      "valid_target": true
+    },
+    {
+      "row_id": "",
+      "issue": "missed_behavior",
+      "note": "Page 7 states that registry modification commands were executed via cmd.exe. The inventory has no row for the reported registry modification behavior.",
+      "expected_technique_id": "T1112",
+      "valid_target": true
+    }
+  ],
+  "reconciliation_flags": [
+    "P012/P013 are a cross-page duplicate that an automatic resolver may miss because the pages and quote detail differ. Keep the encryption behavior once with the more specific P013 evidence; do not treat the .rhysida suffix as a separate occurrence.",
+    "P001 and P002 both mention VPN access, but P001 specifies authentication with compromised valid credentials while P002 also includes RDP connections and summarizes living-off-the-land activity. Their text does not establish the same host or occurrence, so do not drop either wholesale.",
+    "P010 describes staging directories and deployment of tools and scripts. P011 separately infers that host-named files in the in folder were imported through scanning; the report does not explicitly say actors stored those files. Preserve P011 as an inference or remove it if actor placement is required, and do not collapse it into the staging-directory action.",
+    "P014 describes PowerShell deletion of the ransomware binary after encryption; P015 separately describes binary strings deleting themselves after completing tasks. Different objects and stated purposes mean these are not duplicates.",
+    "P016 captures the reported double-extortion demand and threat to publish data; P017 separately describes instructions to pay in Bitcoin. Preserve the extortion behavior and payment-channel detail without conflating them."
+  ],
+  "gold_comparison": [],
+  "processed_chunks": [
+    {
+      "id": "chunk-001",
+      "pdf_page": 1,
+      "start": 19,
+      "end": 2981,
+      "rows": 0
+    },
+    {
+      "id": "chunk-002",
+      "pdf_page": 2,
+      "start": 3000,
+      "end": 3614,
+      "rows": 0
+    },
+    {
+      "id": "chunk-003",
+      "pdf_page": 3,
+      "start": 3633,
+      "end": 6734,
+      "rows": 0
+    },
+    {
+      "id": "chunk-004",
+      "pdf_page": 3,
+      "start": 6434,
+      "end": 6908,
+      "rows": 0
+    },
+    {
+      "id": "chunk-005",
+      "pdf_page": 4,
+      "start": 6927,
+      "end": 9629,
+      "rows": 3
+    },
+    {
+      "id": "chunk-006",
+      "pdf_page": 5,
+      "start": 9648,
+      "end": 12238,
+      "rows": 3
+    },
+    {
+      "id": "chunk-007",
+      "pdf_page": 6,
+      "start": 12257,
+      "end": 14378,
+      "rows": 5
+    },
+    {
+      "id": "chunk-008",
+      "pdf_page": 7,
+      "start": 14397,
+      "end": 16590,
+      "rows": 1
+    },
+    {
+      "id": "chunk-009",
+      "pdf_page": 8,
+      "start": 16609,
+      "end": 18284,
+      "rows": 6
+    },
+    {
+      "id": "chunk-010",
+      "pdf_page": 9,
+      "start": 18303,
+      "end": 19808,
+      "rows": 0
+    },
+    {
+      "id": "chunk-011",
+      "pdf_page": 10,
+      "start": 19828,
+      "end": 21106,
+      "rows": 0
+    },
+    {
+      "id": "chunk-012",
+      "pdf_page": 11,
+      "start": 21126,
+      "end": 22821,
+      "rows": 0
+    },
+    {
+      "id": "chunk-013",
+      "pdf_page": 12,
+      "start": 22841,
+      "end": 25958,
+      "rows": 0
+    },
+    {
+      "id": "chunk-014",
+      "pdf_page": 12,
+      "start": 25658,
+      "end": 27502,
+      "rows": 0
+    },
+    {
+      "id": "chunk-015",
+      "pdf_page": 17,
+      "start": 27522,
+      "end": 30702,
+      "rows": 0
+    },
+    {
+      "id": "chunk-016",
+      "pdf_page": 17,
+      "start": 30402,
+      "end": 30784,
+      "rows": 0
+    },
+    {
+      "id": "chunk-017",
+      "pdf_page": 18,
+      "start": 30804,
+      "end": 33212,
+      "rows": 0
+    },
+    {
+      "id": "chunk-018",
+      "pdf_page": 19,
+      "start": 33232,
+      "end": 35802,
+      "rows": 0
+    },
+    {
+      "id": "chunk-019",
+      "pdf_page": 20,
+      "start": 35822,
+      "end": 36746,
+      "rows": 0
+    }
+  ],
+  "smoke": false,
+  "proposal_hash": "2403d2dee53ad6099c008a9dde0a73a5168678125e08d03461dde6536b39340c"
+}

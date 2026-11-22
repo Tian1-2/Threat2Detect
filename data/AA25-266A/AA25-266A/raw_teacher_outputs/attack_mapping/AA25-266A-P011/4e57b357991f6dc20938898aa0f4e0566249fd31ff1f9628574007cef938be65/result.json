@@ -1,0 +1,17 @@
+{
+  "output": {
+    "mappings": [],
+    "additional_ids": [
+      "T1018",
+      "T1082"
+    ],
+    "assessment": "The report confirms host-discovery commands were run but omits their details, so the available evidence does not yet support a specific candidate technique. Remote System Discovery and System Information Discovery merit definition review."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-82cb799d9525486b858fac16e187baaf.json"
+}

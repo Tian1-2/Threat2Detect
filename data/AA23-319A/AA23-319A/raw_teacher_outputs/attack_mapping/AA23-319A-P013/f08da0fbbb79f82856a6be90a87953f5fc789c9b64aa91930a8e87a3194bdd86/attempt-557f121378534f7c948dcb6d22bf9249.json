@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:43:15.885486+00:00",
+  "response": "{\"job_id\": \"ea48f1bb212211127c748468839614dfc65b523a31163aa41cc08a9fdcc0ee7b\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1486\", \"rationale\": \"The ransomware encrypts targeted victim files, directly matching Data Encrypted for Impact.\", \"confidence\": \"high\"}], \"additional_ids\": [], \"assessment\": \"The file encryption and extension change are one impact behavior; the extension change alone does not establish masquerading.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

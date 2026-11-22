@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:33:35.019522+00:00",
+  "response": "{\"job_id\": \"affa2f58ee2d5fb96a5a4f218d8635d5f8b1f52f9267b07acb1dba2b052f942b\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1018\", \"rationale\": \"The report states that actors ping swept multiple hosts in internal subnets, supporting remote system discovery.\", \"confidence\": \"high\"}], \"additional_ids\": [], \"assessment\": \"The behavior is host discovery. The report says the scan excluded brute forcing and vulnerability scanning, so those mappings do not apply.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

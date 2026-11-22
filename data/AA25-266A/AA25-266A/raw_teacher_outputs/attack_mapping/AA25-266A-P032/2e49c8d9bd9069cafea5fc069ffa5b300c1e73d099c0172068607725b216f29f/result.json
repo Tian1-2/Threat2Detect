@@ -1,0 +1,14 @@
+{
+  "output": {
+    "mappings": [],
+    "additional_ids": [],
+    "assessment": "The timeline only says discovery commands were run on GeoServer 2. It does not identify what information was discovered, so no specific discovery technique is supported."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-3719b335785b4796bd21b98ee8b35765.json"
+}

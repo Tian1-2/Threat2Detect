@@ -12,3 +12,6 @@ Thumbs.db
 artifacts/runs/*_normalized.json
 artifacts/runs/pipeline-*/
 artifacts/runs/sigma-agent/
+
+# Holdout annotation package stays local until review is authorized.
+/data/AA24-193A/

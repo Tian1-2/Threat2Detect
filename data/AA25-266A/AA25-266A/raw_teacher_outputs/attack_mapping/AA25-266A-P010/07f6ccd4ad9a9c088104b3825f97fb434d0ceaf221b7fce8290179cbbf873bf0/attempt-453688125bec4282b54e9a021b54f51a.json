@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:32:27.145336+00:00",
+  "response": "{\"job_id\": \"28115ad3c8a55a5faeed76af743c68f9ed402d62be875a2971cc7f489e607053\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1595.002\", \"confidence\": \"high\", \"rationale\": \"The behavior explicitly characterizes activity as vulnerability scanning, matching this specific active-scanning sub-technique.\"}], \"additional_ids\": [], \"assessment\": \"The behavior directly supports vulnerability scanning; the report does not specify scanning IP blocks or another narrower target.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

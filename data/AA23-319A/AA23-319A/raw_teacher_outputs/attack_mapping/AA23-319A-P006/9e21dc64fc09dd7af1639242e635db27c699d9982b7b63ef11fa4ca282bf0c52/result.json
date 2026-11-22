@@ -1,0 +1,20 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1021.004",
+        "confidence": "high",
+        "rationale": "The report explicitly describes PuTTY connections used to remotely connect to systems via SSH, directly matching the SSH sub-technique."
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "The expanded candidates do not establish SSH session hijacking, authorized-key modification, or command-history clearing; only SSH remote connections are explicitly reported."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-95894f71078e4c7cbd599521dc387c2e.json"
+}

@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:39:20.636396+00:00",
+  "response": "{\"job_id\": \"c4ffbfcdc680e8946f72f6a98a0aa27a1d5121d18b99d93a76a7585b0d2287e4\", \"worker\": \"gpt-6-luna\", \"output\": {\"behaviors\": [{\"action\": \"encrypt victim data after mapping the network\", \"object\": \"victim data\", \"fact_status\": \"observed\", \"confidence\": \"high\", \"context_note\": \"The report describes Rhysida ransomware encrypting data after network mapping.\", \"scope\": \"ransomware operation\", \"quote\": \"After mapping the network, the ransomware encrypts data\", \"pdf_page\": 7}]}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

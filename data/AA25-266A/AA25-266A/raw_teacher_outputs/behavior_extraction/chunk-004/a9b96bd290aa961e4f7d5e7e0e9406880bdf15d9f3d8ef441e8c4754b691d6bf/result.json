@@ -1,0 +1,23 @@
+{
+  "output": {
+    "behaviors": [
+      {
+        "confidence": "high",
+        "fact_status": "observed",
+        "scope": "incident",
+        "pdf_page": 4,
+        "context_note": "CISA summarizes the incident findings.",
+        "quote": "The cyber threat actors exploited CVE-2024-36401 for initial access on two GeoServers.",
+        "object": "two GeoServers",
+        "action": "exploited a vulnerability to gain initial access"
+      }
+    ]
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-16d54b5532244d718b588edd4060bcdd.json"
+}

@@ -1,0 +1,25 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1105",
+        "rationale": "The report explicitly states that payloads were downloaded to compromised systems, supporting ingress tool transfer.",
+        "confidence": "high"
+      },
+      {
+        "technique_id": "T1197",
+        "rationale": "The report names BITS Admin GetFile in the payload download activity, supporting BITS job transfer.",
+        "confidence": "high"
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "Both the download behavior and the named BITS mechanism are directly supported. The downloaded content is not described as executed in this behavior."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-692405db8aa8441ba6fab42288ddfa12.json"
+}

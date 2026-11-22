@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:31:58.822731+00:00",
+  "response": "{\"job_id\": \"7687489275d1565782755fef7986b4f7e4c138961fb824fdc4a53a9964ee81f7\", \"output\": {\"mappings\": [], \"additional_ids\": [\"T1008\"], \"assessment\": \"The second C2 connection is described as likely serving as a backup channel, matching Fallback Channels. The supplied candidates do not contain that technique.\"}, \"worker\": \"gpt-6-luna\", \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

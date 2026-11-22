@@ -1,0 +1,20 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1070.004",
+        "rationale": "The report describes completed binary strings deleting themselves to evade detection, consistent with File Deletion to remove artifacts.",
+        "confidence": "medium"
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "File Deletion fits better than Control Panel, which does not describe this deletion behavior."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-2c0c11ad62b54ed692794732e28df715.json"
+}

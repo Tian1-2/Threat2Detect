@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:32:27.280143+00:00",
+  "response": "{\"job_id\": \"ceaa48e09cee7abd0800cfcbaad67dd08ca299f32d74c303f9ac6eb43af4d19d\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1090\", \"rationale\": \"The report describes an outbound connection to the C2 server after downloading a modified proxy tool, supporting proxy use in command and control.\", \"confidence\": \"medium\"}], \"additional_ids\": [\"T1105\", \"T1071.001\"], \"assessment\": \"The behavior combines a tool download with a successful outbound C2 connection over HTTP. Ingress transfer and web protocol C2 may be relevant, but their definitions were not supplied in this pass.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

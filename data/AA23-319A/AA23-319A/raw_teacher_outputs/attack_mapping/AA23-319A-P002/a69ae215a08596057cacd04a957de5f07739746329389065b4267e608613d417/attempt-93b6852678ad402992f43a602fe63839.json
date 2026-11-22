@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:42:23.942406+00:00",
+  "response": "{\"job_id\": \"17e61e2aa44476567a3f35b7f392274f18491f9e4b9807d9e8258b9f8a9f2690\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1021.001\", \"confidence\": \"high\", \"rationale\": \"The report explicitly describes creating RDP connections for lateral movement, directly matching the Remote Desktop Protocol sub-technique.\"}, {\"technique_id\": \"T1133\", \"confidence\": \"high\", \"rationale\": \"The report also explicitly describes establishing VPN access to the victim network, matching use of an external remote service.\"}], \"additional_ids\": [], \"assessment\": \"RDP lateral movement and VPN access are both directly described. RDP hijacking, transfer of tools, and terminal-services persistence are not established.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

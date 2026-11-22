@@ -1,0 +1,27 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1027",
+        "rationale": "The report explicitly describes the host and network discovery commands as encoded, supporting obfuscation of command content.",
+        "confidence": "high"
+      },
+      {
+        "technique_id": "T1018",
+        "rationale": "The report explicitly identifies host discovery commands executed on GeoServer 2.",
+        "confidence": "high"
+      }
+    ],
+    "additional_ids": [
+      "T1016"
+    ],
+    "assessment": "Encoded commands were used for host and network discovery. The report does not specify the encoded content or a particular interpreter."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-687f55e3063640e1817c88687278f3ad.json"
+}

@@ -1,0 +1,18 @@
+{
+  "output": {
+    "mappings": [],
+    "additional_ids": [
+      "T1087.002",
+      "T1059.001",
+      "T1555"
+    ],
+    "assessment": "PowerView use is explicit, and the report says it supported reconnaissance and credential harvesting. The evidence does not identify the specific discovery commands or credential access mechanism needed to select a supplied technique confidently."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-cec4943178b8417b8cf3513fa662fa05.json"
+}

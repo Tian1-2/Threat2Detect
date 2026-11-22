@@ -1,0 +1,20 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1059.001",
+        "confidence": "high",
+        "rationale": "The behavior explicitly describes launching PowerShell ISE before executing a malicious script, supporting PowerShell execution."
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "No expanded candidate for PowerShell profiles or other persistence mechanisms is supported; the behavior describes script execution."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-56e410736cb449039c3be7dd195b3e81.json"
+}

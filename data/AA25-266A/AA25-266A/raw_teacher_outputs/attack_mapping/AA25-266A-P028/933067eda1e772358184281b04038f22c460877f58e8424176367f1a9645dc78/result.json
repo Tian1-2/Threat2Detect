@@ -1,0 +1,16 @@
+{
+  "output": {
+    "mappings": [],
+    "additional_ids": [
+      "T1190"
+    ],
+    "assessment": "Full report context attributes the GeoServer 1 initial access to exploitation of a public-facing application vulnerability. T1190 is not among the supplied candidates."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-56265e050edc4f318aca46089135890a.json"
+}

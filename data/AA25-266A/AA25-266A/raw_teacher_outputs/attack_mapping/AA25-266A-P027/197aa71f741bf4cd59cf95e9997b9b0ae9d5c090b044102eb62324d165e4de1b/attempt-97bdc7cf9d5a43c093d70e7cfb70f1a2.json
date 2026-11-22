@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:33:35.107702+00:00",
+  "response": "{\"job_id\": \"1bdae9ea641886d835a8c97bf941b824259d833077d197f85c035f79e10ea817\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1105\", \"rationale\": \"The actors transferred a file to the SQL Server through bitsadmin, consistent with ingress tool or file transfer to a compromised system.\", \"confidence\": \"high\"}], \"additional_ids\": [], \"assessment\": \"The evidence supports ingress transfer; it does not show masquerading or that the file moved host-to-host from another compromised system.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

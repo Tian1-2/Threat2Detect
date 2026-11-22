@@ -1,0 +1,63 @@
+{
+  "output": {
+    "behaviors": [
+      {
+        "action": "Enumerated the internal network",
+        "object": "internal systems",
+        "fact_status": "observed",
+        "confidence": "high",
+        "context_note": "fscan was used to identify network services.",
+        "scope": "actor behavior",
+        "quote": "Subsequently, they enumerated the internal network from GeoServer 1, identifying Secure Shell (SSH) \nlisteners, File Transfer Protocol (FTP) servers, file servers, and web servers  by using the fscan \ntool. (Note: CISA observed endpoint logs that showed the cyber threat actors uploaded fscan to the",
+        "pdf_page": 8
+      },
+      {
+        "action": "Attempted credential brute force",
+        "object": "exploited web services",
+        "fact_status": "attempted",
+        "confidence": "high",
+        "context_note": "The report states the attempt was to gain access or move laterally.",
+        "scope": "actor behavior",
+        "quote": "compromised host and ran it against internal systems.) The actors then attempted to brute force login \ncredentials for the exploited web services to gain remote access, achieve RCE, or move laterally.",
+        "pdf_page": 8
+      },
+      {
+        "action": "Conducted ping sweeps",
+        "object": "hosts in internal subnets",
+        "fact_status": "observed",
+        "confidence": "high",
+        "context_note": "Sweep activity used fscan.",
+        "scope": "actor behavior",
+        "quote": "The cyber threat actors also conducted ping sweeps of several hosts within the organization’s internal \nsubnets using fscan. Their use of the -nobr and -nopoc flags for fscan indicated that this scan \nexcluded brute forcing or vulnerability scanning, respectively.",
+        "pdf_page": 8
+      },
+      {
+        "action": "Performed host discovery",
+        "object": "SQL Server",
+        "fact_status": "observed",
+        "confidence": "high",
+        "context_note": "CISA observed discovery commands; individual commands omitted.",
+        "scope": "actor behavior",
+        "quote": "CISA observed the following discovery commands on the organization’s SQL server:",
+        "pdf_page": 8
+      },
+      {
+        "action": "Used Burp Collaborator to execute host and network discovery",
+        "object": "GeoServer 2",
+        "fact_status": "observed",
+        "confidence": "high",
+        "context_note": "Encoded command contents omitted.",
+        "scope": "actor behavior",
+        "quote": "Based on images CISA received of GeoServer 2, CISA observed the bash history of a user that showed the \nuse of Burp Collaborator to execute encoded host and network discovery commands.",
+        "pdf_page": 8
+      }
+    ]
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-dc7885c22e6745ff93af4291bec55d3e.json"
+}

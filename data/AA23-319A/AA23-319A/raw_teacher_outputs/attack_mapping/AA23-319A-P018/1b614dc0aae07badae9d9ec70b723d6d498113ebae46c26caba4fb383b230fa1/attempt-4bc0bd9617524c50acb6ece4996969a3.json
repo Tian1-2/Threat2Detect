@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:42:09.264588+00:00",
+  "response": "{\"job_id\": \"15a56e5f5160196232d385c5322af2517f9dc5541d9d0d7abcd262384bd192f4\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [], \"additional_ids\": [], \"assessment\": \"Dropping a ransom note is part of the ransomware operation, but none of the supplied techniques specifically describes the note delivery behavior. The evidence does not support a more specific technique.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

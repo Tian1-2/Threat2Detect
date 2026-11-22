@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:33:35.069950+00:00",
+  "response": "{\"job_id\": \"f5e94d79baf9cfe2556de1bd7ceadf1d46996a408825effe121c906a9a0714c1\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1090.001\", \"rationale\": \"The report states that C2 traffic was forwarded through the Web Server to access internal resources, supporting use of an internal proxy.\", \"confidence\": \"high\"}], \"additional_ids\": [], \"assessment\": \"Internal proxying is directly described. Writing the proxy tool to disk alone does not establish additional techniques in this behavior.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

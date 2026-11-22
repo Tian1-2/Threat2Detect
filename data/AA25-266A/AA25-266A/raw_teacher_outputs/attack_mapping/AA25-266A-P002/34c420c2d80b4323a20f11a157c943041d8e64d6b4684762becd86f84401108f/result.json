@@ -1,0 +1,20 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1190",
+        "confidence": "high",
+        "rationale": "The behavior explicitly describes exploiting a vulnerability to gain access to the agency network through the report’s public-facing GeoServer."
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "The evidence supports exploitation of a public-facing application. It does not identify account creation, supply-chain compromise, or another persistence mechanism for this behavior."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-bcd00a410ed540a7817d32dc092eccbc.json"
+}

@@ -1,0 +1,20 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1021",
+        "confidence": "medium",
+        "rationale": "The report explicitly says PsExec was used for lateral movement and remote execution, supporting the general Remote Services technique. It does not specify the underlying protocol or service mechanism."
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "The expanded candidates include specific SMB and service-execution techniques, but the behavior does not state those mechanisms. The report supports general remote service use without a defensible sub-technique."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-f1c02276ef054ddba68115d013994935.json"
+}

@@ -1,0 +1,20 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1074.001",
+        "rationale": "The report describes host-named files stored in the in folder within a C: drive staging directory, supporting local data staging.",
+        "confidence": "medium"
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "The placement in the staging directory is explicit, while import through a scanning tool is only inferred by the advisory; no transfer technique is asserted."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-a6002eef3b884b51a0a1ba3814adcb1f.json"
+}

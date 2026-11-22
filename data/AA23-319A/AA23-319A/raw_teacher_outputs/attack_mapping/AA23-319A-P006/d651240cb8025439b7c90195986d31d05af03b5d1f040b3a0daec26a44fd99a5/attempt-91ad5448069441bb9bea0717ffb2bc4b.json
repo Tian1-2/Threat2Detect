@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:42:23.989429+00:00",
+  "response": "{\"job_id\": \"57469c93cec0f302e368793bdd74ce59ddb6a2d80f6d49e1d96bfac95e8e9852\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1021.004\", \"confidence\": \"high\", \"rationale\": \"The report explicitly describes PuTTY connections used to remotely connect to systems via SSH, directly matching the SSH sub-technique.\"}], \"additional_ids\": [], \"assessment\": \"The evidence supports SSH remote services. It does not describe hijacking an existing SSH session, adding authorized keys, or clearing connection history.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

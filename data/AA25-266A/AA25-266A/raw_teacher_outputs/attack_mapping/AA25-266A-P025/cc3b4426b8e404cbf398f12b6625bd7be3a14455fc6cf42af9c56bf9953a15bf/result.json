@@ -1,0 +1,16 @@
+{
+  "output": {
+    "mappings": [],
+    "additional_ids": [
+      "T1059.004"
+    ],
+    "assessment": "The reported execution of /tmp/mm.sh is Unix shell script execution. The supplied candidates do not include the matching command interpreter technique."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-cacfa20533f24570b7502f210876d959.json"
+}

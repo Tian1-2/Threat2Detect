@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:38:35.933647+00:00",
+  "response": "{\"job_id\": \"45e3cf0ebc31e499d704445b1490de5ed3610fee5cefcb380c640cd61ccf56d7\", \"worker\": \"gpt-6-luna\", \"output\": {\"behaviors\": []}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

@@ -1,0 +1,20 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1018",
+        "rationale": "The report explicitly states the actors performed a ping sweep of multiple hosts, supporting remote system discovery.",
+        "confidence": "high"
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "The behavior is direct host discovery evidence. No evidence supports the other supplied techniques."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-e640fac88bbe4dde8c9fd8afd0e81c60.json"
+}

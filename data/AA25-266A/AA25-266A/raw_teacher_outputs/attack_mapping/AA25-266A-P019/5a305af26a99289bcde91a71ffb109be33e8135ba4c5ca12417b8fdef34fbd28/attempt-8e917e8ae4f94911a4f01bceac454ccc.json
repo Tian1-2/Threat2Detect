@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:33:35.047215+00:00",
+  "response": "{\"job_id\": \"f58fa912bd5184df472dc3fe06b04f98f96a2862403fa0b4335ee3892ab83649\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1210\", \"rationale\": \"The report attributes lateral movement between servers to enabling a remote SQL execution capability, consistent with exploitation of a remote service.\", \"confidence\": \"high\"}], \"additional_ids\": [], \"assessment\": \"The report explicitly describes movement from the Web Server to the SQL Server. The evidence does not establish malicious SQL procedure installation or the other supplied techniques.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:42:24.011400+00:00",
+  "response": "{\"job_id\": \"87ee790a21bead4ecce71c1274681473aef2a9ddf60f5671d01bf9302ba60a95\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1685.005\", \"rationale\": \"The report explicitly says actors used wevtutil to clear Windows system, application, and security event logs.\", \"confidence\": \"high\"}], \"additional_ids\": [], \"assessment\": \"This is direct evidence of clearing Windows event logs. Log enumeration or mailbox clearing is not supported.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

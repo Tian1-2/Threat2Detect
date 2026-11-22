@@ -1,0 +1,30 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1105",
+        "rationale": "The report explicitly states that a modified Stowaway tool was downloaded, supporting ingress tool transfer.",
+        "confidence": "high"
+      },
+      {
+        "technique_id": "T1071.001",
+        "rationale": "The report states that the successful outbound C2 connection used HTTP, supporting web protocol use for command and control.",
+        "confidence": "high"
+      },
+      {
+        "technique_id": "T1090",
+        "rationale": "The downloaded tool is identified in the report as a multi-level proxy, supporting proxy use in this C2 activity.",
+        "confidence": "medium"
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "The tool download and HTTP C2 connection are explicit. Proxy use is supported by the report's description of Stowaway, while the precise proxy topology is not established here."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-7a5fb063dc5d4b5fa4c1eb55f277ecbe.json"
+}

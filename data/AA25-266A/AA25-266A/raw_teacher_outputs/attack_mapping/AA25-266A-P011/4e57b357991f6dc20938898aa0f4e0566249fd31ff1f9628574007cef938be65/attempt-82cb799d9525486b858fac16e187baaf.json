@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:32:27.155194+00:00",
+  "response": "{\"job_id\": \"7dbee51867968a7fa02bfc53de9086efe0a6afa542650cb9db6365402d64f6db\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [], \"additional_ids\": [\"T1018\", \"T1082\"], \"assessment\": \"The report confirms host-discovery commands were run but omits their details, so the available evidence does not yet support a specific candidate technique. Remote System Discovery and System Information Discovery merit definition review.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

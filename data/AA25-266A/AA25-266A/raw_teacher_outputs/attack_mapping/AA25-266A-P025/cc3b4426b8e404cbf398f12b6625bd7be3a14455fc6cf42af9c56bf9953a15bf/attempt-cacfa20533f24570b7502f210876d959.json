@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:31:58.810194+00:00",
+  "response": "{\"job_id\": \"bfe93b249ba80ae1cebdb6da0270c57afd45705b230d0f8c407df4c88ee5f13e\", \"output\": {\"mappings\": [], \"additional_ids\": [\"T1059.004\"], \"assessment\": \"The reported execution of /tmp/mm.sh is Unix shell script execution. The supplied candidates do not include the matching command interpreter technique.\"}, \"worker\": \"gpt-6-luna\", \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

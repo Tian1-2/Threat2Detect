@@ -1,0 +1,63 @@
+{
+  "output": {
+    "behaviors": [
+      {
+        "action": "Performed ping sweeps and downloaded fscan for scanning",
+        "object": "organization network",
+        "fact_status": "observed",
+        "confidence": "high",
+        "context_note": "Network discovery and scanning following initial access.",
+        "scope": "actor behavior",
+        "quote": "performed ping sweeps of hosts within specific subnets and do wnloaded the fscan tool  t o scan 4",
+        "pdf_page": 7
+      },
+      {
+        "action": "Conducted network and vulnerability scanning",
+        "object": "organization network",
+        "fact_status": "observed",
+        "confidence": "high",
+        "context_note": "Activity occurred July 15 to 31, 2024.",
+        "scope": "actor behavior",
+        "quote": "and web vulnerability detection—among other functions.) Between July 15 and 31, 2024, the cyber threat \nactors conducted extensive network and vulnerability scanning using fscan and linux-exploit-\nsuggester2.pl. CISA’s host forensics analysts uncovered this activity by reviewing remnants the cyber",
+        "pdf_page": 7
+      },
+      {
+        "action": "Executed host discovery commands",
+        "object": "GeoServer 1",
+        "fact_status": "observed",
+        "confidence": "high",
+        "context_note": "Detection summary; command details omitted.",
+        "scope": "actor behavior",
+        "quote": "The cyber threat actors leveraged CVE-2024-36401 to execute the following host discovery commands on \nGeoServer 1:",
+        "pdf_page": 7
+      },
+      {
+        "action": "Performed user, service, filesystem, and network discovery",
+        "object": "GeoServer 1",
+        "fact_status": "observed",
+        "confidence": "high",
+        "context_note": "LOTL discovery activity.",
+        "scope": "actor behavior",
+        "quote": "Additionally, they employed LOTL techniques for user, service, filesystem, and network discovery on \nGeoServer 1:",
+        "pdf_page": 7
+      },
+      {
+        "action": "Downloaded a shell script and an archive",
+        "object": "GeoServer 1 temporary directory",
+        "fact_status": "observed",
+        "confidence": "high",
+        "context_note": "Script and archive names appear in the evidence.",
+        "scope": "actor behavior",
+        "quote": "The cyber threat actors then used curl commands to download a shell script named mm.sh (which they \nrenamed to aa.sh) and a zip file named aaa.zip to the /tmp/ directory.",
+        "pdf_page": 7
+      }
+    ]
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-a3890bff3f1b44239c39dc8ad81b8165.json"
+}

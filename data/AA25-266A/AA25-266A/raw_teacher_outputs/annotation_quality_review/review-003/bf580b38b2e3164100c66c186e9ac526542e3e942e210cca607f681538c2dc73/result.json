@@ -1,0 +1,19 @@
+{
+  "output": {
+    "flags": [
+      {
+        "row_id": "AA25-266A-P031",
+        "issue": "other",
+        "note": "The timeline calls this initial access to the SQL Server, while the report narrative describes the actors moving laterally to the SQL Server. Preserve the event but resolve the wording or scope; the timeline alone supplies no method to map.",
+        "expected_technique_id": null
+      }
+    ]
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-e63878886c6746e7b1bd185938bb9209.json"
+}

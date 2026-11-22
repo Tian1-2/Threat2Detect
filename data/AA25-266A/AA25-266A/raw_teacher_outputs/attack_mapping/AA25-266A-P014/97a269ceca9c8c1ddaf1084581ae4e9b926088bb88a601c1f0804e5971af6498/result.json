@@ -1,0 +1,17 @@
+{
+  "output": {
+    "mappings": [],
+    "additional_ids": [
+      "T1046",
+      "T1018"
+    ],
+    "assessment": "The report describes internal fscan enumeration identifying SSH, FTP, file, and web servers. Network service discovery and remote system discovery appear relevant, but their definitions were not supplied in this pass."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-05e3265c3f9e4272896e54971cb5030a.json"
+}

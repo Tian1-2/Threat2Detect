@@ -1,0 +1,14 @@
+{
+  "output": {
+    "mappings": [],
+    "additional_ids": [],
+    "assessment": "Directing victims to pay ransom in Bitcoin is an extortion payment demand, not evidence of financial theft by the actors through a technique represented in the supplied candidates."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-3d08f9cebcc04cdeb61735242ed00ccb.json"
+}

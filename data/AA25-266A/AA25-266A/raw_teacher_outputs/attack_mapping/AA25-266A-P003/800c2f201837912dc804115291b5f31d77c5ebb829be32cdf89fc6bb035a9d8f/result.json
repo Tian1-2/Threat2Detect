@@ -1,0 +1,22 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1505.003",
+        "confidence": "high",
+        "rationale": "The behavior explicitly reports uploading or attempting to upload web shells, which is direct evidence for the Web Shell technique."
+      }
+    ],
+    "additional_ids": [
+      "T1105"
+    ],
+    "assessment": "The shell upload supports Web Shell. The report also mentions scripts designed for several functions, but this behavior does not establish a particular lateral-movement mechanism."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-db893e94b5e541ad9eaf37d658e367c3.json"
+}

@@ -1,0 +1,45 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1082",
+        "rationale": "The SQL Server command set included system information queries, supporting system information discovery.",
+        "confidence": "high"
+      },
+      {
+        "technique_id": "T1083",
+        "rationale": "The observed directory listing and file viewing commands support file and directory discovery.",
+        "confidence": "high"
+      },
+      {
+        "technique_id": "T1057",
+        "rationale": "The observed task listing commands support process discovery.",
+        "confidence": "high"
+      },
+      {
+        "technique_id": "T1016",
+        "rationale": "The observed network configuration and connection queries support system network configuration discovery.",
+        "confidence": "medium"
+      },
+      {
+        "technique_id": "T1069.002",
+        "rationale": "The command set included a domain administrators group query, supporting domain group discovery.",
+        "confidence": "high"
+      },
+      {
+        "technique_id": "T1033",
+        "rationale": "The command set included a current user identity query, supporting system owner or user discovery.",
+        "confidence": "high"
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "The full command evidence supports several distinct discovery behaviors on the SQL Server. No execution or collection beyond discovery is inferred."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-ab33b8850e7e46e39d78394fdeee4e1f.json"
+}

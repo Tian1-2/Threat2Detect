@@ -1,0 +1,25 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1087.002",
+        "confidence": "high",
+        "rationale": "The report describes reconnaissance on network/domain accounts, directly matching Domain Account discovery."
+      },
+      {
+        "technique_id": "T1033",
+        "confidence": "high",
+        "rationale": "The report explicitly states that actors identified logged-in users, matching System Owner/User Discovery."
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "The expanded set supports the more specific domain-account discovery mapping. The report does not say the actors discovered or modified domain trust relationships."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-7a884e02d35c47308ca289f63c21a2e6.json"
+}

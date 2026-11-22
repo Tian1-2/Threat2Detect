@@ -1,0 +1,17 @@
+{
+  "output": {
+    "mappings": [],
+    "additional_ids": [
+      "T1090.001",
+      "T1090.003"
+    ],
+    "assessment": "The report says C2 traffic was forwarded through the Web Server to reach internal resources, and Stowaway was written to disk. Internal proxying and multi-hop proxying appear relevant but were not supplied in this pass."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-9adb12956019498cb91b8c2dc4141f08.json"
+}

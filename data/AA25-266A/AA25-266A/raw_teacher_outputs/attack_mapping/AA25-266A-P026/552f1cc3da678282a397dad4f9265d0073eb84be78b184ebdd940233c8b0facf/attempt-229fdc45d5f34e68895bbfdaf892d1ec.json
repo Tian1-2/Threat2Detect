@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:33:35.100520+00:00",
+  "response": "{\"job_id\": \"42082afb58512b6bb31968b2bca15afcbee598700d3ce6b36780e76a5f5a7df5\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1008\", \"rationale\": \"The second C2 connection is described as likely serving as a backup channel, which matches fallback communication when a primary channel is unavailable.\", \"confidence\": \"medium\"}], \"additional_ids\": [], \"assessment\": \"Fallback Channels best fits the explicitly described backup C2 connection; the report does not establish a multistage C2 architecture.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

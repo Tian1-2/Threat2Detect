@@ -1,0 +1,1024 @@
+{
+  "report": {
+    "case_id": "AA23-319A",
+    "title": "#StopRansomware: Rhysida Ransomware",
+    "source_url": "https://www.cisa.gov/sites/default/files/2025-04/aa23-319a-stopransomware-rhysida-ransomware_2.pdf",
+    "input_path": "data/reports/cisa-aa23-319a-input.txt",
+    "input_sha256": "bfe5828a66c497055b5894792a27c55be251943fa8dea6e71546a736665573a9",
+    "annotation_basis": "answer_hidden_report_and_attack_catalog"
+  },
+  "attack_catalog": {
+    "version": "Enterprise 20.0",
+    "sha256": "81113ba98afa2928f3dcff62022539f7ce30c315c32e14422f11ff95ce534352",
+    "path": "data/attack/enterprise-attack-20.0.json"
+  },
+  "teacher": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "prompt_version": "1.0.0",
+  "prompt_hash": "c08556bef4daa327d62be3ab4ed762f143587650e2b406cc0f73cc67db11aee8",
+  "started_at": "2026-11-20T17:45:01.752279+00:00",
+  "processed_chunks": [
+    {
+      "id": "chunk-001",
+      "pdf_page": 1,
+      "start": 19,
+      "end": 2981,
+      "rows": 0
+    },
+    {
+      "id": "chunk-002",
+      "pdf_page": 2,
+      "start": 3000,
+      "end": 3614,
+      "rows": 0
+    },
+    {
+      "id": "chunk-003",
+      "pdf_page": 3,
+      "start": 3633,
+      "end": 6734,
+      "rows": 0
+    },
+    {
+      "id": "chunk-004",
+      "pdf_page": 3,
+      "start": 6434,
+      "end": 6908,
+      "rows": 0
+    },
+    {
+      "id": "chunk-005",
+      "pdf_page": 4,
+      "start": 6927,
+      "end": 9629,
+      "rows": 3
+    },
+    {
+      "id": "chunk-006",
+      "pdf_page": 5,
+      "start": 9648,
+      "end": 12238,
+      "rows": 3
+    },
+    {
+      "id": "chunk-007",
+      "pdf_page": 6,
+      "start": 12257,
+      "end": 14378,
+      "rows": 5
+    },
+    {
+      "id": "chunk-008",
+      "pdf_page": 7,
+      "start": 14397,
+      "end": 16590,
+      "rows": 1
+    },
+    {
+      "id": "chunk-009",
+      "pdf_page": 8,
+      "start": 16609,
+      "end": 18284,
+      "rows": 6
+    },
+    {
+      "id": "chunk-010",
+      "pdf_page": 9,
+      "start": 18303,
+      "end": 19808,
+      "rows": 0
+    },
+    {
+      "id": "chunk-011",
+      "pdf_page": 10,
+      "start": 19828,
+      "end": 21106,
+      "rows": 0
+    },
+    {
+      "id": "chunk-012",
+      "pdf_page": 11,
+      "start": 21126,
+      "end": 22821,
+      "rows": 0
+    },
+    {
+      "id": "chunk-013",
+      "pdf_page": 12,
+      "start": 22841,
+      "end": 25958,
+      "rows": 0
+    },
+    {
+      "id": "chunk-014",
+      "pdf_page": 12,
+      "start": 25658,
+      "end": 27502,
+      "rows": 0
+    },
+    {
+      "id": "chunk-015",
+      "pdf_page": 17,
+      "start": 27522,
+      "end": 30702,
+      "rows": 0
+    },
+    {
+      "id": "chunk-016",
+      "pdf_page": 17,
+      "start": 30402,
+      "end": 30784,
+      "rows": 0
+    },
+    {
+      "id": "chunk-017",
+      "pdf_page": 18,
+      "start": 30804,
+      "end": 33212,
+      "rows": 0
+    },
+    {
+      "id": "chunk-018",
+      "pdf_page": 19,
+      "start": 33232,
+      "end": 35802,
+      "rows": 0
+    },
+    {
+      "id": "chunk-019",
+      "pdf_page": 20,
+      "start": 35822,
+      "end": 36746,
+      "rows": 0
+    }
+  ],
+  "dataset_version": "teacher-development-1",
+  "dataset_split": "development",
+  "smoke": false,
+  "total_chunks": 19,
+  "counts": {
+    "behaviors": 18,
+    "mappings": 19,
+    "by_status": {
+      "draft": {
+        "behaviors": 18,
+        "mappings": 19,
+        "unmapped_behaviors": 3,
+        "technique_count": 13,
+        "tactics": [
+          "collection",
+          "credential-access",
+          "defense-impairment",
+          "discovery",
+          "execution",
+          "impact",
+          "initial-access",
+          "lateral-movement",
+          "persistence",
+          "privilege-escalation",
+          "stealth"
+        ],
+        "behaviors_by_technique": {
+          "T1003.003": 1,
+          "T1021": 1,
+          "T1021.001": 1,
+          "T1021.004": 1,
+          "T1033": 1,
+          "T1059.001": 2,
+          "T1070.004": 2,
+          "T1074.001": 2,
+          "T1078": 1,
+          "T1087.002": 2,
+          "T1133": 2,
+          "T1486": 2,
+          "T1685.005": 1
+        },
+        "fact_status": {
+          "observed": 16,
+          "inferred": 2
+        },
+        "behavior_confidence": {
+          "high": 15,
+          "medium": 3
+        },
+        "mapping_confidence": {
+          "high": 14,
+          "medium": 5
+        },
+        "tactic_count": 11
+      },
+      "confirmed": {
+        "behaviors": 0,
+        "mappings": 0,
+        "unmapped_behaviors": 0,
+        "technique_count": 0,
+        "tactics": [],
+        "behaviors_by_technique": {},
+        "fact_status": {},
+        "behavior_confidence": {},
+        "mapping_confidence": {},
+        "tactic_count": 0
+      }
+    },
+    "unmapped_behaviors": 3,
+    "duplicate_rows_removed": 0,
+    "unresolved_evidence": 0,
+    "rejected_mappings": 0,
+    "quality_flags": 5,
+    "unresolved_review_items": 37,
+    "review": {
+      "accept": 0,
+      "edit": 0,
+      "reject": 0,
+      "insufficient_evidence": 0
+    },
+    "evidence_review": {
+      "edit": 0,
+      "reject": 0,
+      "insufficient_evidence": 0
+    },
+    "pending_evidence_review": 0,
+    "manual_edit_rate": null,
+    "automated_validation_pass_rate": 1.0,
+    "reference_comparison": {
+      "v20_unavailable": [
+        "T1070.001"
+      ],
+      "independent_teacher": {
+        "intersection": [
+          "T1003.003",
+          "T1021.001",
+          "T1021.004",
+          "T1033",
+          "T1059.001",
+          "T1070.004",
+          "T1078",
+          "T1087.002",
+          "T1486"
+        ],
+        "missing": [
+          "T1016",
+          "T1018",
+          "T1055.002",
+          "T1059.003",
+          "T1059.009",
+          "T1069.001",
+          "T1069.002",
+          "T1112",
+          "T1219",
+          "T1482",
+          "T1564.003",
+          "T1587",
+          "T1657"
+        ],
+        "extra": [
+          "T1021",
+          "T1074.001",
+          "T1133",
+          "T1685.005"
+        ]
+      },
+      "merged_handoff": {
+        "intersection": [
+          "T1003.003",
+          "T1021.001",
+          "T1021.004",
+          "T1033",
+          "T1059.001",
+          "T1070.004",
+          "T1078",
+          "T1087.002",
+          "T1486"
+        ],
+        "missing": [
+          "T1016",
+          "T1018",
+          "T1055.002",
+          "T1059.003",
+          "T1059.009",
+          "T1069.001",
+          "T1069.002",
+          "T1112",
+          "T1219",
+          "T1482",
+          "T1564.003",
+          "T1587",
+          "T1657"
+        ],
+        "extra": [
+          "T1021",
+          "T1074.001",
+          "T1133",
+          "T1685.005"
+        ]
+      }
+    }
+  },
+  "automatic_validation_failures": 0,
+  "human_review": "pending",
+  "status": "complete",
+  "calls": [
+    {
+      "stage": "behavior_extraction",
+      "label": "chunk-001",
+      "signature": "aa6621a658f26a4ed8fc1765cd6764a0c991f00623db8e409b21daeda52c7d7d",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\behavior_extraction\\chunk-001\\aa6621a658f26a4ed8fc1765cd6764a0c991f00623db8e409b21daeda52c7d7d\\attempt-650b215f14eb40f9960bc4c637e839b7.json"
+    },
+    {
+      "stage": "behavior_extraction",
+      "label": "chunk-002",
+      "signature": "748bf643c82ca8305b306cd1a07cdb060037a55d0039e5183b121ac595294c87",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\behavior_extraction\\chunk-002\\748bf643c82ca8305b306cd1a07cdb060037a55d0039e5183b121ac595294c87\\attempt-522f6d8db9a643d3a2081deb4586d875.json"
+    },
+    {
+      "stage": "behavior_extraction",
+      "label": "chunk-003",
+      "signature": "9dc3b42f28d3d402f6b48b14915bed4f8c44e7e8e266aa8ce7cf5ceb96841085",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\behavior_extraction\\chunk-003\\9dc3b42f28d3d402f6b48b14915bed4f8c44e7e8e266aa8ce7cf5ceb96841085\\attempt-8ead6b0c7e2541f7b3a392555f8d4042.json"
+    },
+    {
+      "stage": "behavior_extraction",
+      "label": "chunk-004",
+      "signature": "ac2e7058ace5a32c08ef23f81b12cecaeb00eb4eb734d1465bc2db7ee7a34ac1",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\behavior_extraction\\chunk-004\\ac2e7058ace5a32c08ef23f81b12cecaeb00eb4eb734d1465bc2db7ee7a34ac1\\attempt-a64647befccd4d479521b9a9e53c3365.json"
+    },
+    {
+      "stage": "behavior_extraction",
+      "label": "chunk-005",
+      "signature": "64292eb8884c7168df8a4ec08abb0dcd871dd760d09a85663595a105659f7897",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\behavior_extraction\\chunk-005\\64292eb8884c7168df8a4ec08abb0dcd871dd760d09a85663595a105659f7897\\attempt-1f54258ac5484612a471276dd4b26c51.json"
+    },
+    {
+      "stage": "behavior_extraction",
+      "label": "chunk-006",
+      "signature": "8368a012c8dcead76c381860e2df6048ecdf3592a8c016672f80634a31b9ea7b",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\behavior_extraction\\chunk-006\\8368a012c8dcead76c381860e2df6048ecdf3592a8c016672f80634a31b9ea7b\\attempt-b853df0cb57f47348ba040b918aefaeb.json"
+    },
+    {
+      "stage": "behavior_extraction",
+      "label": "chunk-007",
+      "signature": "60f18f5ed6f9c3b7fd69a3cbbb47b4b8e45362bbb8444aae4334ae26395653a6",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\behavior_extraction\\chunk-007\\60f18f5ed6f9c3b7fd69a3cbbb47b4b8e45362bbb8444aae4334ae26395653a6\\attempt-5e45d5c672e24faabcd52e2c12fc0bed.json"
+    },
+    {
+      "stage": "behavior_extraction",
+      "label": "chunk-008",
+      "signature": "0d69c9572762330a82b7312b1d4fb768b28ed3516a7b7a77ba42e23756ec7197",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\behavior_extraction\\chunk-008\\0d69c9572762330a82b7312b1d4fb768b28ed3516a7b7a77ba42e23756ec7197\\attempt-dae9c0fc91ea440b82edeff81c639c26.json"
+    },
+    {
+      "stage": "behavior_extraction",
+      "label": "chunk-009",
+      "signature": "b8bd6cb13373a400d23da0ecdf7ea159f4f5a66400ae31d32447c3e2131409d7",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\behavior_extraction\\chunk-009\\b8bd6cb13373a400d23da0ecdf7ea159f4f5a66400ae31d32447c3e2131409d7\\attempt-25afa642e27d4c8a960b35b6f766133d.json"
+    },
+    {
+      "stage": "behavior_extraction",
+      "label": "chunk-010",
+      "signature": "8f7f273c47bbeedcf8031e862df74bb475c2b2fa138dba2c9aa004ef2d79ebfb",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\behavior_extraction\\chunk-010\\8f7f273c47bbeedcf8031e862df74bb475c2b2fa138dba2c9aa004ef2d79ebfb\\attempt-1202aca6018d48fa9bd8f2993efb60ea.json"
+    },
+    {
+      "stage": "behavior_extraction",
+      "label": "chunk-011",
+      "signature": "d7b378d6f902c9ee0b3e9b17c1e0c5e8196d753e8f3827013f0969fb057c8630",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\behavior_extraction\\chunk-011\\d7b378d6f902c9ee0b3e9b17c1e0c5e8196d753e8f3827013f0969fb057c8630\\attempt-604582df215e4fc2a8f1d552ffe721f1.json"
+    },
+    {
+      "stage": "behavior_extraction",
+      "label": "chunk-012",
+      "signature": "ff4b367dae02f4fdb005009a89a637f3e258ff588af4e688d92c768ad94a4eac",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\behavior_extraction\\chunk-012\\ff4b367dae02f4fdb005009a89a637f3e258ff588af4e688d92c768ad94a4eac\\attempt-4478893626d84abaa3cd39be734d5efa.json"
+    },
+    {
+      "stage": "behavior_extraction",
+      "label": "chunk-013",
+      "signature": "40ee34193860b0a666c6a912d5b9ea4f27da5decfddec926e4c932840b0050f8",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\behavior_extraction\\chunk-013\\40ee34193860b0a666c6a912d5b9ea4f27da5decfddec926e4c932840b0050f8\\attempt-8aeaaafec20a4cb1be461c4aa0fa54f4.json"
+    },
+    {
+      "stage": "behavior_extraction",
+      "label": "chunk-014",
+      "signature": "66e9fd082f4c0c8b8f87bd0c030ab602385ad610154d3e72b99ea8f53f4e21d8",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\behavior_extraction\\chunk-014\\66e9fd082f4c0c8b8f87bd0c030ab602385ad610154d3e72b99ea8f53f4e21d8\\attempt-133acfca4f2d4a788edc9e0aa9a73148.json"
+    },
+    {
+      "stage": "behavior_extraction",
+      "label": "chunk-015",
+      "signature": "7661e717fae0d71142cc2b2d1166e9154957f9b226df92c8799b7641cc2d82bb",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\behavior_extraction\\chunk-015\\7661e717fae0d71142cc2b2d1166e9154957f9b226df92c8799b7641cc2d82bb\\attempt-395aa2a92b8e4ada95a2dfe1b326c05d.json"
+    },
+    {
+      "stage": "behavior_extraction",
+      "label": "chunk-016",
+      "signature": "e4d57f41b664755ef89e35ca721a091cdb566ab12fe46bb65b88ae9d214f4370",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\behavior_extraction\\chunk-016\\e4d57f41b664755ef89e35ca721a091cdb566ab12fe46bb65b88ae9d214f4370\\attempt-31f9b5d2688c4730b16293b07c451c47.json"
+    },
+    {
+      "stage": "behavior_extraction",
+      "label": "chunk-017",
+      "signature": "d3b226ece49ab3f1f7d022f1c5904b45899f6255bc26047f617484e261f1f045",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\behavior_extraction\\chunk-017\\d3b226ece49ab3f1f7d022f1c5904b45899f6255bc26047f617484e261f1f045\\attempt-72290cb039774105b8c138307c8c1aa2.json"
+    },
+    {
+      "stage": "behavior_extraction",
+      "label": "chunk-018",
+      "signature": "eadc3f69782f2601ee86caba90f3530f6a2b0957cbeff5f9788cb7273fdd8084",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\behavior_extraction\\chunk-018\\eadc3f69782f2601ee86caba90f3530f6a2b0957cbeff5f9788cb7273fdd8084\\attempt-b399ede64020496a8549d08d1d11107d.json"
+    },
+    {
+      "stage": "behavior_extraction",
+      "label": "chunk-019",
+      "signature": "9738dcbd7bee8affa5d946bf6e41cdd5b10666e2254362dc9677c4f5c616c263",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\behavior_extraction\\chunk-019\\9738dcbd7bee8affa5d946bf6e41cdd5b10666e2254362dc9677c4f5c616c263\\attempt-3027c20e022543f3a988fcac3bb390be.json"
+    },
+    {
+      "stage": "global_deduplication",
+      "label": "global",
+      "signature": "71cc6cfba7903567b6d567949a8c2f1e88e6d48dcd8784586ff444c37ab66148",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\global_deduplication\\global\\71cc6cfba7903567b6d567949a8c2f1e88e6d48dcd8784586ff444c37ab66148\\attempt-67089ba70b094ed69517d3a3756c83e5.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P001",
+      "signature": "820f6f95170e36799cc80da8bfb3ea9e4edb764e164328f3453b16652cbba400",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P001\\820f6f95170e36799cc80da8bfb3ea9e4edb764e164328f3453b16652cbba400\\attempt-02230135bc244cafb642fd96de6850b9.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P001",
+      "signature": "8b2d4199a38074d5fa189c192f15094fbfc688e31e9e41c6ba1f512c6d4e64f3",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P001\\8b2d4199a38074d5fa189c192f15094fbfc688e31e9e41c6ba1f512c6d4e64f3\\attempt-69fd8224170242e49c78ab149ef04c16.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P002",
+      "signature": "a69ae215a08596057cacd04a957de5f07739746329389065b4267e608613d417",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P002\\a69ae215a08596057cacd04a957de5f07739746329389065b4267e608613d417\\attempt-93b6852678ad402992f43a602fe63839.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P002",
+      "signature": "fd7c8fe8cae3019e140b514fa2c0bc9ec778f46c70dbdc4c845f030b92c90dee",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P002\\fd7c8fe8cae3019e140b514fa2c0bc9ec778f46c70dbdc4c845f030b92c90dee\\attempt-ee2f5090576a41b69a1371d304695aa9.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P003",
+      "signature": "3bdd94c2c67b3c1e109c02b70335c8b4bc81ddfacad7f24476d5738d5d0bb2ea",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P003\\3bdd94c2c67b3c1e109c02b70335c8b4bc81ddfacad7f24476d5738d5d0bb2ea\\attempt-5e4b75c39b6549398dfb2ec79f38bf75.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P003",
+      "signature": "7a263c2a02777f614d043e2e444d9fd96b303c496645ec5ad6b64469bdaba450",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P003\\7a263c2a02777f614d043e2e444d9fd96b303c496645ec5ad6b64469bdaba450\\attempt-7a884e02d35c47308ca289f63c21a2e6.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P004",
+      "signature": "017f504b0056fa85765cb207d4be08365a6f774f225cd864b64dab53c2a513b0",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P004\\017f504b0056fa85765cb207d4be08365a6f774f225cd864b64dab53c2a513b0\\attempt-87aa7a4c884c44f68ec81fbe05c391f2.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P004",
+      "signature": "e72377d5864e225344c39978fc3fe9fb35eebed16c3c8a318955faecc9c8a002",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P004\\e72377d5864e225344c39978fc3fe9fb35eebed16c3c8a318955faecc9c8a002\\attempt-56e410736cb449039c3be7dd195b3e81.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P005",
+      "signature": "9e58bf888173b042e56b10a1cfef4558717f27b78357242f7491f2eefb7ac4e9",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P005\\9e58bf888173b042e56b10a1cfef4558717f27b78357242f7491f2eefb7ac4e9\\attempt-31d7ba6099344ec4901259310840b854.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P005",
+      "signature": "2c2024cd09b05863fab0120c1e7cfc3cc76bcb3a90a417b23ce0ff0daea6d249",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P005\\2c2024cd09b05863fab0120c1e7cfc3cc76bcb3a90a417b23ce0ff0daea6d249\\attempt-f1c02276ef054ddba68115d013994935.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P006",
+      "signature": "d651240cb8025439b7c90195986d31d05af03b5d1f040b3a0daec26a44fd99a5",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P006\\d651240cb8025439b7c90195986d31d05af03b5d1f040b3a0daec26a44fd99a5\\attempt-91ad5448069441bb9bea0717ffb2bc4b.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P006",
+      "signature": "9e21dc64fc09dd7af1639242e635db27c699d9982b7b63ef11fa4ca282bf0c52",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P006\\9e21dc64fc09dd7af1639242e635db27c699d9982b7b63ef11fa4ca282bf0c52\\attempt-95894f71078e4c7cbd599521dc387c2e.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P007",
+      "signature": "93c24ebf0af0fa35ac597a0f84dbbc59eb13c4ae0e3e1a42751eaeb7782948a3",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P007\\93c24ebf0af0fa35ac597a0f84dbbc59eb13c4ae0e3e1a42751eaeb7782948a3\\attempt-2b1613c7437f46cebba5cf1464e1c9d1.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P007",
+      "signature": "83b3561b66be0ec8205ec814647e47be12218c527ed6acebfea191bfa4883371",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P007\\83b3561b66be0ec8205ec814647e47be12218c527ed6acebfea191bfa4883371\\attempt-2fd55131790b48a28fa7490a90e5d5bd.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P008",
+      "signature": "f350ce075aea37b06b39ccac65d310b802da3e6f7a433bb867b22b8dc6d3f4b4",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P008\\f350ce075aea37b06b39ccac65d310b802da3e6f7a433bb867b22b8dc6d3f4b4\\attempt-467662a886a743a88f2644cbed28aa38.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P008",
+      "signature": "0e57258139c0022265c8e573aaa647f8860481e4a8ff4fc1a518b6d3e6bcaffb",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P008\\0e57258139c0022265c8e573aaa647f8860481e4a8ff4fc1a518b6d3e6bcaffb\\attempt-a93a24343d3247e88f2a4502a0463c87.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P009",
+      "signature": "58eb8b9fdd0d2d92ed1cfcee6f4b9e86111c25031ae480a7a74d3f3cfa29ed63",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P009\\58eb8b9fdd0d2d92ed1cfcee6f4b9e86111c25031ae480a7a74d3f3cfa29ed63\\attempt-cec4943178b8417b8cf3513fa662fa05.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P009",
+      "signature": "c53b6bc3a18e18839f93b4aa46cfba2872719fc415ec3510f44f747bdcd5c1cf",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P009\\c53b6bc3a18e18839f93b4aa46cfba2872719fc415ec3510f44f747bdcd5c1cf\\attempt-dc76a1f9566845f797506bb6b647ac35.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P010",
+      "signature": "a25e498036b32d4e6b70890c07b2b43fecacb4bf2ce87d2ddf0d0b63ef2d17c2",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P010\\a25e498036b32d4e6b70890c07b2b43fecacb4bf2ce87d2ddf0d0b63ef2d17c2\\attempt-51d693945e52421bb11f62c2365746b3.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P010",
+      "signature": "e7fbafaeb9c398ddfb3fd58ed2b9f3085e498ec643731375e31f8f88cb5fc8b2",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P010\\e7fbafaeb9c398ddfb3fd58ed2b9f3085e498ec643731375e31f8f88cb5fc8b2\\attempt-919700ccfba04e119c84f9b6059a63aa.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P011",
+      "signature": "b9f00af7452ccc52ac589cdbdc05a737735ae73ee5227d66096695bf907c3635",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P011\\b9f00af7452ccc52ac589cdbdc05a737735ae73ee5227d66096695bf907c3635\\attempt-a6002eef3b884b51a0a1ba3814adcb1f.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P011",
+      "signature": "d4d84bd4f6424eacb2ab55f78eab5b68e3695257b24b34e6d46ce9ef06628d5b",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P011\\d4d84bd4f6424eacb2ab55f78eab5b68e3695257b24b34e6d46ce9ef06628d5b\\attempt-521d911abfa3466e8f4d18e3327b8fec.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P012",
+      "signature": "b42f8cc155f6b07d5477d203cc0c0490351a2a20c44b264788860efdab81c8fa",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P012\\b42f8cc155f6b07d5477d203cc0c0490351a2a20c44b264788860efdab81c8fa\\attempt-1b6288200aa84194b1c15298bf6b6f4a.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P012",
+      "signature": "b2ce76cedacf6b477fecc1554436e601058360ecfc560c1a8181af6acde0ad00",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P012\\b2ce76cedacf6b477fecc1554436e601058360ecfc560c1a8181af6acde0ad00\\attempt-1758ffdd5f274f2ca6f8379e9282832f.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P013",
+      "signature": "9195c8248d4da3af9e1487bb74226b9d8b8c82f6623e987157bafecfd32cf317",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P013\\9195c8248d4da3af9e1487bb74226b9d8b8c82f6623e987157bafecfd32cf317\\attempt-a4718043d91442b6a71810446fce01c5.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P013",
+      "signature": "f08da0fbbb79f82856a6be90a87953f5fc789c9b64aa91930a8e87a3194bdd86",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P013\\f08da0fbbb79f82856a6be90a87953f5fc789c9b64aa91930a8e87a3194bdd86\\attempt-557f121378534f7c948dcb6d22bf9249.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P014",
+      "signature": "5cfa139c55554cf047a366f37b5ce1e474aebd9baf0380220c67f5a3f34bd3a3",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P014\\5cfa139c55554cf047a366f37b5ce1e474aebd9baf0380220c67f5a3f34bd3a3\\attempt-6d2f60ea2bbd42d38ff35099f3c0bf4a.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P014",
+      "signature": "4a654830421459a8371e7d66b8957400d9c8106747de03a4514a55fcb6866ee2",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P014\\4a654830421459a8371e7d66b8957400d9c8106747de03a4514a55fcb6866ee2\\attempt-db0ac9ec21c24aeca17beee3e45d6638.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P015",
+      "signature": "b13d8a5da9385d8ac43de26ae2be838f4889d13234fb51ba2603f3d0b24b86f0",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P015\\b13d8a5da9385d8ac43de26ae2be838f4889d13234fb51ba2603f3d0b24b86f0\\attempt-6ebaf3b00f094c3890f076aec7bea3d2.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P015",
+      "signature": "e28dc3f1252714de74d17b45b35e7d77af61f729f7deb2bf57e032c49c99b495",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P015\\e28dc3f1252714de74d17b45b35e7d77af61f729f7deb2bf57e032c49c99b495\\attempt-2c0c11ad62b54ed692794732e28df715.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P016",
+      "signature": "ac10a4165af91879ea91e79c17a8d783d0936330e2dfc04889ee7eab49574072",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P016\\ac10a4165af91879ea91e79c17a8d783d0936330e2dfc04889ee7eab49574072\\attempt-c538e136ecdc4b62b4a59de6d6ca963f.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P016",
+      "signature": "3c193457c294353c435a414f917b1fe08682c2c6a0e0ca7f76bc78b6f35fdbcc",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P016\\3c193457c294353c435a414f917b1fe08682c2c6a0e0ca7f76bc78b6f35fdbcc\\attempt-b78238c0c5e84b2887cf0937744d93a3.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P017",
+      "signature": "61a455fd9165bcd76152393bcbbcc73d3760bf2a68566c7da325ecf0638dc7a6",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P017\\61a455fd9165bcd76152393bcbbcc73d3760bf2a68566c7da325ecf0638dc7a6\\attempt-68546a86680f4de29fe7e7a196cc3bbb.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P017",
+      "signature": "26e724ada64418631a3cfd6a9a35413ab572496ed71170fe6ca6e79ab9415fd1",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P017\\26e724ada64418631a3cfd6a9a35413ab572496ed71170fe6ca6e79ab9415fd1\\attempt-3d08f9cebcc04cdeb61735242ed00ccb.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P018",
+      "signature": "1b614dc0aae07badae9d9ec70b723d6d498113ebae46c26caba4fb383b230fa1",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P018\\1b614dc0aae07badae9d9ec70b723d6d498113ebae46c26caba4fb383b230fa1\\attempt-4bc0bd9617524c50acb6ece4996969a3.json"
+    },
+    {
+      "stage": "attack_mapping",
+      "label": "AA23-319A-P018",
+      "signature": "42697a9d994a8e27e70b037fd6e8066eec5143ac8ade5bb6df5db3e4252b11dc",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\attack_mapping\\AA23-319A-P018\\42697a9d994a8e27e70b037fd6e8066eec5143ac8ade5bb6df5db3e4252b11dc\\attempt-2bbf6458fead4b2a86b9ea084cfef3b5.json"
+    },
+    {
+      "stage": "annotation_quality_review",
+      "label": "review-001",
+      "signature": "01bbf60e26de55b10ee7c652289fa57337fa0214072031b9a2ecbc8aa1809b05",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\annotation_quality_review\\review-001\\01bbf60e26de55b10ee7c652289fa57337fa0214072031b9a2ecbc8aa1809b05\\attempt-235f45fdc2cc4da48974183b2c3ce253.json"
+    },
+    {
+      "stage": "annotation_quality_review",
+      "label": "review-002",
+      "signature": "9a8ada505c8423a919c5e333550638ee126735959db63fcc9fe9bb709f3fb838",
+      "model": {
+        "provider": "codex-offline",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "high",
+        "worker": "gpt-6-luna"
+      },
+      "raw_file": "E:\\Threat2Detect\\Threat2Detect-main\\artifacts\\runs\\teacher_annotations\\AA23-319A\\raw_teacher_outputs\\annotation_quality_review\\review-002\\9a8ada505c8423a919c5e333550638ee126735959db63fcc9fe9bb709f3fb838\\attempt-56f6b235a94d40179513c0db01c76b19.json"
+    }
+  ],
+  "finished_at": "2026-11-20T17:45:02.196080+00:00",
+  "last_refresh_status": "complete"
+}

@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:32:27.078914+00:00",
+  "response": "{\"job_id\": \"68fc8e5dbdaf2f5cb6ccefab973351524e3eba2ddbd79d453606467f0837c2dc\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1595.002\", \"confidence\": \"high\", \"rationale\": \"The actors scanned a public-facing GeoServer to identify a vulnerability, directly matching vulnerability scanning.\"}], \"additional_ids\": [], \"assessment\": \"The evidence supports vulnerability scanning; it does not show exploitation during this reconnaissance behavior.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

@@ -1,0 +1,20 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1595.002",
+        "confidence": "high",
+        "rationale": "The behavior explicitly identifies vulnerability scanning, matching the Vulnerability Scanning sub-technique."
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "The report does not state that the scanning targeted IP blocks or involved exploitation; the specific vulnerability-scanning definition is supported."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-c8d2da6166ff43a18b88ea62e4ed5b5e.json"
+}

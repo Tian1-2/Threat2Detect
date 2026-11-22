@@ -1,0 +1,22 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1110",
+        "rationale": "The report explicitly states the actors attempted brute force against login credentials for exploited web services.",
+        "confidence": "high"
+      }
+    ],
+    "additional_ids": [
+      "T1110.001"
+    ],
+    "assessment": "Credential brute force is explicit and the attempt outcome is unknown. Password spraying is not supported by the report."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-f73f2849267e4d018b1f7f89e8daa93f.json"
+}

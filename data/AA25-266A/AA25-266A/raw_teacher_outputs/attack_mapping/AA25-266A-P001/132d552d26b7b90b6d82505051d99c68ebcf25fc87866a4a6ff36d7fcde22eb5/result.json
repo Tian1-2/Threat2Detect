@@ -1,0 +1,20 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1190",
+        "confidence": "high",
+        "rationale": "The behavior describes exploiting a vulnerability on public-facing GeoServers to gain initial access, matching Exploit Public-Facing Application."
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "The report supports application exploitation for initial access. The expanded candidates do not support additional effects such as privilege escalation or credential access for this behavior."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-bb4b3ed122c44469b284b8607fbe68f7.json"
+}

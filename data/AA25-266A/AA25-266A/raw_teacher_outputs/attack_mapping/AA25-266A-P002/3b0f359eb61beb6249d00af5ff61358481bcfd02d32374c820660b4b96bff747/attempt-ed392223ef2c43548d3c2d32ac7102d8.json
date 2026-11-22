@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:33:47.082923+00:00",
+  "response": "{\"job_id\": \"0f84cf78ab7338298e5aadc102ed82c6aa39eb05acda1a564154d074c129cf80\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1190\", \"confidence\": \"high\", \"rationale\": \"The behavior states that the actors exploited a vulnerability in a public-facing GeoServer to gain access, matching Exploit Public-Facing Application.\"}], \"additional_ids\": [], \"assessment\": \"The evidence supports exploitation of the public-facing GeoServer. Although the behavior also says persistence was established, it does not identify the mechanism, so no persistence technique is assigned.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

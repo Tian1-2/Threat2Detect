@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:33:35.010506+00:00",
+  "response": "{\"job_id\": \"901157b981aee1aa66b305fd73081c6cd03f7fc1dc5b95ba713d9ce704005bd6\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1110\", \"rationale\": \"The report explicitly states the actors attempted brute force against credentials for exploited web services.\", \"confidence\": \"high\"}, {\"technique_id\": \"T1110.001\", \"rationale\": \"The described brute force effort against login credentials is password guessing; no evidence indicates password spraying.\", \"confidence\": \"high\"}], \"additional_ids\": [], \"assessment\": \"The attempt is explicit but its success is not stated. Password spraying and credential theft techniques are unsupported.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

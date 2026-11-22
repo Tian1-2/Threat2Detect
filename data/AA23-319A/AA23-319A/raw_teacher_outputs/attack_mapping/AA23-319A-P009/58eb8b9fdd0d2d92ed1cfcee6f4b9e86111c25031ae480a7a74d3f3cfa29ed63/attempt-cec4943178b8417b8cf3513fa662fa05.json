@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:42:24.025489+00:00",
+  "response": "{\"job_id\": \"01fc15902c6e9a7da4c4e970dead250cfaab21e9fb06f6c49ac7d5ae870720b0\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [], \"additional_ids\": [\"T1087.002\", \"T1059.001\", \"T1555\"], \"assessment\": \"PowerView use is explicit, and the report says it supported reconnaissance and credential harvesting. The evidence does not identify the specific discovery commands or credential access mechanism needed to select a supplied technique confidently.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

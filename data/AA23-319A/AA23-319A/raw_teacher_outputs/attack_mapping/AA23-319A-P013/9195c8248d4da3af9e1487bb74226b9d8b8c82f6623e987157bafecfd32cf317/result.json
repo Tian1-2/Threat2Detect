@@ -1,0 +1,20 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1486",
+        "rationale": "The ransomware encrypts targeted victim files, directly matching Data Encrypted for Impact.",
+        "confidence": "high"
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "The observed file encryption and extension change are part of the same impact behavior; the extension change alone does not establish masquerading."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-a4718043d91442b6a71810446fce01c5.json"
+}

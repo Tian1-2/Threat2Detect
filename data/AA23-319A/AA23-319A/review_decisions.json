@@ -1,0 +1,306 @@
+{
+  "proposal_hash": "2403d2dee53ad6099c008a9dde0a73a5168678125e08d03461dde6536b39340c",
+  "evidence_queue_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "reviewer": "project_lead_via_chat_2026-11-22",
+  "decisions": {
+    "AA23-319A-PM002": {
+      "action": "accept",
+      "scope": "report_alignment_only",
+      "reason": "Exact report technique ID match.",
+      "replacement_behavior_ids": [
+        "AA23-319A-P001"
+      ],
+      "applied": true
+    },
+    "AA23-319A-PM003": {
+      "action": "accept",
+      "scope": "report_alignment_only",
+      "reason": "Exact report technique ID match.",
+      "replacement_behavior_ids": [
+        "AA23-319A-P002"
+      ],
+      "applied": true
+    },
+    "AA23-319A-PM005": {
+      "action": "accept",
+      "scope": "report_alignment_only",
+      "reason": "Exact report technique ID match.",
+      "replacement_behavior_ids": [
+        "AA23-319A-P003"
+      ],
+      "applied": true
+    },
+    "AA23-319A-PM006": {
+      "action": "accept",
+      "scope": "report_alignment_only",
+      "reason": "Exact report technique ID match.",
+      "replacement_behavior_ids": [
+        "AA23-319A-P003"
+      ],
+      "applied": true
+    },
+    "AA23-319A-PM007": {
+      "action": "accept",
+      "scope": "report_alignment_only",
+      "reason": "Exact report technique ID match.",
+      "replacement_behavior_ids": [
+        "AA23-319A-P004"
+      ],
+      "applied": true
+    },
+    "AA23-319A-PM009": {
+      "action": "accept",
+      "scope": "report_alignment_only",
+      "reason": "Exact report technique ID match.",
+      "replacement_behavior_ids": [
+        "AA23-319A-P006"
+      ],
+      "applied": true
+    },
+    "AA23-319A-PM010": {
+      "action": "accept",
+      "scope": "report_alignment_only",
+      "reason": "Exact report technique ID match.",
+      "replacement_behavior_ids": [
+        "AA23-319A-P007"
+      ],
+      "applied": true
+    },
+    "AA23-319A-PM011": {
+      "action": "accept",
+      "scope": "report_alignment_only",
+      "reason": "Report T1070.001 is revoked by T1685.005 in the fixed Enterprise v20 STIX catalog. Same Windows event-log clearing behavior.",
+      "replacement_behavior_ids": [
+        "AA23-319A-P008"
+      ],
+      "applied": true
+    },
+    "AA23-319A-PM012": {
+      "action": "accept",
+      "scope": "report_alignment_only",
+      "reason": "Exact report technique ID match.",
+      "replacement_behavior_ids": [
+        "AA23-319A-P009"
+      ],
+      "applied": true
+    },
+    "AA23-319A-PM013": {
+      "action": "accept",
+      "scope": "report_alignment_only",
+      "reason": "Exact report technique ID match.",
+      "replacement_behavior_ids": [
+        "AA23-319A-P009"
+      ],
+      "applied": true
+    },
+    "AA23-319A-PM016": {
+      "action": "accept",
+      "scope": "report_alignment_only",
+      "reason": "Exact report technique ID match.",
+      "replacement_behavior_ids": [
+        "AA23-319A-P012"
+      ],
+      "applied": true
+    },
+    "AA23-319A-PM017": {
+      "action": "accept",
+      "scope": "report_alignment_only",
+      "reason": "Exact report technique ID match.",
+      "replacement_behavior_ids": [
+        "AA23-319A-P013"
+      ],
+      "applied": true
+    },
+    "AA23-319A-PM018": {
+      "action": "accept",
+      "scope": "report_alignment_only",
+      "reason": "Exact report technique ID match.",
+      "replacement_behavior_ids": [
+        "AA23-319A-P014"
+      ],
+      "applied": true
+    },
+    "AA23-319A-PM019": {
+      "action": "accept",
+      "scope": "report_alignment_only",
+      "reason": "Exact report technique ID match.",
+      "replacement_behavior_ids": [
+        "AA23-319A-P015"
+      ],
+      "applied": true
+    },
+    "AA23-319A-PM014": {
+      "action": "reject",
+      "reason": "The evidence describes staging malicious tools and scripts for encryption, not collected victim data awaiting exfiltration.",
+      "original_mapping": {
+        "technique_id": "T1074.001",
+        "rationale": "The report says actors created a central C: drive staging directory to host malicious executables, supporting local data staging.",
+        "confidence": "high",
+        "origin": "agent_proposal",
+        "review_status": "draft",
+        "behavior_id": "AA23-319A-P010",
+        "mapping_id": "AA23-319A-PM014",
+        "technique_name": "Local Data Staging",
+        "retrieved_candidate_ids": [
+          "T1547.001",
+          "T1564.006",
+          "T1189",
+          "T1218.011",
+          "T1553.001",
+          "T1574.001",
+          "T1074.001",
+          "T1564.012",
+          "T1074.002",
+          "T1601.001",
+          "T1105",
+          "T1570",
+          "T1027.011",
+          "T1608",
+          "T1677",
+          "T1608.002",
+          "T1197",
+          "T1195.001",
+          "T1059.013",
+          "T1220",
+          "T1608.004",
+          "T1564.001",
+          "T1497.001",
+          "T1659"
+        ]
+      },
+      "replacement_behavior_ids": [
+        "AA23-319A-P010"
+      ],
+      "applied": true
+    },
+    "AA23-319A-PM015": {
+      "action": "reject",
+      "reason": "The evidence describes staging malicious tools and scripts for encryption, not collected victim data awaiting exfiltration.",
+      "original_mapping": {
+        "technique_id": "T1074.001",
+        "rationale": "The host-named files were stored in the in folder inside the local C: drive staging directory, supporting local data staging.",
+        "confidence": "medium",
+        "origin": "agent_proposal",
+        "review_status": "draft",
+        "behavior_id": "AA23-319A-P011",
+        "mapping_id": "AA23-319A-PM015",
+        "technique_name": "Local Data Staging",
+        "retrieved_candidate_ids": [
+          "T1574.001",
+          "T1027.011",
+          "T1564.009",
+          "T1074",
+          "T1074.002",
+          "T1555.004",
+          "T1074.001",
+          "T1553.005",
+          "T1564.012",
+          "T1608.002",
+          "T1105",
+          "T1197",
+          "T1124",
+          "T1677",
+          "T1080",
+          "T1119",
+          "T1601.001",
+          "T1608",
+          "T1480",
+          "T1195.001",
+          "T1220",
+          "T1570",
+          "T1176.001",
+          "T1564.006"
+        ]
+      },
+      "replacement_behavior_ids": [
+        "AA23-319A-P011"
+      ],
+      "applied": true
+    },
+    "AA23-319A-PM001": {
+      "action": "accept",
+      "reason": "User approved retaining the additional technique based on explicit VPN access or PsExec remote execution evidence.",
+      "replacement_behavior_ids": [
+        "AA23-319A-P001"
+      ],
+      "applied": true
+    },
+    "AA23-319A-PM004": {
+      "action": "accept",
+      "reason": "User approved retaining the additional technique based on explicit VPN access or PsExec remote execution evidence.",
+      "replacement_behavior_ids": [
+        "AA23-319A-R001"
+      ],
+      "applied": true
+    },
+    "AA23-319A-PM008": {
+      "action": "accept",
+      "reason": "User approved retaining the additional technique based on explicit VPN access or PsExec remote execution evidence.",
+      "replacement_behavior_ids": [
+        "AA23-319A-P005"
+      ],
+      "applied": true
+    },
+    "AA23-319A-P001": {
+      "action": "accept",
+      "reason": "Behavior retained by user-approved review; unsupported data-staging mapping removed where applicable.",
+      "replacement_behavior_ids": [
+        "AA23-319A-P001"
+      ],
+      "applied": true
+    },
+    "AA23-319A-P005": {
+      "action": "accept",
+      "reason": "Behavior retained by user-approved review; unsupported data-staging mapping removed where applicable.",
+      "replacement_behavior_ids": [
+        "AA23-319A-P005"
+      ],
+      "applied": true
+    },
+    "AA23-319A-P010": {
+      "action": "accept",
+      "reason": "Behavior retained by user-approved review; unsupported data-staging mapping removed where applicable.",
+      "replacement_behavior_ids": [
+        "AA23-319A-P010"
+      ],
+      "applied": true
+    },
+    "AA23-319A-P011": {
+      "action": "accept",
+      "reason": "Behavior retained by user-approved review; unsupported data-staging mapping removed where applicable.",
+      "replacement_behavior_ids": [
+        "AA23-319A-P011"
+      ],
+      "applied": true
+    },
+    "AA23-319A-P002": {
+      "action": "edit",
+      "reason": "Separate RDP from VPN; VPN summary overlaps P001 and must not count as an independent VPN incident.",
+      "original_behavior": {
+        "action": "Created RDP connections for lateral movement and established VPN access",
+        "object": "victim network",
+        "fact_status": "observed",
+        "confidence": "high",
+        "context_note": "The advisory describes these as living-off-the-land techniques used by Rhysida actors.",
+        "scope": "Rhysida activity across reported victims",
+        "behavior_id": "AA23-319A-P002",
+        "evidence": {
+          "quote": "Analysis identified Rhysida actors using living off the land techniques, such as creating Remote Desktop \nProtocol (RDP) connections for lateral movement, establishing VPN access, and utilizing \nPowerShell. Living off the land techniques include using native (built into the operating \nsystem) network administration tools to perform operations. This allows the actors to evade detection by \nblending in with normal Windows systems and network activities.",
+          "pdf_page": 4,
+          "char_start": 8606,
+          "char_end": 9061
+        },
+        "origin": "agent_proposal",
+        "review_status": "draft"
+      },
+      "replacement_behavior_ids": [
+        "AA23-319A-P002",
+        "AA23-319A-R001"
+      ],
+      "applied": true
+    }
+  },
+  "evidence_decisions": {},
+  "decision_format": "Project-local audit record; no importer is present.",
+  "review_basis": "User requested AA25 workflow: retain report-aligned IDs; review extras."
+}

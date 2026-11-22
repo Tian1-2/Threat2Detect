@@ -1,0 +1,20 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1190",
+        "rationale": "The report attributes the separate GeoServer 2 initial access to exploitation of the same vulnerability on the public-facing GeoServer, matching exploitation of a public-facing application.",
+        "confidence": "high"
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "This is a distinct GeoServer 2 access occurrence, supported by the report context."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-7bccd56e6c694b74a9da2364809cfde1.json"
+}

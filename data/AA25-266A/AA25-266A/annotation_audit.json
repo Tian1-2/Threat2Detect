@@ -1,0 +1,2562 @@
+{
+  "evidence_failures": [],
+  "quote_repairs": [],
+  "duplicates": [
+    {
+      "keep": "AA25-266A-P005",
+      "drop": "AA25-266A-P001",
+      "reason": "Both describe exploitation of CVE-2024-36401 to gain initial access to GeoServer 1 and GeoServer 2; P005 gives the same paired-host scope with more specific technique context.",
+      "applied": false
+    },
+    {
+      "keep": "AA25-266A-P005",
+      "drop": "AA25-266A-P028",
+      "reason": "P028 is the timeline’s GeoServer 1 instance of initial access already included in P005’s two-GeoServer exploitation behavior.",
+      "applied": false
+    },
+    {
+      "keep": "AA25-266A-P005",
+      "drop": "AA25-266A-P029",
+      "reason": "P029 is the timeline’s GeoServer 2 instance of initial access already included in P005’s two-GeoServer exploitation behavior.",
+      "applied": false
+    },
+    {
+      "keep": "AA25-266A-P024",
+      "drop": "AA25-266A-P021",
+      "reason": "Both describe using Stowaway to establish command and control; P024 identifies the successful outbound connection and modified tool, while P021 is the broader summary.",
+      "applied": false
+    }
+  ],
+  "mapping_checks": [
+    {
+      "behavior_id": "AA25-266A-P001",
+      "initial_candidates": [
+        "T1210",
+        "T1190",
+        "T1195.001",
+        "T1677",
+        "T1068",
+        "T1686.002",
+        "T1219.003",
+        "T1136.001",
+        "T1668",
+        "T1204.005"
+      ],
+      "final_candidates": [
+        "T1210",
+        "T1190",
+        "T1195.001",
+        "T1677",
+        "T1068",
+        "T1686.002",
+        "T1219.003",
+        "T1136.001",
+        "T1668",
+        "T1204.005",
+        "T1588.005",
+        "T1203",
+        "T1587.004",
+        "T1133",
+        "T1189",
+        "T1211",
+        "T1078.001",
+        "T1564.006",
+        "T1212",
+        "T1596.005",
+        "T1204.001",
+        "T1046",
+        "T1597.001",
+        "T1078"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1190",
+            "confidence": "high",
+            "rationale": "The report identifies exploitation of a vulnerability in public-facing GeoServers to gain initial access, matching exploitation of a public-facing application."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The evidence supports public-facing application exploitation. The cited activity does not establish exploitation of remote services, client execution, or any other candidate behavior."
+      },
+      "assessment": "The report supports application exploitation for initial access. The expanded candidates do not support additional effects such as privilege escalation or credential access for this behavior.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1190",
+            "confidence": "high",
+            "rationale": "The behavior describes exploiting a vulnerability on public-facing GeoServers to gain initial access, matching Exploit Public-Facing Application."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The report supports application exploitation for initial access. The expanded candidates do not support additional effects such as privilege escalation or credential access for this behavior."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P002",
+      "initial_candidates": [
+        "T1190",
+        "T1136.001",
+        "T1195",
+        "T1210",
+        "T1686.002",
+        "T1677",
+        "T1133",
+        "T1189",
+        "T1203",
+        "T1588.005"
+      ],
+      "final_candidates": [
+        "T1190",
+        "T1136.001",
+        "T1195",
+        "T1210",
+        "T1686.002",
+        "T1677",
+        "T1133",
+        "T1189",
+        "T1203",
+        "T1588.005",
+        "T1195.001",
+        "T1078.001",
+        "T1546.008",
+        "T1564.006",
+        "T1592.002",
+        "T1187",
+        "T1550.001",
+        "T1068",
+        "T1553.004",
+        "T1671",
+        "T1574.001",
+        "T1588.002",
+        "T1055.001",
+        "T1212"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1190",
+            "confidence": "high",
+            "rationale": "The behavior explicitly describes exploiting a vulnerability to gain access to the agency network through the report’s public-facing GeoServer."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The evidence supports exploitation of a public-facing application. It does not identify account creation, supply-chain compromise, or another persistence mechanism for this behavior."
+      },
+      "assessment": "The evidence supports exploitation of the public-facing GeoServer. Although the behavior also says persistence was established, it does not identify the mechanism, so no persistence technique is assigned.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1190",
+            "confidence": "high",
+            "rationale": "The behavior states that the actors exploited a vulnerability in a public-facing GeoServer to gain access, matching Exploit Public-Facing Application."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The evidence supports exploitation of the public-facing GeoServer. Although the behavior also says persistence was established, it does not identify the mechanism, so no persistence technique is assigned."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P003",
+      "initial_candidates": [
+        "T1078.001",
+        "T1210",
+        "T1195.001",
+        "T1611",
+        "T1574.001",
+        "T1677",
+        "T1133",
+        "T1555.003",
+        "T1505.003",
+        "T1546.012"
+      ],
+      "final_candidates": [
+        "T1078.001",
+        "T1210",
+        "T1195.001",
+        "T1611",
+        "T1574.001",
+        "T1677",
+        "T1133",
+        "T1555.003",
+        "T1505.003",
+        "T1546.012",
+        "T1105",
+        "T1546.004",
+        "T1564.006",
+        "T1550.001",
+        "T1059.004",
+        "T1526",
+        "T1552.003",
+        "T1037.004",
+        "T1053.002",
+        "T1037.005",
+        "T1190",
+        "T1059.002",
+        "T1104",
+        "T1574.011"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1505.003",
+            "confidence": "high",
+            "rationale": "The behavior explicitly reports uploading or attempting to upload web shells, which is direct evidence for the Web Shell technique."
+          }
+        ],
+        "additional_ids": [
+          "T1105"
+        ],
+        "assessment": "The shell upload supports Web Shell. The report also mentions scripts designed for several functions, but this behavior does not establish a particular lateral-movement mechanism."
+      },
+      "assessment": "The expanded definitions support both web shell use and ingress tool transfer. Lateral movement is explicit, but the behavior does not identify a specific remote-service mechanism.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1505.003",
+            "confidence": "high",
+            "rationale": "The behavior explicitly reports uploading or attempting to upload web shells, which directly matches the Web Shell technique."
+          },
+          {
+            "technique_id": "T1105",
+            "confidence": "high",
+            "rationale": "The behavior reports uploading web shells and scripts onto the servers, which is evidence of transferring files into the compromised environment."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The expanded definitions support both web shell use and ingress tool transfer. Lateral movement is explicit, but the behavior does not identify a specific remote-service mechanism."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P004",
+      "initial_candidates": [
+        "T1190",
+        "T1665",
+        "T1210",
+        "T1596.005",
+        "T1595.002",
+        "T1686.002",
+        "T1211",
+        "T1068",
+        "T1564.006",
+        "T1587.004"
+      ],
+      "final_candidates": [
+        "T1190",
+        "T1665",
+        "T1210",
+        "T1596.005",
+        "T1595.002",
+        "T1686.002",
+        "T1211",
+        "T1068",
+        "T1564.006",
+        "T1587.004",
+        "T1598.003",
+        "T1596.004",
+        "T1588.005",
+        "T1681",
+        "T1595",
+        "T1596.003",
+        "T1590.005",
+        "T1677",
+        "T1589.001",
+        "T1133",
+        "T1589.002",
+        "T1590.002",
+        "T1595.001",
+        "T1597.001"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1595.002",
+            "confidence": "high",
+            "rationale": "The actors scanned a public-facing GeoServer to identify a vulnerability, directly matching vulnerability scanning."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The evidence supports vulnerability scanning; it does not show exploitation during this reconnaissance behavior."
+      },
+      "assessment": "The expanded set adds no more specific technique that is supported by the report’s description of reconnaissance.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1595.002",
+            "confidence": "high",
+            "rationale": "The actors scanned to identify a vulnerability in a public-facing GeoServer, directly matching Vulnerability Scanning."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The expanded set adds no more specific technique that is supported by the report’s description of reconnaissance."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P005",
+      "initial_candidates": [
+        "T1210",
+        "T1677",
+        "T1068",
+        "T1190",
+        "T1203",
+        "T1187",
+        "T1189",
+        "T1211",
+        "T1195.001",
+        "T1212"
+      ],
+      "final_candidates": [
+        "T1210",
+        "T1677",
+        "T1068",
+        "T1190",
+        "T1203",
+        "T1187",
+        "T1189",
+        "T1211",
+        "T1195.001",
+        "T1212",
+        "T1078.001",
+        "T1548.005",
+        "T1659",
+        "T1574.001",
+        "T1548.003",
+        "T1681",
+        "T1553.001",
+        "T1098.007",
+        "T1098.005",
+        "T1668",
+        "T1070.006",
+        "T1548.002",
+        "T1098.001",
+        "T1546.008"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1190",
+            "confidence": "high",
+            "rationale": "The report states that the actors exploited a vulnerability on public-facing GeoServers to obtain initial access, matching public-facing application exploitation."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The evidence describes exploitation for initial access. Code injection is the vulnerability mechanism, not evidence for client-side exploitation or privilege escalation."
+      },
+      "assessment": "The code-injection mechanism is described as exploitation for initial access. It does not establish client execution, privilege escalation, credential access, or another expanded candidate.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1190",
+            "confidence": "high",
+            "rationale": "The report identifies exploitation of a vulnerability on public-facing GeoServers to gain initial access, matching public-facing application exploitation."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The code-injection mechanism is described as exploitation for initial access. It does not establish client execution, privilege escalation, credential access, or another expanded candidate."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P006",
+      "initial_candidates": [
+        "T1053.003",
+        "T1053.002",
+        "T1574.001",
+        "T1053.007",
+        "T1133",
+        "T1053",
+        "T1070.006",
+        "T1505.004",
+        "T1114.003",
+        "T1546.004"
+      ],
+      "final_candidates": [
+        "T1053.003",
+        "T1053.002",
+        "T1574.001",
+        "T1053.007",
+        "T1133",
+        "T1053",
+        "T1070.006",
+        "T1505.004",
+        "T1114.003",
+        "T1546.004",
+        "T1078",
+        "T1505.003",
+        "T1547.001",
+        "T1553.003",
+        "T1608.006",
+        "T1690",
+        "T1195.001",
+        "T1098.001",
+        "T1070.003",
+        "T1564.006",
+        "T1053.006",
+        "T1548.005",
+        "T1546.012",
+        "T1134.004"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1053.003",
+            "confidence": "high",
+            "rationale": "Cron jobs are explicitly identified as a persistence mechanism, matching the Cron sub-technique."
+          }
+        ],
+        "additional_ids": [
+          "T1078",
+          "T1505.003"
+        ],
+        "assessment": "The evidence explicitly supports cron persistence. Valid accounts and web shells are also named as persistence mechanisms, so their corresponding definitions should be checked in the expanded candidate set."
+      },
+      "assessment": "The expanded definitions fit all three persistence mechanisms explicitly listed in the behavior. No narrower valid-account or scheduled-task sub-technique is established.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1053.003",
+            "confidence": "high",
+            "rationale": "Cron jobs are explicitly identified as a persistence mechanism, matching the Cron sub-technique."
+          },
+          {
+            "technique_id": "T1078",
+            "confidence": "high",
+            "rationale": "The behavior explicitly states that valid accounts were used for persistence, matching Valid Accounts."
+          },
+          {
+            "technique_id": "T1505.003",
+            "confidence": "high",
+            "rationale": "The report identifies web shells as a persistence mechanism, matching Web Shell."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The expanded definitions fit all three persistence mechanisms explicitly listed in the behavior. No narrower valid-account or scheduled-task sub-technique is established."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P007",
+      "initial_candidates": [
+        "T1098.001",
+        "T1105",
+        "T1068",
+        "T1133",
+        "T1078.001",
+        "T1210",
+        "T1556.006",
+        "T1543.005",
+        "T1546",
+        "T1070.003"
+      ],
+      "final_candidates": [
+        "T1098.001",
+        "T1105",
+        "T1068",
+        "T1133",
+        "T1078.001",
+        "T1210",
+        "T1556.006",
+        "T1543.005",
+        "T1546",
+        "T1070.003",
+        "T1574.001",
+        "T1190",
+        "T1548.002",
+        "T1548.004",
+        "T1543.003",
+        "T1608.004",
+        "T1547.001",
+        "T1176.001",
+        "T1546.012",
+        "T1136.001",
+        "T1550.001",
+        "T1564.006",
+        "T1546.008",
+        "T1203"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1068",
+            "confidence": "high",
+            "rationale": "The behavior describes an attempt to escalate local privileges using a tool associated in the report with a privilege-escalation vulnerability; the report also confirms local privilege escalation, while leaving its method unknown."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The evidence supports exploitation for privilege escalation at the behavior level, but does not establish that the later escalation used the same tool."
+      },
+      "assessment": "The expanded candidate set does not establish how the later escalation occurred; the mapping is based on the explicit privilege-escalation behavior and not on a specific unreported technique.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1068",
+            "confidence": "high",
+            "rationale": "The behavior explicitly describes attempted privilege escalation using a tool associated with a privilege-escalation vulnerability and confirms that local privileges were later escalated."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The expanded candidate set does not establish how the later escalation occurred; the mapping is based on the explicit privilege-escalation behavior and not on a specific unreported technique."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P008",
+      "initial_candidates": [
+        "T1197",
+        "T1105",
+        "T1681",
+        "T1218.011",
+        "T1112",
+        "T1548.001",
+        "T1202",
+        "T1543.003",
+        "T1127.002",
+        "T1496.003"
+      ],
+      "final_candidates": [
+        "T1197",
+        "T1105",
+        "T1681",
+        "T1218.011",
+        "T1112",
+        "T1548.001",
+        "T1202",
+        "T1543.003",
+        "T1127.002",
+        "T1496.003",
+        "T1677",
+        "T1574.001",
+        "T1078.001",
+        "T1036.002",
+        "T1546.008",
+        "T1176.001",
+        "T1690",
+        "T1078",
+        "T1564.006",
+        "T1480.001",
+        "T1675",
+        "T1055.013",
+        "T1665",
+        "T1027.009"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1197",
+            "confidence": "high",
+            "rationale": "The report explicitly states that the actors abused BITS jobs, directly matching BITS Jobs."
+          },
+          {
+            "technique_id": "T1202",
+            "confidence": "high",
+            "rationale": "The report explicitly describes indirect command execution through web shells and xp_cmdshell, matching Indirect Command Execution."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "Both the BITS abuse and indirect command execution are explicit in the behavior; the mapping does not infer other evasion techniques."
+      },
+      "assessment": "Both supplied definitions fit behaviors stated directly in the report. No other candidate is needed to represent these actions.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1197",
+            "confidence": "high",
+            "rationale": "The report explicitly states that the actors abused BITS jobs, directly matching BITS Jobs."
+          },
+          {
+            "technique_id": "T1202",
+            "confidence": "high",
+            "rationale": "Indirect command execution through web shells and xp_cmdshell is explicitly described, matching Indirect Command Execution."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "Both supplied definitions fit behaviors stated directly in the report. No other candidate is needed to represent these actions."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P009",
+      "initial_candidates": [
+        "T1595",
+        "T1018",
+        "T1595.001",
+        "T1596.004",
+        "T1595.002",
+        "T1596.005",
+        "T1669",
+        "T1016.001",
+        "T1078",
+        "T1213"
+      ],
+      "final_candidates": [
+        "T1595",
+        "T1018",
+        "T1595.001",
+        "T1596.004",
+        "T1595.002",
+        "T1596.005",
+        "T1669",
+        "T1016.001",
+        "T1078",
+        "T1213",
+        "T1588.002",
+        "T1547.001",
+        "T1592.002",
+        "T1105",
+        "T1210",
+        "T1049",
+        "T1592",
+        "T1189",
+        "T1553.001",
+        "T1553.005",
+        "T1119",
+        "T1078.004",
+        "T1021.005",
+        "T1216.001"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1595",
+            "confidence": "high",
+            "rationale": "Ping sweeps and use of a scanning tool to examine the organization network are active scanning behavior."
+          },
+          {
+            "technique_id": "T1018",
+            "confidence": "medium",
+            "rationale": "Ping sweeps of hosts within the organization’s subnets are evidence of discovering remote systems."
+          }
+        ],
+        "additional_ids": [
+          "T1588.002"
+        ],
+        "assessment": "The ping sweeps support active scanning and remote-system discovery. Downloading fscan may indicate acquisition of a tool, but its definition should be checked in the expanded set."
+      },
+      "assessment": "The behavior supports active scanning and host discovery, plus downloading a tool. The report does not specify IP-block enumeration or exploitation of the discovered systems.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1595",
+            "confidence": "high",
+            "rationale": "Ping sweeps and use of a scanning tool against the organization network are active scanning behavior."
+          },
+          {
+            "technique_id": "T1018",
+            "confidence": "high",
+            "rationale": "Ping sweeps of hosts within specific subnets directly support remote system discovery."
+          },
+          {
+            "technique_id": "T1105",
+            "confidence": "high",
+            "rationale": "The behavior explicitly says the actors downloaded fscan into the environment, matching ingress tool transfer."
+          },
+          {
+            "technique_id": "T1588.002",
+            "confidence": "medium",
+            "rationale": "Downloading fscan supports acquisition of a software tool for the operation, matching the Tool sub-technique."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The behavior supports active scanning and host discovery, plus downloading a tool. The report does not specify IP-block enumeration or exploitation of the discovered systems."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P010",
+      "initial_candidates": [
+        "T1095",
+        "T1195.001",
+        "T1210",
+        "T1564.006",
+        "T1595.002",
+        "T1190",
+        "T1677",
+        "T1574.006",
+        "T1686.002",
+        "T1681"
+      ],
+      "final_candidates": [
+        "T1095",
+        "T1195.001",
+        "T1210",
+        "T1564.006",
+        "T1595.002",
+        "T1190",
+        "T1677",
+        "T1574.006",
+        "T1686.002",
+        "T1681",
+        "T1203",
+        "T1595.001",
+        "T1557.002",
+        "T1596.004",
+        "T1070.006",
+        "T1218.011",
+        "T1678",
+        "T1055.011",
+        "T1685.004",
+        "T1548.003",
+        "T1136.001",
+        "T1574.001",
+        "T1596.002",
+        "T1564.011"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1595.002",
+            "confidence": "high",
+            "rationale": "The behavior explicitly characterizes activity as vulnerability scanning, matching this specific active-scanning sub-technique."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The behavior directly supports vulnerability scanning; the report does not specify scanning IP blocks or another narrower target."
+      },
+      "assessment": "The report does not state that the scanning targeted IP blocks or involved exploitation; the specific vulnerability-scanning definition is supported.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1595.002",
+            "confidence": "high",
+            "rationale": "The behavior explicitly identifies vulnerability scanning, matching the Vulnerability Scanning sub-technique."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The report does not state that the scanning targeted IP blocks or involved exploitation; the specific vulnerability-scanning definition is supported."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P011",
+      "initial_candidates": [
+        "T1677",
+        "T1210",
+        "T1059.013",
+        "T1564.006",
+        "T1686.002",
+        "T1218.011",
+        "T1195.001",
+        "T1546.004",
+        "T1136.001",
+        "T1680"
+      ],
+      "final_candidates": [
+        "T1677",
+        "T1210",
+        "T1059.013",
+        "T1564.006",
+        "T1686.002",
+        "T1218.011",
+        "T1195.001",
+        "T1546.004",
+        "T1136.001",
+        "T1680",
+        "T1018",
+        "T1082",
+        "T1543.003",
+        "T1497.001",
+        "T1690",
+        "T1106",
+        "T1547.001",
+        "T1564.001",
+        "T1654",
+        "T1543.002",
+        "T1070.003",
+        "T1070.010",
+        "T1580",
+        "T1027.011"
+      ],
+      "first_output": {
+        "mappings": [],
+        "additional_ids": [
+          "T1018",
+          "T1082"
+        ],
+        "assessment": "The report confirms host-discovery commands were run but omits their details, so the available evidence does not yet support a specific candidate technique. Remote System Discovery and System Information Discovery merit definition review."
+      },
+      "assessment": "The expanded set provides a plausible host-information discovery mapping, but the report omits the commands, so no more specific discovery technique can be confirmed.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1082",
+            "confidence": "medium",
+            "rationale": "The behavior identifies host-discovery commands run on GeoServer 1, consistent with gathering information about the host; the command details are omitted, limiting confidence."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The expanded set provides a plausible host-information discovery mapping, but the report omits the commands, so no more specific discovery technique can be confirmed."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P012",
+      "initial_candidates": [
+        "T1049",
+        "T1046",
+        "T1680",
+        "T1210",
+        "T1055.009",
+        "T1557.001",
+        "T1016.002",
+        "T1543.002",
+        "T1497.002",
+        "T1124"
+      ],
+      "final_candidates": [
+        "T1049",
+        "T1046",
+        "T1680",
+        "T1210",
+        "T1055.009",
+        "T1557.001",
+        "T1016.002",
+        "T1543.002",
+        "T1497.002",
+        "T1124",
+        "T1033",
+        "T1007",
+        "T1083",
+        "T1016",
+        "T1498",
+        "T1499",
+        "T1690",
+        "T1574.005",
+        "T1201",
+        "T1110",
+        "T1195.001",
+        "T1098.001",
+        "T1557",
+        "T1580"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1046",
+            "confidence": "medium",
+            "rationale": "The behavior explicitly includes service discovery, matching Network Service Discovery."
+          },
+          {
+            "technique_id": "T1049",
+            "confidence": "medium",
+            "rationale": "The behavior explicitly includes network discovery; this is consistent with discovering system network connections, though the report does not give command-level detail."
+          }
+        ],
+        "additional_ids": [
+          "T1033",
+          "T1007",
+          "T1083",
+          "T1016"
+        ],
+        "assessment": "The stated discovery categories support service discovery and may support network-connection discovery. User, service, filesystem, and network activity should be checked against more specific technique definitions in the expanded set."
+      },
+      "assessment": "The behavior names user, service, filesystem, and network discovery, supporting the corresponding host discovery techniques. It does not establish network-service scanning, Wi-Fi discovery, or cloud discovery.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1033",
+            "confidence": "high",
+            "rationale": "The behavior explicitly includes user discovery, matching System Owner/User Discovery."
+          },
+          {
+            "technique_id": "T1007",
+            "confidence": "high",
+            "rationale": "The behavior explicitly includes service discovery, matching System Service Discovery."
+          },
+          {
+            "technique_id": "T1083",
+            "confidence": "high",
+            "rationale": "The behavior explicitly includes filesystem discovery, matching File and Directory Discovery."
+          },
+          {
+            "technique_id": "T1016",
+            "confidence": "medium",
+            "rationale": "The behavior explicitly includes network discovery, consistent with System Network Configuration Discovery; the report does not specify which network information was collected."
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The behavior names user, service, filesystem, and network discovery, supporting the corresponding host discovery techniques. It does not establish network-service scanning, Wi-Fi discovery, or cloud discovery."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P013",
+      "initial_candidates": [
+        "T1218.011",
+        "T1059.013",
+        "T1037.004",
+        "T1564.006",
+        "T1553.001",
+        "T1027.017",
+        "T1105",
+        "T1546.004",
+        "T1553.005",
+        "T1036.002"
+      ],
+      "final_candidates": [
+        "T1218.011",
+        "T1059.013",
+        "T1037.004",
+        "T1564.006",
+        "T1553.001",
+        "T1027.017",
+        "T1105",
+        "T1546.004",
+        "T1553.005",
+        "T1036.002",
+        "T1574.001",
+        "T1677",
+        "T1136.003",
+        "T1574.005",
+        "T1070.006",
+        "T1548.005",
+        "T1574.008",
+        "T1574.007",
+        "T1037.005",
+        "T1053.002",
+        "T1222.002",
+        "T1027.015",
+        "T1497.001",
+        "T1574.011"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1105",
+            "rationale": "The report explicitly describes downloading a shell script and archive to the compromised host, which is ingress transfer of tools or files.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "Download is directly stated. The evidence does not establish execution, persistence, or a specific shell technique."
+      },
+      "assessment": "The evidence describes downloads only; it does not establish execution, persistence, or shell startup behavior.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1105",
+            "rationale": "The report explicitly states that actors downloaded a shell script and archive to the compromised GeoServer, supporting ingress tool transfer.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The evidence describes downloads only; it does not establish execution, persistence, or shell startup behavior."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P014",
+      "initial_candidates": [
+        "T1021",
+        "T1105",
+        "T1570",
+        "T1210",
+        "T1499",
+        "T1650",
+        "T1219.001",
+        "T1070.006",
+        "T1133",
+        "T1098.004"
+      ],
+      "final_candidates": [
+        "T1021",
+        "T1105",
+        "T1570",
+        "T1210",
+        "T1499",
+        "T1650",
+        "T1219.001",
+        "T1070.006",
+        "T1133",
+        "T1098.004",
+        "T1046",
+        "T1018",
+        "T1654",
+        "T1526",
+        "T1659",
+        "T1049",
+        "T1136.001",
+        "T1119",
+        "T1135",
+        "T1690",
+        "T1078.001",
+        "T1187",
+        "T1070.003",
+        "T1548.005"
+      ],
+      "first_output": {
+        "mappings": [],
+        "additional_ids": [
+          "T1046",
+          "T1018"
+        ],
+        "assessment": "The report describes internal fscan enumeration identifying SSH, FTP, file, and web servers. Network service discovery and remote system discovery appear relevant, but their definitions were not supplied in this pass."
+      },
+      "assessment": "The expanded definitions confirm service and host discovery. No transfer, exploitation, or remote access technique is established by this behavior.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1046",
+            "rationale": "fscan was used to enumerate internal systems and identify SSH, FTP, file, and web services, directly supporting network service discovery.",
+            "confidence": "high"
+          },
+          {
+            "technique_id": "T1018",
+            "rationale": "The enumeration also identified multiple internal hosts and servers, supporting remote system discovery.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The expanded definitions confirm service and host discovery. No transfer, exploitation, or remote access technique is established by this behavior."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P015",
+      "initial_candidates": [
+        "T1110",
+        "T1187",
+        "T1210",
+        "T1078.004",
+        "T1557.001",
+        "T1072",
+        "T1133",
+        "T1110.003",
+        "T1212",
+        "T1552.004"
+      ],
+      "final_candidates": [
+        "T1110",
+        "T1187",
+        "T1210",
+        "T1078.004",
+        "T1557.001",
+        "T1072",
+        "T1133",
+        "T1110.003",
+        "T1212",
+        "T1552.004",
+        "T1110.001",
+        "T1677",
+        "T1555.003",
+        "T1550.001",
+        "T1078.001",
+        "T1563.001",
+        "T1539",
+        "T1201",
+        "T1598.003",
+        "T1595.003",
+        "T1486",
+        "T1021",
+        "T1528",
+        "T1190"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1110",
+            "rationale": "The report explicitly states the actors attempted brute force against login credentials for exploited web services.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [
+          "T1110.001"
+        ],
+        "assessment": "Credential brute force is explicit and the attempt outcome is unknown. Password spraying is not supported by the report."
+      },
+      "assessment": "The attempt is explicit but its success is not stated. Password spraying and credential theft techniques are unsupported.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1110",
+            "rationale": "The report explicitly states the actors attempted brute force against credentials for exploited web services.",
+            "confidence": "high"
+          },
+          {
+            "technique_id": "T1110.001",
+            "rationale": "The described brute force effort against login credentials is password guessing; no evidence indicates password spraying.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The attempt is explicit but its success is not stated. Password spraying and credential theft techniques are unsupported."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P016",
+      "initial_candidates": [
+        "T1210",
+        "T1681",
+        "T1110",
+        "T1596.005",
+        "T1677",
+        "T1557.001",
+        "T1686.002",
+        "T1087",
+        "T1595.002",
+        "T1596.004"
+      ],
+      "final_candidates": [
+        "T1210",
+        "T1681",
+        "T1110",
+        "T1596.005",
+        "T1677",
+        "T1557.001",
+        "T1686.002",
+        "T1087",
+        "T1595.002",
+        "T1596.004",
+        "T1018",
+        "T1187",
+        "T1654",
+        "T1046",
+        "T1596.001",
+        "T1203",
+        "T1059.013",
+        "T1595.003",
+        "T1136.001",
+        "T1195.001",
+        "T1612",
+        "T1219",
+        "T1218.011",
+        "T1548.001"
+      ],
+      "first_output": {
+        "mappings": [],
+        "additional_ids": [
+          "T1018"
+        ],
+        "assessment": "The report states that actors ping swept several internal hosts. Remote system discovery is the likely mapping; no supplied candidate directly describes that behavior."
+      },
+      "assessment": "The behavior is host discovery. The report says the scan excluded brute forcing and vulnerability scanning, so those mappings do not apply.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1018",
+            "rationale": "The report states that actors ping swept multiple hosts in internal subnets, supporting remote system discovery.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The behavior is host discovery. The report says the scan excluded brute forcing and vulnerability scanning, so those mappings do not apply."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P017",
+      "initial_candidates": [
+        "T1505.001",
+        "T1489",
+        "T1018",
+        "T1556.006",
+        "T1561.001",
+        "T1059.013",
+        "T1498",
+        "T1499",
+        "T1046",
+        "T1485"
+      ],
+      "final_candidates": [
+        "T1505.001",
+        "T1489",
+        "T1018",
+        "T1556.006",
+        "T1561.001",
+        "T1059.013",
+        "T1498",
+        "T1499",
+        "T1046",
+        "T1485",
+        "T1082",
+        "T1083",
+        "T1057",
+        "T1016",
+        "T1069.002",
+        "T1543.002",
+        "T1497.001",
+        "T1027.009",
+        "T1547.001",
+        "T1518.001",
+        "T1003.001",
+        "T1561.002",
+        "T1033",
+        "T1055.008"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1018",
+            "rationale": "The report identifies a set of host discovery commands observed on the SQL Server, supporting discovery of systems and their state.",
+            "confidence": "medium"
+          },
+          {
+            "technique_id": "T1046",
+            "rationale": "The observed command set includes network-oriented discovery activity, supporting network service discovery at a broad level.",
+            "confidence": "medium"
+          }
+        ],
+        "additional_ids": [
+          "T1082",
+          "T1083",
+          "T1057",
+          "T1016",
+          "T1069.002"
+        ],
+        "assessment": "The report lists multiple discovery commands, including host, system, file, process, and domain group queries. More specific ATT&CK definitions may fit individual commands, but were not supplied in this pass."
+      },
+      "assessment": "The full command evidence supports several distinct discovery behaviors on the SQL Server. No execution or collection beyond discovery is inferred.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1082",
+            "rationale": "The SQL Server command set included system information queries, supporting system information discovery.",
+            "confidence": "high"
+          },
+          {
+            "technique_id": "T1083",
+            "rationale": "The observed directory listing and file viewing commands support file and directory discovery.",
+            "confidence": "high"
+          },
+          {
+            "technique_id": "T1057",
+            "rationale": "The observed task listing commands support process discovery.",
+            "confidence": "high"
+          },
+          {
+            "technique_id": "T1016",
+            "rationale": "The observed network configuration and connection queries support system network configuration discovery.",
+            "confidence": "medium"
+          },
+          {
+            "technique_id": "T1069.002",
+            "rationale": "The command set included a domain administrators group query, supporting domain group discovery.",
+            "confidence": "high"
+          },
+          {
+            "technique_id": "T1033",
+            "rationale": "The command set included a current user identity query, supporting system owner or user discovery.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The full command evidence supports several distinct discovery behaviors on the SQL Server. No execution or collection beyond discovery is inferred."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P018",
+      "initial_candidates": [
+        "T1070.003",
+        "T1690",
+        "T1552.003",
+        "T1546.004",
+        "T1027",
+        "T1059.013",
+        "T1497.002",
+        "T1610",
+        "T1018",
+        "T1583.001"
+      ],
+      "final_candidates": [
+        "T1070.003",
+        "T1690",
+        "T1552.003",
+        "T1546.004",
+        "T1027",
+        "T1059.013",
+        "T1497.002",
+        "T1610",
+        "T1018",
+        "T1583.001",
+        "T1016",
+        "T1027.012",
+        "T1564.014",
+        "T1027.009",
+        "T1548.003",
+        "T1559.002",
+        "T1689",
+        "T1189",
+        "T1059",
+        "T1027.013",
+        "T1546.005",
+        "T1098.004",
+        "T1574.008",
+        "T1205.002"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1027",
+            "rationale": "The report explicitly describes the host and network discovery commands as encoded, supporting obfuscation of command content.",
+            "confidence": "high"
+          },
+          {
+            "technique_id": "T1018",
+            "rationale": "The report explicitly identifies host discovery commands executed on GeoServer 2.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [
+          "T1016"
+        ],
+        "assessment": "Encoded commands were used for host and network discovery. The report does not specify the encoded content or a particular interpreter."
+      },
+      "assessment": "The text explicitly supports encoded commands used for host and network discovery. No particular interpreter or payload behavior is established.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1027",
+            "rationale": "The report explicitly describes the host and network discovery commands as encoded, supporting obfuscation of command content.",
+            "confidence": "high"
+          },
+          {
+            "technique_id": "T1018",
+            "rationale": "The reported encoded commands performed host discovery on GeoServer 2.",
+            "confidence": "high"
+          },
+          {
+            "technique_id": "T1016",
+            "rationale": "The reported encoded commands also performed network discovery, supporting system network configuration discovery.",
+            "confidence": "medium"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The text explicitly supports encoded commands used for host and network discovery. No particular interpreter or payload behavior is established."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P019",
+      "initial_candidates": [
+        "T1505.001",
+        "T1210",
+        "T1489",
+        "T1681",
+        "T1677",
+        "T1686.002",
+        "T1564.006",
+        "T1204.003",
+        "T1552.005",
+        "T1021.003"
+      ],
+      "final_candidates": [
+        "T1505.001",
+        "T1210",
+        "T1489",
+        "T1681",
+        "T1677",
+        "T1686.002",
+        "T1564.006",
+        "T1204.003",
+        "T1552.005",
+        "T1021.003",
+        "T1608.006",
+        "T1480.001",
+        "T1195.001",
+        "T1190",
+        "T1134.004",
+        "T1082",
+        "T1578.003",
+        "T1654",
+        "T1059.013",
+        "T1133",
+        "T1072",
+        "T1578.001",
+        "T1668",
+        "T1124"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1210",
+            "rationale": "The report attributes lateral movement between servers to enabling a SQL execution capability, consistent with exploitation of a remote service.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The report explicitly describes movement from the Web Server to the SQL Server. No evidence supports the other supplied techniques."
+      },
+      "assessment": "The report explicitly describes movement from the Web Server to the SQL Server. The evidence does not establish malicious SQL procedure installation or the other supplied techniques.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1210",
+            "rationale": "The report attributes lateral movement between servers to enabling a remote SQL execution capability, consistent with exploitation of a remote service.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The report explicitly describes movement from the Web Server to the SQL Server. The evidence does not establish malicious SQL procedure installation or the other supplied techniques."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P020",
+      "initial_candidates": [
+        "T1105",
+        "T1197",
+        "T1059",
+        "T1136.001",
+        "T1027.017",
+        "T1070.003",
+        "T1059.013",
+        "T1112",
+        "T1027.012",
+        "T1668"
+      ],
+      "final_candidates": [
+        "T1105",
+        "T1197",
+        "T1059",
+        "T1136.001",
+        "T1027.017",
+        "T1070.003",
+        "T1059.013",
+        "T1112",
+        "T1027.012",
+        "T1668",
+        "T1218.011",
+        "T1036.008",
+        "T1608.001",
+        "T1574.001",
+        "T1480.001",
+        "T1564.006",
+        "T1047",
+        "T1543.003",
+        "T1608.002",
+        "T1659",
+        "T1570",
+        "T1690",
+        "T1203",
+        "T1553.001"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1105",
+            "rationale": "The report explicitly states that payloads were downloaded to compromised systems.",
+            "confidence": "high"
+          },
+          {
+            "technique_id": "T1197",
+            "rationale": "The report names BITS Admin GetFile as a mechanism used to download payloads, supporting BITS job transfer behavior.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "Both ingress transfer and BITS are directly supported. The payload contents and subsequent execution are not established by this behavior."
+      },
+      "assessment": "Both the download behavior and the named BITS mechanism are directly supported. The downloaded content is not described as executed in this behavior.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1105",
+            "rationale": "The report explicitly states that payloads were downloaded to compromised systems, supporting ingress tool transfer.",
+            "confidence": "high"
+          },
+          {
+            "technique_id": "T1197",
+            "rationale": "The report names BITS Admin GetFile in the payload download activity, supporting BITS job transfer.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "Both the download behavior and the named BITS mechanism are directly supported. The downloaded content is not described as executed in this behavior."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P021",
+      "initial_candidates": [
+        "T1090.003",
+        "T1218.002",
+        "T1601.001",
+        "T1176.001",
+        "T1048.003",
+        "T1599",
+        "T1090.002",
+        "T1104",
+        "T1588.007",
+        "T1090.001"
+      ],
+      "final_candidates": [
+        "T1090.003",
+        "T1218.002",
+        "T1601.001",
+        "T1176.001",
+        "T1048.003",
+        "T1599",
+        "T1090.002",
+        "T1104",
+        "T1588.007",
+        "T1090.001",
+        "T1090",
+        "T1218.010",
+        "T1220",
+        "T1598.003",
+        "T1684.002",
+        "T1525",
+        "T1102.003",
+        "T1219",
+        "T1580",
+        "T1568.001",
+        "T1684",
+        "T1574.005",
+        "T1583.001",
+        "T1102.001"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1090.003",
+            "rationale": "The report identifies Stowaway as a multi-level proxy tool used to establish command and control, consistent with multi-hop proxying.",
+            "confidence": "medium"
+          }
+        ],
+        "additional_ids": [
+          "T1090"
+        ],
+        "assessment": "Stowaway is described as a multi-level proxy and used for C2. A general proxy mapping may also be relevant; no supplied candidate captures the broader parent technique."
+      },
+      "assessment": "Proxy use is explicit. The text identifies the tool as multi-level but does not independently detail every proxy hop in this behavior.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1090",
+            "rationale": "The report identifies Stowaway as a proxy used to establish command and control, supporting the proxy technique.",
+            "confidence": "high"
+          },
+          {
+            "technique_id": "T1090.003",
+            "rationale": "Stowaway is described as a multi-level proxy tool, which supports multi-hop proxying at medium confidence.",
+            "confidence": "medium"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "Proxy use is explicit. The text identifies the tool as multi-level but does not independently detail every proxy hop in this behavior."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P022",
+      "initial_candidates": [
+        "T1572",
+        "T1187",
+        "T1133",
+        "T1539",
+        "T1090.002",
+        "T1499",
+        "T1210",
+        "T1599",
+        "T1176.001",
+        "T1528"
+      ],
+      "final_candidates": [
+        "T1572",
+        "T1187",
+        "T1133",
+        "T1539",
+        "T1090.002",
+        "T1499",
+        "T1210",
+        "T1599",
+        "T1176.001",
+        "T1528",
+        "T1090.001",
+        "T1090.003",
+        "T1601.001",
+        "T1556.007",
+        "T1598.003",
+        "T1114.003",
+        "T1548.005",
+        "T1608",
+        "T1550.004",
+        "T1659",
+        "T1098.001",
+        "T1078",
+        "T1111",
+        "T1666"
+      ],
+      "first_output": {
+        "mappings": [],
+        "additional_ids": [
+          "T1090.001",
+          "T1090.003"
+        ],
+        "assessment": "The report says C2 traffic was forwarded through the Web Server to reach internal resources, and Stowaway was written to disk. Internal proxying and multi-hop proxying appear relevant but were not supplied in this pass."
+      },
+      "assessment": "Internal proxying is directly described. Writing the proxy tool to disk alone does not establish additional techniques in this behavior.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1090.001",
+            "rationale": "The report states that C2 traffic was forwarded through the Web Server to access internal resources, supporting use of an internal proxy.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "Internal proxying is directly described. Writing the proxy tool to disk alone does not establish additional techniques in this behavior."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P023",
+      "initial_candidates": [
+        "T1018",
+        "T1557.001",
+        "T1136.001",
+        "T1016.001",
+        "T1210",
+        "T1684.001",
+        "T1677",
+        "T1078",
+        "T1049",
+        "T1574.005"
+      ],
+      "final_candidates": [
+        "T1018",
+        "T1557.001",
+        "T1136.001",
+        "T1016.001",
+        "T1210",
+        "T1684.001",
+        "T1677",
+        "T1078",
+        "T1049",
+        "T1574.005",
+        "T1564.006",
+        "T1205.002",
+        "T1070.008",
+        "T1592.003",
+        "T1681",
+        "T1578.003",
+        "T1678",
+        "T1480.001",
+        "T1592",
+        "T1070.009",
+        "T1204",
+        "T1497.001",
+        "T1574.001",
+        "T1490"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1018",
+            "rationale": "The report explicitly states the actors performed a ping sweep of multiple hosts, supporting remote system discovery.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The behavior is direct host discovery evidence. No evidence supports the other supplied techniques."
+      },
+      "assessment": "This is direct host discovery evidence. No evidence supports the other supplied techniques.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1018",
+            "rationale": "The report explicitly states the actors ping swept multiple hosts, supporting remote system discovery.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "This is direct host discovery evidence. No evidence supports the other supplied techniques."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P024",
+      "initial_candidates": [
+        "T1090",
+        "T1090.002",
+        "T1110.001",
+        "T1090.001",
+        "T1686.002",
+        "T1187",
+        "T1059.013",
+        "T1048",
+        "T1110.003",
+        "T1082"
+      ],
+      "final_candidates": [
+        "T1090",
+        "T1090.002",
+        "T1110.001",
+        "T1090.001",
+        "T1686.002",
+        "T1187",
+        "T1059.013",
+        "T1048",
+        "T1110.003",
+        "T1082",
+        "T1105",
+        "T1071.001",
+        "T1570",
+        "T1608.002",
+        "T1095",
+        "T1048.001",
+        "T1189",
+        "T1572",
+        "T1553.001",
+        "T1499.001",
+        "T1608",
+        "T1049",
+        "T1598.003",
+        "T1608.001"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1090",
+            "rationale": "The report describes an outbound connection to the C2 server after downloading a modified proxy tool, supporting proxy use in command and control.",
+            "confidence": "medium"
+          }
+        ],
+        "additional_ids": [
+          "T1105",
+          "T1071.001"
+        ],
+        "assessment": "The behavior combines a tool download with a successful outbound C2 connection over HTTP. Ingress transfer and web protocol C2 may be relevant, but their definitions were not supplied in this pass."
+      },
+      "assessment": "The tool download and HTTP C2 connection are explicit. Proxy use is supported by the report's description of Stowaway, while the precise proxy topology is not established here.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1105",
+            "rationale": "The report explicitly states that a modified Stowaway tool was downloaded, supporting ingress tool transfer.",
+            "confidence": "high"
+          },
+          {
+            "technique_id": "T1071.001",
+            "rationale": "The report states that the successful outbound C2 connection used HTTP, supporting web protocol use for command and control.",
+            "confidence": "high"
+          },
+          {
+            "technique_id": "T1090",
+            "rationale": "The downloaded tool is identified in the report as a multi-level proxy, supporting proxy use in this C2 activity.",
+            "confidence": "medium"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The tool download and HTTP C2 connection are explicit. Proxy use is supported by the report's description of Stowaway, while the precise proxy topology is not established here."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P025",
+      "initial_candidates": [
+        "T1564.006",
+        "T1677",
+        "T1027",
+        "T1037.004",
+        "T1210",
+        "T1027.017",
+        "T1218.011",
+        "T1505.003",
+        "T1136.001",
+        "T1219.003"
+      ],
+      "final_candidates": [
+        "T1564.006",
+        "T1677",
+        "T1027",
+        "T1037.004",
+        "T1210",
+        "T1027.017",
+        "T1218.011",
+        "T1505.003",
+        "T1136.001",
+        "T1219.003",
+        "T1059.004",
+        "T1574.007",
+        "T1059",
+        "T1546.004",
+        "T1059.002",
+        "T1027.018",
+        "T1027.013",
+        "T1574.005",
+        "T1216.001",
+        "T1220",
+        "T1205.002",
+        "T1564.014",
+        "T1027.010",
+        "T1027.011"
+      ],
+      "first_output": {
+        "mappings": [],
+        "additional_ids": [
+          "T1059.004"
+        ],
+        "assessment": "The reported execution of /tmp/mm.sh is Unix shell script execution. The supplied candidates do not include the matching command interpreter technique."
+      },
+      "assessment": "The evidence supports Unix shell command and scripting interpreter activity.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1059.004",
+            "rationale": "The report says a shell script was executed on the Web Server. Unix Shell is supported by the identified shell script execution.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The evidence supports Unix shell command and scripting interpreter activity."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P026",
+      "initial_candidates": [
+        "T1104",
+        "T1110.001",
+        "T1219",
+        "T1574.001",
+        "T1550.001",
+        "T1187",
+        "T1546.004",
+        "T1110.003",
+        "T1011",
+        "T1041"
+      ],
+      "final_candidates": [
+        "T1104",
+        "T1110.001",
+        "T1219",
+        "T1574.001",
+        "T1550.001",
+        "T1187",
+        "T1546.004",
+        "T1110.003",
+        "T1011",
+        "T1041",
+        "T1008",
+        "T1568.002",
+        "T1499.001",
+        "T1027.013",
+        "T1011.001",
+        "T1601.001",
+        "T1216.001",
+        "T1049",
+        "T1553.003",
+        "T1102.003",
+        "T1048.002",
+        "T1574.005",
+        "T1220",
+        "T1189"
+      ],
+      "first_output": {
+        "mappings": [],
+        "additional_ids": [
+          "T1008"
+        ],
+        "assessment": "The second C2 connection is described as likely serving as a backup channel, matching Fallback Channels. The supplied candidates do not contain that technique."
+      },
+      "assessment": "Fallback Channels best fits the explicitly described backup C2 connection; the report does not establish a multistage C2 architecture.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1008",
+            "rationale": "The second C2 connection is described as likely serving as a backup channel, which matches fallback communication when a primary channel is unavailable.",
+            "confidence": "medium"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "Fallback Channels best fits the explicitly described backup C2 connection; the report does not establish a multistage C2 architecture."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P027",
+      "initial_candidates": [
+        "T1036.008",
+        "T1197",
+        "T1505.001",
+        "T1677",
+        "T1105",
+        "T1210",
+        "T1546.012",
+        "T1489",
+        "T1690",
+        "T1588.002"
+      ],
+      "final_candidates": [
+        "T1036.008",
+        "T1197",
+        "T1505.001",
+        "T1677",
+        "T1105",
+        "T1210",
+        "T1546.012",
+        "T1489",
+        "T1690",
+        "T1588.002",
+        "T1176.001",
+        "T1659",
+        "T1681",
+        "T1608.001",
+        "T1548.003",
+        "T1570",
+        "T1133",
+        "T1059.013",
+        "T1608.002",
+        "T1218.011",
+        "T1027.009",
+        "T1537",
+        "T1070.010",
+        "T1219"
+      ],
+      "first_output": {
+        "mappings": [
+          {
+            "technique_id": "T1105",
+            "rationale": "The report says the actors transferred a file to the SQL Server through bitsadmin, consistent with transferring a tool or file to a compromised host.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "Ingress Tool Transfer directly describes the observed file transfer; the report does not establish file masquerading."
+      },
+      "assessment": "The evidence supports ingress transfer; it does not show masquerading or that the file moved host-to-host from another compromised system.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1105",
+            "rationale": "The actors transferred a file to the SQL Server through bitsadmin, consistent with ingress tool or file transfer to a compromised system.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The evidence supports ingress transfer; it does not show masquerading or that the file moved host-to-host from another compromised system."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P028",
+      "initial_candidates": [
+        "T1195.001",
+        "T1486",
+        "T1590.002",
+        "T1566.001",
+        "T1036.007",
+        "T1566.002",
+        "T1098.005",
+        "T1047",
+        "T1110",
+        "T1056.004"
+      ],
+      "final_candidates": [
+        "T1195.001",
+        "T1486",
+        "T1590.002",
+        "T1566.001",
+        "T1036.007",
+        "T1566.002",
+        "T1098.005",
+        "T1047",
+        "T1110",
+        "T1056.004",
+        "T1190",
+        "T1588.005",
+        "T1587.004",
+        "T1189",
+        "T1595.002",
+        "T1686.002",
+        "T1210",
+        "T1212",
+        "T1595",
+        "T1211",
+        "T1553.001",
+        "T1068",
+        "T1596.005",
+        "T1611"
+      ],
+      "first_output": {
+        "mappings": [],
+        "additional_ids": [
+          "T1190"
+        ],
+        "assessment": "Full report context attributes the GeoServer 1 initial access to exploitation of a public-facing application vulnerability. T1190 is not among the supplied candidates."
+      },
+      "assessment": "The report context supports this technique for the GeoServer 1 access event.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1190",
+            "rationale": "The report attributes GeoServer 1 initial access to exploitation of CVE-2024-36401 on a public-facing GeoServer, matching exploitation of a public-facing application.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "The report context supports this technique for the GeoServer 1 access event."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P029",
+      "initial_candidates": [
+        "T1195.001",
+        "T1550.001",
+        "T1189",
+        "T1546.012",
+        "T1564.014",
+        "T1036.007",
+        "T1195",
+        "T1685.001",
+        "T1199",
+        "T1590.002"
+      ],
+      "final_candidates": [
+        "T1195.001",
+        "T1550.001",
+        "T1189",
+        "T1546.012",
+        "T1564.014",
+        "T1036.007",
+        "T1195",
+        "T1685.001",
+        "T1199",
+        "T1590.002",
+        "T1190",
+        "T1588.005",
+        "T1587.004",
+        "T1595.002",
+        "T1686.002",
+        "T1210",
+        "T1212",
+        "T1595",
+        "T1211",
+        "T1068",
+        "T1596.005",
+        "T1611",
+        "T1566.001",
+        "T1592.003"
+      ],
+      "first_output": {
+        "mappings": [],
+        "additional_ids": [
+          "T1190"
+        ],
+        "assessment": "Full report context attributes the separate GeoServer 2 initial access to exploitation of the same public-facing application vulnerability. T1190 is not among the supplied candidates."
+      },
+      "assessment": "This is a distinct GeoServer 2 access occurrence, supported by the report context.",
+      "final_output": {
+        "mappings": [
+          {
+            "technique_id": "T1190",
+            "rationale": "The report attributes the separate GeoServer 2 initial access to exploitation of the same vulnerability on the public-facing GeoServer, matching exploitation of a public-facing application.",
+            "confidence": "high"
+          }
+        ],
+        "additional_ids": [],
+        "assessment": "This is a distinct GeoServer 2 access occurrence, supported by the report context."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P030",
+      "initial_candidates": [
+        "T1590.002",
+        "T1210",
+        "T1187",
+        "T1189",
+        "T1685.006",
+        "T1556.007",
+        "T1566.001",
+        "T1677",
+        "T1486",
+        "T1555.003"
+      ],
+      "final_candidates": [
+        "T1590.002",
+        "T1210",
+        "T1187",
+        "T1189",
+        "T1685.006",
+        "T1556.007",
+        "T1566.001",
+        "T1677",
+        "T1486",
+        "T1555.003",
+        "T1176.001",
+        "T1550.004",
+        "T1195.001",
+        "T1070.010",
+        "T1550.001",
+        "T1684.002",
+        "T1608",
+        "T1070",
+        "T1072",
+        "T1659",
+        "T1546",
+        "T1557",
+        "T1550.002",
+        "T1548.005"
+      ],
+      "first_output": {
+        "mappings": [],
+        "additional_ids": [],
+        "assessment": "The timeline labels this as initial access to the Web Server, but gives no technique or method for this event. The report separately describes lateral movement; the evidence does not support a specific ATT&CK technique for this row."
+      },
+      "assessment": "The timeline identifies initial access to the Web Server but does not specify the access method. The broader report describes movement from GeoServer 1 to the Web Server, but this row does not support any supplied technique specifically.",
+      "final_output": {
+        "mappings": [],
+        "additional_ids": [],
+        "assessment": "The timeline identifies initial access to the Web Server but does not specify the access method. The broader report describes movement from GeoServer 1 to the Web Server, but this row does not support any supplied technique specifically."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P031",
+      "initial_candidates": [
+        "T1530",
+        "T1505.001",
+        "T1590.002",
+        "T1555.003",
+        "T1566.001",
+        "T1677",
+        "T1486",
+        "T1210",
+        "T1611",
+        "T1110"
+      ],
+      "final_candidates": [
+        "T1530",
+        "T1505.001",
+        "T1590.002",
+        "T1555.003",
+        "T1566.001",
+        "T1677",
+        "T1486",
+        "T1210",
+        "T1611",
+        "T1110",
+        "T1195.001",
+        "T1070.010",
+        "T1550.001",
+        "T1684.002",
+        "T1070",
+        "T1567.004",
+        "T1176.001",
+        "T1659",
+        "T1546",
+        "T1550.002",
+        "T1548.005",
+        "T1021.003",
+        "T1207",
+        "T1136.003"
+      ],
+      "first_output": {
+        "mappings": [],
+        "additional_ids": [],
+        "assessment": "The timeline labels this as initial access to the SQL Server, but gives no technique or method for this event. The report separately describes lateral movement; the evidence does not support a specific ATT&CK technique for this row."
+      },
+      "assessment": "The timeline identifies initial access to the SQL Server but does not specify the access method. The broader report describes movement to the SQL Server, but this row does not support any supplied technique specifically.",
+      "final_output": {
+        "mappings": [],
+        "additional_ids": [],
+        "assessment": "The timeline identifies initial access to the SQL Server but does not specify the access method. The broader report describes movement to the SQL Server, but this row does not support any supplied technique specifically."
+      },
+      "rejected": []
+    },
+    {
+      "behavior_id": "AA25-266A-P032",
+      "initial_candidates": [
+        "T1681",
+        "T1654",
+        "T1677",
+        "T1489",
+        "T1070",
+        "T1195.001",
+        "T1668",
+        "T1195",
+        "T1202",
+        "T1496.003"
+      ],
+      "final_candidates": [
+        "T1681",
+        "T1654",
+        "T1677",
+        "T1489",
+        "T1070",
+        "T1195.001",
+        "T1668",
+        "T1195",
+        "T1202",
+        "T1496.003",
+        "T1690",
+        "T1548.003",
+        "T1027.009",
+        "T1480",
+        "T1070.003",
+        "T1480.001",
+        "T1053.002",
+        "T1564.001",
+        "T1090.003",
+        "T1547.006",
+        "T1548.005",
+        "T1482",
+        "T1033",
+        "T1070.006"
+      ],
+      "first_output": {
+        "mappings": [],
+        "additional_ids": [],
+        "assessment": "The timeline only says discovery commands were run on GeoServer 2. It does not identify what information was discovered, so no specific discovery technique is supported."
+      },
+      "assessment": "The timeline only identifies discovery commands on GeoServer 2 without specifying what was discovered. The supplied candidates do not fit that unspecified activity.",
+      "final_output": {
+        "mappings": [],
+        "additional_ids": [],
+        "assessment": "The timeline only identifies discovery commands on GeoServer 2 without specifying what was discovered. The supplied candidates do not fit that unspecified activity."
+      },
+      "rejected": []
+    }
+  ],
+  "quality_flags": [
+    {
+      "row_id": "AA25-266A-P001",
+      "issue": "duplicate",
+      "note": "This summary of CVE-2024-36401 exploitation for initial access on both GeoServers repeats P005 on page 6. Prefer the more detailed P005 evidence; keep the GeoServer 1 and GeoServer 2 occurrences distinct from each other.",
+      "expected_technique_id": null,
+      "valid_target": true
+    },
+    {
+      "row_id": "AA25-266A-P007",
+      "issue": "incorrect_fact_status",
+      "note": "The same evidence says the actors attempted escalation with dirtycow and later did escalate local privileges, with the method unknown. A single attempted label understates the explicit successful escalation; split the attempted method from the observed outcome or represent both accurately.",
+      "expected_technique_id": null,
+      "valid_target": true
+    },
+    {
+      "row_id": "",
+      "issue": "missed_behavior",
+      "note": "Page 6 reports an unsuccessful or likely unsuccessful attempt to load a JavaScript extension on GeoServer 1 to obtain webserver information; no supplied behavior row captures that distinct attempt.",
+      "expected_technique_id": null,
+      "valid_target": true
+    },
+    {
+      "row_id": "",
+      "issue": "missed_behavior",
+      "note": "Page 6 reports creation of accounts that were later deleted, with no evidence of further use. P006 mentions valid accounts used for persistence but does not capture this distinct account-creation event.",
+      "expected_technique_id": "T1136.001",
+      "valid_target": true
+    },
+    {
+      "row_id": "",
+      "issue": "missed_behavior",
+      "note": "Page 7 says the actors accessed service accounts by exploiting their associated services. P015 captures brute-force attempts but not this separate observed service-account access behavior.",
+      "expected_technique_id": null,
+      "valid_target": true
+    },
+    {
+      "row_id": "",
+      "issue": "missed_behavior",
+      "note": "Page 6 identifies use of a commercially available VPS from a cloud infrastructure provider during the operation; the inventory has no behavior for this infrastructure use.",
+      "expected_technique_id": null,
+      "valid_target": true
+    },
+    {
+      "row_id": "AA25-266A-P002",
+      "issue": "other",
+      "note": "P002 combines the initial-access event with persistence establishment. Initial access is separately summarized in P001/P005, while specific persistence mechanisms are detailed in P006; consider separating the actions to avoid duplicating access and to keep persistence evidence precise.",
+      "expected_technique_id": null,
+      "valid_target": true
+    },
+    {
+      "row_id": "AA25-266A-P021",
+      "issue": "unsupported_inference",
+      "note": "The report calls Stowaway a multi-level proxy tool, but this row supports use of a proxy for C2, not that multiple proxy hops were actually used in this occurrence. Keep the general Proxy mapping; the specific Multi-hop Proxy mapping is not established here.",
+      "expected_technique_id": null,
+      "valid_target": true,
+      "diagnosis": "insufficient_support"
+    },
+    {
+      "row_id": "AA25-266A-P021",
+      "issue": "duplicate",
+      "note": "P021 broadly says Stowaway was used to establish C2; P024 describes downloading a modified Stowaway and successfully establishing the outbound C2 connection on the same page. These may be duplicate descriptions of the same connection; retain distinct download evidence if merged.",
+      "expected_technique_id": null,
+      "valid_target": true
+    },
+    {
+      "row_id": "AA25-266A-P030",
+      "issue": "other",
+      "note": "The timeline labels Web Server access as initial access, while page 5 describes movement from GeoServer 1 to the Web Server. The evidence does not specify a separate initial-access method, so retain no technique mapping and reconcile the event wording.",
+      "expected_technique_id": null,
+      "valid_target": true
+    },
+    {
+      "row_id": "AA25-266A-P031",
+      "issue": "other",
+      "note": "The timeline calls this initial access to the SQL Server, while the report narrative describes the actors moving laterally to the SQL Server. Preserve the event but resolve the wording or scope; the timeline alone supplies no method to map.",
+      "expected_technique_id": null,
+      "valid_target": true
+    }
+  ],
+  "reconciliation_flags": [
+    "P001/P005 and P028/P029 are cross-page duplicates; automatic resolution may miss these because the evidence pages and host granularity differ. Keep the two separate initial-access occurrences on GeoServer 1 and GeoServer 2 distinct from each other.",
+    "P003 bundles separate access, lateral movement, and shell/script upload behaviors across multiple servers; do not collapse it wholesale into P005 or P019 because that would merge different actions and scopes.",
+    "P009 bundles ping sweeps with downloading fscan, while P010 describes later network and vulnerability scanning; these overlap broadly in discovery but the evidence does not establish they are one occurrence, and dropping either row could lose a distinct action.",
+    "P021 overlaps with P024 on the first Stowaway C2 establishment; retain P026 as a distinct second C2 connection and P022 as separate forwarding and on-disk tool activity.",
+    "P030 and P031 describe timeline entries labeled initial access to the Web Server and SQL Server, while P003 describes lateral movement from GeoServer 1 to those servers. The wording differs; preserve the rows separately absent evidence that these are the same access event."
+  ],
+  "gold_comparison": [
+    {
+      "gold_id": "AA25-266A-G001",
+      "expected": [
+        "T1033"
+      ],
+      "overlaps": []
+    },
+    {
+      "gold_id": "AA25-266A-G002",
+      "expected": [
+        "T1016"
+      ],
+      "overlaps": []
+    },
+    {
+      "gold_id": "AA25-266A-G003",
+      "expected": [
+        "T1057"
+      ],
+      "overlaps": []
+    },
+    {
+      "gold_id": "AA25-266A-G004",
+      "expected": [
+        "T1090"
+      ],
+      "overlaps": [
+        {
+          "behavior_id": "AA25-266A-P021",
+          "same_behavior": false,
+          "selected": [
+            "T1090",
+            "T1090.003"
+          ],
+          "matches_mapping": false,
+          "matches_fact_status": true,
+          "disposition": "needs_overlap_review",
+          "independent_behavior": {
+            "action": "Used Stowaway to establish command and control",
+            "object": "Stowaway",
+            "fact_status": "observed",
+            "confidence": "high",
+            "context_note": "A publicly available proxy tool was used for C2.",
+            "scope": "actor behavior",
+            "behavior_id": "AA25-266A-P021",
+            "evidence": {
+              "quote": "They used Stowaway,  a  publicly available multi- level proxy tool, to establish C2. Stowaway",
+              "pdf_page": 9,
+              "char_start": 16436,
+              "char_end": 16529
+            },
+            "origin": "agent_proposal",
+            "review_status": "draft"
+          },
+          "independent_mappings": [
+            {
+              "technique_id": "T1090",
+              "rationale": "The report identifies Stowaway as a proxy used to establish command and control, supporting the proxy technique.",
+              "confidence": "high",
+              "origin": "agent_proposal",
+              "review_status": "draft",
+              "behavior_id": "AA25-266A-P021",
+              "mapping_id": "AA25-266A-PM041",
+              "technique_name": "Proxy",
+              "retrieved_candidate_ids": [
+                "T1090.003",
+                "T1218.002",
+                "T1601.001",
+                "T1176.001",
+                "T1048.003",
+                "T1599",
+                "T1090.002",
+                "T1104",
+                "T1588.007",
+                "T1090.001",
+                "T1090",
+                "T1218.010",
+                "T1220",
+                "T1598.003",
+                "T1684.002",
+                "T1525",
+                "T1102.003",
+                "T1219",
+                "T1580",
+                "T1568.001",
+                "T1684",
+                "T1574.005",
+                "T1583.001",
+                "T1102.001"
+              ]
+            },
+            {
+              "technique_id": "T1090.003",
+              "rationale": "Stowaway is described as a multi-level proxy tool, which supports multi-hop proxying at medium confidence.",
+              "confidence": "medium",
+              "origin": "agent_proposal",
+              "review_status": "draft",
+              "behavior_id": "AA25-266A-P021",
+              "mapping_id": "AA25-266A-PM042",
+              "technique_name": "Multi-hop Proxy",
+              "retrieved_candidate_ids": [
+                "T1090.003",
+                "T1218.002",
+                "T1601.001",
+                "T1176.001",
+                "T1048.003",
+                "T1599",
+                "T1090.002",
+                "T1104",
+                "T1588.007",
+                "T1090.001",
+                "T1090",
+                "T1218.010",
+                "T1220",
+                "T1598.003",
+                "T1684.002",
+                "T1525",
+                "T1102.003",
+                "T1219",
+                "T1580",
+                "T1568.001",
+                "T1684",
+                "T1574.005",
+                "T1583.001",
+                "T1102.001"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "processed_chunks": [
+    {
+      "id": "chunk-001",
+      "pdf_page": 1,
+      "start": 19,
+      "end": 1122,
+      "rows": 0
+    },
+    {
+      "id": "chunk-002",
+      "pdf_page": 2,
+      "start": 1141,
+      "end": 2624,
+      "rows": 0
+    },
+    {
+      "id": "chunk-003",
+      "pdf_page": 3,
+      "start": 2643,
+      "end": 4746,
+      "rows": 0
+    },
+    {
+      "id": "chunk-004",
+      "pdf_page": 4,
+      "start": 4765,
+      "end": 7803,
+      "rows": 1
+    },
+    {
+      "id": "chunk-005",
+      "pdf_page": 5,
+      "start": 7822,
+      "end": 9763,
+      "rows": 2
+    },
+    {
+      "id": "chunk-006",
+      "pdf_page": 6,
+      "start": 9782,
+      "end": 12682,
+      "rows": 5
+    },
+    {
+      "id": "chunk-007",
+      "pdf_page": 7,
+      "start": 12701,
+      "end": 14495,
+      "rows": 5
+    },
+    {
+      "id": "chunk-008",
+      "pdf_page": 8,
+      "start": 14514,
+      "end": 16076,
+      "rows": 5
+    },
+    {
+      "id": "chunk-009",
+      "pdf_page": 9,
+      "start": 16095,
+      "end": 18523,
+      "rows": 9
+    },
+    {
+      "id": "chunk-010",
+      "pdf_page": 10,
+      "start": 18543,
+      "end": 21016,
+      "rows": 0
+    },
+    {
+      "id": "chunk-011",
+      "pdf_page": 11,
+      "start": 21036,
+      "end": 22803,
+      "rows": 0
+    },
+    {
+      "id": "chunk-012",
+      "pdf_page": 12,
+      "start": 22823,
+      "end": 24083,
+      "rows": 0
+    },
+    {
+      "id": "chunk-013",
+      "pdf_page": 15,
+      "start": 24103,
+      "end": 26791,
+      "rows": 0
+    },
+    {
+      "id": "chunk-014",
+      "pdf_page": 16,
+      "start": 26811,
+      "end": 29121,
+      "rows": 0
+    },
+    {
+      "id": "chunk-015",
+      "pdf_page": 17,
+      "start": 29141,
+      "end": 30042,
+      "rows": 0
+    },
+    {
+      "id": "chunk-016",
+      "pdf_page": 18,
+      "start": 30062,
+      "end": 31055,
+      "rows": 5
+    },
+    {
+      "id": "chunk-017",
+      "pdf_page": 19,
+      "start": 31075,
+      "end": 31659,
+      "rows": 0
+    }
+  ],
+  "smoke": false,
+  "proposal_hash": "92c267c531aad05e479ac0ba80effc3084efd45229d5aa4378c885d5d4d52af9"
+}

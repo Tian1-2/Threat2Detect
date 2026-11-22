@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:36:25.371270+00:00",
+  "response": "{\"job_id\": \"265f5b77907e72a0b6cd027eb6335d7c962b6af9aa34fa2cbcae8b8642121c24\", \"worker\": \"gpt-6-luna\", \"output\": {\"flags\": [{\"row_id\": \"AA25-266A-P031\", \"issue\": \"other\", \"note\": \"The timeline calls this initial access to the SQL Server, while the report narrative describes the actors moving laterally to the SQL Server. Preserve the event but resolve the wording or scope; the timeline alone supplies no method to map.\", \"expected_technique_id\": null}]}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

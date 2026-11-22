@@ -1,0 +1,14 @@
+{
+  "output": {
+    "mappings": [],
+    "additional_ids": [],
+    "assessment": "The reported demand and threat to publish data describe extortion, but none of the supplied ATT&CK definitions directly represents that coercive behavior. Do not force-map it to Financial Theft or data theft."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-c538e136ecdc4b62b4a59de6d6ca963f.json"
+}

@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:43:15.796029+00:00",
+  "response": "{\"job_id\": \"6278f9c606559175b21e7b5790dea0a5734b69940bf1f7832c63a1e9965d8053\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1087.002\", \"confidence\": \"high\", \"rationale\": \"The report describes reconnaissance on network/domain accounts, directly matching Domain Account discovery.\"}, {\"technique_id\": \"T1033\", \"confidence\": \"high\", \"rationale\": \"The report explicitly states that actors identified logged-in users, matching System Owner/User Discovery.\"}], \"additional_ids\": [], \"assessment\": \"The expanded set supports the more specific domain-account discovery mapping. The report does not say the actors discovered or modified domain trust relationships.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:32:27.260491+00:00",
+  "response": "{\"job_id\": \"06037460925f9847fc852d6d9b73426dfb3eb81e7f368698e8e43d1d2a1df772\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [], \"additional_ids\": [\"T1090.001\", \"T1090.003\"], \"assessment\": \"The report says C2 traffic was forwarded through the Web Server to reach internal resources, and Stowaway was written to disk. Internal proxying and multi-hop proxying appear relevant but were not supplied in this pass.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

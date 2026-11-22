@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:42:09.243488+00:00",
+  "response": "{\"job_id\": \"ef934d3cca7d6a0851cfde574e6610ea58a4e223c1fcfdb81649ffbc9bcb14de\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [], \"additional_ids\": [], \"assessment\": \"The reported demand and threat to publish data describe extortion, but none of the supplied ATT&CK definitions directly represents that coercive behavior. Do not force-map it to Financial Theft or data theft.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

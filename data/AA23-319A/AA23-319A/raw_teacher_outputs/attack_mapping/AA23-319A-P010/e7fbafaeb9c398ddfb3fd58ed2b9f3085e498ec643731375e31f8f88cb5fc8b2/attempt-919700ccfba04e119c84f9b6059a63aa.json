@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:43:15.862562+00:00",
+  "response": "{\"job_id\": \"ca01a808aea58f8497e4cfe9eb793a7be3629892ea671db7f3b54dbe4c44e047\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1074.001\", \"rationale\": \"The report says actors created a central C: drive staging directory to host malicious executables, supporting local data staging.\", \"confidence\": \"high\"}], \"additional_ids\": [], \"assessment\": \"Local staging is explicit. Deployment to support network-wide encryption is reported, but the evidence does not specify how tools were transferred to other hosts.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

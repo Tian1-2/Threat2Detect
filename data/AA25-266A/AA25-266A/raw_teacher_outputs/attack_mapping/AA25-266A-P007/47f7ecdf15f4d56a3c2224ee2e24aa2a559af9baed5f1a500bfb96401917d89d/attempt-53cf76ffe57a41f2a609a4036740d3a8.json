@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:32:27.110248+00:00",
+  "response": "{\"job_id\": \"8f53268afebf3a3e835f8a67c9bf8a611c6bf8c62f62537cecefe1011e9ba82b\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1068\", \"confidence\": \"high\", \"rationale\": \"The behavior describes an attempt to escalate local privileges using a tool associated in the report with a privilege-escalation vulnerability; the report also confirms local privilege escalation, while leaving its method unknown.\"}], \"additional_ids\": [], \"assessment\": \"The evidence supports exploitation for privilege escalation at the behavior level, but does not establish that the later escalation used the same tool.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

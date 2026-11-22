@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:33:35.114214+00:00",
+  "response": "{\"job_id\": \"7b32dc16ca5683662e2d43466def7821cde69de7db4ee65de53122d90705a58a\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1190\", \"rationale\": \"The report attributes GeoServer 1 initial access to exploitation of CVE-2024-36401 on a public-facing GeoServer, matching exploitation of a public-facing application.\", \"confidence\": \"high\"}], \"additional_ids\": [], \"assessment\": \"The report context supports this technique for the GeoServer 1 access event.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

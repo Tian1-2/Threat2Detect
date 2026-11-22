@@ -1,0 +1,20 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1090.001",
+        "rationale": "The report states that C2 traffic was forwarded through the Web Server to access internal resources, supporting use of an internal proxy.",
+        "confidence": "high"
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "Internal proxying is directly described. Writing the proxy tool to disk alone does not establish additional techniques in this behavior."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-954efc65f0e9472aa42500ee1a53f263.json"
+}

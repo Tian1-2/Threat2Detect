@@ -1,0 +1,30 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1053.003",
+        "confidence": "high",
+        "rationale": "Cron jobs are explicitly identified as a persistence mechanism, matching the Cron sub-technique."
+      },
+      {
+        "technique_id": "T1078",
+        "confidence": "high",
+        "rationale": "The behavior explicitly states that valid accounts were used for persistence, matching Valid Accounts."
+      },
+      {
+        "technique_id": "T1505.003",
+        "confidence": "high",
+        "rationale": "The report identifies web shells as a persistence mechanism, matching Web Shell."
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "The expanded definitions fit all three persistence mechanisms explicitly listed in the behavior. No narrower valid-account or scheduled-task sub-technique is established."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-c0b84afb58f24214bcbd34b55384c974.json"
+}

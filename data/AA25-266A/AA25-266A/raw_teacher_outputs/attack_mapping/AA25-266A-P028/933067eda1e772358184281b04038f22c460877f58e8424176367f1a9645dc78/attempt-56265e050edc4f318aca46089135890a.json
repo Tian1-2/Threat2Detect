@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:31:58.840572+00:00",
+  "response": "{\"job_id\": \"5a7a69f077a5f8a620b37a7245dc5f50a159b7bf0aa6f86e891da4ae2136752c\", \"output\": {\"mappings\": [], \"additional_ids\": [\"T1190\"], \"assessment\": \"Full report context attributes the GeoServer 1 initial access to exploitation of a public-facing application vulnerability. T1190 is not among the supplied candidates.\"}, \"worker\": \"gpt-6-luna\", \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

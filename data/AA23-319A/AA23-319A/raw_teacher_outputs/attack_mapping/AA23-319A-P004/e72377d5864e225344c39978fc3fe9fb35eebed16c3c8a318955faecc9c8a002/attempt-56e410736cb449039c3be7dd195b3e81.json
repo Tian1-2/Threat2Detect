@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:43:15.805826+00:00",
+  "response": "{\"job_id\": \"90a3ba2961bb29c79dbf4444cfe9294fdb3fe0844fafced9b21b4b63606eecc7\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1059.001\", \"confidence\": \"high\", \"rationale\": \"The behavior explicitly describes launching PowerShell ISE before executing a malicious script, supporting PowerShell execution.\"}], \"additional_ids\": [], \"assessment\": \"No expanded candidate for PowerShell profiles or other persistence mechanisms is supported; the behavior describes script execution.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

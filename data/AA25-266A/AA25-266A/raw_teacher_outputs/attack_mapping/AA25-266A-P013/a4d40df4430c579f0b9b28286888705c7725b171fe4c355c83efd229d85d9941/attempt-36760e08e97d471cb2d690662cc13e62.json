@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:33:34.993084+00:00",
+  "response": "{\"job_id\": \"2debf7a48e7a23026aec30c1b528028a8dd84c1202a8f59fa9f146a53a98d434\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1105\", \"rationale\": \"The report explicitly states that actors downloaded a shell script and archive to the compromised GeoServer, supporting ingress tool transfer.\", \"confidence\": \"high\"}], \"additional_ids\": [], \"assessment\": \"The evidence describes downloads only; it does not establish execution, persistence, or shell startup behavior.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

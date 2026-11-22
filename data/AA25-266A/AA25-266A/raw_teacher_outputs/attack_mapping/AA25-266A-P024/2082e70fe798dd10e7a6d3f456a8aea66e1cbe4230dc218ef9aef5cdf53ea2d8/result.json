@@ -1,0 +1,23 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1090",
+        "rationale": "The report describes an outbound connection to the C2 server after downloading a modified proxy tool, supporting proxy use in command and control.",
+        "confidence": "medium"
+      }
+    ],
+    "additional_ids": [
+      "T1105",
+      "T1071.001"
+    ],
+    "assessment": "The behavior combines a tool download with a successful outbound C2 connection over HTTP. Ingress transfer and web protocol C2 may be relevant, but their definitions were not supplied in this pass."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-c164fa25f7024547847572c0b37cd9c7.json"
+}

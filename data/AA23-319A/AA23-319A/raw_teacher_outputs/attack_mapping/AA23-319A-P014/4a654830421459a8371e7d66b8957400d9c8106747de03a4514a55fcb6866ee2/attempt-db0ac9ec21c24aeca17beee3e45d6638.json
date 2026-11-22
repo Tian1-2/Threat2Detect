@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:43:15.893670+00:00",
+  "response": "{\"job_id\": \"a10553be4f7e3b993e313560140670a162c2a74f0f14390f0202d7e4643aa4bb\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1070.004\", \"rationale\": \"The report describes deleting the ransomware binary after encryption, consistent with File Deletion to remove an artifact.\", \"confidence\": \"medium\"}], \"additional_ids\": [], \"assessment\": \"This is deletion of the ransomware binary after its task, not destruction of victim data or inhibition of recovery.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

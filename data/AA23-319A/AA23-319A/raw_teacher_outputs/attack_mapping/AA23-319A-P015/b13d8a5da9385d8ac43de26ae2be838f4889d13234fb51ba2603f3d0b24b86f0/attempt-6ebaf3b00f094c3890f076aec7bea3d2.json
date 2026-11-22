@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:42:09.233997+00:00",
+  "response": "{\"job_id\": \"96483e7c146ced740230d6c583cc51f4a3dc05b317dfb16343d0856a292a974e\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [], \"additional_ids\": [\"T1070.004\"], \"assessment\": \"The report describes completed binary strings deleting themselves to evade detection. File Deletion is a plausible mapping, but it is not among the supplied candidates; the Control Panel technique does not fit the stated behavior.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

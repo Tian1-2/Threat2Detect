@@ -1,0 +1,25 @@
+{
+  "output": {
+    "duplicates": [
+      {
+        "keep": "AA23-319A-P013",
+        "drop": "AA23-319A-P012",
+        "reason": "Both describe Rhysida encrypting victim files in the same ransomware operation; P012 is a page 7 summary and P013 gives the page 8 targeted-file and extension detail."
+      }
+    ],
+    "flags": [
+      "P012/P013 are a cross-page duplicate that an automatic resolver may miss because the pages and quote detail differ. Keep the encryption behavior once with the more specific P013 evidence; do not treat the .rhysida suffix as a separate occurrence.",
+      "P001 and P002 both mention VPN access, but P001 specifies authentication with compromised valid credentials while P002 also includes RDP connections and summarizes living-off-the-land activity. Their text does not establish the same host or occurrence, so do not drop either wholesale.",
+      "P010 describes staging directories and deployment of tools and scripts. P011 separately infers that host-named files in the in folder were imported through scanning; the report does not explicitly say actors stored those files. Preserve P011 as an inference or remove it if actor placement is required, and do not collapse it into the staging-directory action.",
+      "P014 describes PowerShell deletion of the ransomware binary after encryption; P015 separately describes binary strings deleting themselves after completing tasks. Different objects and stated purposes mean these are not duplicates.",
+      "P016 captures the reported double-extortion demand and threat to publish data; P017 separately describes instructions to pay in Bitcoin. Preserve the extortion behavior and payment-channel detail without conflating them."
+    ]
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-67089ba70b094ed69517d3a3756c83e5.json"
+}

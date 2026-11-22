@@ -1,0 +1,43 @@
+{
+  "output": {
+    "behaviors": [
+      {
+        "action": "Launched PowerShell ISE before executing a malicious script",
+        "object": "compromised Windows system",
+        "fact_status": "observed",
+        "confidence": "high",
+        "context_note": "The advisory identifies the script as 1.ps1 from a temporary AppData folder.",
+        "scope": "Rhysida activity across reported victims",
+        "quote": "Rhysida actors have been observed launching Windows PowerShell Integrated \nScripting Environment (ISE) prior to executing a malicious script (1.ps1 from a folder \nin %AppData%\\Local\\Temp%). PowerShell ISE provides a graphical interface for \nediting and testing PowerShell scripts.",
+        "pdf_page": 5
+      },
+      {
+        "action": "Used PsExec for lateral movement and remote execution",
+        "object": "remote victim systems",
+        "fact_status": "observed",
+        "confidence": "high",
+        "context_note": "The advisory states Rhysida actors heavily leveraged this tool for these actions.",
+        "scope": "Rhysida activity across reported victims",
+        "quote": "PsExec.exe A tool included in the PsTools suite used to execute processes remotely. Rhysida actors heavily leveraged this tool for lateral movement and remote execution.",
+        "pdf_page": 5
+      },
+      {
+        "action": "Created SSH connections with PuTTY for lateral movement",
+        "object": "remote victim systems",
+        "fact_status": "observed",
+        "confidence": "high",
+        "context_note": "In one example, PowerShell console history for a compromised user showed remote SSH connections.",
+        "scope": "one compromised-user instance",
+        "quote": "Rhysida actors have been observed creating Secure Shell (SSH) PuTTy connections for \nlateral movement. In one example, analysis of PowerShell console host history for a \ncompromised user account revealed Rhysida actors leveraged PuTTy to remotely \nconnect to systems via SSH.",
+        "pdf_page": 5
+      }
+    ]
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-b853df0cb57f47348ba040b918aefaeb.json"
+}

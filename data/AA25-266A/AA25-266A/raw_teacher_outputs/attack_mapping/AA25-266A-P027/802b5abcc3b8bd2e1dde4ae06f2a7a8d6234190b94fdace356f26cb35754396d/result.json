@@ -1,0 +1,20 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1105",
+        "rationale": "The report says the actors transferred a file to the SQL Server through bitsadmin, consistent with transferring a tool or file to a compromised host.",
+        "confidence": "high"
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "Ingress Tool Transfer directly describes the observed file transfer; the report does not establish file masquerading."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-a3e571dab4d84588bbcda81d2b132ccf.json"
+}

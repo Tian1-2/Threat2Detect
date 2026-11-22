@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:32:27.222798+00:00",
+  "response": "{\"job_id\": \"52a4eb882c5c0d3e35823b1559f277fbdffa4d0f7840a0e4c272526027871ded\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1027\", \"rationale\": \"The report explicitly describes the host and network discovery commands as encoded, supporting obfuscation of command content.\", \"confidence\": \"high\"}, {\"technique_id\": \"T1018\", \"rationale\": \"The report explicitly identifies host discovery commands executed on GeoServer 2.\", \"confidence\": \"high\"}], \"additional_ids\": [\"T1016\"], \"assessment\": \"Encoded commands were used for host and network discovery. The report does not specify the encoded content or a particular interpreter.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

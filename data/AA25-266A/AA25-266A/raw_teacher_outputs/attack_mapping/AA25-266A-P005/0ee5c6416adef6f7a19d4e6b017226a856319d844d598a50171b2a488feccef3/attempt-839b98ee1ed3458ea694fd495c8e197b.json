@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:32:27.088821+00:00",
+  "response": "{\"job_id\": \"5b5a680c3ffbc862b936a8991cd66bb7efc10af9000c2a0dacb79cb7690de14f\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1190\", \"confidence\": \"high\", \"rationale\": \"The report states that the actors exploited a vulnerability on public-facing GeoServers to obtain initial access, matching public-facing application exploitation.\"}], \"additional_ids\": [], \"assessment\": \"The evidence describes exploitation for initial access. Code injection is the vulnerability mechanism, not evidence for client-side exploitation or privilege escalation.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

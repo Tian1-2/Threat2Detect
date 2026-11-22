@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:32:27.204970+00:00",
+  "response": "{\"job_id\": \"4b6bf1912b97fae0963f52e96d8c0bc9e697dff71cf0fdab04a9ffc2a8c8842a\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [], \"additional_ids\": [\"T1018\"], \"assessment\": \"The report states that actors ping swept several internal hosts. Remote system discovery is the likely mapping; no supplied candidate directly describes that behavior.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

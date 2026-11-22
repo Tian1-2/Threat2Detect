@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:32:27.067563+00:00",
+  "response": "{\"job_id\": \"71a1ca760c4be9d0471aae3e1cc32aa417eb30c416c8b67d8a73c71580a204d0\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1505.003\", \"confidence\": \"high\", \"rationale\": \"The behavior explicitly reports uploading or attempting to upload web shells, which is direct evidence for the Web Shell technique.\"}], \"additional_ids\": [\"T1105\"], \"assessment\": \"The shell upload supports Web Shell. The report also mentions scripts designed for several functions, but this behavior does not establish a particular lateral-movement mechanism.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

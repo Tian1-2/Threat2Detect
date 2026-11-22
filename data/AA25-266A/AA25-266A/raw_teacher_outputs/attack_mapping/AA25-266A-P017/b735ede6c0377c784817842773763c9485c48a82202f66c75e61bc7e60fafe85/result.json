@@ -1,0 +1,31 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1018",
+        "rationale": "The report identifies a set of host discovery commands observed on the SQL Server, supporting discovery of systems and their state.",
+        "confidence": "medium"
+      },
+      {
+        "technique_id": "T1046",
+        "rationale": "The observed command set includes network-oriented discovery activity, supporting network service discovery at a broad level.",
+        "confidence": "medium"
+      }
+    ],
+    "additional_ids": [
+      "T1082",
+      "T1083",
+      "T1057",
+      "T1016",
+      "T1069.002"
+    ],
+    "assessment": "The report lists multiple discovery commands, including host, system, file, process, and domain group queries. More specific ATT&CK definitions may fit individual commands, but were not supplied in this pass."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-9ac30ae7204342dda67a1f80e0bb05d5.json"
+}

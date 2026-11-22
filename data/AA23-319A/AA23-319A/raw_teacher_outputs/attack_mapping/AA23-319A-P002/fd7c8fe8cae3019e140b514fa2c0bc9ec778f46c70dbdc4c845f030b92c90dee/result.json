@@ -1,0 +1,25 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1021.001",
+        "confidence": "high",
+        "rationale": "The report explicitly states that the actors created RDP connections for lateral movement, matching Remote Desktop Protocol."
+      },
+      {
+        "technique_id": "T1133",
+        "confidence": "high",
+        "rationale": "The report separately describes establishing VPN access, matching External Remote Services."
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "The expanded candidates do not support session hijacking, tool transfer, or persistence through terminal-services components. VPN and RDP use are directly stated."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-ee2f5090576a41b69a1371d304695aa9.json"
+}

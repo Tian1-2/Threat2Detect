@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:33:35.077237+00:00",
+  "response": "{\"job_id\": \"8b10a544278dcbdcbdf9b78316db2cbb228dc20e6347f09ff80cd620e6b6907b\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1018\", \"rationale\": \"The report explicitly states the actors ping swept multiple hosts, supporting remote system discovery.\", \"confidence\": \"high\"}], \"additional_ids\": [], \"assessment\": \"This is direct host discovery evidence. No evidence supports the other supplied techniques.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

@@ -1,0 +1,20 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1003.003",
+        "rationale": "The report explicitly states that actors used ntdsutil to extract and dump NTDS.dit from a domain controller, matching NTDS credential dumping.",
+        "confidence": "high"
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "The data source and extraction are explicit. No other credential dumping method is supported."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-2fd55131790b48a28fa7490a90e5d5bd.json"
+}

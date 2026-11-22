@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:31:58.831997+00:00",
+  "response": "{\"job_id\": \"0391d686fc96cecd7fe49eca869352c40dd78d8d04a0d2e9ad4da14462ea72c0\", \"output\": {\"mappings\": [{\"technique_id\": \"T1105\", \"rationale\": \"The report says the actors transferred a file to the SQL Server through bitsadmin, consistent with transferring a tool or file to a compromised host.\", \"confidence\": \"high\"}], \"additional_ids\": [], \"assessment\": \"Ingress Tool Transfer directly describes the observed file transfer; the report does not establish file masquerading.\"}, \"worker\": \"gpt-6-luna\", \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

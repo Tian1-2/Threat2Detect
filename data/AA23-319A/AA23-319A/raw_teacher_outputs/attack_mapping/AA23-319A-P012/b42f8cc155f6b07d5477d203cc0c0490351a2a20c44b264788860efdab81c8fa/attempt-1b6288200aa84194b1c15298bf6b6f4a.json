@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:42:24.060818+00:00",
+  "response": "{\"job_id\": \"28d30a2fe6583e228418a8e94efd43654193d5b8a6e3e81733b97784860298e8\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1486\", \"rationale\": \"The report directly states that ransomware encrypts victim data after mapping the network, matching data encryption for impact.\", \"confidence\": \"high\"}], \"additional_ids\": [], \"assessment\": \"Encryption of victim data is explicit; the other supplied techniques do not describe this behavior.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

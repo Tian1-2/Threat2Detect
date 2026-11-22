@@ -1,0 +1,638 @@
+{
+  "case_id": "AA25-266A",
+  "date": "2026-11-22",
+  "reviewer": "project_lead_via_chat_2026-11-22",
+  "comparison_basis": "exact technique ID; parent and sub-technique are different",
+  "reference_path": "data/reports/cisa-aa25-266a-reference.json",
+  "reference_sha256": "93012f04161f4cbca2adcaa5985e4796107a7398b4ff4ae08570b70d9d70f00f",
+  "reviewed_package_sha256": "a7524bded42622b73f5b00563cb9afb7078f251e4d93cd5d6735b7388bc21ea4",
+  "counts": {
+    "retain": 37,
+    "additional_accepted": 4,
+    "pending_additional": 0
+  },
+  "missing_report_ids": [
+    "T1049",
+    "T1059.001",
+    "T1087.001",
+    "T1583.003"
+  ],
+  "items": [
+    {
+      "mapping_id": "AA25-266A-M001",
+      "behavior_id": "AA25-266A-G001",
+      "technique_id": "T1033",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-M002",
+      "behavior_id": "AA25-266A-G002",
+      "technique_id": "T1016",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-M003",
+      "behavior_id": "AA25-266A-G003",
+      "technique_id": "T1057",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-M004",
+      "behavior_id": "AA25-266A-G004",
+      "technique_id": "T1090",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM002",
+      "behavior_id": "AA25-266A-P002",
+      "technique_id": "T1190",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM005",
+      "behavior_id": "AA25-266A-P004",
+      "technique_id": "T1595.002",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM011",
+      "behavior_id": "AA25-266A-P008",
+      "technique_id": "T1197",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM012",
+      "behavior_id": "AA25-266A-P008",
+      "technique_id": "T1202",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM014",
+      "behavior_id": "AA25-266A-P009",
+      "technique_id": "T1018",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM015",
+      "behavior_id": "AA25-266A-P009",
+      "technique_id": "T1105",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM017",
+      "behavior_id": "AA25-266A-P010",
+      "technique_id": "T1595.002",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM018",
+      "behavior_id": "AA25-266A-P011",
+      "technique_id": "T1082",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM023",
+      "behavior_id": "AA25-266A-P013",
+      "technique_id": "T1105",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM024",
+      "behavior_id": "AA25-266A-P014",
+      "technique_id": "T1046",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM025",
+      "behavior_id": "AA25-266A-P014",
+      "technique_id": "T1018",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM026",
+      "behavior_id": "AA25-266A-P015",
+      "technique_id": "T1110",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM028",
+      "behavior_id": "AA25-266A-P016",
+      "technique_id": "T1018",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM036",
+      "behavior_id": "AA25-266A-P018",
+      "technique_id": "T1018",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM037",
+      "behavior_id": "AA25-266A-P018",
+      "technique_id": "T1016",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM039",
+      "behavior_id": "AA25-266A-P020",
+      "technique_id": "T1105",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM040",
+      "behavior_id": "AA25-266A-P020",
+      "technique_id": "T1197",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM043",
+      "behavior_id": "AA25-266A-P022",
+      "technique_id": "T1090",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM044",
+      "behavior_id": "AA25-266A-P023",
+      "technique_id": "T1018",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM048",
+      "behavior_id": "AA25-266A-P025",
+      "technique_id": "T1059.004",
+      "review_status": "confirmed",
+      "disposition": "additional_mapping_accepted_by_user"
+    },
+    {
+      "mapping_id": "AA25-266A-PM049",
+      "behavior_id": "AA25-266A-R016",
+      "technique_id": "T1008",
+      "review_status": "confirmed",
+      "disposition": "additional_mapping_accepted_by_user"
+    },
+    {
+      "mapping_id": "AA25-266A-PM050",
+      "behavior_id": "AA25-266A-P027",
+      "technique_id": "T1105",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM010",
+      "behavior_id": "AA25-266A-P007",
+      "technique_id": "T1068",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-P028-M01",
+      "behavior_id": "AA25-266A-P028",
+      "technique_id": "T1190",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-P029-M01",
+      "behavior_id": "AA25-266A-P029",
+      "technique_id": "T1190",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-P021-M01",
+      "behavior_id": "AA25-266A-P021",
+      "technique_id": "T1090",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-R001-M01",
+      "behavior_id": "AA25-266A-R001",
+      "technique_id": "T1105",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-R002-M01",
+      "behavior_id": "AA25-266A-R002",
+      "technique_id": "T1071.001",
+      "review_status": "confirmed",
+      "disposition": "additional_mapping_accepted_by_user"
+    },
+    {
+      "mapping_id": "AA25-266A-R005-M01",
+      "behavior_id": "AA25-266A-R005",
+      "technique_id": "T1505.003",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-R006-M01",
+      "behavior_id": "AA25-266A-R006",
+      "technique_id": "T1053.003",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-R007-M01",
+      "behavior_id": "AA25-266A-R007",
+      "technique_id": "T1078",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-R008-M01",
+      "behavior_id": "AA25-266A-R008",
+      "technique_id": "T1016",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-R011-M01",
+      "behavior_id": "AA25-266A-R011",
+      "technique_id": "T1082",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-R012-M01",
+      "behavior_id": "AA25-266A-R012",
+      "technique_id": "T1082",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-R013-M01",
+      "behavior_id": "AA25-266A-R013",
+      "technique_id": "T1082",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-R014-M01",
+      "behavior_id": "AA25-266A-R014",
+      "technique_id": "T1083",
+      "review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-R015-M01",
+      "behavior_id": "AA25-266A-R015",
+      "technique_id": "T1069.002",
+      "review_status": "confirmed",
+      "disposition": "additional_mapping_accepted_by_user"
+    }
+  ],
+  "limitations": [
+    "Exact report-ID matches retained by user decision; linked behavior states remain independent.",
+    "Reference comparison must remain outside prediction input.",
+    "Additional accepted mappings are team additions, not CISA official labels."
+  ],
+  "previous_comparison_items": [
+    {
+      "mapping_id": "AA25-266A-M001",
+      "behavior_id": "AA25-266A-G001",
+      "technique_id": "T1033",
+      "previous_review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-M002",
+      "behavior_id": "AA25-266A-G002",
+      "technique_id": "T1016",
+      "previous_review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-M003",
+      "behavior_id": "AA25-266A-G003",
+      "technique_id": "T1057",
+      "previous_review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-M004",
+      "behavior_id": "AA25-266A-G004",
+      "technique_id": "T1090",
+      "previous_review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM002",
+      "behavior_id": "AA25-266A-P002",
+      "technique_id": "T1190",
+      "previous_review_status": "draft",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM005",
+      "behavior_id": "AA25-266A-P004",
+      "technique_id": "T1595.002",
+      "previous_review_status": "draft",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM011",
+      "behavior_id": "AA25-266A-P008",
+      "technique_id": "T1197",
+      "previous_review_status": "draft",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM012",
+      "behavior_id": "AA25-266A-P008",
+      "technique_id": "T1202",
+      "previous_review_status": "draft",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM013",
+      "behavior_id": "AA25-266A-P009",
+      "technique_id": "T1595",
+      "previous_review_status": "draft",
+      "disposition": "additional_mapping_for_review"
+    },
+    {
+      "mapping_id": "AA25-266A-PM014",
+      "behavior_id": "AA25-266A-P009",
+      "technique_id": "T1018",
+      "previous_review_status": "draft",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM015",
+      "behavior_id": "AA25-266A-P009",
+      "technique_id": "T1105",
+      "previous_review_status": "draft",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM016",
+      "behavior_id": "AA25-266A-P009",
+      "technique_id": "T1588.002",
+      "previous_review_status": "draft",
+      "disposition": "additional_mapping_for_review"
+    },
+    {
+      "mapping_id": "AA25-266A-PM017",
+      "behavior_id": "AA25-266A-P010",
+      "technique_id": "T1595.002",
+      "previous_review_status": "draft",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM018",
+      "behavior_id": "AA25-266A-P011",
+      "technique_id": "T1082",
+      "previous_review_status": "draft",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM023",
+      "behavior_id": "AA25-266A-P013",
+      "technique_id": "T1105",
+      "previous_review_status": "draft",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM024",
+      "behavior_id": "AA25-266A-P014",
+      "technique_id": "T1046",
+      "previous_review_status": "draft",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM025",
+      "behavior_id": "AA25-266A-P014",
+      "technique_id": "T1018",
+      "previous_review_status": "draft",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM026",
+      "behavior_id": "AA25-266A-P015",
+      "technique_id": "T1110",
+      "previous_review_status": "draft",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM027",
+      "behavior_id": "AA25-266A-P015",
+      "technique_id": "T1110.001",
+      "previous_review_status": "draft",
+      "disposition": "additional_mapping_for_review"
+    },
+    {
+      "mapping_id": "AA25-266A-PM028",
+      "behavior_id": "AA25-266A-P016",
+      "technique_id": "T1018",
+      "previous_review_status": "draft",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM035",
+      "behavior_id": "AA25-266A-P018",
+      "technique_id": "T1027",
+      "previous_review_status": "draft",
+      "disposition": "additional_mapping_for_review"
+    },
+    {
+      "mapping_id": "AA25-266A-PM036",
+      "behavior_id": "AA25-266A-P018",
+      "technique_id": "T1018",
+      "previous_review_status": "draft",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM037",
+      "behavior_id": "AA25-266A-P018",
+      "technique_id": "T1016",
+      "previous_review_status": "draft",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM038",
+      "behavior_id": "AA25-266A-P019",
+      "technique_id": "T1210",
+      "previous_review_status": "draft",
+      "disposition": "additional_mapping_for_review"
+    },
+    {
+      "mapping_id": "AA25-266A-PM039",
+      "behavior_id": "AA25-266A-P020",
+      "technique_id": "T1105",
+      "previous_review_status": "draft",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM040",
+      "behavior_id": "AA25-266A-P020",
+      "technique_id": "T1197",
+      "previous_review_status": "draft",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM043",
+      "behavior_id": "AA25-266A-P022",
+      "technique_id": "T1090.001",
+      "previous_review_status": "draft",
+      "disposition": "additional_mapping_for_review"
+    },
+    {
+      "mapping_id": "AA25-266A-PM044",
+      "behavior_id": "AA25-266A-P023",
+      "technique_id": "T1018",
+      "previous_review_status": "draft",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM048",
+      "behavior_id": "AA25-266A-P025",
+      "technique_id": "T1059.004",
+      "previous_review_status": "draft",
+      "disposition": "additional_mapping_for_review"
+    },
+    {
+      "mapping_id": "AA25-266A-PM049",
+      "behavior_id": "AA25-266A-P026",
+      "technique_id": "T1008",
+      "previous_review_status": "draft",
+      "disposition": "additional_mapping_for_review"
+    },
+    {
+      "mapping_id": "AA25-266A-PM050",
+      "behavior_id": "AA25-266A-P027",
+      "technique_id": "T1105",
+      "previous_review_status": "draft",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-PM010",
+      "behavior_id": "AA25-266A-P007",
+      "technique_id": "T1068",
+      "previous_review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-P028-M01",
+      "behavior_id": "AA25-266A-P028",
+      "technique_id": "T1190",
+      "previous_review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-P029-M01",
+      "behavior_id": "AA25-266A-P029",
+      "technique_id": "T1190",
+      "previous_review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-P021-M01",
+      "behavior_id": "AA25-266A-P021",
+      "technique_id": "T1090",
+      "previous_review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-R001-M01",
+      "behavior_id": "AA25-266A-R001",
+      "technique_id": "T1105",
+      "previous_review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-R002-M01",
+      "behavior_id": "AA25-266A-R002",
+      "technique_id": "T1071.001",
+      "previous_review_status": "confirmed",
+      "disposition": "additional_mapping_for_review"
+    },
+    {
+      "mapping_id": "AA25-266A-R005-M01",
+      "behavior_id": "AA25-266A-R005",
+      "technique_id": "T1505.003",
+      "previous_review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-R006-M01",
+      "behavior_id": "AA25-266A-R006",
+      "technique_id": "T1053.003",
+      "previous_review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-R007-M01",
+      "behavior_id": "AA25-266A-R007",
+      "technique_id": "T1078",
+      "previous_review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-R008-M01",
+      "behavior_id": "AA25-266A-R008",
+      "technique_id": "T1016",
+      "previous_review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-R011-M01",
+      "behavior_id": "AA25-266A-R011",
+      "technique_id": "T1082",
+      "previous_review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-R012-M01",
+      "behavior_id": "AA25-266A-R012",
+      "technique_id": "T1082",
+      "previous_review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-R013-M01",
+      "behavior_id": "AA25-266A-R013",
+      "technique_id": "T1082",
+      "previous_review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-R014-M01",
+      "behavior_id": "AA25-266A-R014",
+      "technique_id": "T1083",
+      "previous_review_status": "confirmed",
+      "disposition": "retain_report_id_match"
+    },
+    {
+      "mapping_id": "AA25-266A-R015-M01",
+      "behavior_id": "AA25-266A-R015",
+      "technique_id": "T1069.002",
+      "previous_review_status": "confirmed",
+      "disposition": "additional_mapping_for_review"
+    }
+  ]
+}

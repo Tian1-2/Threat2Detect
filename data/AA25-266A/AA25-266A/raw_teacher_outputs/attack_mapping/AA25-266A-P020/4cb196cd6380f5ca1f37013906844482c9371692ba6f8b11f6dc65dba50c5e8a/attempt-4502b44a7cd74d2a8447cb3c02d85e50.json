@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:32:27.241401+00:00",
+  "response": "{\"job_id\": \"623175613a0091cc8c35592c6d2f0dcc965b4eab60510c5567efdfbb9a4e2ba0\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1105\", \"rationale\": \"The report explicitly states that payloads were downloaded to compromised systems.\", \"confidence\": \"high\"}, {\"technique_id\": \"T1197\", \"rationale\": \"The report names BITS Admin GetFile as a mechanism used to download payloads, supporting BITS job transfer behavior.\", \"confidence\": \"high\"}], \"additional_ids\": [], \"assessment\": \"Both ingress transfer and BITS are directly supported. The payload contents and subsequent execution are not established by this behavior.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

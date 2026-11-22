@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:27:35.607967+00:00",
+  "response": "{\"job_id\": \"f4bda287fd457fa5c55bc0f90b7c2bbe04a9093e9db9b63cab6d7ac46ba10da8\", \"worker\": \"gpt-6-luna\", \"output\": {\"behaviors\": [{\"confidence\": \"high\", \"fact_status\": \"observed\", \"scope\": \"incident\", \"pdf_page\": 4, \"context_note\": \"CISA summarizes the incident findings.\", \"quote\": \"The cyber threat actors exploited CVE-2024-36401 for initial access on two GeoServers.\", \"object\": \"two GeoServers\", \"action\": \"exploited a vulnerability to gain initial access\"}]}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

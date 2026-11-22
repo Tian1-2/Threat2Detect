@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:43:15.902421+00:00",
+  "response": "{\"job_id\": \"236a19282635a88c10b058b90ab6861e299466acf242492c13cbaa19068a07d0\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1070.004\", \"rationale\": \"The report describes completed binary strings deleting themselves to evade detection, consistent with File Deletion to remove artifacts.\", \"confidence\": \"medium\"}], \"additional_ids\": [], \"assessment\": \"File Deletion fits better than Control Panel, which does not describe this deletion behavior.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

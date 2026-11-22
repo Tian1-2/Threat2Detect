@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:32:27.135100+00:00",
+  "response": "{\"job_id\": \"e3fec9e56a729bfe3ec26d70b5eb5d776fc17bc7353c8d75714cbbbf399b8786\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1595\", \"confidence\": \"high\", \"rationale\": \"Ping sweeps and use of a scanning tool to examine the organization network are active scanning behavior.\"}, {\"technique_id\": \"T1018\", \"confidence\": \"medium\", \"rationale\": \"Ping sweeps of hosts within the organization’s subnets are evidence of discovering remote systems.\"}], \"additional_ids\": [\"T1588.002\"], \"assessment\": \"The ping sweeps support active scanning and remote-system discovery. Downloading fscan may indicate acquisition of a tool, but its definition should be checked in the expanded set.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

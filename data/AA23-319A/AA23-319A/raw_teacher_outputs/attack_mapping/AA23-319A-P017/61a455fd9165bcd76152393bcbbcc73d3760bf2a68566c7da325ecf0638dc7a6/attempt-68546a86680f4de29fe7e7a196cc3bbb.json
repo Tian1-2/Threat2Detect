@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:42:09.255090+00:00",
+  "response": "{\"job_id\": \"f2da752f7d42ff5da467abdf64605e1973d9dc60d0fe86254de57d16c9774235\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [], \"additional_ids\": [], \"assessment\": \"Directing victims to pay ransom in Bitcoin is an extortion payment demand, not evidence of financial theft by the actors through a technique represented in the supplied candidates.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

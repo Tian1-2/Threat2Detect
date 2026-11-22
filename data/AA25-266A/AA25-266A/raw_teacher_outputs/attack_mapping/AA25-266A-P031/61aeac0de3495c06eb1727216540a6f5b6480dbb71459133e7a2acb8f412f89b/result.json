@@ -1,0 +1,14 @@
+{
+  "output": {
+    "mappings": [],
+    "additional_ids": [],
+    "assessment": "The timeline identifies initial access to the SQL Server but does not specify the access method. The broader report describes movement to the SQL Server, but this row does not support any supplied technique specifically."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-4649dd8cc4ac4a2cad5ead366fa7bb41.json"
+}

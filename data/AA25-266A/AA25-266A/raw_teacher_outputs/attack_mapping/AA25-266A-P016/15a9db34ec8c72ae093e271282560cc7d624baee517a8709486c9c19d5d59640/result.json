@@ -1,0 +1,16 @@
+{
+  "output": {
+    "mappings": [],
+    "additional_ids": [
+      "T1018"
+    ],
+    "assessment": "The report states that actors ping swept several internal hosts. Remote system discovery is the likely mapping; no supplied candidate directly describes that behavior."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-ac402e27ea674c06b4b571fdd44e3887.json"
+}

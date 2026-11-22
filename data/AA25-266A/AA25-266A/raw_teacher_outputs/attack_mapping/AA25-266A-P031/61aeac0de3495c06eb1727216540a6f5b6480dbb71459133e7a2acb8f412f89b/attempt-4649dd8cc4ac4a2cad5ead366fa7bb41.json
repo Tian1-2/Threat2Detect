@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:33:35.134128+00:00",
+  "response": "{\"job_id\": \"0eeb3d277ada2b931f9e266cf8e01a86b5f480441091491242b4c7e809173c46\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [], \"additional_ids\": [], \"assessment\": \"The timeline identifies initial access to the SQL Server but does not specify the access method. The broader report describes movement to the SQL Server, but this row does not support any supplied technique specifically.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

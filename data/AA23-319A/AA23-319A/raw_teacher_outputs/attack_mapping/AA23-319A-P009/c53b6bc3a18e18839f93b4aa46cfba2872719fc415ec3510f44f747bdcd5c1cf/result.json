@@ -1,0 +1,25 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1059.001",
+        "rationale": "PowerShell event logs identified actors using PowerView, a PowerShell tool, for reconnaissance and credential harvesting.",
+        "confidence": "high"
+      },
+      {
+        "technique_id": "T1087.002",
+        "rationale": "The report describes PowerView use for Windows domain reconnaissance, supporting domain account discovery at medium confidence.",
+        "confidence": "medium"
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "PowerShell use and domain reconnaissance are supported. Credential harvesting is stated, but the report does not identify whether credentials came from memory, files, or password stores."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-dc76a1f9566845f797506bb6b647ac35.json"
+}

@@ -1,0 +1,40 @@
+{
+  "output": {
+    "duplicates": [
+      {
+        "keep": "AA25-266A-P005",
+        "drop": "AA25-266A-P001",
+        "reason": "Both describe exploitation of CVE-2024-36401 to gain initial access to GeoServer 1 and GeoServer 2; P005 gives the same paired-host scope with more specific technique context."
+      },
+      {
+        "keep": "AA25-266A-P005",
+        "drop": "AA25-266A-P028",
+        "reason": "P028 is the timeline’s GeoServer 1 instance of initial access already included in P005’s two-GeoServer exploitation behavior."
+      },
+      {
+        "keep": "AA25-266A-P005",
+        "drop": "AA25-266A-P029",
+        "reason": "P029 is the timeline’s GeoServer 2 instance of initial access already included in P005’s two-GeoServer exploitation behavior."
+      },
+      {
+        "keep": "AA25-266A-P024",
+        "drop": "AA25-266A-P021",
+        "reason": "Both describe using Stowaway to establish command and control; P024 identifies the successful outbound connection and modified tool, while P021 is the broader summary."
+      }
+    ],
+    "flags": [
+      "P001/P005 and P028/P029 are cross-page duplicates; automatic resolution may miss these because the evidence pages and host granularity differ. Keep the two separate initial-access occurrences on GeoServer 1 and GeoServer 2 distinct from each other.",
+      "P003 bundles separate access, lateral movement, and shell/script upload behaviors across multiple servers; do not collapse it wholesale into P005 or P019 because that would merge different actions and scopes.",
+      "P009 bundles ping sweeps with downloading fscan, while P010 describes later network and vulnerability scanning; these overlap broadly in discovery but the evidence does not establish they are one occurrence, and dropping either row could lose a distinct action.",
+      "P021 overlaps with P024 on the first Stowaway C2 establishment; retain P026 as a distinct second C2 connection and P022 as separate forwarding and on-disk tool activity.",
+      "P030 and P031 describe timeline entries labeled initial access to the Web Server and SQL Server, while P003 describes lateral movement from GeoServer 1 to those servers. The wording differs; preserve the rows separately absent evidence that these are the same access event."
+    ]
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-2b9dd7c044bc4b20a95682d446d3001c.json"
+}

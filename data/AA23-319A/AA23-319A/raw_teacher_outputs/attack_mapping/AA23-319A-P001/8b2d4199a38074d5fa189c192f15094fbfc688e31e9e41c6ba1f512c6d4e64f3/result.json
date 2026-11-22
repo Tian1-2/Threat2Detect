@@ -1,0 +1,25 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1133",
+        "confidence": "high",
+        "rationale": "The report explicitly describes authentication to internal VPN access points, matching use of external remote services."
+      },
+      {
+        "technique_id": "T1078",
+        "confidence": "high",
+        "rationale": "Compromised valid credentials were used to authenticate, directly matching Valid Accounts."
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "The more specific account sub-techniques in the expanded set are not supported: the report does not identify default or cloud accounts. It also does not describe brute force or credential theft."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-69fd8224170242e49c78ab149ef04c16.json"
+}

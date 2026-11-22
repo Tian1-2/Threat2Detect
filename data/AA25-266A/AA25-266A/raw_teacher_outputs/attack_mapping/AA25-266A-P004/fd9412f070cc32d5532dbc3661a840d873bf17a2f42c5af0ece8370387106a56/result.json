@@ -1,0 +1,20 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1595.002",
+        "confidence": "high",
+        "rationale": "The actors scanned to identify a vulnerability in a public-facing GeoServer, directly matching Vulnerability Scanning."
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "The expanded set adds no more specific technique that is supported by the report’s description of reconnaissance."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-5ed328fc055f4813b0d54f6a6de9a6a7.json"
+}

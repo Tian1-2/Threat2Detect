@@ -1,0 +1,33 @@
+{
+  "output": {
+    "behaviors": [
+      {
+        "action": "exploited vulnerability to gain access and established persistence",
+        "object": "agency network",
+        "fact_status": "observed",
+        "confidence": "high",
+        "context_note": "Initial access to GeoServer 1 occurred July 11, 2024.",
+        "scope": "initial access and persistence",
+        "quote": "During the incident response, CISA discovered that cyber threat actors gained access to the agency’s \nnetwork on July 11, 2024, by exploiting GeoServer vulnerability CVE 2024-36401 [CWE-95: “Eval \nInjection”] on a public-facing GeoServer (GeoServer 1). This critical vulnerability, disclosed June 30, 2024, \nallows unauthenticated users to gain remote code execution (RCE) on affected GeoServer versions.  The \ncyber threat actors used this vulnerability to download open source tools and scripts and establish \npersistence in the agency’s network. (CISA added this vulnerability to its",
+        "pdf_page": 5
+      },
+      {
+        "action": "gained separate access and moved laterally; uploaded or attempted to upload web shells and scripts",
+        "object": "GeoServer 2, Web Server, and SQL server",
+        "fact_status": "unclear",
+        "confidence": "high",
+        "context_note": "The source groups upload and attempted upload together.",
+        "scope": "incident",
+        "quote": "After gaining initial access to GeoServer 1, the cyber threat actors gained separate initial access to a \nsecond GeoServer (GeoServer 2) on July 24, 2024, by exploiting the same vulnerability. They moved \nlaterally from GeoServer 1 to a web server (Web Server) and then a Structured Query Language (SQL) \nserver. On each server, they uploaded (or attempted to upload) web shells such as China Chopper, along \nwith scripts designed for remote access, persistence, command execution, and privilege escalation. The",
+        "pdf_page": 5
+      }
+    ]
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-9883fb012d784b4eb9af457f0c5b898f.json"
+}

@@ -1,0 +1,20 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1068",
+        "confidence": "high",
+        "rationale": "The behavior explicitly describes attempted privilege escalation using a tool associated with a privilege-escalation vulnerability and confirms that local privileges were later escalated."
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "The expanded candidate set does not establish how the later escalation occurred; the mapping is based on the explicit privilege-escalation behavior and not on a specific unreported technique."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-3fde4a07a7374852aa17778733888b37.json"
+}

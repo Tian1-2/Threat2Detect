@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:43:15.833198+00:00",
+  "response": "{\"job_id\": \"d7b6241ae7ada63ec7c74b3ecad965634fb434a8a82cb91040de40bcf7c277d0\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1003.003\", \"rationale\": \"The report explicitly states that actors used ntdsutil to extract and dump NTDS.dit from a domain controller, matching NTDS credential dumping.\", \"confidence\": \"high\"}], \"additional_ids\": [], \"assessment\": \"The data source and extraction are explicit. No other credential dumping method is supported.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:33:47.111529+00:00",
+  "response": "{\"job_id\": \"50c24d192a0fc4123cfa73021e33bce427ea1e24335c6b168615f075bbbd2649\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1190\", \"confidence\": \"high\", \"rationale\": \"The report identifies exploitation of a vulnerability on public-facing GeoServers to gain initial access, matching public-facing application exploitation.\"}], \"additional_ids\": [], \"assessment\": \"The code-injection mechanism is described as exploitation for initial access. It does not establish client execution, privilege escalation, credential access, or another expanded candidate.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

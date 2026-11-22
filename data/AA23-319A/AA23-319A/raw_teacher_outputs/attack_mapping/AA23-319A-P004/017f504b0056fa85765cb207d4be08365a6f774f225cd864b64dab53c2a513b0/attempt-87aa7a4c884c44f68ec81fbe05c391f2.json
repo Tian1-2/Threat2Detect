@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:42:23.966710+00:00",
+  "response": "{\"job_id\": \"2209c791f0e3531f2b9cf0489ccf61eea4e3bbb2f5e5a32579b002a6a231868e\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1059.001\", \"confidence\": \"high\", \"rationale\": \"The report identifies launching Windows PowerShell ISE before executing a malicious script, directly supporting PowerShell execution.\"}], \"additional_ids\": [], \"assessment\": \"The evidence describes PowerShell execution. It does not establish PowerShell profile modification or another persistence mechanism.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

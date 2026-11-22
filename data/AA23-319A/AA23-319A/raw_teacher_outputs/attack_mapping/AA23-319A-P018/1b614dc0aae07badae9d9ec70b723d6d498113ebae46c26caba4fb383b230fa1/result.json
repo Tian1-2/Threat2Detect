@@ -1,0 +1,14 @@
+{
+  "output": {
+    "mappings": [],
+    "additional_ids": [],
+    "assessment": "Dropping a ransom note is part of the ransomware operation, but none of the supplied techniques specifically describes the note delivery behavior. The evidence does not support a more specific technique."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-4bc0bd9617524c50acb6ece4996969a3.json"
+}

@@ -1,0 +1,25 @@
+{
+  "output": {
+    "mappings": [
+      {
+        "technique_id": "T1133",
+        "confidence": "high",
+        "rationale": "The report explicitly identifies VPN access points as the external-facing remote service used to connect to internal network resources."
+      },
+      {
+        "technique_id": "T1078",
+        "confidence": "high",
+        "rationale": "The report states the actors authenticated with compromised valid credentials, directly matching Valid Accounts."
+      }
+    ],
+    "additional_ids": [],
+    "assessment": "The evidence directly supports VPN-based external remote service use and compromised valid accounts. It does not establish brute force or forced authentication."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-02230135bc244cafb642fd96de6850b9.json"
+}

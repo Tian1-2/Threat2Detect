@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:31:58.848892+00:00",
+  "response": "{\"job_id\": \"b86dc83bfc525e36a8454686315ef187b97bfcfcff5be6066dcb1fa1a10a324b\", \"output\": {\"mappings\": [], \"additional_ids\": [\"T1190\"], \"assessment\": \"Full report context attributes the separate GeoServer 2 initial access to exploitation of the same public-facing application vulnerability. T1190 is not among the supplied candidates.\"}, \"worker\": \"gpt-6-luna\", \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

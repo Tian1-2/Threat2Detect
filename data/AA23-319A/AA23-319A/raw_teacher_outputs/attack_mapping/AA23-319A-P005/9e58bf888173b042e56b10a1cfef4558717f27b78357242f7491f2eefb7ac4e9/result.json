@@ -1,0 +1,16 @@
+{
+  "output": {
+    "mappings": [],
+    "additional_ids": [
+      "T1021"
+    ],
+    "assessment": "The report explicitly describes PsExec being used for lateral movement and remote execution, but this pass lacks a matching general Remote Services candidate. The specific SMB, service-execution, software-deployment, or file-transfer mechanisms are not stated in the behavior and should not be inferred from the tool name."
+  },
+  "model": {
+    "provider": "codex-offline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "worker": "gpt-6-luna"
+  },
+  "raw_file": "attempt-31d7ba6099344ec4901259310840b854.json"
+}

@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:33:35.002508+00:00",
+  "response": "{\"job_id\": \"877ae5d8866a0cae081b134cb495c2611cb1c770a96183a7b60c6beaa7fa5698\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1046\", \"rationale\": \"fscan was used to enumerate internal systems and identify SSH, FTP, file, and web services, directly supporting network service discovery.\", \"confidence\": \"high\"}, {\"technique_id\": \"T1018\", \"rationale\": \"The enumeration also identified multiple internal hosts and servers, supporting remote system discovery.\", \"confidence\": \"high\"}], \"additional_ids\": [], \"assessment\": \"The expanded definitions confirm service and host discovery. No transfer, exploitation, or remote access technique is established by this behavior.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}

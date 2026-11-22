@@ -1,0 +1,4 @@
+{
+  "time": "2026-11-20T17:42:23.927521+00:00",
+  "response": "{\"job_id\": \"21d57d13e7786cbef82873a1e2b0e6f75a68f5db8321e7a7021e8111f220373c\", \"worker\": \"gpt-6-luna\", \"output\": {\"mappings\": [{\"technique_id\": \"T1133\", \"confidence\": \"high\", \"rationale\": \"The report explicitly identifies VPN access points as the external-facing remote service used to connect to internal network resources.\"}, {\"technique_id\": \"T1078\", \"confidence\": \"high\", \"rationale\": \"The report states the actors authenticated with compromised valid credentials, directly matching Valid Accounts.\"}], \"additional_ids\": [], \"assessment\": \"The evidence directly supports VPN-based external remote service use and compromised valid accounts. It does not establish brute force or forced authentication.\"}, \"model\": {\"provider\": \"codex-offline\", \"model\": \"gpt-6-luna\", \"reasoning_effort\": \"high\", \"worker\": \"gpt-6-luna\"}}"
+}
