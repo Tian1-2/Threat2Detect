@@ -1,8 +1,13 @@
 import json
 from pathlib import Path
 
-from sigma_agent import absent_required_flags, analyze_candidate, feedback_for_finish, unresolved_filter_fields
-from sigma_coverage import prepare
+from src.threat2detect.sigma.agent import (
+    absent_required_flags,
+    analyze_candidate,
+    feedback_for_finish,
+    unresolved_filter_fields,
+)
+from src.threat2detect.sigma.coverage import prepare
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -35,7 +40,7 @@ def test_unknown_parent_filter_feedback_causes_revision(monkeypatch):
             assert "inspect_rule" not in schema["properties"]["action"]["enum"]
         return result
 
-    monkeypatch.setattr("sigma_agent.ollama_json", fake_model)
+    monkeypatch.setattr("src.threat2detect.sigma.agent.ollama_json", fake_model)
     proposal, trace = analyze_candidate(item, "fake", "local", 5)
     assert proposal["decision"] == "insufficient_detail"
     assert len(trace) == 3
@@ -52,7 +57,7 @@ def test_agent_stops_with_unknown_after_step_limit(monkeypatch):
          "supporting_conditions": ["whoami"], "missing_conditions": [],
          "unknown_conditions": [], "explanation": "Matches"},
     ])
-    monkeypatch.setattr("sigma_agent.ollama_json", lambda *_args: next(calls))
+    monkeypatch.setattr("src.threat2detect.sigma.agent.ollama_json", lambda *_args: next(calls))
     proposal, trace = analyze_candidate(item, "fake", "local", 2)
     assert proposal["decision"] == "insufficient_detail"
     assert proposal["agent_stop_reason"] == "step_limit"
@@ -83,7 +88,7 @@ def test_missing_flag_feedback_revises_partial_match(monkeypatch):
          "supporting_conditions": ["whoami"], "missing_conditions": ["/all"],
          "unknown_conditions": [], "explanation": "The reported command lacks the mandatory /all argument"},
     ])
-    monkeypatch.setattr("sigma_agent.ollama_json", lambda *_args: next(calls))
+    monkeypatch.setattr("src.threat2detect.sigma.agent.ollama_json", lambda *_args: next(calls))
     proposal, trace = analyze_candidate(item, "fake", "local", 5)
     assert proposal["decision"] == "does_not_match"
     assert "does_not_match" in trace[1]["feedback"][0]

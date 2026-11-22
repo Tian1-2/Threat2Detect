@@ -1,1 +1,6 @@
-"""Threat2Detect application modules; legacy CLI modules remain compatible."""
+"""Threat2Detect application modules."""
+
+from pathlib import Path
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]

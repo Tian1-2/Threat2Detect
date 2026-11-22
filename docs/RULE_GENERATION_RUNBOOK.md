@@ -1,18 +1,18 @@
 # 候选 Sigma 生成与样例验证
 
-`generate_rule.py` 实现独立的 `rule_generation_request → rule_generation_result` 接口。
+`src/threat2detect/rule_generation/generator.py` 实现独立的 `rule_generation_request → rule_generation_result` 接口。
 输入必须给出具体行为、检测目标、日志源、可用字段及执行器支持范围；ATT&CK ID 只生成标签。
 不依赖成员 B 的召回输出，不自动宣称现有规则存在缺口。
 
 ## 用真实 OTRF 开发样例运行
 
-项目根目录执行，先安装 `requirements-poc.txt` 并准备本机 Ollama `qwen3:4b`。
+项目根目录执行，先安装 `config/requirements.txt` 并准备本机 Ollama `qwen3:4b`。
 每次使用新的空输出目录，程序拒绝覆盖旧运行。
 
 ```powershell
 python tools/prepare_rule_generation_demo.py artifacts/runs/rule-generation-fixture-v1
-python generate_rule.py artifacts/runs/rule-generation-fixture-v1/request.json artifacts/runs/rule-generation-ollama-v1 --events artifacts/runs/rule-generation-fixture-v1/events.json --max-attempts 3
-python validate_contract.py artifacts/runs/rule-generation-ollama-v1/result.json
+python -m src.threat2detect.rule_generation.generator artifacts/runs/rule-generation-fixture-v1/request.json artifacts/runs/rule-generation-ollama-v1 --events artifacts/runs/rule-generation-fixture-v1/events.json --max-attempts 3
+python -m src.threat2detect.contracts artifacts/runs/rule-generation-ollama-v1/result.json
 ```
 
 准备脚本从现有 OTRF ZIP 提取 L33808（Dumpert 访问 LSASS）和 L1727（VBoxService 背景候选），保留原事件 UID、字段和来源位置。
@@ -23,7 +23,7 @@ L1727 的“负例”仅指该目标下预期不匹配；其来源是公开攻�
 ## 已有 YAML 的验证模式
 
 ```powershell
-python generate_rule.py request.json artifacts/runs/rule-validation-v1 --candidate candidate.yml --events events.json
+python -m src.threat2detect.rule_generation.generator request.json artifacts/runs/rule-validation-v1 --candidate candidate.yml --events events.json
 ```
 
 此模式不调用模型，结果中 `generation_mode` 为 `supplied_candidate`，只能证明提供的候选经过检查，不能当作模型生成效果。
@@ -79,7 +79,7 @@ BITS 第二场景命令（选择新的空目录）：
 
 ```powershell
 python tools/prepare_rule_generation_demo.py artifacts/runs/rule-generation-bits-fixture-new --scenario bits
-python generate_rule.py artifacts/runs/rule-generation-bits-fixture-new/request.json artifacts/runs/rule-generation-bits-new --events artifacts/runs/rule-generation-bits-fixture-new/events.json --evaluation-refs artifacts/runs/rule-generation-bits-fixture-new/evaluation_refs.json --evaluation-events artifacts/runs/rule-generation-bits-fixture-new/evaluation_events.json
+python -m src.threat2detect.rule_generation.generator artifacts/runs/rule-generation-bits-fixture-new/request.json artifacts/runs/rule-generation-bits-new --events artifacts/runs/rule-generation-bits-fixture-new/events.json --evaluation-refs artifacts/runs/rule-generation-bits-fixture-new/evaluation_refs.json --evaluation-events artifacts/runs/rule-generation-bits-fixture-new/evaluation_events.json
 ```
 
 不传 `--scenario bits` 则准备 LSASS。BITS 人工目标是 `Image` 以 `\\bitsadmin.exe` 结尾且命令包含 ` /transfer `；该参数来自人工选择的变体，不是 CISA 正文给出的事实，也不覆盖全部 BITS 方法。

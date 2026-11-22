@@ -4,8 +4,8 @@ from __future__ import annotations
 import hashlib
 import json
 
-from run_sigma_offline import field_matches, selector_matches
-from validate_contract import EVENT_REF
+from ..contracts import EVENT_REF
+from ..sigma.executor import field_matches, selector_matches
 from jsonschema import validate
 
 

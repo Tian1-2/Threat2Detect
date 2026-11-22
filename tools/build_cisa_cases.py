@@ -14,7 +14,7 @@ sys.path.insert(0, str(ROOT / ".deps"))
 sys.path.insert(0, str(ROOT))
 from pypdf import PdfReader  # noqa: E402
 
-from agent_poc import load_catalog, prepare_report
+from src.threat2detect.report_agent import load_catalog, prepare_report
 
 
 REPORTS = ROOT / "data" / "reports"

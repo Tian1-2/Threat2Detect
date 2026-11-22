@@ -22,8 +22,8 @@ ATT&CK 目录位于 `data/attack/enterprise-attack-20.0.json`，其 SHA-256 见 
 2. 先在开发案例上运行：
 
 ```powershell
-python agent_poc.py analyze data/reports/cisa-aa25-266a-input.txt data/attack/enterprise-attack-20.0.json artifacts/runs/cisa-aa25-266a-prediction-v2.json --report-id AA25-266A --model qwen3:4b
-python agent_poc.py evaluate artifacts/runs/cisa-aa25-266a-prediction-v2.json data/reports/cisa-aa25-266a-reference.json artifacts/runs/cisa-aa25-266a-evaluation-v2.json
+python -m src.threat2detect.report_agent analyze data/reports/cisa-aa25-266a-input.txt data/attack/enterprise-attack-20.0.json artifacts/runs/cisa-aa25-266a-prediction-v2.json --report-id AA25-266A --model qwen3:4b
+python -m src.threat2detect.report_agent evaluate artifacts/runs/cisa-aa25-266a-prediction-v2.json data/reports/cisa-aa25-266a-reference.json artifacts/runs/cisa-aa25-266a-evaluation-v2.json
 ```
 
 3. 打开预测 JSON，逐条查看 `quote`、`location.char_start`、行为事实强度与 `mapping`。评估 JSON 的 `missed_reference_ids` 是漏掉的官方标签；`additional_ids_for_human_review` 是需要人工核查的新增结果，不自动算错。
@@ -35,7 +35,7 @@ python agent_poc.py evaluate artifacts/runs/cisa-aa25-266a-prediction-v2.json da
 
 - 官方映射表是报告级参考答案，不提供每个 ID 的唯一原文句子；报告级召回率不能评估证据位置和事实强度，需要人工抽检。
 - `candidate_ids` 用 ATT&CK 名称与说明做轻量词项召回。若候选未召回正确技术，模型不会选择它；需在开发集上单独记录这类错误。
-- 本地 4B 模型适合验证工作流，可能漏提、误分或输出格式异常；不要把它的结果当专业结论。`agent_poc.py` 会拒绝虚构引句及候选集外 ID，但仍需审核合理性。
+- 本地 4B 模型适合验证工作流，可能漏提、误分或输出格式异常；不要把它的结果当专业结论。`src/threat2detect/report_agent.py` 会拒绝虚构引句及候选集外 ID，但仍需审核合理性。
 - 本阶段尚未计算 Sigma 覆盖率或日志检出率，也没有真实良性样本的误报率。
 
 ## 离线检查

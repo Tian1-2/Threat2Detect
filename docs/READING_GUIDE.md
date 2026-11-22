@@ -4,16 +4,16 @@
 
 ## 按角色阅读，不必读完整个仓库
 
-所有人先看[项目总说明](docs/PROJECT_HANDOFF.md)的目标与分工，以及[接口契约](docs/INTERFACE_CONTRACT.md)中自己的输入输出。各角色的第一项交付见[组员启动清单](docs/TEAM_START.md)。[目录约定](docs/PROJECT_STRUCTURE.md)解释文件归属和后续结构；[三段流水线](docs/PIPELINE_RUNBOOK.md)说明统一入口，[Sigma Agent 运行说明](docs/SIGMA_AGENT_RUNBOOK.md)说明工具决策循环。数据版本与固定 commit 见[数据版本](docs/DATA_VERSIONS.md)。每轮开发变动与未解决问题记在[开发日志](DEVELOPMENT_LOG.md)；规则召回与条件对照见[Sigma 检索说明](docs/SECOND_STAGE_RUNBOOK.md)，静态日志执行见[离线执行说明](docs/OFFLINE_SIGMA_RUNBOOK.md)。
+所有人先看[项目总说明](PROJECT_HANDOFF.md)的目标与分工，以及[接口契约](INTERFACE_CONTRACT.md)中自己的输入输出。各角色的第一项交付见[组员启动清单](TEAM_START.md)。[目录约定](PROJECT_STRUCTURE.md)解释文件归属；[Case Agent 运行说明](CASE_AGENT_RUNBOOK.md)说明主控工具循环，[Sigma Agent 运行说明](SIGMA_AGENT_RUNBOOK.md)说明局部分析循环。数据版本与固定 commit 见[DATA_VERSIONS.md](DATA_VERSIONS.md)。每轮开发变动与未解决问题记在[开发日志](DEVELOPMENT_LOG.md)；规则召回与条件对照见[Sigma 检索说明](SECOND_STAGE_RUNBOOK.md)，静态日志执行见[离线执行说明](OFFLINE_SIGMA_RUNBOOK.md)。
 
 | 角色 | 接着读 | 开发时使用的数据 | 暂时不要拿来当输入 |
 |---|---|---|---|
-| A：报告理解 | [人工审核方法](docs/REVIEW_PROTOCOL.md)、[原型运行](docs/POC_RUNBOOK.md) | `data/reports/cisa-aa25-266a-input.txt`、`data/attack/enterprise-attack-20.0.json`；4 条已确认行为供开发评估 | `*-reference.json` 不进模型；AA24-193A 是封存案例 |
-| B：Sigma 检索与条件分析 | [B 操作指引](docs/MEMBER_B_GUIDE.md) | 已确认 `case_handoff`、`data/sigma`、4 条覆盖判定样本；6 组 OTRF 事件样本用于练 YAML 条件 | OTRF 命中不能证明 CISA 事件被检测；不把 tag 当覆盖结论 |
-| C：日志整理 | [OTRF 日志盘点](docs/OTRF_LOG_ANALYSIS.md)、[首个场景](docs/FIRST_SCENARIO.md) | `data/Security-Datasets/` 的 LSASS_campaign_06 元数据与 ZIP/JSONL | 背景候选不能直接标成已证实良性 |
-| 组长：集成 | [接口契约](docs/INTERFACE_CONTRACT.md)、上述各角色交付 | 全部已确认样本及模块输出 | 不把规则纸面适用性写成实际日志命中 |
+| A：报告理解 | [人工审核方法](REVIEW_PROTOCOL.md)、[原型运行](POC_RUNBOOK.md) | `data/reports/cisa-aa25-266a-input.txt`、`data/attack/enterprise-attack-20.0.json`；4 条已确认行为供开发评估 | `*-reference.json` 不进模型；AA24-193A 是封存案例 |
+| B：Sigma 检索与条件分析 | [B 操作指引](MEMBER_B_GUIDE.md) | 已确认 `case_handoff`、`data/sigma`、4 条覆盖判定样本；6 组 OTRF 事件样本用于练 YAML 条件 | OTRF 命中不能证明 CISA 事件被检测；不把 tag 当覆盖结论 |
+| C：日志整理 | [OTRF 日志盘点](OTRF_LOG_ANALYSIS.md)、[首个场景](FIRST_SCENARIO.md) | `data/Security-Datasets/` 的 LSASS_campaign_06 元数据与 ZIP/JSONL | 背景候选不能直接标成已证实良性 |
+| 组长：集成 | [接口契约](INTERFACE_CONTRACT.md)、上述各角色交付 | 全部已确认样本及模块输出 | 不把规则纸面适用性写成实际日志命中 |
 
-[首轮实验复盘](docs/BASELINE_REVIEW.md)与 `artifacts/runs/` 是旧原型诊断资料；[全篇候选梳理](docs/GOLDEN_REPORTS_FULL.md)、[初选报告概览](docs/GOLDEN_REPORTS.md)和 `docs/mermaid-diagram.png` 是研究背景材料，**不是当前必读或已复核的黄金数据**。只在需要追溯早期选择时打开。
+[首轮实验复盘](BASELINE_REVIEW.md)与 `artifacts/runs/` 是旧原型诊断资料；[全篇候选梳理](GOLDEN_REPORTS_FULL.md)、[初选报告概览](GOLDEN_REPORTS.md)和 `docs/mermaid-diagram.png` 是研究背景材料，**不是当前必读或已复核的黄金数据**。只在需要追溯早期选择时打开。
 
 ## 数据放在哪里
 
@@ -32,7 +32,7 @@
 
 ### 1. 行为与 ATT&CK
 
-打开 [行为级黄金样本](data/annotations/aa25_266a_gold_draft.json)，同时阅读 [CISA 原 PDF](data/reports/cisa-aa25-266a.pdf) 第 8–9 页和 [提取原文](data/reports/cisa-aa25-266a-extracted.txt)。4 条行为及映射已由组长确认，**只抽样标注第 8–9 页，不是全篇已标完**。第 7 页 GeoServer 1 的 `ipconfig` 不在当前行为级评估范围内，因此原型没有提取它不能依据此样本计为正式行为级漏报。若后续标注它，应与第 8 页 SQL Server 的 `ipconfig /all` 分别保留主机、参数和证据；报告级 T1016 统计才去重。
+打开 [行为级黄金样本](../data/annotations/aa25_266a_gold_draft.json)，同时阅读 [CISA 原 PDF](../data/reports/cisa-aa25-266a.pdf) 第 8–9 页和 [提取原文](../data/reports/cisa-aa25-266a-extracted.txt)。4 条行为及映射已由组长确认，**只抽样标注第 8–9 页，不是全篇已标完**。第 7 页 GeoServer 1 的 `ipconfig` 不在当前行为级评估范围内，因此原型没有提取它不能依据此样本计为正式行为级漏报。若后续标注它，应与第 8 页 SQL Server 的 `ipconfig /all` 分别保留主机、参数和证据；报告级 T1016 统计才去重。
 
 行为级黄金草稿只根据去答案正文与 ATT&CK 技术定义填写，`origin` 使用 `team_review`。`rationale` 解释具体行为为什么属于该技术，不引用 CISA 给出的映射。`data/reports/*-reference.json` 保存官方报告级映射，只在盲标完成后用于评估或争议复核。给 Agent 预测时只传 `-input.txt` 与固定 ATT&CK 目录，不传黄金草稿或参考答案。
 
@@ -40,7 +40,7 @@
 
 ### 2. Sigma 覆盖
 
-先看 [候选规则清单](data/annotations/aa25_266a_rule_candidates.json) 的 `rule_path`，逐个打开完整 YAML 的 `detection`、`condition` 与过滤器，再看 [覆盖判定样本](data/annotations/coverage_gold_template.json)。当前 4 行覆盖 `matches_procedure`、`does_not_match`、`insufficient_detail` 三种结论：
+先看 [候选规则清单](../data/annotations/aa25_266a_rule_candidates.json) 的 `rule_path`，逐个打开完整 YAML 的 `detection`、`condition` 与过滤器，再看 [覆盖判定样本](../data/annotations/coverage_gold_template.json)。当前 4 行覆盖 `matches_procedure`、`does_not_match`、`insufficient_detail` 三种结论：
 
 | 判定行 | 报告做法与规则条件 | 已复核结论 |
 |---|---|---|
@@ -55,12 +55,12 @@
 
 ## 运行与校验
 
-首次安装依赖：`python -m pip install -r requirements-poc.txt`。下面这些命令不会调用 Ollama，也不会覆盖已有的人工草稿：
+首次安装依赖：`python -m pip install -r config/requirements.txt`。下面这些命令不会调用 Ollama，也不会覆盖已有的人工草稿：
 
 ```powershell
-python validate_contract.py data/annotations/aa25_266a_gold_draft.json
-python validate_contract.py data/annotations/aa25_266a_rule_candidates.json --handoff data/annotations/aa25_266a_gold_draft.json
-python validate_contract.py data/annotations/coverage_gold_template.json --handoff data/annotations/aa25_266a_gold_draft.json --candidates data/annotations/aa25_266a_rule_candidates.json
+python -m src.threat2detect.contracts data/annotations/aa25_266a_gold_draft.json
+python -m src.threat2detect.contracts data/annotations/aa25_266a_rule_candidates.json --handoff data/annotations/aa25_266a_gold_draft.json
+python -m src.threat2detect.contracts data/annotations/coverage_gold_template.json --handoff data/annotations/aa25_266a_gold_draft.json --candidates data/annotations/aa25_266a_rule_candidates.json
 python -m pytest -q tests/test_agent_poc.py tests/test_contract.py
 ```
 

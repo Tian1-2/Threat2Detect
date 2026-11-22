@@ -7,7 +7,7 @@ import zipfile
 from contextlib import contextmanager
 from pathlib import Path
 
-from validate_contract import ROOT, validate_contract
+from ..contracts import ROOT, validate_contract
 
 
 DEFAULT_SOURCE = ROOT / "data/Security-Datasets/datasets/compound/LSASS_campaign_06/metasploit_outflank-dumpert_lsass_memory_dump.zip"

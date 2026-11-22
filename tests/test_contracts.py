@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from validate_contract import validate_contract, validate_links
+from src.threat2detect.contracts import validate_contract, validate_links
 
 
 ROOT = Path(__file__).resolve().parents[1]

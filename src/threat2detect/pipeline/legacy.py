@@ -9,20 +9,25 @@ import hashlib
 import json
 from pathlib import Path
 
-from agent_poc import analyze, load_catalog
-from normalize_otrf import DEFAULT_SOURCE, normalize
-from run_sigma_offline import run_rule
-from sigma_agent import run as assess_with_agent
-from sigma_coverage import run as assess_coverage
-from sigma_retrieval import DEFAULT_RULES, retrieve
-from validate_contract import validate_contract, validate_links, workspace_path
+from .. import PROJECT_ROOT
+from ..contracts import lf_sha256, validate_contract, validate_links, workspace_path
+from ..report_agent import analyze, load_catalog
+from ..sigma.agent import run as assess_with_agent
+from ..sigma.coverage import run as assess_coverage
+from ..sigma.executor import run_rule
+from ..sigma.retrieval import DEFAULT_RULES, retrieve
+from ..telemetry.otrf import DEFAULT_SOURCE, normalize
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = PROJECT_ROOT
 
 
 def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def catalog_sha256(path: Path) -> str:
+    return lf_sha256(path)
 
 
 def relative(path: Path) -> str:
@@ -43,7 +48,9 @@ def prediction_to_handoff(prediction: dict, report: Path, catalog_path: Path,
     """Keep proposals as drafts; reject stale or ungrounded experimental output."""
     if prediction.get("report_id") != case_id:
         raise ValueError("Prediction report_id differs from case_id")
-    if prediction.get("input_sha256") != sha256(report) or prediction.get("catalog_sha256") != sha256(catalog_path):
+    if prediction.get("input_sha256") not in {sha256(report), lf_sha256(report)}:
+        raise ValueError("Prediction input or ATT&CK catalog hash differs from current files")
+    if prediction.get("catalog_sha256") not in {sha256(catalog_path), catalog_sha256(catalog_path)}:
         raise ValueError("Prediction input or ATT&CK catalog hash differs from current files")
     report_text = report.read_text(encoding="utf-8")
     catalog = load_catalog(catalog_path)
@@ -82,7 +89,7 @@ def prediction_to_handoff(prediction: dict, report: Path, catalog_path: Path,
             "report": {"case_id": case_id, "title": title, "source_url": source_url,
                        "input_path": relative(report), "input_sha256": sha256(report),
                        "annotation_basis": "answer_hidden_report_and_attack_catalog"},
-            "attack_catalog": {"version": catalog_version, "sha256": sha256(catalog_path),
+            "attack_catalog": {"version": catalog_version, "sha256": catalog_sha256(catalog_path),
                                "path": relative(catalog_path)},
             "behaviors": behaviors, "mappings": mappings, "telemetry": [], "warnings": warnings}
 
@@ -106,7 +113,7 @@ def execute(args: argparse.Namespace) -> dict:
             prediction = analyze(args.case_id, report.read_text(encoding="utf-8"),
                                  load_catalog(catalog_path), args.model, args.endpoint, output / "prediction.json")
             prediction["input_sha256"] = sha256(report)
-            prediction["catalog_sha256"] = sha256(catalog_path)
+            prediction["catalog_sha256"] = catalog_sha256(catalog_path)
             (output / "prediction.json").write_text(json.dumps(prediction, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         handoff = prediction_to_handoff(prediction, report, catalog_path, args.case_id,
                                         args.title or args.case_id, args.source_url, args.catalog_version)

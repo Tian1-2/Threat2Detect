@@ -4,16 +4,16 @@
 
 ## 从这里开始
 
-先读[阅读指引](READING_GUIDE.md)，再按角色读[项目总说明](docs/PROJECT_HANDOFF.md)、[接口契约](docs/INTERFACE_CONTRACT.md)和[组员启动清单](docs/TEAM_START.md)。[目录约定](docs/PROJECT_STRUCTURE.md)说明文件归属；[三段流水线](docs/PIPELINE_RUNBOOK.md)给出统一运行命令，[Sigma Agent](docs/SIGMA_AGENT_RUNBOOK.md)说明工具决策循环。[开发日志](DEVELOPMENT_LOG.md)记录每轮改动与遗留问题。
+先读[阅读指引](docs/READING_GUIDE.md)，再按角色读[项目总说明](docs/PROJECT_HANDOFF.md)、[接口契约](docs/INTERFACE_CONTRACT.md)和[组员启动清单](docs/TEAM_START.md)。[目录约定](docs/PROJECT_STRUCTURE.md)说明文件归属；[三段流水线](docs/PIPELINE_RUNBOOK.md)给出统一运行命令，[Sigma Agent](docs/SIGMA_AGENT_RUNBOOK.md)说明工具决策循环，[Case Agent](docs/CASE_AGENT_RUNBOOK.md)说明主控工具循环。[开发日志](docs/DEVELOPMENT_LOG.md)记录每轮改动与遗留问题。
 
 ## 获取数据与运行
 
 ```powershell
 git clone --recurse-submodules https://github.com/Tian1-2/Threat2Detect.git
 cd Threat2Detect
-python -m pip install -r requirements-poc.txt
+python -m pip install -r config/requirements.txt
 python -m pytest -q
-python validate_contract.py data/annotations/aa25_266a_gold_draft.json
+python -m src.threat2detect.contracts data/annotations/aa25_266a_gold_draft.json
 python tools/inspect_dataset.py
 python tools/analyze_otrf_background.py
 ```
@@ -24,4 +24,12 @@ python tools/analyze_otrf_background.py
 
 独立的[候选规则生成与验证模块](docs/RULE_GENERATION_RUNBOOK.md)现支持本机模型生成、受限语法检查、指定事件执行和有限反馈修订；生成结果仍为待审候选，不自动部署。
 
-[主控 Case Agent](docs/CASE_AGENT_RUNBOOK.md)通过 `case_agent.py` 管理状态、工具动作、共享模型调用预算与人审队列，可按用户配置调用可选规则生成；原 `pipeline.py` 固定流水线继续可用。
+[主控 Case Agent](docs/CASE_AGENT_RUNBOOK.md)通过 `src/threat2detect/pipeline/controller.py` 管理状态、工具动作、共享模型调用预算与人审队列，可按用户配置调用可选规则生成；原 `src/threat2detect/pipeline/legacy.py` 固定流水线继续可用。
+
+Sigma 规则召回已集成到主控的 `search_rules` 工具，采用精确 ATT&CK tag 召回、平台/事件类别过滤、IDF 加权、选择器条件降权和稳定候选 ID。AA25-266A 的小样本回归中，Recall@5 从 0.25 提升到 0.75，MRR 从 0.3385 提升到 0.5875；对比证据见 `artifacts/runs/sigma_retrieval_comparison.json`。
+
+主控入口：
+
+```powershell
+python -m src.threat2detect --help
+```

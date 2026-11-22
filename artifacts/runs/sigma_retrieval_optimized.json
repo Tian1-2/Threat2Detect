@@ -1,0 +1,1461 @@
+{
+  "schema_version": "1.0",
+  "kind": "rule_candidates",
+  "case_id": "AA25-266A",
+  "ruleset_commit": "05d1031f537e830b76da53bae2400c5814c89165",
+  "items": [
+    {
+      "candidate_id": "AA25-266A-M001-502b42de",
+      "rank": 1,
+      "behavior_id": "AA25-266A-G001",
+      "technique_id": "T1033",
+      "rule_id": "502b42de-4306-40b4-9596-6f590c81f073",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_susp_local_system_owner_account_discovery.yml",
+      "rule_sha256": "ddb20029d804c7a434cc6600659aaac2b646b67cd150470e9b1ef4be47c16e06",
+      "title": "Local Accounts Discovery",
+      "tags": [
+        "attack.discovery",
+        "attack.t1033",
+        "attack.t1087.001"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine",
+        "Image",
+        "OriginalFileName"
+      ],
+      "retrieval_score": 89.078,
+      "retrieval_components": {
+        "title_hits": [],
+        "detection_hits": [
+          "user",
+          "whoami"
+        ],
+        "description_hits": [
+          "user"
+        ],
+        "quote_hits": [
+          "whoami"
+        ],
+        "category_match": true,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [
+            "selection_other_img"
+          ],
+          "unsupported_selectors": [],
+          "adjustment": 10.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: user, whoami; compatible category: process_creation; rule status: test; supported Sigma selector evidence; score 89.078"
+    },
+    {
+      "candidate_id": "AA25-266A-M001-bed2a484",
+      "rank": 2,
+      "behavior_id": "AA25-266A-G001",
+      "technique_id": "T1033",
+      "rule_id": "bed2a484-9348-4143-8a8a-b801c979301c",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_webshell_recon_commands_and_processes.yml",
+      "rule_sha256": "6baf7358a3a9d5159fb035e3654ebbc3ed046ab2e04767f663dedfa87c2d1390",
+      "title": "Webshell Detection With Command Line Keywords",
+      "tags": [
+        "attack.persistence",
+        "attack.discovery",
+        "attack.t1505.003",
+        "attack.t1018",
+        "attack.t1033",
+        "attack.t1087"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine",
+        "Image",
+        "OriginalFileName",
+        "ParentImage"
+      ],
+      "retrieval_score": 84.278,
+      "retrieval_components": {
+        "title_hits": [],
+        "detection_hits": [
+          "user",
+          "whoami"
+        ],
+        "description_hits": [],
+        "quote_hits": [
+          "whoami"
+        ],
+        "category_match": true,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [
+            "selection_susp_misc_discovery_binaries"
+          ],
+          "unsupported_selectors": [],
+          "adjustment": 10.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: user, whoami; compatible category: process_creation; rule status: test; supported Sigma selector evidence; score 84.278"
+    },
+    {
+      "candidate_id": "AA25-266A-M001-4ebc877f",
+      "rank": 3,
+      "behavior_id": "AA25-266A-G001",
+      "technique_id": "T1033",
+      "rule_id": "4ebc877f-4612-45cb-b3a5-8e3834db36c9",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_webshell_hacking.yml",
+      "rule_sha256": "7e798383219b76b934c3cd5b78117896600c70eb46e2f00d01f79e3f1059e39c",
+      "title": "Webshell Hacking Activity Patterns",
+      "tags": [
+        "attack.persistence",
+        "attack.discovery",
+        "attack.t1505.003",
+        "attack.t1018",
+        "attack.t1033",
+        "attack.t1087"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine",
+        "Image",
+        "ParentImage"
+      ],
+      "retrieval_score": 74.278,
+      "retrieval_components": {
+        "title_hits": [],
+        "detection_hits": [
+          "user",
+          "whoami"
+        ],
+        "description_hits": [],
+        "quote_hits": [
+          "whoami"
+        ],
+        "category_match": true,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [],
+          "unsupported_selectors": [],
+          "adjustment": 0.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: user, whoami; compatible category: process_creation; rule status: test; score 74.278"
+    },
+    {
+      "candidate_id": "AA25-266A-M001-8de1cbe8",
+      "rank": 4,
+      "behavior_id": "AA25-266A-G001",
+      "technique_id": "T1033",
+      "rule_id": "8de1cbe8-d6f5-496d-8237-5f44a721c7a0",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_whoami_parent_anomaly.yml",
+      "rule_sha256": "07a23606d2d8234926302a9aa167be225bf48ecd4ed21d1938c30a63a1ffdbeb",
+      "title": "Whoami.EXE Execution Anomaly",
+      "tags": [
+        "attack.discovery",
+        "attack.t1033",
+        "car.2016-03-001"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "Image",
+        "OriginalFileName",
+        "ParentImage"
+      ],
+      "retrieval_score": 38.185,
+      "retrieval_components": {
+        "title_hits": [
+          "whoami"
+        ],
+        "detection_hits": [
+          "whoami"
+        ],
+        "description_hits": [
+          "whoami"
+        ],
+        "quote_hits": [
+          "whoami"
+        ],
+        "category_match": true,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [
+            "selection"
+          ],
+          "unsupported_selectors": [],
+          "adjustment": -60.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: whoami; title terms: whoami; compatible category: process_creation; rule status: test; parent-process filter cannot be resolved from the report; supported Sigma selector evidence; score 38.185"
+    },
+    {
+      "candidate_id": "AA25-266A-M001-e9142d84",
+      "rank": 5,
+      "behavior_id": "AA25-266A-G001",
+      "technique_id": "T1033",
+      "rule_id": "e9142d84-fbe0-401d-ac50-3e519fb00c89",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_susp_whoami_as_param.yml",
+      "rule_sha256": "f1a2ec7ccf346470771611b7e2fd9fc142c4b2082ae3f4e36a4e968ddf5c03ea",
+      "title": "WhoAmI as Parameter",
+      "tags": [
+        "attack.discovery",
+        "attack.t1033",
+        "car.2016-03-001"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine"
+      ],
+      "retrieval_score": 28.185,
+      "retrieval_components": {
+        "title_hits": [
+          "whoami"
+        ],
+        "detection_hits": [
+          "whoami"
+        ],
+        "description_hits": [
+          "whoami"
+        ],
+        "quote_hits": [
+          "whoami"
+        ],
+        "category_match": true,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [],
+          "unsupported_selectors": [],
+          "adjustment": -70.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: whoami; title terms: whoami; compatible category: process_creation; rule status: test; the sole selection does not match the reported command detail; score 28.185"
+    },
+    {
+      "candidate_id": "AA25-266A-M001-d9367cbb",
+      "rank": 6,
+      "behavior_id": "AA25-266A-G001",
+      "technique_id": "T1033",
+      "rule_id": "d9367cbb-c2e0-47ce-bdc0-128cb6da898d",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_hktl_sharpldapwhoami.yml",
+      "rule_sha256": "bf0a9e66f402358eae2a0021cb57557c8154c8fc4d6ccb851813169cc7fbd692",
+      "title": "HackTool - SharpLdapWhoami Execution",
+      "tags": [
+        "attack.discovery",
+        "attack.t1033",
+        "car.2016-03-001"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine",
+        "Image",
+        "OriginalFileName",
+        "Product"
+      ],
+      "retrieval_score": 24.767,
+      "retrieval_components": {
+        "title_hits": [],
+        "detection_hits": [],
+        "description_hits": [
+          "whoami"
+        ],
+        "quote_hits": [
+          "whoami"
+        ],
+        "category_match": true,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [],
+          "unsupported_selectors": [],
+          "adjustment": 0.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; compatible category: process_creation; rule status: test; score 24.767"
+    },
+    {
+      "candidate_id": "AA25-266A-M001-bd8b828d",
+      "rank": 7,
+      "behavior_id": "AA25-266A-G001",
+      "technique_id": "T1033",
+      "rule_id": "bd8b828d-0dca-48e1-8a63-8a58ecf2644f",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_whoami_groups_discovery.yml",
+      "rule_sha256": "9811f214ced5d77bc91b9ba4656513fd488a4c98e25f058fd43c3b86cb190cc1",
+      "title": "Group Membership Reconnaissance Via Whoami.EXE",
+      "tags": [
+        "attack.discovery",
+        "attack.t1033"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine",
+        "Image",
+        "OriginalFileName"
+      ],
+      "retrieval_score": 21.026,
+      "retrieval_components": {
+        "title_hits": [
+          "whoami"
+        ],
+        "detection_hits": [
+          "whoami"
+        ],
+        "description_hits": [
+          "current",
+          "user",
+          "whoami"
+        ],
+        "quote_hits": [
+          "whoami"
+        ],
+        "category_match": true,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [
+            "selection_img"
+          ],
+          "unsupported_selectors": [
+            "selection_cli"
+          ],
+          "adjustment": -90.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: whoami; title terms: whoami; compatible category: process_creation; rule status: test; required argument, user, or process condition is not evidenced; supported Sigma selector evidence; score 21.026"
+    },
+    {
+      "candidate_id": "AA25-266A-M001-97a80ec7",
+      "rank": 8,
+      "behavior_id": "AA25-266A-G001",
+      "technique_id": "T1033",
+      "rule_id": "97a80ec7-0e2f-4d05-9ef4-65760e634f6b",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_whoami_priv_discovery.yml",
+      "rule_sha256": "551440eda804b85d85b68f2b283058ab8286c3c3b1da06c262ca1437fa2558a7",
+      "title": "Security Privileges Enumeration Via Whoami.EXE",
+      "tags": [
+        "attack.privilege-escalation",
+        "attack.discovery",
+        "attack.t1033"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine",
+        "Image",
+        "OriginalFileName"
+      ],
+      "retrieval_score": 21.026,
+      "retrieval_components": {
+        "title_hits": [
+          "whoami"
+        ],
+        "detection_hits": [
+          "whoami"
+        ],
+        "description_hits": [
+          "current",
+          "user",
+          "whoami"
+        ],
+        "quote_hits": [
+          "whoami"
+        ],
+        "category_match": true,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [
+            "selection_img"
+          ],
+          "unsupported_selectors": [
+            "selection_cli"
+          ],
+          "adjustment": -90.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: whoami; title terms: whoami; compatible category: process_creation; rule status: test; required argument, user, or process condition is not evidenced; supported Sigma selector evidence; score 21.026"
+    },
+    {
+      "candidate_id": "AA25-266A-M001-79ce34ca",
+      "rank": 9,
+      "behavior_id": "AA25-266A-G001",
+      "technique_id": "T1033",
+      "rule_id": "79ce34ca-af29-4d0e-b832-fc1b377020db",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_whoami_execution_from_high_priv_process.yml",
+      "rule_sha256": "52f8f0ec332a357e6897081b7b36cfa4ce9db1145dedc057fd9853cff345ec88",
+      "title": "Whoami.EXE Execution From Privileged Process",
+      "tags": [
+        "attack.privilege-escalation",
+        "attack.discovery",
+        "attack.t1033"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "Image",
+        "OriginalFileName",
+        "User"
+      ],
+      "retrieval_score": 20.987,
+      "retrieval_components": {
+        "title_hits": [
+          "whoami"
+        ],
+        "detection_hits": [
+          "user",
+          "whoami"
+        ],
+        "description_hits": [
+          "whoami"
+        ],
+        "quote_hits": [
+          "whoami"
+        ],
+        "category_match": true,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [
+            "selection_img"
+          ],
+          "unsupported_selectors": [
+            "selection_user"
+          ],
+          "adjustment": -90.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: user, whoami; title terms: whoami; compatible category: process_creation; rule status: test; required argument, user, or process condition is not evidenced; supported Sigma selector evidence; score 20.987"
+    },
+    {
+      "candidate_id": "AA25-266A-M001-c248c896",
+      "rank": 10,
+      "behavior_id": "AA25-266A-G001",
+      "technique_id": "T1033",
+      "rule_id": "c248c896-e412-4279-8c15-1c558067b6fa",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_whoami_all_execution.yml",
+      "rule_sha256": "fd87990871c3324c5e3eb20b4cd6cede336e23cbe3c1a35307b7894581869f24",
+      "title": "Enumerate All Information With Whoami.EXE",
+      "tags": [
+        "attack.discovery",
+        "attack.t1033",
+        "car.2016-03-001"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine",
+        "Image",
+        "OriginalFileName"
+      ],
+      "retrieval_score": 8.185,
+      "retrieval_components": {
+        "title_hits": [
+          "whoami"
+        ],
+        "detection_hits": [
+          "whoami"
+        ],
+        "description_hits": [
+          "whoami"
+        ],
+        "quote_hits": [
+          "whoami"
+        ],
+        "category_match": true,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [
+            "selection_main_img"
+          ],
+          "unsupported_selectors": [
+            "selection_main_cli"
+          ],
+          "adjustment": -90.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: whoami; title terms: whoami; compatible category: process_creation; rule status: test; required argument, user, or process condition is not evidenced; supported Sigma selector evidence; score 8.185"
+    },
+    {
+      "candidate_id": "AA25-266A-M002-a29c1813",
+      "rank": 1,
+      "behavior_id": "AA25-266A-G002",
+      "technique_id": "T1016",
+      "rule_id": "a29c1813-ab1f-4dde-b489-330b952e91ae",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_susp_network_command.yml",
+      "rule_sha256": "ea9b3d15a8419787940b14991faf715c0dd05628c311e18ac9d1558e7fbe120d",
+      "title": "Suspicious Network Command",
+      "tags": [
+        "attack.discovery",
+        "attack.t1016"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine"
+      ],
+      "retrieval_score": 131.907,
+      "retrieval_components": {
+        "title_hits": [
+          "network"
+        ],
+        "detection_hits": [
+          "all",
+          "ipconfig"
+        ],
+        "description_hits": [
+          "configuration",
+          "network"
+        ],
+        "quote_hits": [
+          "all",
+          "ipconfig"
+        ],
+        "category_match": true,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [
+            "selection"
+          ],
+          "unsupported_selectors": [],
+          "adjustment": 10.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: all, ipconfig; title terms: network; compatible category: process_creation; rule status: test; supported Sigma selector evidence; score 131.907"
+    },
+    {
+      "candidate_id": "AA25-266A-M002-edf3485d",
+      "rank": 2,
+      "behavior_id": "AA25-266A-G002",
+      "technique_id": "T1016",
+      "rule_id": "edf3485d-dac4-4d50-90e4-b0e5813f7e60",
+      "rule_path": "data/sigma/rules/windows/network_connection/net_connection_win_domain_external_ip_lookup.yml",
+      "rule_sha256": "ee3d69559a0049293d62cad91f8711132f7526782d051ac5062c156492be6a6c",
+      "title": "Suspicious Network Connection to IP Lookup Service APIs",
+      "tags": [
+        "attack.discovery",
+        "attack.t1016"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "network_connection",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "DestinationHostname",
+        "Image"
+      ],
+      "retrieval_score": 85.859,
+      "retrieval_components": {
+        "title_hits": [
+          "network"
+        ],
+        "detection_hits": [
+          "ipconfig"
+        ],
+        "description_hits": [],
+        "quote_hits": [
+          "ipconfig"
+        ],
+        "category_match": false,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [],
+          "unsupported_selectors": [],
+          "adjustment": 0.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: ipconfig; title terms: network; rule status: test; score 85.859"
+    },
+    {
+      "candidate_id": "AA25-266A-M002-0e4164da",
+      "rank": 3,
+      "behavior_id": "AA25-266A-G002",
+      "technique_id": "T1016",
+      "rule_id": "0e4164da-94bc-450d-a7be-a4b176179f1f",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_netsh_fw_rules_discovery.yml",
+      "rule_sha256": "bd8e9861b0acd621c336576ac1553da61b0956105146b4052dcf1bd736070c4e",
+      "title": "Firewall Configuration Discovery Via Netsh.EXE",
+      "tags": [
+        "attack.discovery",
+        "attack.t1016"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine",
+        "Image",
+        "OriginalFileName"
+      ],
+      "retrieval_score": -39.548,
+      "retrieval_components": {
+        "title_hits": [
+          "configuration"
+        ],
+        "detection_hits": [
+          "all"
+        ],
+        "description_hits": [
+          "configuration",
+          "network"
+        ],
+        "quote_hits": [
+          "all"
+        ],
+        "category_match": true,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [],
+          "unsupported_selectors": [
+            "selection_img",
+            "selection_cli"
+          ],
+          "adjustment": -100.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: all; title terms: configuration; compatible category: process_creation; rule status: test; required argument, user, or process condition is not evidenced; score -39.548"
+    },
+    {
+      "candidate_id": "AA25-266A-M002-5cc90652",
+      "rank": 4,
+      "behavior_id": "AA25-266A-G002",
+      "technique_id": "T1016",
+      "rule_id": "5cc90652-4cbd-4241-aa3b-4b462fa5a248",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_nltest_recon.yml",
+      "rule_sha256": "a40330e4f631169523a802f3c943110077553471a6a717d3e2c3263adcd43059",
+      "title": "Potential Recon Activity Via Nltest.EXE",
+      "tags": [
+        "attack.discovery",
+        "attack.t1016",
+        "attack.t1482"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine",
+        "Image",
+        "OriginalFileName"
+      ],
+      "retrieval_score": -59.204,
+      "retrieval_components": {
+        "title_hits": [],
+        "detection_hits": [
+          "all",
+          "server"
+        ],
+        "description_hits": [],
+        "quote_hits": [
+          "all"
+        ],
+        "category_match": true,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [],
+          "unsupported_selectors": [
+            "selection_nltest",
+            "selection_recon"
+          ],
+          "adjustment": -100.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: all, server; compatible category: process_creation; rule status: test; required argument, user, or process condition is not evidenced; score -59.204"
+    },
+    {
+      "candidate_id": "AA25-266A-M002-903076ff",
+      "rank": 5,
+      "behavior_id": "AA25-266A-G002",
+      "technique_id": "T1016",
+      "rule_id": "903076ff-f442-475a-b667-4f246bcc203b",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_nltest_execution.yml",
+      "rule_sha256": "1210867b8d10a3d3f10d34a95e80d7fa87240377e0ba4cb05b9859e56bb3c6f7",
+      "title": "Nltest.EXE Execution",
+      "tags": [
+        "attack.discovery",
+        "attack.t1016",
+        "attack.t1018",
+        "attack.t1482"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "Image",
+        "OriginalFileName"
+      ],
+      "retrieval_score": -65.0,
+      "retrieval_components": {
+        "title_hits": [],
+        "detection_hits": [],
+        "description_hits": [],
+        "quote_hits": [],
+        "category_match": true,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [],
+          "unsupported_selectors": [],
+          "adjustment": -70.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; compatible category: process_creation; rule status: test; the sole selection does not match the reported command detail; score -65.0"
+    },
+    {
+      "candidate_id": "AA25-266A-M003-ccb5742c",
+      "rank": 1,
+      "behavior_id": "AA25-266A-G003",
+      "technique_id": "T1057",
+      "rule_id": "ccb5742c-c248-4982-8c5c-5571b9275ad3",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_findstr_recon_pipe_output.yml",
+      "rule_sha256": "7dbffbfce7eb80aab5c87dd87f9dfde9a20b69b51a391ac5081de0b189b7d480",
+      "title": "Recon Command Output Piped To Findstr.EXE",
+      "tags": [
+        "attack.discovery",
+        "attack.t1057"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine"
+      ],
+      "retrieval_score": 72.462,
+      "retrieval_components": {
+        "title_hits": [],
+        "detection_hits": [
+          "tasklist"
+        ],
+        "description_hits": [],
+        "quote_hits": [
+          "tasklist"
+        ],
+        "category_match": true,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [],
+          "unsupported_selectors": [],
+          "adjustment": 0.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: tasklist; compatible category: process_creation; rule status: test; score 72.462"
+    },
+    {
+      "candidate_id": "AA25-266A-M003-fca949cc",
+      "rank": 2,
+      "behavior_id": "AA25-266A-G003",
+      "technique_id": "T1057",
+      "rule_id": "fca949cc-79ca-446e-8064-01aa7e52ece5",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_hktl_pchunter.yml",
+      "rule_sha256": "c017c7f9b000c23c67c32d7c6a8d3ae7403983ad8e266b9d2b14cf79dd0a1a09",
+      "title": "HackTool - PCHunter Execution",
+      "tags": [
+        "attack.execution",
+        "attack.discovery",
+        "attack.t1082",
+        "attack.t1057",
+        "attack.t1012",
+        "attack.t1083",
+        "attack.t1007"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "Description",
+        "Hashes",
+        "Image",
+        "OriginalFileName"
+      ],
+      "retrieval_score": 10.821,
+      "retrieval_components": {
+        "title_hits": [],
+        "detection_hits": [],
+        "description_hits": [
+          "processes"
+        ],
+        "quote_hits": [],
+        "category_match": true,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [],
+          "unsupported_selectors": [],
+          "adjustment": 0.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; compatible category: process_creation; rule status: test; score 10.821"
+    },
+    {
+      "candidate_id": "AA25-266A-M003-af4c87ce",
+      "rank": 3,
+      "behavior_id": "AA25-266A-G003",
+      "technique_id": "T1057",
+      "rule_id": "af4c87ce-bdda-4215-b998-15220772e993",
+      "rule_path": "data/sigma/rules/windows/powershell/powershell_script/posh_ps_susp_get_process.yml",
+      "rule_sha256": "fc05a6f8d01b1e8c2da3c6947ade2f1bb7570f96f0c62e123e7d9c7353bf0a3c",
+      "title": "Suspicious Process Discovery With Get-Process",
+      "tags": [
+        "attack.discovery",
+        "attack.t1057"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "ps_script",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "ScriptBlockText"
+      ],
+      "retrieval_score": -55.259,
+      "retrieval_components": {
+        "title_hits": [],
+        "detection_hits": [],
+        "description_hits": [
+          "processes",
+          "running"
+        ],
+        "quote_hits": [],
+        "category_match": false,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [],
+          "unsupported_selectors": [],
+          "adjustment": -70.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; rule status: test; the sole selection does not match the reported command detail; score -55.259"
+    },
+    {
+      "candidate_id": "AA25-266A-M003-221b251a",
+      "rank": 4,
+      "behavior_id": "AA25-266A-G003",
+      "technique_id": "T1057",
+      "rule_id": "221b251a-357a-49a9-920a-271802777cc0",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_wmic_recon_process.yml",
+      "rule_sha256": "a2de36a81c89e9a4665ee479585bc049171d92dca392ef248f59bcea4937c238",
+      "title": "Potential Process Reconnaissance via Wmic.EXE",
+      "tags": [
+        "attack.execution",
+        "attack.t1047",
+        "attack.discovery",
+        "attack.t1057"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine",
+        "Image",
+        "OriginalFileName"
+      ],
+      "retrieval_score": -71.259,
+      "retrieval_components": {
+        "title_hits": [],
+        "detection_hits": [],
+        "description_hits": [
+          "processes",
+          "running"
+        ],
+        "quote_hits": [],
+        "category_match": true,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [
+            "selection_cli"
+          ],
+          "unsupported_selectors": [
+            "selection_img"
+          ],
+          "adjustment": -90.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; compatible category: process_creation; rule status: test; required argument, user, or process condition is not evidenced; supported Sigma selector evidence; score -71.259"
+    },
+    {
+      "candidate_id": "AA25-266A-M004-32410e29",
+      "rank": 1,
+      "behavior_id": "AA25-266A-G004",
+      "technique_id": "T1090",
+      "rule_id": "32410e29-5f94-4568-b6a3-d91a8adad863",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_pua_frp.yml",
+      "rule_sha256": "277856da69d0f782b21a79553a5a0a201ab4bd7658d602ee8509cfaa6ac74127",
+      "title": "PUA - Fast Reverse Proxy (FRP) Execution",
+      "tags": [
+        "attack.command-and-control",
+        "attack.t1090"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine",
+        "Hashes",
+        "Image"
+      ],
+      "retrieval_score": 31.517,
+      "retrieval_components": {
+        "title_hits": [
+          "proxy"
+        ],
+        "detection_hits": [],
+        "description_hits": [
+          "proxy"
+        ],
+        "quote_hits": [],
+        "category_match": false,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [],
+          "unsupported_selectors": [],
+          "adjustment": 0.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; title terms: proxy; rule status: test; score 31.517"
+    },
+    {
+      "candidate_id": "AA25-266A-M004-d7654f02",
+      "rank": 2,
+      "behavior_id": "AA25-266A-G004",
+      "technique_id": "T1090",
+      "rule_id": "d7654f02-e04b-4934-9838-65c46f187ebc",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_pua_iox.yml",
+      "rule_sha256": "daade2e5fc71b4eeae7fe8f46509056e1033a7675b1224b978c281522e82bfcf",
+      "title": "PUA- IOX Tunneling Tool Execution",
+      "tags": [
+        "attack.command-and-control",
+        "attack.t1090"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine",
+        "Hashes",
+        "Image"
+      ],
+      "retrieval_score": 26.822,
+      "retrieval_components": {
+        "title_hits": [],
+        "detection_hits": [
+          "proxy"
+        ],
+        "description_hits": [
+          "proxy"
+        ],
+        "quote_hits": [],
+        "category_match": false,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [],
+          "unsupported_selectors": [],
+          "adjustment": 0.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: proxy; rule status: test; score 26.822"
+    },
+    {
+      "candidate_id": "AA25-266A-M004-68d37776",
+      "rank": 3,
+      "behavior_id": "AA25-266A-G004",
+      "technique_id": "T1090",
+      "rule_id": "68d37776-61db-42f5-bf54-27e87072d17e",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_pua_nps.yml",
+      "rule_sha256": "ce63d92df57000b866009ddeba46acb9f9dc64846e2e2416ad47920ae0b888b5",
+      "title": "PUA - NPS Tunneling Tool Execution",
+      "tags": [
+        "attack.command-and-control",
+        "attack.t1090"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine",
+        "Hashes",
+        "Image"
+      ],
+      "retrieval_score": 8.042,
+      "retrieval_components": {
+        "title_hits": [],
+        "detection_hits": [],
+        "description_hits": [
+          "proxy"
+        ],
+        "quote_hits": [],
+        "category_match": false,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [],
+          "unsupported_selectors": [],
+          "adjustment": 0.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; rule status: test; score 8.042"
+    },
+    {
+      "candidate_id": "AA25-266A-M004-5fc297ae",
+      "rank": 4,
+      "behavior_id": "AA25-266A-G004",
+      "technique_id": "T1090",
+      "rule_id": "5fc297ae-25b6-488a-8f25-cc12ac29b744",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_qemu_suspicious_execution.yml",
+      "rule_sha256": "672d7bddced701dabaa009b794a552bdd54bba934ae1560e1c99bde199c9d1a0",
+      "title": "Potentially Suspicious Usage Of Qemu",
+      "tags": [
+        "attack.command-and-control",
+        "attack.t1090",
+        "attack.t1572"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine"
+      ],
+      "retrieval_score": 6.821,
+      "retrieval_components": {
+        "title_hits": [],
+        "detection_hits": [],
+        "description_hits": [
+          "network"
+        ],
+        "quote_hits": [],
+        "category_match": false,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [],
+          "unsupported_selectors": [],
+          "adjustment": 0.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; rule status: test; score 6.821"
+    },
+    {
+      "candidate_id": "AA25-266A-M004-f5e3b62f",
+      "rank": 5,
+      "behavior_id": "AA25-266A-G004",
+      "technique_id": "T1090",
+      "rule_id": "f5e3b62f-e577-4e59-931e-0a15b2b94e1e",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_hktl_htran_or_natbypass.yml",
+      "rule_sha256": "c96598021631f20bcd2f5b6ceb785c77571e905c82a49181606bc784a48051db",
+      "title": "HackTool - Htran/NATBypass Execution",
+      "tags": [
+        "attack.command-and-control",
+        "attack.t1090",
+        "attack.s0040"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine",
+        "Image"
+      ],
+      "retrieval_score": 1.0,
+      "retrieval_components": {
+        "title_hits": [],
+        "detection_hits": [],
+        "description_hits": [],
+        "quote_hits": [],
+        "category_match": false,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [],
+          "unsupported_selectors": [],
+          "adjustment": 0.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; rule status: test; score 1.0"
+    },
+    {
+      "candidate_id": "AA25-266A-M004-322ed9ec",
+      "rank": 6,
+      "behavior_id": "AA25-266A-G004",
+      "technique_id": "T1090",
+      "rule_id": "322ed9ec-fcab-4f67-9a34-e7c6aef43614",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_netsh_port_forwarding.yml",
+      "rule_sha256": "99793e40ac1f54c17874beb4e2659749a3882598fe0e7cf93d4621127bd65a38",
+      "title": "New Port Forwarding Rule Added Via Netsh.EXE",
+      "tags": [
+        "attack.lateral-movement",
+        "attack.command-and-control",
+        "attack.t1090"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine",
+        "Image",
+        "OriginalFileName"
+      ],
+      "retrieval_score": 1.0,
+      "retrieval_components": {
+        "title_hits": [],
+        "detection_hits": [],
+        "description_hits": [],
+        "quote_hits": [],
+        "category_match": false,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [],
+          "unsupported_selectors": [],
+          "adjustment": 0.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; rule status: test; score 1.0"
+    },
+    {
+      "candidate_id": "AA25-266A-M004-72f4ab3f",
+      "rank": 7,
+      "behavior_id": "AA25-266A-G004",
+      "technique_id": "T1090",
+      "rule_id": "72f4ab3f-787d-495d-a55d-68c2ff46cf4c",
+      "rule_path": "data/sigma/rules/linux/process_creation/proc_creation_lnx_proxy_connection.yml",
+      "rule_sha256": "e1716fa736e1d30049566d9834a60eabe184d31669d8b9aa90525ed22800f8ea",
+      "title": "Connection Proxy",
+      "tags": [
+        "attack.command-and-control",
+        "attack.t1090"
+      ],
+      "logsource": {
+        "product": "linux",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine"
+      ],
+      "retrieval_score": -19.703,
+      "retrieval_components": {
+        "title_hits": [
+          "proxy"
+        ],
+        "detection_hits": [
+          "proxy"
+        ],
+        "description_hits": [
+          "proxy"
+        ],
+        "quote_hits": [],
+        "category_match": false,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [],
+          "unsupported_selectors": [],
+          "adjustment": -70.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: proxy; title terms: proxy; rule status: test; the sole selection does not match the reported command detail; score -19.703"
+    },
+    {
+      "candidate_id": "AA25-266A-M004-c4568f5d",
+      "rank": 8,
+      "behavior_id": "AA25-266A-G004",
+      "technique_id": "T1090",
+      "rule_id": "c4568f5d-131f-4e78-83d4-45b2da0ec4f1",
+      "rule_path": "data/sigma/rules/linux/network_connection/net_connection_lnx_domain_localtonet_tunnel.yml",
+      "rule_sha256": "b4430d86f381852608314bb2038e181886dc1ec0dedbbb3ae0c3d100feebb5ca",
+      "title": "Communication To LocaltoNet Tunneling Service Initiated - Linux",
+      "tags": [
+        "attack.command-and-control",
+        "attack.t1572",
+        "attack.t1090",
+        "attack.t1102"
+      ],
+      "logsource": {
+        "product": "linux",
+        "category": "network_connection",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "DestinationHostname",
+        "Initiated"
+      ],
+      "retrieval_score": -52.136,
+      "retrieval_components": {
+        "title_hits": [],
+        "detection_hits": [],
+        "description_hits": [
+          "network",
+          "proxy"
+        ],
+        "quote_hits": [],
+        "category_match": true,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [],
+          "unsupported_selectors": [],
+          "adjustment": -70.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; compatible category: network_connection; rule status: test; the sole selection does not match the reported command detail; score -52.136"
+    },
+    {
+      "candidate_id": "AA25-266A-M004-3ab65069",
+      "rank": 9,
+      "behavior_id": "AA25-266A-G004",
+      "technique_id": "T1090",
+      "rule_id": "3ab65069-d82a-4d44-a759-466661a082d1",
+      "rule_path": "data/sigma/rules/windows/network_connection/net_connection_win_domain_localtonet_tunnel.yml",
+      "rule_sha256": "a4a6e09c81f94d14e8eeef1439cee1b4b8276ec5b994c76aad4b03d8a07d2b4b",
+      "title": "Communication To LocaltoNet Tunneling Service Initiated",
+      "tags": [
+        "attack.command-and-control",
+        "attack.t1572",
+        "attack.t1090",
+        "attack.t1102"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "network_connection",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "DestinationHostname",
+        "Initiated"
+      ],
+      "retrieval_score": -52.136,
+      "retrieval_components": {
+        "title_hits": [],
+        "detection_hits": [],
+        "description_hits": [
+          "network",
+          "proxy"
+        ],
+        "quote_hits": [],
+        "category_match": true,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [],
+          "unsupported_selectors": [],
+          "adjustment": -70.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; compatible category: network_connection; rule status: test; the sole selection does not match the reported command detail; score -52.136"
+    },
+    {
+      "candidate_id": "AA25-266A-M004-1d08ac94",
+      "rank": 10,
+      "behavior_id": "AA25-266A-G004",
+      "technique_id": "T1090",
+      "rule_id": "1d08ac94-400d-4469-a82f-daee9a908849",
+      "rule_path": "data/sigma/rules/windows/network_connection/net_connection_win_domain_ngrok_tunnel.yml",
+      "rule_sha256": "4ce74f56f189a9af924b1223f882f7835b2af2dcd9cb2ee768de263816a85887",
+      "title": "Communication To Ngrok Tunneling Service Initiated",
+      "tags": [
+        "attack.exfiltration",
+        "attack.command-and-control",
+        "attack.t1567",
+        "attack.t1568.002",
+        "attack.t1572",
+        "attack.t1090",
+        "attack.t1102",
+        "attack.s0508"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "network_connection",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "DestinationHostname"
+      ],
+      "retrieval_score": -59.179,
+      "retrieval_components": {
+        "title_hits": [],
+        "detection_hits": [],
+        "description_hits": [
+          "network"
+        ],
+        "quote_hits": [],
+        "category_match": true,
+        "status": "test",
+        "condition_adjustment": {
+          "supported_selectors": [],
+          "unsupported_selectors": [],
+          "adjustment": -70.0
+        }
+      },
+      "retrieval_reason": "exact ATT&CK technique tag; compatible category: network_connection; rule status: test; the sole selection does not match the reported command detail; score -59.179"
+    }
+  ],
+  "retrieval_warnings": [],
+  "platform_exclusions": [
+    {
+      "behavior_id": "AA25-266A-G001",
+      "rule_id": "56fda488-113e-4ce9-8076-afc2457922c3",
+      "rule_path": "data/sigma/rules/application/rpc_firewall/rpc_firewall_dcsync_attack.yml",
+      "reason": "logsource product 'rpc_firewall' is incompatible with inferred platforms ['windows']"
+    },
+    {
+      "behavior_id": "AA25-266A-G001",
+      "rule_id": "6d580420-ff3f-4e0e-b6b0-41b90c787e28",
+      "rule_path": "data/sigma/rules/application/rpc_firewall/rpc_firewall_sharphound_recon_sessions.yml",
+      "reason": "logsource product 'rpc_firewall' is incompatible with inferred platforms ['windows']"
+    },
+    {
+      "behavior_id": "AA25-266A-G001",
+      "rule_id": "9a0d8ca0-2385-4020-b6c6-cb6153ca56f3",
+      "rule_path": "data/sigma/rules/linux/auditd/execve/lnx_auditd_user_discovery.yml",
+      "reason": "logsource product 'linux' is incompatible with inferred platforms ['windows']"
+    },
+    {
+      "behavior_id": "AA25-266A-G001",
+      "rule_id": "33e814e0-1f00-4e43-9c34-31fb7ae2b174",
+      "rule_path": "data/sigma/rules/linux/process_creation/proc_creation_lnx_esxcli_network_discovery.yml",
+      "reason": "logsource product 'linux' is incompatible with inferred platforms ['windows']"
+    },
+    {
+      "behavior_id": "AA25-266A-G001",
+      "rule_id": "f41dada5-3f56-4232-8503-3fb7f9cf2d60",
+      "rule_path": "data/sigma/rules/linux/process_creation/proc_creation_lnx_esxcli_storage_discovery.yml",
+      "reason": "logsource product 'linux' is incompatible with inferred platforms ['windows']"
+    },
+    {
+      "behavior_id": "AA25-266A-G001",
+      "rule_id": "e80273e1-9faf-40bc-bd85-dbaff104c4e9",
+      "rule_path": "data/sigma/rules/linux/process_creation/proc_creation_lnx_esxcli_system_discovery.yml",
+      "reason": "logsource product 'linux' is incompatible with inferred platforms ['windows']"
+    },
+    {
+      "behavior_id": "AA25-266A-G001",
+      "rule_id": "5f1573a7-363b-4114-9208-ad7a61de46eb",
+      "rule_path": "data/sigma/rules/linux/process_creation/proc_creation_lnx_esxcli_vm_discovery.yml",
+      "reason": "logsource product 'linux' is incompatible with inferred platforms ['windows']"
+    },
+    {
+      "behavior_id": "AA25-266A-G001",
+      "rule_id": "d54c2f06-aca9-4e2b-81c9-5317858f4b79",
+      "rule_path": "data/sigma/rules/linux/process_creation/proc_creation_lnx_esxcli_vsan_discovery.yml",
+      "reason": "logsource product 'linux' is incompatible with inferred platforms ['windows']"
+    },
+    {
+      "behavior_id": "AA25-266A-G001",
+      "rule_id": "9705a6a1-6db6-4a16-a987-15b7151e299b",
+      "rule_path": "data/sigma/rules/network/cisco/aaa/cisco_cli_discovery.yml",
+      "reason": "logsource product 'cisco' is incompatible with inferred platforms ['windows']"
+    },
+    {
+      "behavior_id": "AA25-266A-G002",
+      "rule_id": "e9856028-fd4e-46e6-b3d1-10f7ceb95078",
+      "rule_path": "data/sigma/rules/application/opencanary/opencanary_snmp_cmd.yml",
+      "reason": "logsource product 'opencanary' is incompatible with inferred platforms ['windows']"
+    },
+    {
+      "behavior_id": "AA25-266A-G002",
+      "rule_id": "e7bd1cfa-b446-4c88-8afb-403bcd79e3fa",
+      "rule_path": "data/sigma/rules/linux/process_creation/proc_creation_lnx_system_network_discovery.yml",
+      "reason": "logsource product 'linux' is incompatible with inferred platforms ['windows']"
+    },
+    {
+      "behavior_id": "AA25-266A-G002",
+      "rule_id": "58800443-f9fc-4d55-ae0c-98a3966dfb97",
+      "rule_path": "data/sigma/rules/macos/process_creation/proc_creation_macos_susp_system_network_discovery.yml",
+      "reason": "logsource product 'macos' is incompatible with inferred platforms ['windows']"
+    },
+    {
+      "behavior_id": "AA25-266A-G002",
+      "rule_id": "9705a6a1-6db6-4a16-a987-15b7151e299b",
+      "rule_path": "data/sigma/rules/network/cisco/aaa/cisco_cli_discovery.yml",
+      "reason": "logsource product 'cisco' is incompatible with inferred platforms ['windows']"
+    },
+    {
+      "behavior_id": "AA25-266A-G003",
+      "rule_id": "b207d563-a1d9-4275-b349-77d1eb55aa6d",
+      "rule_path": "data/sigma/rules/linux/auditd/syscall/lnx_auditd_susp_discovery_sysinfo_syscall.yml",
+      "reason": "logsource product 'linux' is incompatible with inferred platforms ['windows']"
+    },
+    {
+      "behavior_id": "AA25-266A-G003",
+      "rule_id": "9705a6a1-6db6-4a16-a987-15b7151e299b",
+      "rule_path": "data/sigma/rules/network/cisco/aaa/cisco_cli_discovery.yml",
+      "reason": "logsource product 'cisco' is incompatible with inferred platforms ['windows']"
+    }
+  ],
+  "retrieval_note": "Candidates use exact technique tags, platform filtering, IDF-weighted field terms, category compatibility, and rule status; coverage requires separate YAML condition review."
+}

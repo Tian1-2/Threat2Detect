@@ -4,8 +4,8 @@ from pathlib import Path
 
 import pytest
 
-import generate_rule as gen
-import run_sigma_offline as engine
+from src.threat2detect.rule_generation import generator as gen
+from src.threat2detect.sigma import executor as engine
 
 
 RULE = r"""title: Suspicious LSASS Access Candidate

@@ -6,8 +6,8 @@ import copy
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from normalize_otrf import DEFAULT_SOURCE, normalize
-from validate_contract import ROOT, validate_contract
+from src.threat2detect.contracts import ROOT, validate_contract
+from src.threat2detect.telemetry.otrf import DEFAULT_SOURCE, normalize
 
 
 def main():

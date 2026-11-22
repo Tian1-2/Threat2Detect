@@ -33,7 +33,7 @@
 
 B 只依赖 `case_handoff` 的 `report`、`behaviors`、`mappings` 和 `attack_catalog`；需要日志需求时再读 `telemetry`。开发时用 `origin: team_review` 且 `review_status: confirmed` 的黄金行；集成时换成 `origin: agent_proposal` 的同结构结果。B 不依赖 A 的提示词、模型调用方式或原始输出格式。CISA 官方原标及 `*-reference.json` 永远不进入 Agent 的预测输入或成员 A 的盲标输入。
 
-**注意：**当前 `agent_poc.py` 是实验输出，`mapping` 嵌在行为里且每行为单 ID。成员 A 负责把它转换成上面的 `behaviors[]` 与 `mappings[]`，并支持一对多；B 不应直接解析实验 JSON。
+**注意：**当前 `src/threat2detect/report_agent.py` 是实验输出，`mapping` 嵌在行为里且每行为单 ID。成员 A 负责把它转换成上面的 `behaviors[]` 与 `mappings[]`，并支持一对多；B 不应直接解析实验 JSON。
 
 ### B 的两个结论不可合并
 
@@ -45,7 +45,7 @@ B 只依赖 `case_handoff` 的 `report`、`behaviors`、`mappings` 和 `attack_c
 
 `positive_event_refs[]` 与 `negative_event_refs[]` 的每项为 `{dataset_id,event_uid,provenance}`；`provenance` 取 `public_attack` / `public_benign` / `local_capture` / `synthetic`，不能把自造事件冒充独立公开数据。
 
-独立实现 `generate_rule.py` 支持可选 `required_conditions[]`：每项为 `{field,modifier,value}`，`modifier` 为 `equals` / `contains` / `startswith` / `endswith`，`value` 为非空字符串。它表达请求方人工明确的必需条件，必须使用可用字段；不是从测试样本反推的答案。有此约束时，仅接受能通过合取选择器强制这些条件的规则，其他表达式保守拒绝。实现和边界见 `docs/RULE_GENERATION_RUNBOOK.md`。
+独立实现 `src/threat2detect/rule_generation/generator.py` 支持可选 `required_conditions[]`：每项为 `{field,modifier,value}`，`modifier` 为 `equals` / `contains` / `startswith` / `endswith`，`value` 为非空字符串。它表达请求方人工明确的必需条件，必须使用可用字段；不是从测试样本反推的答案。有此约束时，仅接受能通过合取选择器强制这些条件的规则，其他表达式保守拒绝。实现和边界见 `docs/RULE_GENERATION_RUNBOOK.md`。
 
 输出 `rule_generation_result`：`scenario_id,candidate_yaml_path,candidate_yaml_sha256,parse_status,required_fields,positive_tests[],negative_tests[],limitations`。`parse_status` 为 `valid` / `invalid` / `unsupported_syntax`；每个测试项为 `{dataset_id,tested_event_uids,matched_event_uids,status,reason}`，`status` 取 `hit` / `miss` / `not_tested` / `unsupported_rule`。若生成失败，YAML 路径/哈希为 `null`，原因写入 `limitations`。只有主流程需要使用新规则时，才追加 SigmaHQ 重复检查和真实缺口核对。
 
@@ -61,14 +61,14 @@ B 只依赖 `case_handoff` 的 `report`、`behaviors`、`mappings` 和 `attack_c
 2. SigmaHQ 已固定 commit。`data/annotations/aa25_266a_rule_candidates.json` 是真实候选规则清单；`data/annotations/coverage_gold_template.json` 已填 4 条示范判断，均已由组长复核为 `confirmed`，可供 B 调优。B 以后可扩大规则集并把争议结论交回组长。
 3. A、B 分别拿确认行调优，各自保存版本、输入哈希和错误清单；组长审核新争议，不逐行代替他们跑实验。
 
-示例文件用 `python validate_contract.py <文件路径>` 校验结构、引用与报告引句位置。后续跨模块交付时带上游文件，例如：
+示例文件用 `python -m src.threat2detect.contracts <文件路径>` 校验结构、引用与报告引句位置。后续跨模块交付时带上游文件，例如：
 
-首次在其他成员电脑运行前安装 `python -m pip install -r requirements-poc.txt`。
+首次在其他成员电脑运行前安装 `python -m pip install -r config/requirements.txt`。
 
 ```powershell
-python validate_contract.py rules_output.json --handoff data/annotations/aa25_266a_gold_draft.json
-python validate_contract.py coverage_output.json --handoff data/annotations/aa25_266a_gold_draft.json --candidates rules_output.json
-python validate_contract.py rule_tests_output.json --candidates rules_output.json --events normalized_events.json
+python -m src.threat2detect.contracts rules_output.json --handoff data/annotations/aa25_266a_gold_draft.json
+python -m src.threat2detect.contracts coverage_output.json --handoff data/annotations/aa25_266a_gold_draft.json --candidates rules_output.json
+python -m src.threat2detect.contracts rule_tests_output.json --candidates rules_output.json --events normalized_events.json
 ```
 
 验证器会检查行为/技术连接、候选规则引用及命中事件 ID；它不能代替安全语义复核。草稿黄金行的 `review_status` 必须由组长确认后才能作为 B 的调优答案。

@@ -11,12 +11,12 @@ from pathlib import Path
 import yaml
 from jsonschema import validate
 
-from agent_poc import load_catalog, ollama_json
-from run_sigma_offline import (
+from ..contracts import ROOT, validate_contract
+from ..report_agent import load_catalog, ollama_json
+from ..sigma.executor import (
     ENGINE_VERSION, SYSMON_CATEGORY, UnsupportedRule, check_supported, evaluate, run_rule,
 )
-from validate_contract import ROOT, validate_contract
-from rule_generation_review import (
+from .review import (
     condition_diagnostics, diagnostic_feedback, evidence_catalog, sample_outcome, validate_split,
 )
 

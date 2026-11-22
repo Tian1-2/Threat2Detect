@@ -12,9 +12,9 @@ from pathlib import Path
 
 import yaml
 
-from agent_poc import ollama_json
-from sigma_coverage import guard_decision, prepare
-from validate_contract import validate_contract, validate_links
+from ..contracts import validate_contract, validate_links
+from ..report_agent import ollama_json
+from .coverage import guard_decision, prepare
 
 
 SYSTEM = """You analyze whether ONE reported behavior fits ONE Sigma rule.

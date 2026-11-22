@@ -13,7 +13,7 @@ from pathlib import Path
 
 import yaml
 
-from validate_contract import ROOT, validate_contract, validate_links, workspace_path
+from ..contracts import ROOT, validate_contract, validate_links, workspace_path
 
 
 ENGINE_VERSION = "sigma-offline-subset-0.1"

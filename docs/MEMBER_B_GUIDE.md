@@ -26,17 +26,17 @@
 4. **用 OTRF 样本练匹配。** 先人工复现已复核样本 E01–E06 的逻辑，再考虑自动化解析。事件在 JSONL 的行号和 YAML 规则路径均已给出。背景候选并非已证实良性；攻击相关事件上的规则 `miss` 也不意味着事件良性。真正的 `rule_tests.status` 需执行器运行、保存事件 ID 与引擎版本，由组长负责集成。
 5. **提交争议。** 给组长发具体 `behavior_id`、`candidate_id`、YAML 条件、原文引句、你的判断和不确定点。新增行在组长复核前保持 `review_status: draft`。不要读取 CISA `*-reference.json` 来反推行为映射，也不要把当前四条示范规则硬编码为唯一候选。
 
-最小交付是：可复现的规则检索函数、候选 JSON、逐条件覆盖 JSON、所用 Sigma commit/规则哈希，以及一份错误与争议清单。成员 A 的实验输出格式尚未等同正式 `case_handoff`；集成时请按接口契约接收 `behaviors[]` 与 `mappings[]`，不要直接解析 `agent_poc.py` 的嵌套实验 JSON。
+最小交付是：可复现的规则检索函数、候选 JSON、逐条件覆盖 JSON、所用 Sigma commit/规则哈希，以及一份错误与争议清单。成员 A 的实验输出格式尚未等同正式 `case_handoff`；集成时请按接口契约接收 `behaviors[]` 与 `mappings[]`，不要直接解析 `src/threat2detect/report_agent.py` 的嵌套实验 JSON。
 
-完整的独立运行命令与当前实验结果位置见[第二部分运行说明](SECOND_STAGE_RUNBOOK.md)。当前模型条件对照仍会把必需参数和父进程过滤项判断错；开发进展见仓库根目录 `DEVELOPMENT_LOG.md`。
+完整的独立运行命令与当前实验结果位置见[第二部分运行说明](SECOND_STAGE_RUNBOOK.md)。当前模型条件对照仍会把必需参数和父进程过滤项判断错；开发进展见仓库根目录 `docs/DEVELOPMENT_LOG.md`。
 
 ## 校验
 
-首次运行：`python -m pip install -r requirements-poc.txt`。下面的路径以你的实际输出文件替换：
+首次运行：`python -m pip install -r config/requirements.txt`。下面的路径以你的实际输出文件替换：
 
 ```powershell
-python validate_contract.py rules_output.json --handoff data/annotations/aa25_266a_gold_draft.json
-python validate_contract.py coverage_output.json --handoff data/annotations/aa25_266a_gold_draft.json --candidates rules_output.json
+python -m src.threat2detect.contracts rules_output.json --handoff data/annotations/aa25_266a_gold_draft.json
+python -m src.threat2detect.contracts coverage_output.json --handoff data/annotations/aa25_266a_gold_draft.json --candidates rules_output.json
 ```
 
 验证器检查结构和引用，不替代人工核对 YAML 的语义。遇到不支持的 Sigma 修饰符或布尔写法，应记录具体规则和语法，不要把“无法执行”写成 `miss`。

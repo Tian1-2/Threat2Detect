@@ -1,14 +1,14 @@
 # Sigma 条件分析 Agent：首版
 
-`sigma_agent.py` 只判断**报告描述的具体做法**与一条 Sigma 规则是否相符，不执行规则，也不把报告与 OTRF 当作同一次事件。它接受现有 `case_handoff` 与 `rule_candidates`，输出同一个 `coverage_assessments` 契约，因此可以与旧的单次判断器对照。
+`src/threat2detect/sigma/agent.py` 只判断**报告描述的具体做法**与一条 Sigma 规则是否相符，不执行规则，也不把报告与 OTRF 当作同一次事件。它接受现有 `case_handoff` 与 `rule_candidates`，输出同一个 `coverage_assessments` 契约，因此可以与旧的单次判断器对照。
 
 ## 运行
 
 从项目根目录运行，先确保本机 Ollama 已启动且有 `qwen3:4b`：
 
 ```powershell
-python sigma_agent.py data/annotations/aa25_266a_gold_draft.json data/annotations/aa25_266a_rule_candidates.json artifacts/runs/sigma-agent/coverage-r003.json --candidate-id AA25-266A-R003 --max-steps 5
-python validate_contract.py artifacts/runs/sigma-agent/coverage-r003.json --handoff data/annotations/aa25_266a_gold_draft.json --candidates data/annotations/aa25_266a_rule_candidates.json
+python -m src.threat2detect.sigma.agent data/annotations/aa25_266a_gold_draft.json data/annotations/aa25_266a_rule_candidates.json artifacts/runs/sigma-agent/coverage-r003.json --candidate-id AA25-266A-R003 --max-steps 5
+python -m src.threat2detect.contracts artifacts/runs/sigma-agent/coverage-r003.json --handoff data/annotations/aa25_266a_gold_draft.json --candidates data/annotations/aa25_266a_rule_candidates.json
 ```
 
 输出旁边的 `coverage-r003_trace.jsonl` 记录每一步工具选择、工具返回、模型提出的判断和校验反馈。Agent 可选择 `inspect_rule`、`read_context`、`check_fields`、`finish`；同一工具不可重复调用。`inspect_rule` 必须在结束前调用。达到 `--max-steps` 后仍没有合格结论，就输出 `insufficient_detail` 和停止原因，而不编造确定判断。
@@ -16,7 +16,7 @@ python validate_contract.py artifacts/runs/sigma-agent/coverage-r003.json --hand
 统一流水线可加 `--agent-coverage --agent-max-steps 5`。例如：
 
 ```powershell
-python pipeline.py --handoff data/annotations/aa25_266a_gold_draft.json --events artifacts/runs/otrf_lsass_normalized.json --output-dir artifacts/runs/pipeline-agent-demo --limit 1 --max-coverage 1 --max-rules 1 --agent-coverage --agent-max-steps 5
+python -m src.threat2detect.pipeline.legacy --handoff data/annotations/aa25_266a_gold_draft.json --events artifacts/runs/otrf_lsass_normalized.json --output-dir artifacts/runs/pipeline-agent-demo --limit 1 --max-coverage 1 --max-rules 1 --agent-coverage --agent-max-steps 5
 ```
 
 `--limit`、`--max-coverage`、`--max-rules` 是演示预算；未处理的候选在 `case_result` 中保持 `null`。Agent 判断始终为 `review_status: draft`。只用 `--include-draft` 才会独立分析 A 阶段的未审核预测；统一流水线会在输入含草稿时显式传入该选项。
@@ -32,7 +32,7 @@ python pipeline.py --handoff data/annotations/aa25_266a_gold_draft.json --events
 评估脚本按 `candidate_id` 对齐人工判定，不把黄金答案送给 Agent：
 
 ```powershell
-python sigma_agent.py data/annotations/aa25_266a_gold_draft.json data/annotations/aa25_266a_rule_candidates.json artifacts/runs/sigma-agent/coverage-all-v2.json --max-items 4 --max-steps 5
+python -m src.threat2detect.sigma.agent data/annotations/aa25_266a_gold_draft.json data/annotations/aa25_266a_rule_candidates.json artifacts/runs/sigma-agent/coverage-all-v2.json --max-items 4 --max-steps 5
 python tools/evaluate_sigma_agent.py data/annotations/coverage_gold_template.json artifacts/runs/sigma-agent/coverage-all-v2.json artifacts/runs/sigma-agent/eval-v2.json --trace artifacts/runs/sigma-agent/coverage-all-v2_trace.jsonl
 ```
 

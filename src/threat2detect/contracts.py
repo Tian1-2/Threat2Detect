@@ -1,6 +1,6 @@
 """Validate Threat2Detect v1.0 module handoff JSON files.
 
-Usage: python validate_contract.py data/annotations/aa25_266a_gold_draft.json
+Usage: python -m src.threat2detect.contracts data/annotations/aa25_266a_gold_draft.json
 Requires jsonschema (`python -m pip install jsonschema`).
 """
 
@@ -13,8 +13,10 @@ from pathlib import Path
 
 from jsonschema import Draft202012Validator
 
+from . import PROJECT_ROOT
 
-ROOT = Path(__file__).parent
+
+ROOT = PROJECT_ROOT
 ID = {"type": "string", "minLength": 1}
 TEXT = {"type": "string"}
 HASH = {"type": "string", "pattern": "^[0-9a-f]{64}$"}
@@ -24,6 +26,19 @@ FACT_STATUS = {"enum": ["observed", "attempted", "inferred", "unclear"]}
 REVIEW_STATUS = {"enum": ["draft", "confirmed", "disputed", "insufficient_evidence"]}
 CONFIDENCE = {"enum": ["high", "medium", "low", "unknown"]}
 ORIGIN = {"enum": ["cisa_inline", "cisa_table", "team_review", "agent_proposal"]}
+
+
+def file_sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def lf_sha256(path: Path) -> str:
+    data = path.read_bytes().replace(b"\r\n", b"\n")
+    return hashlib.sha256(data).hexdigest()
+
+
+def hash_matches(path: Path, expected: str) -> bool:
+    return expected in {file_sha256(path), lf_sha256(path)}
 
 
 def record(required: list[str], properties: dict) -> dict:
@@ -195,7 +210,7 @@ def validate_contract(data: dict, file_path: Path) -> None:
             raise ValueError("Mapping or telemetry refers to missing behavior_id")
         report_path = workspace_path(data["report"]["input_path"])
         if report_path.is_file():
-            if hashlib.sha256(report_path.read_bytes()).hexdigest() != data["report"]["input_sha256"]:
+            if not hash_matches(report_path, data["report"]["input_sha256"]):
                 raise ValueError("Report input SHA-256 mismatch")
             text = report_path.read_text(encoding="utf-8")
             for item in data["behaviors"]:
@@ -205,7 +220,7 @@ def validate_contract(data: dict, file_path: Path) -> None:
         else:
             raise ValueError(f"Report input not found: {report_path}")
         catalog_path = workspace_path(data["attack_catalog"]["path"])
-        if not catalog_path.is_file() or hashlib.sha256(catalog_path.read_bytes()).hexdigest() != data["attack_catalog"]["sha256"]:
+        if not catalog_path.is_file() or not hash_matches(catalog_path, data["attack_catalog"]["sha256"]):
             raise ValueError("ATT&CK catalog missing or SHA-256 mismatch")
         catalog_data = json.loads(catalog_path.read_text(encoding="utf-8"))
         if "objects" in catalog_data:

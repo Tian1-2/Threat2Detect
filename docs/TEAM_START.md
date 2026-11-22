@@ -1,10 +1,10 @@
 # 四位组员的开发起点
 
-本页用于各组员把项目交给自己的 AI 后立即开始开发。先读[项目总说明](PROJECT_HANDOFF.md)了解目标与分工，再读[接口契约](INTERFACE_CONTRACT.md)确定字段与状态值。`README.md` 和 `READING_GUIDE.md` 是仓库入口；所有路径相对仓库根目录。
+本页用于各组员把项目交给自己的 AI 后立即开始开发。先读[项目总说明](PROJECT_HANDOFF.md)了解目标与分工，再读[接口契约](INTERFACE_CONTRACT.md)确定字段与状态值。`README.md` 和 `docs/READING_GUIDE.md` 是仓库入口；所有路径相对仓库根目录。
 
 ## 当前已确认与尚未实现
 
-AA25-266A 的 `data/annotations/aa25_266a_gold_draft.json` 虽沿用旧文件名，内含的 4 条行为与映射已是 `confirmed`。`data/annotations/coverage_gold_template.json` 的 4 条规则适用性判断也已确认。`data/annotations/otrf_lsass_event_judgement_reviewed.md` 的 6 组事件条件推演已确认，所选 3 条规则已在 OTRF 静态事件上离线执行，详见 `docs/OFFLINE_SIGMA_RUNBOOK.md`。`agent_poc.py` 是实验原型，它的嵌套输出不等于正式契约。三篇报告的全篇梳理仍是候选研究材料，不是全部审核过的黄金答案。
+AA25-266A 的 `data/annotations/aa25_266a_gold_draft.json` 虽沿用旧文件名，内含的 4 条行为与映射已是 `confirmed`。`data/annotations/coverage_gold_template.json` 的 4 条规则适用性判断也已确认。`data/annotations/otrf_lsass_event_judgement_reviewed.md` 的 6 组事件条件推演已确认，所选 3 条规则已在 OTRF 静态事件上离线执行，详见 `docs/OFFLINE_SIGMA_RUNBOOK.md`。`src/threat2detect/report_agent.py` 是实验原型，它的嵌套输出不等于正式契约。三篇报告的全篇梳理仍是候选研究材料，不是全部审核过的黄金答案。
 
 ## 各角色第一项交付
 
@@ -15,4 +15,4 @@ AA25-266A 的 `data/annotations/aa25_266a_gold_draft.json` 虽沿用旧文件名
 | B：Sigma 检索 | `MEMBER_B_GUIDE.md` | 确认的 `case_handoff` 行、`data/sigma`、4 条覆盖样本及 6 组 OTRF 推演 | `rule_candidates` 与 `coverage_assessments` 的最小实现；逐条件说明支持、冲突、决定性未知；新增争议交组长 |
 | C：轻量数据任务 | `OTRF_LOG_ANALYSIS.md`、`FIRST_SCENARIO.md` | OTRF ZIP/JSONL 与元数据 | 数据集清单、事件字段与行号核对、少量 `normalized_events` 样例及解析错误数；把背景候选与已证实良性分开 |
 
-各人先用 `python validate_contract.py` 验证自己的 JSON。需要变更字段或枚举时，提供具体输入、现有输出与建议修改给组长统一更新契约。不要让几个模块各自定义不同的 `behavior_id`、规则编号或日志命中含义。
+各人先用 `python -m src.threat2detect.contracts` 验证自己的 JSON。需要变更字段或枚举时，提供具体输入、现有输出与建议修改给组长统一更新契约。不要让几个模块各自定义不同的 `behavior_id`、规则编号或日志命中含义。

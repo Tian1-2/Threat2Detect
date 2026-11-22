@@ -1,0 +1,112 @@
+{
+  "kind": "sigma_retrieval_comparison",
+  "ruleset_commit": "05d1031f537e830b76da53bae2400c5814c89165",
+  "baseline": {
+    "candidate_count": 35,
+    "labelled_rule_count": 4,
+    "ranks": {
+      "AA25-266A-G001|c248c896-e412-4279-8c15-1c558067b6fa": 7,
+      "AA25-266A-G001|8de1cbe8-d6f5-496d-8237-5f44a721c7a0": 9,
+      "AA25-266A-G001|502b42de-4306-40b4-9596-6f590c81f073": 10,
+      "AA25-266A-G002|a29c1813-ab1f-4dde-b489-330b952e91ae": 1
+    },
+    "recall_at": {
+      "1": 0.25,
+      "3": 0.25,
+      "5": 0.25,
+      "10": 1.0
+    },
+    "mrr": 0.3385,
+    "mean_rank": 6.75,
+    "wrong_platform_top10": [
+      {
+        "behavior_id": "AA25-266A-G001",
+        "rule_id": "9a0d8ca0-2385-4020-b6c6-cb6153ca56f3",
+        "product": "linux",
+        "inferred_platforms": [
+          "windows"
+        ]
+      },
+      {
+        "behavior_id": "AA25-266A-G002",
+        "rule_id": "58800443-f9fc-4d55-ae0c-98a3966dfb97",
+        "product": "macos",
+        "inferred_platforms": [
+          "windows"
+        ]
+      },
+      {
+        "behavior_id": "AA25-266A-G002",
+        "rule_id": "e9856028-fd4e-46e6-b3d1-10f7ceb95078",
+        "product": "opencanary",
+        "inferred_platforms": [
+          "windows"
+        ]
+      },
+      {
+        "behavior_id": "AA25-266A-G002",
+        "rule_id": "e7bd1cfa-b446-4c88-8afb-403bcd79e3fa",
+        "product": "linux",
+        "inferred_platforms": [
+          "windows"
+        ]
+      },
+      {
+        "behavior_id": "AA25-266A-G002",
+        "rule_id": "9705a6a1-6db6-4a16-a987-15b7151e299b",
+        "product": "cisco",
+        "inferred_platforms": [
+          "windows"
+        ]
+      },
+      {
+        "behavior_id": "AA25-266A-G003",
+        "rule_id": "9705a6a1-6db6-4a16-a987-15b7151e299b",
+        "product": "cisco",
+        "inferred_platforms": [
+          "windows"
+        ]
+      },
+      {
+        "behavior_id": "AA25-266A-G003",
+        "rule_id": "b207d563-a1d9-4275-b349-77d1eb55aa6d",
+        "product": "linux",
+        "inferred_platforms": [
+          "windows"
+        ]
+      }
+    ],
+    "stable_candidate_ids": 0,
+    "candidate_id_stability": 0.0
+  },
+  "optimized": {
+    "candidate_count": 29,
+    "labelled_rule_count": 4,
+    "ranks": {
+      "AA25-266A-G001|502b42de-4306-40b4-9596-6f590c81f073": 1,
+      "AA25-266A-G001|8de1cbe8-d6f5-496d-8237-5f44a721c7a0": 4,
+      "AA25-266A-G001|c248c896-e412-4279-8c15-1c558067b6fa": 10,
+      "AA25-266A-G002|a29c1813-ab1f-4dde-b489-330b952e91ae": 1
+    },
+    "recall_at": {
+      "1": 0.5,
+      "3": 0.5,
+      "5": 0.75,
+      "10": 1.0
+    },
+    "mrr": 0.5875,
+    "mean_rank": 4.0,
+    "wrong_platform_top10": [],
+    "stable_candidate_ids": 29,
+    "candidate_id_stability": 1.0
+  },
+  "delta": {
+    "recall_at_1": 0.25,
+    "recall_at_3": 0.25,
+    "recall_at_5": 0.5,
+    "recall_at_10": 0.0,
+    "mrr": 0.249,
+    "mean_rank": 2.75,
+    "wrong_platform_top10": 7
+  }
+}

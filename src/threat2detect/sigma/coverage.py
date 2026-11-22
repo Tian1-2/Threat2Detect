@@ -9,8 +9,8 @@ import hashlib
 import json
 from pathlib import Path
 
-from agent_poc import ollama_json
-from validate_contract import ROOT, validate_contract, validate_links, workspace_path
+from ..contracts import validate_contract, validate_links, workspace_path
+from ..report_agent import ollama_json
 
 
 SYSTEM = """You compare one threat-report procedure with one complete Sigma rule.

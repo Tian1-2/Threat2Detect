@@ -1,0 +1,886 @@
+{
+  "schema_version": "1.0",
+  "kind": "rule_candidates",
+  "case_id": "AA25-266A",
+  "ruleset_commit": "05d1031f537e830b76da53bae2400c5814c89165",
+  "items": [
+    {
+      "candidate_id": "AA25-266A-M001-R001",
+      "behavior_id": "AA25-266A-G001",
+      "technique_id": "T1033",
+      "rule_id": "79ce34ca-af29-4d0e-b832-fc1b377020db",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_whoami_execution_from_high_priv_process.yml",
+      "rule_sha256": "52f8f0ec332a357e6897081b7b36cfa4ce9db1145dedc057fd9853cff345ec88",
+      "title": "Whoami.EXE Execution From Privileged Process",
+      "tags": [
+        "attack.privilege-escalation",
+        "attack.discovery",
+        "attack.t1033"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "Image",
+        "OriginalFileName",
+        "User"
+      ],
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: user, whoami; title terms: whoami; lexical score 12"
+    },
+    {
+      "candidate_id": "AA25-266A-M001-R002",
+      "behavior_id": "AA25-266A-G001",
+      "technique_id": "T1033",
+      "rule_id": "9a0d8ca0-2385-4020-b6c6-cb6153ca56f3",
+      "rule_path": "data/sigma/rules/linux/auditd/execve/lnx_auditd_user_discovery.yml",
+      "rule_sha256": "6a7f81c3aa7dee9a7e155720be3439a927011c2f78922ca0f3245c6bc9ab9f13",
+      "title": "System Owner or User Discovery - Linux",
+      "tags": [
+        "attack.discovery",
+        "attack.t1033"
+      ],
+      "logsource": {
+        "product": "linux",
+        "category": null,
+        "service": "auditd"
+      },
+      "status": "test",
+      "required_fields": [],
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: whoami; title terms: user; lexical score 10"
+    },
+    {
+      "candidate_id": "AA25-266A-M001-R003",
+      "behavior_id": "AA25-266A-G001",
+      "technique_id": "T1033",
+      "rule_id": "bd8b828d-0dca-48e1-8a63-8a58ecf2644f",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_whoami_groups_discovery.yml",
+      "rule_sha256": "9811f214ced5d77bc91b9ba4656513fd488a4c98e25f058fd43c3b86cb190cc1",
+      "title": "Group Membership Reconnaissance Via Whoami.EXE",
+      "tags": [
+        "attack.discovery",
+        "attack.t1033"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine",
+        "Image",
+        "OriginalFileName"
+      ],
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: whoami; title terms: whoami; lexical score 10"
+    },
+    {
+      "candidate_id": "AA25-266A-M001-R004",
+      "behavior_id": "AA25-266A-G001",
+      "technique_id": "T1033",
+      "rule_id": "97a80ec7-0e2f-4d05-9ef4-65760e634f6b",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_whoami_priv_discovery.yml",
+      "rule_sha256": "551440eda804b85d85b68f2b283058ab8286c3c3b1da06c262ca1437fa2558a7",
+      "title": "Security Privileges Enumeration Via Whoami.EXE",
+      "tags": [
+        "attack.privilege-escalation",
+        "attack.discovery",
+        "attack.t1033"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine",
+        "Image",
+        "OriginalFileName"
+      ],
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: whoami; title terms: whoami; lexical score 10"
+    },
+    {
+      "candidate_id": "AA25-266A-M001-R005",
+      "behavior_id": "AA25-266A-G001",
+      "technique_id": "T1033",
+      "rule_id": "f1086bf7-a0c4-4a37-9102-01e573caf4a0",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_renamed_whoami.yml",
+      "rule_sha256": "6202f588c35467a152e4fe1917be432a02d6e66b2d5b1ce637eb4f4489f80e61",
+      "title": "Renamed Whoami Execution",
+      "tags": [
+        "attack.discovery",
+        "attack.t1033",
+        "car.2016-03-001"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "Image",
+        "OriginalFileName"
+      ],
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: whoami; title terms: whoami; lexical score 9"
+    },
+    {
+      "candidate_id": "AA25-266A-M001-R006",
+      "behavior_id": "AA25-266A-G001",
+      "technique_id": "T1033",
+      "rule_id": "e9142d84-fbe0-401d-ac50-3e519fb00c89",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_susp_whoami_as_param.yml",
+      "rule_sha256": "f1a2ec7ccf346470771611b7e2fd9fc142c4b2082ae3f4e36a4e968ddf5c03ea",
+      "title": "WhoAmI as Parameter",
+      "tags": [
+        "attack.discovery",
+        "attack.t1033",
+        "car.2016-03-001"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine"
+      ],
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: whoami; title terms: whoami; lexical score 9"
+    },
+    {
+      "candidate_id": "AA25-266A-M001-R007",
+      "behavior_id": "AA25-266A-G001",
+      "technique_id": "T1033",
+      "rule_id": "c248c896-e412-4279-8c15-1c558067b6fa",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_whoami_all_execution.yml",
+      "rule_sha256": "fd87990871c3324c5e3eb20b4cd6cede336e23cbe3c1a35307b7894581869f24",
+      "title": "Enumerate All Information With Whoami.EXE",
+      "tags": [
+        "attack.discovery",
+        "attack.t1033",
+        "car.2016-03-001"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine",
+        "Image",
+        "OriginalFileName"
+      ],
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: whoami; title terms: whoami; lexical score 9"
+    },
+    {
+      "candidate_id": "AA25-266A-M001-R008",
+      "behavior_id": "AA25-266A-G001",
+      "technique_id": "T1033",
+      "rule_id": "c30fb093-1109-4dc8-88a8-b30d11c95a5d",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_whoami_output.yml",
+      "rule_sha256": "b1c66c34acc77754685d25cb8456095947ebdebaeca01ac303507c826222e174",
+      "title": "Whoami.EXE Execution With Output Option",
+      "tags": [
+        "attack.discovery",
+        "attack.t1033",
+        "car.2016-03-001"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine",
+        "Image",
+        "OriginalFileName"
+      ],
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: whoami; title terms: whoami; lexical score 9"
+    },
+    {
+      "candidate_id": "AA25-266A-M001-R009",
+      "behavior_id": "AA25-266A-G001",
+      "technique_id": "T1033",
+      "rule_id": "8de1cbe8-d6f5-496d-8237-5f44a721c7a0",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_whoami_parent_anomaly.yml",
+      "rule_sha256": "07a23606d2d8234926302a9aa167be225bf48ecd4ed21d1938c30a63a1ffdbeb",
+      "title": "Whoami.EXE Execution Anomaly",
+      "tags": [
+        "attack.discovery",
+        "attack.t1033",
+        "car.2016-03-001"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "Image",
+        "OriginalFileName",
+        "ParentImage"
+      ],
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: whoami; title terms: whoami; lexical score 9"
+    },
+    {
+      "candidate_id": "AA25-266A-M001-R010",
+      "behavior_id": "AA25-266A-G001",
+      "technique_id": "T1033",
+      "rule_id": "502b42de-4306-40b4-9596-6f590c81f073",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_susp_local_system_owner_account_discovery.yml",
+      "rule_sha256": "ddb20029d804c7a434cc6600659aaac2b646b67cd150470e9b1ef4be47c16e06",
+      "title": "Local Accounts Discovery",
+      "tags": [
+        "attack.discovery",
+        "attack.t1033",
+        "attack.t1087.001"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine",
+        "Image",
+        "OriginalFileName"
+      ],
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: user, whoami; lexical score 7"
+    },
+    {
+      "candidate_id": "AA25-266A-M002-R001",
+      "behavior_id": "AA25-266A-G002",
+      "technique_id": "T1016",
+      "rule_id": "a29c1813-ab1f-4dde-b489-330b952e91ae",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_susp_network_command.yml",
+      "rule_sha256": "ea9b3d15a8419787940b14991faf715c0dd05628c311e18ac9d1558e7fbe120d",
+      "title": "Suspicious Network Command",
+      "tags": [
+        "attack.discovery",
+        "attack.t1016"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine"
+      ],
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: all, ipconfig; lexical score 6"
+    },
+    {
+      "candidate_id": "AA25-266A-M002-R002",
+      "behavior_id": "AA25-266A-G002",
+      "technique_id": "T1016",
+      "rule_id": "58800443-f9fc-4d55-ae0c-98a3966dfb97",
+      "rule_path": "data/sigma/rules/macos/process_creation/proc_creation_macos_susp_system_network_discovery.yml",
+      "rule_sha256": "dc1b4572e8955ba693819bd393791ba07464ab5fc256543118f3e7f3c69cca34",
+      "title": "System Network Discovery - macOS",
+      "tags": [
+        "attack.discovery",
+        "attack.t1016"
+      ],
+      "logsource": {
+        "product": "macos",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine",
+        "Image",
+        "ParentImage"
+      ],
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: all; lexical score 3"
+    },
+    {
+      "candidate_id": "AA25-266A-M002-R003",
+      "behavior_id": "AA25-266A-G002",
+      "technique_id": "T1016",
+      "rule_id": "edf3485d-dac4-4d50-90e4-b0e5813f7e60",
+      "rule_path": "data/sigma/rules/windows/network_connection/net_connection_win_domain_external_ip_lookup.yml",
+      "rule_sha256": "ee3d69559a0049293d62cad91f8711132f7526782d051ac5062c156492be6a6c",
+      "title": "Suspicious Network Connection to IP Lookup Service APIs",
+      "tags": [
+        "attack.discovery",
+        "attack.t1016"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "network_connection",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "DestinationHostname",
+        "Image"
+      ],
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: ipconfig; lexical score 3"
+    },
+    {
+      "candidate_id": "AA25-266A-M002-R004",
+      "behavior_id": "AA25-266A-G002",
+      "technique_id": "T1016",
+      "rule_id": "0e4164da-94bc-450d-a7be-a4b176179f1f",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_netsh_fw_rules_discovery.yml",
+      "rule_sha256": "bd8e9861b0acd621c336576ac1553da61b0956105146b4052dcf1bd736070c4e",
+      "title": "Firewall Configuration Discovery Via Netsh.EXE",
+      "tags": [
+        "attack.discovery",
+        "attack.t1016"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine",
+        "Image",
+        "OriginalFileName"
+      ],
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: all; lexical score 3"
+    },
+    {
+      "candidate_id": "AA25-266A-M002-R005",
+      "behavior_id": "AA25-266A-G002",
+      "technique_id": "T1016",
+      "rule_id": "5cc90652-4cbd-4241-aa3b-4b462fa5a248",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_nltest_recon.yml",
+      "rule_sha256": "a40330e4f631169523a802f3c943110077553471a6a717d3e2c3263adcd43059",
+      "title": "Potential Recon Activity Via Nltest.EXE",
+      "tags": [
+        "attack.discovery",
+        "attack.t1016",
+        "attack.t1482"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine",
+        "Image",
+        "OriginalFileName"
+      ],
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: all; lexical score 3"
+    },
+    {
+      "candidate_id": "AA25-266A-M002-R006",
+      "behavior_id": "AA25-266A-G002",
+      "technique_id": "T1016",
+      "rule_id": "e9856028-fd4e-46e6-b3d1-10f7ceb95078",
+      "rule_path": "data/sigma/rules/application/opencanary/opencanary_snmp_cmd.yml",
+      "rule_sha256": "b75e199d80ab1a8b5dcfe0b1506bcbf569d99d1c0b68616f6f66005c363a2ec1",
+      "title": "OpenCanary - SNMP OID Request",
+      "tags": [
+        "attack.discovery",
+        "attack.lateral-movement",
+        "attack.t1016",
+        "attack.t1021"
+      ],
+      "logsource": {
+        "product": "opencanary",
+        "category": "application",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [],
+      "retrieval_reason": "exact ATT&CK technique tag; lexical score 0"
+    },
+    {
+      "candidate_id": "AA25-266A-M002-R007",
+      "behavior_id": "AA25-266A-G002",
+      "technique_id": "T1016",
+      "rule_id": "e7bd1cfa-b446-4c88-8afb-403bcd79e3fa",
+      "rule_path": "data/sigma/rules/linux/process_creation/proc_creation_lnx_system_network_discovery.yml",
+      "rule_sha256": "a7b4fa79d7eff4112be7a51b0bb1ce697a63561393e550c7b545fefae9b7b0c9",
+      "title": "System Network Discovery - Linux",
+      "tags": [
+        "attack.discovery",
+        "attack.t1016"
+      ],
+      "logsource": {
+        "product": "linux",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine",
+        "Image"
+      ],
+      "retrieval_reason": "exact ATT&CK technique tag; lexical score 0"
+    },
+    {
+      "candidate_id": "AA25-266A-M002-R008",
+      "behavior_id": "AA25-266A-G002",
+      "technique_id": "T1016",
+      "rule_id": "9705a6a1-6db6-4a16-a987-15b7151e299b",
+      "rule_path": "data/sigma/rules/network/cisco/aaa/cisco_cli_discovery.yml",
+      "rule_sha256": "caaf3675e5ff8db73bd2525f340d7e992209401a7e5f13dd34014d4b3f8cefb5",
+      "title": "Cisco Discovery",
+      "tags": [
+        "attack.discovery",
+        "attack.t1083",
+        "attack.t1201",
+        "attack.t1057",
+        "attack.t1018",
+        "attack.t1082",
+        "attack.t1016",
+        "attack.t1049",
+        "attack.t1033",
+        "attack.t1124"
+      ],
+      "logsource": {
+        "product": "cisco",
+        "category": null,
+        "service": "aaa"
+      },
+      "status": "test",
+      "required_fields": [],
+      "retrieval_reason": "exact ATT&CK technique tag; lexical score 0"
+    },
+    {
+      "candidate_id": "AA25-266A-M002-R009",
+      "behavior_id": "AA25-266A-G002",
+      "technique_id": "T1016",
+      "rule_id": "903076ff-f442-475a-b667-4f246bcc203b",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_nltest_execution.yml",
+      "rule_sha256": "1210867b8d10a3d3f10d34a95e80d7fa87240377e0ba4cb05b9859e56bb3c6f7",
+      "title": "Nltest.EXE Execution",
+      "tags": [
+        "attack.discovery",
+        "attack.t1016",
+        "attack.t1018",
+        "attack.t1482"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "Image",
+        "OriginalFileName"
+      ],
+      "retrieval_reason": "exact ATT&CK technique tag; lexical score 0"
+    },
+    {
+      "candidate_id": "AA25-266A-M003-R001",
+      "behavior_id": "AA25-266A-G003",
+      "technique_id": "T1057",
+      "rule_id": "9705a6a1-6db6-4a16-a987-15b7151e299b",
+      "rule_path": "data/sigma/rules/network/cisco/aaa/cisco_cli_discovery.yml",
+      "rule_sha256": "caaf3675e5ff8db73bd2525f340d7e992209401a7e5f13dd34014d4b3f8cefb5",
+      "title": "Cisco Discovery",
+      "tags": [
+        "attack.discovery",
+        "attack.t1083",
+        "attack.t1201",
+        "attack.t1057",
+        "attack.t1018",
+        "attack.t1082",
+        "attack.t1016",
+        "attack.t1049",
+        "attack.t1033",
+        "attack.t1124"
+      ],
+      "logsource": {
+        "product": "cisco",
+        "category": null,
+        "service": "aaa"
+      },
+      "status": "test",
+      "required_fields": [],
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: processes; lexical score 3"
+    },
+    {
+      "candidate_id": "AA25-266A-M003-R002",
+      "behavior_id": "AA25-266A-G003",
+      "technique_id": "T1057",
+      "rule_id": "ccb5742c-c248-4982-8c5c-5571b9275ad3",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_findstr_recon_pipe_output.yml",
+      "rule_sha256": "7dbffbfce7eb80aab5c87dd87f9dfde9a20b69b51a391ac5081de0b189b7d480",
+      "title": "Recon Command Output Piped To Findstr.EXE",
+      "tags": [
+        "attack.discovery",
+        "attack.t1057"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine"
+      ],
+      "retrieval_reason": "exact ATT&CK technique tag; detection terms: tasklist; lexical score 3"
+    },
+    {
+      "candidate_id": "AA25-266A-M003-R003",
+      "behavior_id": "AA25-266A-G003",
+      "technique_id": "T1057",
+      "rule_id": "b207d563-a1d9-4275-b349-77d1eb55aa6d",
+      "rule_path": "data/sigma/rules/linux/auditd/syscall/lnx_auditd_susp_discovery_sysinfo_syscall.yml",
+      "rule_sha256": "db335a709533393176e73b109c70242a541381363c9e417e3aa5b27d4b3aa022",
+      "title": "System Info Discovery via Sysinfo Syscall",
+      "tags": [
+        "attack.discovery",
+        "attack.t1057",
+        "attack.t1082"
+      ],
+      "logsource": {
+        "product": "linux",
+        "category": null,
+        "service": "auditd"
+      },
+      "status": "experimental",
+      "required_fields": [
+        "SYSCALL",
+        "exe"
+      ],
+      "retrieval_reason": "exact ATT&CK technique tag; lexical score 2"
+    },
+    {
+      "candidate_id": "AA25-266A-M003-R004",
+      "behavior_id": "AA25-266A-G003",
+      "technique_id": "T1057",
+      "rule_id": "af4c87ce-bdda-4215-b998-15220772e993",
+      "rule_path": "data/sigma/rules/windows/powershell/powershell_script/posh_ps_susp_get_process.yml",
+      "rule_sha256": "fc05a6f8d01b1e8c2da3c6947ade2f1bb7570f96f0c62e123e7d9c7353bf0a3c",
+      "title": "Suspicious Process Discovery With Get-Process",
+      "tags": [
+        "attack.discovery",
+        "attack.t1057"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "ps_script",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "ScriptBlockText"
+      ],
+      "retrieval_reason": "exact ATT&CK technique tag; lexical score 2"
+    },
+    {
+      "candidate_id": "AA25-266A-M003-R005",
+      "behavior_id": "AA25-266A-G003",
+      "technique_id": "T1057",
+      "rule_id": "221b251a-357a-49a9-920a-271802777cc0",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_wmic_recon_process.yml",
+      "rule_sha256": "a2de36a81c89e9a4665ee479585bc049171d92dca392ef248f59bcea4937c238",
+      "title": "Potential Process Reconnaissance via Wmic.EXE",
+      "tags": [
+        "attack.execution",
+        "attack.t1047",
+        "attack.discovery",
+        "attack.t1057"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine",
+        "Image",
+        "OriginalFileName"
+      ],
+      "retrieval_reason": "exact ATT&CK technique tag; lexical score 2"
+    },
+    {
+      "candidate_id": "AA25-266A-M003-R006",
+      "behavior_id": "AA25-266A-G003",
+      "technique_id": "T1057",
+      "rule_id": "fca949cc-79ca-446e-8064-01aa7e52ece5",
+      "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_hktl_pchunter.yml",
+      "rule_sha256": "c017c7f9b000c23c67c32d7c6a8d3ae7403983ad8e266b9d2b14cf79dd0a1a09",
+      "title": "HackTool - PCHunter Execution",
+      "tags": [
+        "attack.execution",
+        "attack.discovery",
+        "attack.t1082",
+        "attack.t1057",
+        "attack.t1012",
+        "attack.t1083",
+        "attack.t1007"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "Description",
+        "Hashes",
+        "Image",
+        "OriginalFileName"
+      ],
+      "retrieval_reason": "exact ATT&CK technique tag; lexical score 1"
+    },
+    {
+      "candidate_id": "AA25-266A-M004-R001",
+      "behavior_id": "AA25-266A-G004",
+      "technique_id": "T1090",
+      "rule_id": "5498fc09-adc6-4804-b9d9-5cca1f0b8760",
+      "rule_path": "data/sigma/rules/application/opencanary/opencanary_httpproxy_login_attempt.yml",
+      "rule_sha256": "95ba6ee535e1ea81dac07e63e026d68a2b15547d82c39dc9fb23268d2feebc36",
+      "title": "OpenCanary - HTTPPROXY Login Attempt",
+      "tags": [
+        "attack.initial-access",
+        "attack.command-and-control",
+        "attack.t1090"
+      ],
+      "logsource": {
+        "product": "opencanary",
+        "category": "application",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [],
+      "retrieval_reason": "exact ATT&CK technique tag; lexical score 0"
+    },
+    {
+      "candidate_id": "AA25-266A-M004-R002",
+      "behavior_id": "AA25-266A-G004",
+      "technique_id": "T1090",
+      "rule_id": "a3f55ebd-0c01-4ed6-adc0-8fb76d8cd3cd",
+      "rule_path": "data/sigma/rules/cloud/azure/identity_protection/azure_identity_protection_malicious_ip_address.yml",
+      "rule_sha256": "306495f109bc68bf67a05173a2baa1e1e6ac50ce6c2948688c9999c6977a4437",
+      "title": "Malicious IP Address Sign-In Failure Rate",
+      "tags": [
+        "attack.t1090",
+        "attack.command-and-control"
+      ],
+      "logsource": {
+        "product": "azure",
+        "category": null,
+        "service": "riskdetection"
+      },
+      "status": "test",
+      "required_fields": [],
+      "retrieval_reason": "exact ATT&CK technique tag; lexical score 0"
+    },
+    {
+      "candidate_id": "AA25-266A-M004-R003",
+      "behavior_id": "AA25-266A-G004",
+      "technique_id": "T1090",
+      "rule_id": "36440e1c-5c22-467a-889b-593e66498472",
+      "rule_path": "data/sigma/rules/cloud/azure/identity_protection/azure_identity_protection_malicious_ip_address_suspicious.yml",
+      "rule_sha256": "5c0cc361b74246035b916f7651727d83bf7d78b237a4967d16a13e3d4742d3c3",
+      "title": "Malicious IP Address Sign-In Suspicious",
+      "tags": [
+        "attack.t1090",
+        "attack.command-and-control"
+      ],
+      "logsource": {
+        "product": "azure",
+        "category": null,
+        "service": "riskdetection"
+      },
+      "status": "test",
+      "required_fields": [],
+      "retrieval_reason": "exact ATT&CK technique tag; lexical score 0"
+    },
+    {
+      "candidate_id": "AA25-266A-M004-R004",
+      "behavior_id": "AA25-266A-G004",
+      "technique_id": "T1090",
+      "rule_id": "821b4dc3-1295-41e7-b157-39ab212dd6bd",
+      "rule_path": "data/sigma/rules/cloud/azure/identity_protection/azure_identity_protection_malware_linked_ip.yml",
+      "rule_sha256": "834d289c647351381b55cbd7f96d8b37415f3da7027449c1d577f73c4b801cee",
+      "title": "Sign-In From Malware Infected IP",
+      "tags": [
+        "attack.t1090",
+        "attack.command-and-control"
+      ],
+      "logsource": {
+        "product": "azure",
+        "category": null,
+        "service": "riskdetection"
+      },
+      "status": "test",
+      "required_fields": [],
+      "retrieval_reason": "exact ATT&CK technique tag; lexical score 0"
+    },
+    {
+      "candidate_id": "AA25-266A-M004-R005",
+      "behavior_id": "AA25-266A-G004",
+      "technique_id": "T1090",
+      "rule_id": "c4568f5d-131f-4e78-83d4-45b2da0ec4f1",
+      "rule_path": "data/sigma/rules/linux/network_connection/net_connection_lnx_domain_localtonet_tunnel.yml",
+      "rule_sha256": "b4430d86f381852608314bb2038e181886dc1ec0dedbbb3ae0c3d100feebb5ca",
+      "title": "Communication To LocaltoNet Tunneling Service Initiated - Linux",
+      "tags": [
+        "attack.command-and-control",
+        "attack.t1572",
+        "attack.t1090",
+        "attack.t1102"
+      ],
+      "logsource": {
+        "product": "linux",
+        "category": "network_connection",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "DestinationHostname",
+        "Initiated"
+      ],
+      "retrieval_reason": "exact ATT&CK technique tag; lexical score 0"
+    },
+    {
+      "candidate_id": "AA25-266A-M004-R006",
+      "behavior_id": "AA25-266A-G004",
+      "technique_id": "T1090",
+      "rule_id": "19bf6fdb-7721-4f3d-867f-53467f6a5db6",
+      "rule_path": "data/sigma/rules/linux/network_connection/net_connection_lnx_ngrok_tunnel.yml",
+      "rule_sha256": "c3466742b9092eed5b8296d6fe4bdf77fa287ca8cc6ef394f833ba170e388015",
+      "title": "Communication To Ngrok Tunneling Service - Linux",
+      "tags": [
+        "attack.exfiltration",
+        "attack.command-and-control",
+        "attack.t1567",
+        "attack.t1568.002",
+        "attack.t1572",
+        "attack.t1090",
+        "attack.t1102",
+        "attack.s0508"
+      ],
+      "logsource": {
+        "product": "linux",
+        "category": "network_connection",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "DestinationHostname"
+      ],
+      "retrieval_reason": "exact ATT&CK technique tag; lexical score 0"
+    },
+    {
+      "candidate_id": "AA25-266A-M004-R007",
+      "behavior_id": "AA25-266A-G004",
+      "technique_id": "T1090",
+      "rule_id": "72f4ab3f-787d-495d-a55d-68c2ff46cf4c",
+      "rule_path": "data/sigma/rules/linux/process_creation/proc_creation_lnx_proxy_connection.yml",
+      "rule_sha256": "e1716fa736e1d30049566d9834a60eabe184d31669d8b9aa90525ed22800f8ea",
+      "title": "Connection Proxy",
+      "tags": [
+        "attack.command-and-control",
+        "attack.t1090"
+      ],
+      "logsource": {
+        "product": "linux",
+        "category": "process_creation",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "CommandLine"
+      ],
+      "retrieval_reason": "exact ATT&CK technique tag; lexical score 0"
+    },
+    {
+      "candidate_id": "AA25-266A-M004-R008",
+      "behavior_id": "AA25-266A-G004",
+      "technique_id": "T1090",
+      "rule_id": "64d51a51-32a6-49f0-9f3d-17e34d640272",
+      "rule_path": "data/sigma/rules/windows/builtin/terminalservices/win_terminalservices_rdp_ngrok.yml",
+      "rule_sha256": "815692c6aad1c2feef4d71bd6e7ea0d8033c86eb8038b3c0a33e7890b1cafc5d",
+      "title": "Ngrok Usage with Remote Desktop Service",
+      "tags": [
+        "attack.command-and-control",
+        "attack.t1090"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": null,
+        "service": "terminalservices-localsessionmanager"
+      },
+      "status": "test",
+      "required_fields": [
+        "Address",
+        "EventID"
+      ],
+      "retrieval_reason": "exact ATT&CK technique tag; lexical score 0"
+    },
+    {
+      "candidate_id": "AA25-266A-M004-R009",
+      "behavior_id": "AA25-266A-G004",
+      "technique_id": "T1090",
+      "rule_id": "3ab65069-d82a-4d44-a759-466661a082d1",
+      "rule_path": "data/sigma/rules/windows/network_connection/net_connection_win_domain_localtonet_tunnel.yml",
+      "rule_sha256": "a4a6e09c81f94d14e8eeef1439cee1b4b8276ec5b994c76aad4b03d8a07d2b4b",
+      "title": "Communication To LocaltoNet Tunneling Service Initiated",
+      "tags": [
+        "attack.command-and-control",
+        "attack.t1572",
+        "attack.t1090",
+        "attack.t1102"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "network_connection",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "DestinationHostname",
+        "Initiated"
+      ],
+      "retrieval_reason": "exact ATT&CK technique tag; lexical score 0"
+    },
+    {
+      "candidate_id": "AA25-266A-M004-R010",
+      "behavior_id": "AA25-266A-G004",
+      "technique_id": "T1090",
+      "rule_id": "1d08ac94-400d-4469-a82f-daee9a908849",
+      "rule_path": "data/sigma/rules/windows/network_connection/net_connection_win_domain_ngrok_tunnel.yml",
+      "rule_sha256": "4ce74f56f189a9af924b1223f882f7835b2af2dcd9cb2ee768de263816a85887",
+      "title": "Communication To Ngrok Tunneling Service Initiated",
+      "tags": [
+        "attack.exfiltration",
+        "attack.command-and-control",
+        "attack.t1567",
+        "attack.t1568.002",
+        "attack.t1572",
+        "attack.t1090",
+        "attack.t1102",
+        "attack.s0508"
+      ],
+      "logsource": {
+        "product": "windows",
+        "category": "network_connection",
+        "service": null
+      },
+      "status": "test",
+      "required_fields": [
+        "DestinationHostname"
+      ],
+      "retrieval_reason": "exact ATT&CK technique tag; lexical score 0"
+    }
+  ],
+  "retrieval_warnings": [],
+  "retrieval_note": "Candidates are ranked by tag and text overlap; coverage requires separate YAML condition review."
+}

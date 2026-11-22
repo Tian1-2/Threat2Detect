@@ -18,10 +18,14 @@ def setup(tmp_path, monkeypatch):
     candidates = json.loads((mod.ROOT / 'data/annotations/aa25_266a_rule_candidates.json').read_text())
     candidate = copy.deepcopy(next(c for c in candidates['items'] if c['behavior_id'] == bid))
     candidate['required_fields'] = ['Image']
+    candidate['rank'] = 1
+    candidate['retrieval_score'] = 12.5
+    candidate['retrieval_reason'] = 'optimized retrieval regression fixture'
     monkeypatch.setattr(mod, 'relative', lambda p: str(p))
     monkeypatch.setattr(mod, 'retrieve', lambda *a, **kw: {
         'schema_version': '1.0', 'kind': 'rule_candidates', 'case_id': handoff['case_id'],
-        'ruleset_commit': candidates['ruleset_commit'], 'items': [copy.deepcopy(candidate)]})
+        'ruleset_commit': candidates['ruleset_commit'], 'items': [copy.deepcopy(candidate)],
+        'platform_exclusions': []})
     events = {'schema_version': '1.0', 'kind': 'normalized_events', 'dataset_id': 'test',
               'source_path': 'synthetic:test', 'parse_error_count': 0, 'items': [
                   {'event_uid': 'test:1', 'event_code': 1, 'channel': 'Microsoft-Windows-Sysmon/Operational',
@@ -39,8 +43,11 @@ def test_offline_policy_executes_and_keeps_procedure_unknown(setup):
     assert result['model_calls_used'] == 0
     assert result['items'][0]['procedure_decision'] is None
     assert result['items'][0]['sample_test_status'] == 'hit'
+    assert result['items'][0]['retrieval_rank'] == 1
+    assert result['items'][0]['retrieval_score'] == 12.5
+    assert result['retrieval_platform_exclusions'][handoff['behaviors'][0]['behavior_id']] == []
     assert result['review_queue']
-    trace = [json.loads(x) for x in (out / 'offline/trace.jsonl').read_text().splitlines()]
+    trace = [json.loads(x) for x in (out / 'offline/trace.jsonl').read_text(encoding='utf-8').splitlines()]
     assert [x['action']['tool'] for x in trace] == [
         'read_context', 'search_rules', 'check_telemetry', 'test_rule', 'request_review', 'finish']
 
@@ -191,7 +198,7 @@ def test_behavior_limit_reports_omitted_work(setup):
 
 
 def test_generated_tool_propagates_shared_budget_exhaustion(setup, monkeypatch):
-    import generate_rule
+    from src.threat2detect.rule_generation import generator as generate_rule
     handoff, _, _, out = setup
     monkeypatch.setattr(generate_rule, 'ROOT', out)
     bid = handoff['behaviors'][0]['behavior_id']

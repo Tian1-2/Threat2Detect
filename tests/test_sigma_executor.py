@@ -4,8 +4,8 @@ from pathlib import Path
 
 import pytest
 
-from normalize_otrf import SYSMON_CHANNEL, parse_message, source_lines
-from run_sigma_offline import run_rule
+from src.threat2detect.sigma.executor import run_rule
+from src.threat2detect.telemetry.otrf import SYSMON_CHANNEL, parse_message, source_lines
 
 
 ROOT = Path(__file__).resolve().parents[1]
