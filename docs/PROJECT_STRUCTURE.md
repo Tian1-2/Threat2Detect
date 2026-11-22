@@ -2,6 +2,8 @@
 
 本页记录**当前目录**和后续集成时的目标。代码移动以不破坏现有命令和测试为前提；新增模块按目标位置开发，迁移旧脚本时提供兼容入口。
 
+主控 Agent 已新增到 `src/threat2detect/pipeline/controller.py`，根目录 `case_agent.py` 为命令行入口。现有报告、Sigma 和规则生成模块继续复用，暂不整批迁移。
+
 ```text
 Threat2Detect/
 ├─ README.md, READING_GUIDE.md, DEVELOPMENT_LOG.md

@@ -26,3 +26,16 @@ python pipeline.py --handoff data/annotations/aa25_266a_gold_draft.json --events
 首轮用已复核的 R001、R003 检查。R001 的 `whoami` 分支得到 `matches_procedure`。R003 含 `ParentImage` 排除条件；报告目标引句没有父进程值，初判被退回后得到 `insufficient_detail`，与人工行的结论一致。校验器保守检查 `ParentImage` 的否定过滤条件，并阻止“列出未知/缺失条件却声称完全匹配”。这只是一项具体护栏，不代表能正确解析所有 Sigma 语法或代替人工审核。
 
 下一轮调优应在已确认的四条判定样本和更多盲测样本上逐项比较：最终结论、必需字段解释、工具调用次数、无效工具调用、反馈后是否正确修正。不要把人工答案放进 Agent 输入；人工判定表只用于跑完后的评估。
+
+## 第一轮错误对照
+
+评估脚本按 `candidate_id` 对齐人工判定，不把黄金答案送给 Agent：
+
+```powershell
+python sigma_agent.py data/annotations/aa25_266a_gold_draft.json data/annotations/aa25_266a_rule_candidates.json artifacts/runs/sigma-agent/coverage-all-v2.json --max-items 4 --max-steps 5
+python tools/evaluate_sigma_agent.py data/annotations/coverage_gold_template.json artifacts/runs/sigma-agent/coverage-all-v2.json artifacts/runs/sigma-agent/eval-v2.json --trace artifacts/runs/sigma-agent/coverage-all-v2_trace.jsonl
+```
+
+首轮 v1 为 3/4，错误在 R002：目标引句是 `whoami`，规则要求 `-all` 或 `/all`，模型误判 `partially_matches`。加入“明确列出的命令缺少必需参数”的反馈后，v2 本次运行是 4/4，R002 判为 `does_not_match`。这项护栏限制在规则条件中的必需 `windash` 参数与明确的命令引句；不能推断真实日志里的完整命令。v2 的 R002 没有触发反馈，而是模型直接判对，因此单次提升不能单独证明护栏改善了平均准确率；需要重复运行和封存样本。
+
+v3 加入解释一致性反馈：不能把报告条件对照写成日志中“规则已触发”，也不能在 `insufficient_detail` 后又写“规则不适用”。四条标签仍为 4/4，R003 和 R004 分别发生两次反馈修正。**解释仍未全部正确**：R001 对选择器 OR 分支表述含糊，R003 把否定的 `ParentImage` 过滤条件描述得不准确，R004 的最终解释缺少具体字段。下一轮应单独评价解释的证据充分性与 Sigma 逻辑，而不只看四分类标签。

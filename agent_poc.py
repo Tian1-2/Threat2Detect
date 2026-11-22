@@ -197,7 +197,7 @@ def candidate_ids(behavior: dict[str, Any], catalog: dict[str, dict[str, str]], 
     }
 
 
-def analyze(report_id: str, text: str, catalog: dict[str, dict[str, str]], model: str, endpoint: str, checkpoint: Path | None = None) -> dict[str, Any]:
+def analyze(report_id: str, text: str, catalog: dict[str, dict[str, str]], model: str, endpoint: str, checkpoint: Path | None = None, llm=None) -> dict[str, Any]:
     behaviors: list[dict[str, Any]] = []
     warnings: list[str] = []
     chunk_times: list[float] = []
@@ -205,7 +205,7 @@ def analyze(report_id: str, text: str, catalog: dict[str, dict[str, str]], model
     chunks = report_chunks(text)
     for chunk_index, chunk in enumerate(chunks, 1):
         started = time.perf_counter()
-        proposed = ollama_json(model, EXTRACT_SYSTEM, chunk, endpoint, EXTRACT_SCHEMA)
+        proposed = (llm or ollama_json)(model, EXTRACT_SYSTEM, chunk, endpoint, EXTRACT_SCHEMA)
         chunk_behaviors: list[dict[str, Any]] = []
         mapping_inputs: list[dict[str, Any]] = []
         candidates_by_id: dict[str, dict[str, str]] = {}
@@ -237,7 +237,7 @@ def analyze(report_id: str, text: str, catalog: dict[str, dict[str, str]], model
         mapping_proposals = {}
         for batch_start in range(0, len(mapping_inputs), 5):
             batch = mapping_inputs[batch_start : batch_start + 5]
-            mapping_output = ollama_json(model, MAP_SYSTEM, json.dumps({"items": batch}, ensure_ascii=False), endpoint, MAP_SCHEMA)
+            mapping_output = (llm or ollama_json)(model, MAP_SYSTEM, json.dumps({"items": batch}, ensure_ascii=False), endpoint, MAP_SCHEMA)
             mapping_proposals.update({entry.get("behavior_id"): entry for entry in mapping_output.get("mappings", [])})
         for behavior in chunk_behaviors:
             proposal = mapping_proposals.get(behavior["behavior_id"], {})

@@ -1,0 +1,136 @@
+{
+  "schema_version": "1.0",
+  "kind": "sigma_writing_learning_samples",
+  "source_manifest": "data/research/sigma_writing_resources.json",
+  "notes": [
+    "Six educational drafts, not human-confirmed gold or independent event logs.",
+    "Author-written task summaries; original rules remain in the locked submodule with attribution."
+  ],
+  "items": [
+    {
+      "sample_id": "SIGMA-LEARN-001",
+      "task": "generate_narrow_rule",
+      "source_ids": [
+        "bits",
+        "conditions"
+      ],
+      "input": "人工检测目标：进程为 bitsadmin.exe 且命令包含 /transfer。URL、落地文件名和父进程未知。",
+      "expected_review": [
+        "Image endswith \\bitsadmin.exe 与 CommandLine contains \" /transfer \" 必须 AND。",
+        "不添加来源 URL、文件哈希或父进程限制。",
+        "仅该变体，不声称覆盖完整 BITS 技术或恶意性。"
+      ],
+      "local_source": {
+        "path": "data/sigma/rules/windows/process_creation/proc_creation_win_bitsadmin_download.yml",
+        "rule_id": "d059842b-6b9d-4ed1-b5c3-5b89143c6ede",
+        "sha256": "26747eb1e298fb9243b12057545424ea3a51733c1dc9dc03dcbb2e32339e70bc",
+        "url": "https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_bitsadmin_download.yml",
+        "ruleset_commit": "05d1031f537e830b76da53bae2400c5814c89165"
+      },
+      "review_status": "draft",
+      "origin": "assistant_authored_educational_example",
+      "split": "development_only",
+      "not_for_final_evaluation": true
+    },
+    {
+      "sample_id": "SIGMA-LEARN-002",
+      "task": "repair_boolean_logic",
+      "source_ids": [
+        "conditions",
+        "bits"
+      ],
+      "input": "上述目标的候选写成 Image 为 bitsadmin.exe OR 命令包含 /transfer。",
+      "expected_review": [
+        "OR 使任一条件单独成立即可触发，超出目标。",
+        "改为 AND；用仅满足单个条件的合成边界样本验证。"
+      ],
+      "review_status": "draft",
+      "origin": "assistant_authored_educational_example",
+      "split": "development_only",
+      "not_for_final_evaluation": true
+    },
+    {
+      "sample_id": "SIGMA-LEARN-003",
+      "task": "generate_narrow_rule",
+      "source_ids": [
+        "lsass",
+        "modifiers"
+      ],
+      "input": "人工目标：TargetImage 以 \\lsass.exe 结尾且 GrantedAccess 等于 0x1FFFFF；SourceImage 未知。",
+      "expected_review": [
+        "两个必需条件合取。",
+        "不能添加凭空猜测的 SourceImage。",
+        "这比完整 SigmaHQ 检测更窄且不同，不冒充新增或生产有效规则。"
+      ],
+      "local_source": {
+        "path": "data/sigma/rules/windows/process_access/proc_access_win_lsass_memdump.yml",
+        "rule_id": "5ef9853e-4d0e-4a70-846f-a9ca37d876da",
+        "sha256": "6a4c3d27947f011dadc67c78a8547be67a04d5fdb8f8add537b4d9603d00e65a",
+        "url": "https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_access/proc_access_win_lsass_memdump.yml",
+        "ruleset_commit": "05d1031f537e830b76da53bae2400c5814c89165"
+      },
+      "review_status": "draft",
+      "origin": "assistant_authored_educational_example",
+      "split": "development_only",
+      "not_for_final_evaluation": true
+    },
+    {
+      "sample_id": "SIGMA-LEARN-004",
+      "task": "reject_unsupported_flag_inference",
+      "source_ids": [
+        "discovery",
+        "rules"
+      ],
+      "input": "报告证据只有 whoami；候选要求命令含 /all。",
+      "expected_review": [
+        "不能补造 /all 参数。",
+        "若报告只给省略后的命令，应保留信息不足；对明确无该参数的事件不能命中该条件。"
+      ],
+      "local_source": {
+        "path": "data/sigma/rules/windows/process_creation/proc_creation_win_susp_local_system_owner_account_discovery.yml",
+        "rule_id": "502b42de-4306-40b4-9596-6f590c81f073",
+        "sha256": "ddb20029d804c7a434cc6600659aaac2b646b67cd150470e9b1ef4be47c16e06",
+        "url": "https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_susp_local_system_owner_account_discovery.yml",
+        "ruleset_commit": "05d1031f537e830b76da53bae2400c5814c89165"
+      },
+      "review_status": "draft",
+      "origin": "assistant_authored_educational_example",
+      "split": "development_only",
+      "not_for_final_evaluation": true
+    },
+    {
+      "sample_id": "SIGMA-LEARN-005",
+      "task": "explain_unknown_filter",
+      "source_ids": [
+        "conditions",
+        "spec"
+      ],
+      "input": "规则 selection and not filter；filter 使用 ParentImage，但报告未提供父进程。",
+      "expected_review": [
+        "缺失信息不证明排除项为假。",
+        "区分报告语义未知与给定日志执行结果；报告级结论需要保留未知。"
+      ],
+      "review_status": "draft",
+      "origin": "assistant_authored_educational_example",
+      "split": "development_only",
+      "not_for_final_evaluation": true
+    },
+    {
+      "sample_id": "SIGMA-LEARN-006",
+      "task": "separate_metadata_and_detection",
+      "source_ids": [
+        "spec",
+        "rules"
+      ],
+      "input": "falsepositives 元数据写了 legitimate administrator，候选声称自动排除所有管理员。",
+      "expected_review": [
+        "falsepositives 是说明性元数据，不是自动执行的 filter。",
+        "实际排除必须由检测条件和可用字段定义。"
+      ],
+      "review_status": "draft",
+      "origin": "assistant_authored_educational_example",
+      "split": "development_only",
+      "not_for_final_evaluation": true
+    }
+  ]
+}

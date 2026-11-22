@@ -21,3 +21,7 @@ python tools/analyze_otrf_background.py
 `data/sigma` 和 `data/Security-Datasets` 是锁定提交的 Git 子模块；普通 `git clone` 后还需运行 `git submodule update --init --recursive`。OTRF 上游 ZIP 已在子模块中；盘点脚本会在本地未解压时直接读 ZIP。`data/attack/enterprise-attack-20.0.json`、CISA PDF 与已处理的文本在本仓库中。Ollama 原型的模型下载与运行见[原型说明](docs/POC_RUNBOOK.md)。
 
 目前确认的样本：AA25-266A 的 4 条行为映射、4 条报告 × Sigma 规则条件判断，以及 6 组 OTRF 事件 × 规则人工条件推演。所选 3 条 Sigma 规则现可在 OTRF 静态日志上[离线执行](docs/OFFLINE_SIGMA_RUNBOOK.md)；背景候选事件不等于已证实良性。CISA 官方映射只用于盲标后的报告级对照，不作为行为级理由。
+
+独立的[候选规则生成与验证模块](docs/RULE_GENERATION_RUNBOOK.md)现支持本机模型生成、受限语法检查、指定事件执行和有限反馈修订；生成结果仍为待审候选，不自动部署。
+
+[主控 Case Agent](docs/CASE_AGENT_RUNBOOK.md)通过 `case_agent.py` 管理状态、工具动作、共享模型调用预算与人审队列，可按用户配置调用可选规则生成；原 `pipeline.py` 固定流水线继续可用。

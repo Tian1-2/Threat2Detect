@@ -45,7 +45,15 @@ B 只依赖 `case_handoff` 的 `report`、`behaviors`、`mappings` 和 `attack_c
 
 `positive_event_refs[]` 与 `negative_event_refs[]` 的每项为 `{dataset_id,event_uid,provenance}`；`provenance` 取 `public_attack` / `public_benign` / `local_capture` / `synthetic`，不能把自造事件冒充独立公开数据。
 
+独立实现 `generate_rule.py` 支持可选 `required_conditions[]`：每项为 `{field,modifier,value}`，`modifier` 为 `equals` / `contains` / `startswith` / `endswith`，`value` 为非空字符串。它表达请求方人工明确的必需条件，必须使用可用字段；不是从测试样本反推的答案。有此约束时，仅接受能通过合取选择器强制这些条件的规则，其他表达式保守拒绝。实现和边界见 `docs/RULE_GENERATION_RUNBOOK.md`。
+
 输出 `rule_generation_result`：`scenario_id,candidate_yaml_path,candidate_yaml_sha256,parse_status,required_fields,positive_tests[],negative_tests[],limitations`。`parse_status` 为 `valid` / `invalid` / `unsupported_syntax`；每个测试项为 `{dataset_id,tested_event_uids,matched_event_uids,status,reason}`，`status` 取 `hit` / `miss` / `not_tested` / `unsupported_rule`。若生成失败，YAML 路径/哈希为 `null`，原因写入 `limitations`。只有主流程需要使用新规则时，才追加 SigmaHQ 重复检查和真实缺口核对。
+
+实现另附 `validation_outcome`，区分候选无效、样例失败、验证不完整、开发样例通过；`parse_status: valid` 不等于样例通过。生成结果始终为 `draft`，需要人工语义审核。
+
+可选 `evidence_items[]` 为 `{evidence_id,kind,text,source_ref?}`；`kind` 为 `report_fact` / `manual_goal` / `constraint` / `assumption`。`unknown_information[]` 明列未知信息；假设只有列入 `allowed_assumption_ids[]` 才能使用。提供依据时，结构化模型的每个条件必须引用有效依据 ID 并解释来源。输出 `condition_basis[]` 保留引用与解释；引用有效不等于语义已确认。
+
+封存样本通过独立 `--evaluation-refs` 和 `--evaluation-events` 传入，清单包含正负引用、`independence`（`synthetic_boundary` / `same_source_holdout` / `independent_source`）及 `limitations`。不得与开发事件重叠，重命名复制也拒绝。候选固定后才执行并另存 `evaluation.json`，不反馈给模型。合成边界测试不宣称独立真实环境效果。
 
 ## 人工填写顺序
 

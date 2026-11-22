@@ -74,6 +74,31 @@ def unresolved_filter_fields(item: dict) -> list[str]:
     return unknown
 
 
+def absent_required_flags(item: dict) -> list[str]:
+    """Find mandatory windash flags absent from an explicitly quoted command."""
+    quote = item["behavior"]["evidence"]["quote"].strip().lower()
+    if not re.fullmatch(r"[a-z0-9_./\\ -]+", quote):
+        return []
+    detection = yaml.safe_load(item["sigma_yaml"]).get("detection") or {}
+    if not re.search(r"\ball of selection", str(detection.get("condition", ""))):
+        return []
+    absent = []
+    for name, selector in detection.items():
+        if not name.startswith("selection"):
+            continue
+        values = selector if isinstance(selector, list) else [selector]
+        for value in values:
+            if not isinstance(value, dict):
+                continue
+            for field, expected in value.items():
+                if not str(field).startswith("CommandLine|contains|windash") or not isinstance(expected, str):
+                    continue
+                flag = expected.strip().lstrip("-/").lower()
+                if expected.startswith(" ") and flag and not re.search(rf"(?:^|\s)[-/]{re.escape(flag)}(?:\s|$)", quote):
+                    absent.append(flag)
+    return sorted(set(absent))
+
+
 def feedback_for_finish(action: dict, inspected: bool, item: dict | None = None) -> list[str]:
     issues = []
     if not inspected:
@@ -82,15 +107,23 @@ def feedback_for_finish(action: dict, inspected: bool, item: dict | None = None)
         issues.append("finish requires a coverage decision")
     if not action["explanation"].strip():
         issues.append("finish requires an explanation")
+    explanation = action["explanation"].lower()
+    if re.search(r"\brule\s+(?:is\s+|was\s+)?(?:triggered|fired|hit)\b", explanation):
+        issues.append("No event log was executed here; describe procedure fit, not a triggered rule")
+    if action["decision"] == "insufficient_detail" and re.search(r"\brule\s+(?:does\s+not\s+apply|does\s+not\s+match)\b", explanation):
+        issues.append("insufficient_detail means the report cannot resolve the condition, not that the rule does not apply")
     if action["decision"] == "matches_procedure" and (action["missing_conditions"] or action["unknown_conditions"]):
         issues.append("complete match conflicts with listed missing or unknown conditions")
     if item is not None and action["decision"] in {"matches_procedure", "does_not_match"}:
         for field in unresolved_filter_fields(item):
             issues.append(f"{field} controls a negated filter, but the target quote does not establish its value; use insufficient_detail, not match or mismatch")
+    if item is not None and action["decision"] != "does_not_match":
+        for flag in absent_required_flags(item):
+            issues.append(f"The explicitly quoted command lacks mandatory -{flag} or /{flag}; judge the reported procedure as does_not_match, without guessing unreported arguments")
     return issues
 
 
-def analyze_candidate(item: dict, model: str, endpoint: str, max_steps: int) -> tuple[dict, list[dict]]:
+def analyze_candidate(item: dict, model: str, endpoint: str, max_steps: int, llm=None) -> tuple[dict, list[dict]]:
     if max_steps < 2:
         raise ValueError("max_steps must be at least 2")
     candidate, behavior = item["candidate"], item["behavior"]
@@ -113,7 +146,7 @@ def analyze_candidate(item: dict, model: str, endpoint: str, max_steps: int) -> 
                    "observations": observations,
                    "available_actions": available,
                    "remaining_steps": max_steps - step + 1}
-        action = ollama_json(model, SYSTEM, json.dumps(payload, ensure_ascii=False), endpoint, action_schema)
+        action = (llm or ollama_json)(model, SYSTEM, json.dumps(payload, ensure_ascii=False), endpoint, action_schema)
         name = action["action"]
         if name not in available:
             raise ValueError(f"Model selected unavailable action: {name}")
@@ -140,6 +173,7 @@ def analyze_candidate(item: dict, model: str, endpoint: str, max_steps: int) -> 
         else:
             observation = {"tool": name, "result": {"required_fields": candidate["required_fields"],
                                                       "unresolved_negated_filter_fields": unresolved_filter_fields(item),
+                                                      "absent_mandatory_flags_in_quote": absent_required_flags(item),
                                                       "note": "These are rule field names, not observed event values; check whether the target quote supports them."}}
         seen_tools.add(name)
         observations.append(observation)

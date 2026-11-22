@@ -1,0 +1,72 @@
+{
+  "collected_on": "2026-11-22",
+  "purpose": "Primary-source reading and future tuning sample preparation; not automatically ingested into prompts.",
+  "notes": [
+    "Official documentation/master links can change. Repository-derived examples use the existing locked local Sigma snapshot and content hashes.",
+    "The old Rule-Creation-Guide wiki URL redirects to the wiki home; use the High-Level Guide listed here.",
+    "Review rule licensing and attribution before building a distributable training corpus; local Sigma rules identify DRL 1.1.",
+    "Do not mix development examples with final-only evaluation samples."
+  ],
+  "resources": [
+    {
+      "resource_id": "getting_started",
+      "title": "Sigma 官方入门",
+      "url": "https://sigmahq.io/docs/guide/getting-started.html",
+      "learning_use": "规则格式与基本工作流"
+    },
+    {
+      "resource_id": "rules",
+      "title": "规则结构",
+      "url": "https://sigmahq.io/docs/basics/rules.html",
+      "learning_use": "元数据、logsource、detection、condition 的职责"
+    },
+    {
+      "resource_id": "conditions",
+      "title": "布尔条件",
+      "url": "https://sigmahq.io/docs/basics/conditions.html",
+      "learning_use": "AND、OR、NOT、括号与选择器组合；用于构造逻辑错误反例"
+    },
+    {
+      "resource_id": "modifiers",
+      "title": "字段修饰符",
+      "url": "https://sigmahq.io/docs/basics/modifiers.html",
+      "learning_use": "contains、endswith、all 等语义；注意本地执行器只支持子集"
+    },
+    {
+      "resource_id": "logsources",
+      "title": "日志源",
+      "url": "https://sigmahq.io/docs/basics/log-sources.html",
+      "learning_use": "category/product/service 及字段适配"
+    },
+    {
+      "resource_id": "creation_guide",
+      "title": "官方规则写作指南",
+      "url": "https://github.com/SigmaHQ/sigma/wiki/Rule-Creation-High%E2%80%90Level-Guide",
+      "learning_use": "规则模板、描述与社区惯例"
+    },
+    {
+      "resource_id": "spec",
+      "title": "规则规范",
+      "url": "https://github.com/SigmaHQ/sigma-specification/blob/main/specification/sigma-rules-specification.md",
+      "learning_use": "规则格式的规范依据，不等于本地全量支持"
+    },
+    {
+      "resource_id": "bits",
+      "title": "BITS 下载规则",
+      "url": "https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_bitsadmin_download.yml",
+      "learning_use": "进程身份与命令参数的组合，包含多种 BITS 变体"
+    },
+    {
+      "resource_id": "lsass",
+      "title": "LSASS 规则",
+      "url": "https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_access/proc_access_win_lsass_memdump.yml",
+      "learning_use": "访问权限、调用栈与排除条件的组合"
+    },
+    {
+      "resource_id": "discovery",
+      "title": "账户发现规则",
+      "url": "https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_susp_local_system_owner_account_discovery.yml",
+      "learning_use": "多分支选择与排除项；适合学习共享技术标签不等于同一做法"
+    }
+  ]
+}

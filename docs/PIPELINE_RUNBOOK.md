@@ -1,5 +1,7 @@
 # 三段流水线：固定接口串联
 
+需要有状态的工具选择、共享预算和人审停止时，使用新增的 `case_agent.py`，详见 [主控 Agent 说明](CASE_AGENT_RUNBOOK.md)。本页保留原固定流水线命令，两者入口兼容共存。
+
 从项目根目录运行。统一入口是 `pipeline.py`，依次产生 `case_handoff`、`rule_candidates`、`coverage_assessments`、`normalized_events`、`rule_tests`、`case_result`。每段生成后按 `docs/INTERFACE_CONTRACT.md` 校验，汇总保留候选 ID、行为 ID、数据集 ID 和命中事件 ID。
 
 ## 使用已复核案例演示

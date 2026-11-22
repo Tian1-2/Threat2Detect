@@ -145,6 +145,11 @@ SCHEMAS = {
         "positive_event_refs": {"type": "array", "items": EVENT_REF},
         "negative_event_refs": {"type": "array", "items": EVENT_REF},
         "executor_supported_features": STRINGS, "detection_goal": ID,
+        "evidence_items": {"type": "array", "items": record(["evidence_id", "kind", "text"], {
+            "evidence_id": ID, "kind": {"enum": ["report_fact", "manual_goal", "constraint", "assumption"]},
+            "text": ID, "source_ref": TEXT,
+        })},
+        "unknown_information": STRINGS, "allowed_assumption_ids": STRINGS,
     }),
     "rule_generation_result": envelope("rule_generation_result", ["scenario_id", "candidate_yaml_path", "candidate_yaml_sha256", "parse_status", "required_fields", "positive_tests", "negative_tests", "limitations"], {
         "scenario_id": ID, "candidate_yaml_path": {"type": ["string", "null"]},
