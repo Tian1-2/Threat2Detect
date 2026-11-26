@@ -1,0 +1,11 @@
+University lab service host
+Synthetic incident advisory for evaluation
+
+Summary
+The campus incident team reviewed a Windows lab host after an alert concerning unusual account activity.
+
+Technical Details and Timeline
+11:20 UTC — The command line recorded on LAB-04 was exactly “ipconfig”. The export retained the complete command line; no switches were recorded.
+
+Detection Evidence and Limitations
+The retained record shows a network configuration query. The review window covers only the lab host, and no comparable record was available for the adjacent systems.
