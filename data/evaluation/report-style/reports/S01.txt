@@ -1,0 +1,12 @@
+Municipal services workstation
+Synthetic incident advisory for evaluation
+
+Summary
+The help desk reported an unexpected interactive session on workstation MS-17. Investigators reviewed a narrow window around the alert.
+
+Technical Details and Timeline
+08:12 UTC — The Windows process log recorded tasklist under the interactive session.
+08:14 UTC — A separate process record showed a routine text editor launch.
+
+Detection Evidence and Limitations
+The records support process enumeration on MS-17. The parent session was not attributed to a specific operator.
