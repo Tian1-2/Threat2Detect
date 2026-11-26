@@ -1,0 +1,96 @@
+[
+  {
+    "case_id": "S01",
+    "report": "S01.txt",
+    "quote": "The Windows process log recorded tasklist under the interactive session.",
+    "technique": "T1057",
+    "fact_status": "observed",
+    "rule": "process",
+    "samples": [
+      [
+        1,
+        {
+          "Image": "tasklist.exe"
+        },
+        "hit"
+      ],
+      [
+        1,
+        {
+          "Image": "notepad.exe"
+        },
+        "miss"
+      ]
+    ],
+    "expected_status": "hit",
+    "expected_retrieval": true
+  },
+  {
+    "case_id": "S02",
+    "report": "S02.txt",
+    "quote": "The command line recorded on LAB-04 was exactly “ipconfig”. The export retained the complete command line; no switches were recorded.",
+    "technique": "T1016",
+    "fact_status": "observed",
+    "rule": "network",
+    "samples": [
+      [
+        1,
+        {
+          "Image": "ipconfig.exe",
+          "CommandLine": "ipconfig"
+        },
+        "miss"
+      ]
+    ],
+    "expected_status": "miss",
+    "expected_retrieval": true
+  },
+  {
+    "case_id": "S03",
+    "report": "S03.txt",
+    "quote": "A console transcript in the ticket records the command tasklist.",
+    "technique": "T1057",
+    "fact_status": "observed",
+    "rule": "process",
+    "samples": [],
+    "expected_status": null,
+    "expected_retrieval": true
+  },
+  {
+    "case_id": "S04",
+    "report": "S04.txt",
+    "quote": "During the follow-up interview, an analyst said tasklist might have been used during the session. The statement was attributed to a recollection; no transcript was preserved.",
+    "technique": "T1057",
+    "fact_status": "unclear",
+    "rule": "process",
+    "samples": [],
+    "expected_status": null,
+    "expected_retrieval": false
+  },
+  {
+    "case_id": "S05",
+    "report": "S05.txt",
+    "quote": "The endpoint process-creation record captured Image=whoami.exe. The collection profile omitted original filename metadata.",
+    "technique": "T1033",
+    "fact_status": "observed",
+    "rule": "user",
+    "samples": [
+      [
+        1,
+        {
+          "Image": "whoami.exe"
+        },
+        "hit"
+      ],
+      [
+        11,
+        {
+          "TargetFilename": "whoami.exe"
+        },
+        "incompatible_logsource"
+      ]
+    ],
+    "expected_status": "hit",
+    "expected_retrieval": true
+  }
+]
