@@ -1,0 +1,2355 @@
+window.demoData = {
+  "fixture_only": true,
+  "generated_on": "2026-11-22",
+  "notes": [
+    "This is a frontend development fixture, not an HTTP API or human-confirmed gold dataset.",
+    "Render counts from selected run handoff; screenshot counts are illustrative.",
+    "Report/model judgments remain draft. Public log samples are not production logs."
+  ],
+  "reports": [
+    {
+      "id": "AA25-266A",
+      "title": "CISA Shares Lessons Learned from Incident Response Engagement",
+      "input_sha256": "783142658989912e8f08f1a09b10466c3a047ea133bfd183ae5a98c52948f913",
+      "handoff": {
+        "schema_version": "1.0",
+        "kind": "case_handoff",
+        "case_id": "AA25-266A",
+        "report": {
+          "case_id": "AA25-266A",
+          "title": "CISA Shares Lessons Learned from Incident Response Engagement",
+          "source_url": "https://www.cisa.gov/sites/default/files/2025-09/AA25-266A_advisory_cisa_shares_lessons_learned_from_ir_engagement.pdf",
+          "input_path": "data/reports/cisa-aa25-266a-input.txt",
+          "input_sha256": "783142658989912e8f08f1a09b10466c3a047ea133bfd183ae5a98c52948f913",
+          "annotation_basis": "answer_hidden_report_and_attack_catalog"
+        },
+        "attack_catalog": {
+          "version": "Enterprise 20.0",
+          "sha256": "81113ba98afa2928f3dcff62022539f7ce30c315c32e14422f11ff95ce534352",
+          "path": "data/attack/enterprise-attack-20.0.json"
+        },
+        "behaviors": [
+          {
+            "behavior_id": "AA25-266A-G001",
+            "evidence": {
+              "quote": "whoami",
+              "char_start": 15449,
+              "char_end": 15455,
+              "pdf_page": 8
+            },
+            "action": "identify current user",
+            "object": "current user on SQL Server",
+            "fact_status": "observed",
+            "confidence": "high",
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "context_note": "Read the surrounding paragraph/list in the source PDF before confirming this row."
+          },
+          {
+            "behavior_id": "AA25-266A-G002",
+            "evidence": {
+              "quote": "ipconfig /all",
+              "char_start": 15459,
+              "char_end": 15472,
+              "pdf_page": 8
+            },
+            "action": "inspect network configuration",
+            "object": "SQL Server network configuration",
+            "fact_status": "observed",
+            "confidence": "high",
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "context_note": "Read the surrounding paragraph/list in the source PDF before confirming this row."
+          },
+          {
+            "behavior_id": "AA25-266A-G003",
+            "evidence": {
+              "quote": "tasklist",
+              "char_start": 15511,
+              "char_end": 15519,
+              "pdf_page": 8
+            },
+            "action": "list running processes",
+            "object": "processes on SQL Server",
+            "fact_status": "observed",
+            "confidence": "high",
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "context_note": "Read the surrounding paragraph/list in the source PDF before confirming this row."
+          },
+          {
+            "behavior_id": "AA25-266A-G004",
+            "evidence": {
+              "quote": "Stowaway",
+              "char_start": 16446,
+              "char_end": 16454,
+              "pdf_page": 9
+            },
+            "action": "proxy C2 traffic into the internal network",
+            "object": "C2 traffic",
+            "fact_status": "observed",
+            "confidence": "high",
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "context_note": "Read the surrounding paragraph/list in the source PDF before confirming this row."
+          }
+        ],
+        "mappings": [
+          {
+            "mapping_id": "AA25-266A-M001",
+            "behavior_id": "AA25-266A-G001",
+            "technique_id": "T1033",
+            "technique_name": "System Owner/User Discovery",
+            "rationale": "The command whoami returns the identity of the current user on the SQL server, which fits System Owner/User Discovery (T1033).",
+            "confidence": "high",
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "retrieved_candidate_ids": null
+          },
+          {
+            "mapping_id": "AA25-266A-M002",
+            "behavior_id": "AA25-266A-G002",
+            "technique_id": "T1016",
+            "technique_name": "System Network Configuration Discovery",
+            "rationale": "The command ipconfig /all requests the SQL server's network adapter configuration, which fits System Network Configuration Discovery (T1016).",
+            "confidence": "high",
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "retrieved_candidate_ids": null
+          },
+          {
+            "mapping_id": "AA25-266A-M003",
+            "behavior_id": "AA25-266A-G003",
+            "technique_id": "T1057",
+            "technique_name": "Process Discovery",
+            "rationale": "The command tasklist enumerates running processes on the SQL server, which fits Process Discovery (T1057).",
+            "confidence": "high",
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "retrieved_candidate_ids": null
+          },
+          {
+            "mapping_id": "AA25-266A-M004",
+            "behavior_id": "AA25-266A-G004",
+            "technique_id": "T1090",
+            "technique_name": "Proxy",
+            "rationale": "Stowaway forwarded C2 traffic through the Web Server into the internal network. Forwarding traffic through an intermediary fits Proxy (T1090); the behavior is proxying rather than merely possessing the tool.",
+            "confidence": "high",
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "retrieved_candidate_ids": null
+          }
+        ],
+        "telemetry": [],
+        "warnings": [
+          "Group lead confirmed the four behavior and mapping rows; this is a small review sample, not a full-report annotation."
+        ]
+      },
+      "source_file": "artifacts/runs/case-agent-model-v2/handoff.json"
+    },
+    {
+      "id": "AA23-319A",
+      "title": "#StopRansomware: Rhysida Ransomware",
+      "input_sha256": "949cd2556972c6cf4f19f5c24d9dc8dc8641ce8e9482c7a200c342ac30e9f477",
+      "handoff": {
+        "schema_version": "1.0",
+        "kind": "case_handoff",
+        "case_id": "AA23-319A",
+        "report": {
+          "case_id": "AA23-319A",
+          "title": "#StopRansomware: Rhysida Ransomware",
+          "source_url": "https://www.cisa.gov/sites/default/files/2025-04/aa23-319a-stopransomware-rhysida-ransomware_2.pdf",
+          "input_path": "data/reports/cisa-aa23-319a-input.txt",
+          "input_sha256": "949cd2556972c6cf4f19f5c24d9dc8dc8641ce8e9482c7a200c342ac30e9f477",
+          "annotation_basis": "answer_hidden_report_and_attack_catalog"
+        },
+        "attack_catalog": {
+          "version": "Enterprise 20.0",
+          "sha256": "81113ba98afa2928f3dcff62022539f7ce30c315c32e14422f11ff95ce534352",
+          "path": "data/attack/enterprise-attack-20.0.json"
+        },
+        "behaviors": [
+          {
+            "action": "Authenticated to internal VPN access points using compromised valid credentials",
+            "object": "victim network VPN",
+            "fact_status": "observed",
+            "confidence": "high",
+            "context_note": "The advisory describes this as observed Rhysida activity, particularly where MFA was not enabled by default.",
+            "scope": "Rhysida activity across reported victims",
+            "behavior_id": "AA23-319A-P001",
+            "evidence": {
+              "quote": "Rhysida actors have been observed leveraging external-facing remote services to initially access and \npersist within a network. Remote services, such as virtual private networks (VPNs), allow users to connect \nto internal enterprise network resources from external locations. Rhysida actors have commonly been \nobserved authenticating to internal VPN access points with compromised valid credentials, \nnotably due to organizations lacking MFA enabled by default.",
+              "pdf_page": 4,
+              "char_start": 8007,
+              "char_end": 8469
+            },
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "reviewer": "project_lead_via_chat_2026-11-22",
+            "annotation_method": "assisted_review_of_agent_proposal"
+          },
+          {
+            "action": "Created RDP connections for lateral movement",
+            "object": "remote victim systems",
+            "fact_status": "observed",
+            "confidence": "high",
+            "context_note": "RDP action separated from the VPN summary; report describes recurring activity, not one uniquely identified incident.",
+            "scope": "Rhysida activity across reported victims",
+            "behavior_id": "AA23-319A-P002",
+            "evidence": {
+              "quote": "creating Remote Desktop \nProtocol (RDP) connections for lateral movement",
+              "char_start": 8687,
+              "char_end": 8759,
+              "pdf_page": 4
+            },
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "reviewer": "project_lead_via_chat_2026-11-22"
+          },
+          {
+            "action": "Used domain commands to identify logged-in users and perform account reconnaissance",
+            "object": "victim environment domain accounts",
+            "fact_status": "observed",
+            "confidence": "high",
+            "context_note": "In one instance, compromised credentials were used; the commands ran within PowerShell.",
+            "scope": "one compromised-credential instance",
+            "behavior_id": "AA23-319A-P003",
+            "evidence": {
+              "quote": "Ipconfig, whoami, nltest, and several net commands have been used to \nenumerate victim environments and gather information about domains. In one instance of using \ncompromised credentials, actors leveraged net commands within PowerShell to identify logged-in users \nand perform reconnaissance on network accounts within the victim environment. Note: The following",
+              "pdf_page": 4,
+              "char_start": 9064,
+              "char_end": 9427
+            },
+            "origin": "agent_proposal",
+            "review_status": "draft"
+          },
+          {
+            "action": "Launched PowerShell ISE before executing a malicious script",
+            "object": "compromised Windows system",
+            "fact_status": "observed",
+            "confidence": "high",
+            "context_note": "The advisory identifies the script as 1.ps1 from a temporary AppData folder.",
+            "scope": "Rhysida activity across reported victims",
+            "behavior_id": "AA23-319A-P004",
+            "evidence": {
+              "quote": "Rhysida actors have been observed launching Windows PowerShell Integrated \nScripting Environment (ISE) prior to executing a malicious script (1.ps1 from a folder \nin %AppData%\\Local\\Temp%). PowerShell ISE provides a graphical interface for \nediting and testing PowerShell scripts.",
+              "pdf_page": 5,
+              "char_start": 11246,
+              "char_end": 11526
+            },
+            "origin": "agent_proposal",
+            "review_status": "draft"
+          },
+          {
+            "action": "Used PsExec for lateral movement and remote execution",
+            "object": "remote victim systems",
+            "fact_status": "observed",
+            "confidence": "high",
+            "context_note": "The advisory states Rhysida actors heavily leveraged this tool for these actions.",
+            "scope": "Rhysida activity across reported victims",
+            "behavior_id": "AA23-319A-P005",
+            "evidence": {
+              "quote": "PsExec.exe A tool included in the PsTools suite used to execute processes remotely. Rhysida actors heavily leveraged this tool for lateral movement and remote execution.",
+              "pdf_page": 5,
+              "char_start": 11528,
+              "char_end": 11697
+            },
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "reviewer": "project_lead_via_chat_2026-11-22",
+            "annotation_method": "assisted_review_of_agent_proposal"
+          },
+          {
+            "action": "Created SSH connections with PuTTY for lateral movement",
+            "object": "remote victim systems",
+            "fact_status": "observed",
+            "confidence": "high",
+            "context_note": "In one example, PowerShell console history for a compromised user showed remote SSH connections.",
+            "scope": "one compromised-user instance",
+            "behavior_id": "AA23-319A-P006",
+            "evidence": {
+              "quote": "Rhysida actors have been observed creating Secure Shell (SSH) PuTTy connections for \nlateral movement. In one example, analysis of PowerShell console host history for a \ncompromised user account revealed Rhysida actors leveraged PuTTy to remotely \nconnect to systems via SSH.",
+              "pdf_page": 5,
+              "char_start": 11781,
+              "char_end": 12056
+            },
+            "origin": "agent_proposal",
+            "review_status": "draft"
+          },
+          {
+            "action": "Extracted and dumped the NTDS database from a domain controller",
+            "object": "Active Directory user credential hashes",
+            "fact_status": "observed",
+            "confidence": "high",
+            "context_note": "The advisory explicitly states Rhysida actors used ntdsutil.exe for this activity.",
+            "scope": "Rhysida activity across reported victims",
+            "behavior_id": "AA23-319A-P007",
+            "evidence": {
+              "quote": "A standard Windows tool used to interact with the NTDS database. Rhysida actors \nused this tool to extract and dump the NTDS.dit database from the domain controller \ncontaining hashes for all Active Directory (AD) users.",
+              "pdf_page": 6,
+              "char_start": 12558,
+              "char_end": 12778
+            },
+            "origin": "agent_proposal",
+            "review_status": "draft"
+          },
+          {
+            "action": "Cleared Windows event logs",
+            "object": "system, application, and security logs",
+            "fact_status": "observed",
+            "confidence": "high",
+            "context_note": "The advisory states actors used wevtutil.exe to clear a significant number of logs.",
+            "scope": "Rhysida activity across reported victims",
+            "behavior_id": "AA23-319A-P008",
+            "evidence": {
+              "quote": "A standard Windows Event Utility tool used to view event logs. Rhysida actors used this \ntool to clear a significant number of Windows event logs, including system, application, \nand security logs.",
+              "pdf_page": 6,
+              "char_start": 13159,
+              "char_end": 13356
+            },
+            "origin": "agent_proposal",
+            "review_status": "draft"
+          },
+          {
+            "action": "Conducted domain reconnaissance and harvested credentials",
+            "object": "Windows domain",
+            "fact_status": "observed",
+            "confidence": "high",
+            "context_note": "PowerShell event log review identified PowerView use for these actions.",
+            "scope": "Rhysida activity across reported victims",
+            "behavior_id": "AA23-319A-P009",
+            "evidence": {
+              "quote": "A PowerShell tool used to gain situational awareness of Windows domains. Review of \nPowerShell event logs identified Rhysida actors using this tool to conduct additional \nreconnaissance-based commands and harvest credentials.",
+              "pdf_page": 6,
+              "char_start": 13369,
+              "char_end": 13594
+            },
+            "origin": "agent_proposal",
+            "review_status": "draft"
+          },
+          {
+            "action": "Created staging folders and deployed tools and scripts to support encryption",
+            "object": "victim system C drive and network",
+            "fact_status": "observed",
+            "confidence": "high",
+            "context_note": "The advisory identifies the in and out folders as a staging directory in one investigation.",
+            "scope": "one investigation",
+            "behavior_id": "AA23-319A-P010",
+            "evidence": {
+              "quote": "In one investigation, Rhysida actors created two folders in the C:\\ drive labeled in and out, which served \nas a staging directory (central location) for hosting malicious executables. The in folder contained file \nnames in accordance with host names on the victim’s network, likely imported through a scanning tool. The \nout folder contained various files listed in Table 2 below. Rhysida actors deployed these tools and scripts \nto assist system and network-wide encryption.",
+              "pdf_page": 6,
+              "char_start": 13899,
+              "char_end": 14375
+            },
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "reviewer": "project_lead_via_chat_2026-11-22",
+            "annotation_method": "assisted_review_of_agent_proposal"
+          },
+          {
+            "action": "Stored host-named files in the staging folder, likely imported through a scanning tool",
+            "object": "in staging folder",
+            "fact_status": "inferred",
+            "confidence": "medium",
+            "context_note": "The advisory says the filenames were likely imported through a scanning tool. Inference retained; no accepted ATT&CK mapping. The report does not prove the actors placed collected data here for exfiltration.",
+            "scope": "one investigation",
+            "behavior_id": "AA23-319A-P011",
+            "evidence": {
+              "quote": "as a staging directory (central location) for hosting malicious executables. The in folder contained file \nnames in accordance with host names on the victim’s network, likely imported through a scanning tool. The",
+              "pdf_page": 6,
+              "char_start": 14007,
+              "char_end": 14219
+            },
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "reviewer": "project_lead_via_chat_2026-11-22",
+            "annotation_method": "assisted_review_of_agent_proposal"
+          },
+          {
+            "action": "encrypt victim data after mapping the network",
+            "object": "victim data",
+            "fact_status": "observed",
+            "confidence": "high",
+            "context_note": "The report describes Rhysida ransomware encrypting data after network mapping.",
+            "scope": "ransomware operation",
+            "behavior_id": "AA23-319A-P012",
+            "evidence": {
+              "quote": "After mapping the network, the ransomware encrypts data",
+              "pdf_page": 7,
+              "char_start": 16218,
+              "char_end": 16273
+            },
+            "origin": "agent_proposal",
+            "review_status": "draft"
+          },
+          {
+            "action": "encrypt targeted files and append the ransomware extension",
+            "object": "targeted files",
+            "fact_status": "observed",
+            "confidence": "high",
+            "context_note": "The report describes Rhysida ransomware file encryption.",
+            "scope": "ransomware operation",
+            "behavior_id": "AA23-319A-P013",
+            "evidence": {
+              "quote": "encryptor runs a file to encrypt and modify all targeted files to display a .rhysida extension.",
+              "pdf_page": 8,
+              "char_start": 16702,
+              "char_end": 16797
+            },
+            "origin": "agent_proposal",
+            "review_status": "draft"
+          },
+          {
+            "action": "delete the ransomware binary after encryption",
+            "object": "ransomware binary",
+            "fact_status": "observed",
+            "confidence": "high",
+            "context_note": "The report describes post-encryption binary deletion through PowerShell.",
+            "scope": "defense evasion",
+            "behavior_id": "AA23-319A-P014",
+            "evidence": {
+              "quote": "a PowerShell command deletes the binary from the network",
+              "pdf_page": 8,
+              "char_start": 16824,
+              "char_end": 16880
+            },
+            "origin": "agent_proposal",
+            "review_status": "draft"
+          },
+          {
+            "action": "delete completed binary strings to evade detection",
+            "object": "binary strings",
+            "fact_status": "observed",
+            "confidence": "medium",
+            "context_note": "The report attributes self-deletion after task completion to evasion; the referent of “they” is described in the ransomware characteristics section.",
+            "scope": "defense evasion",
+            "behavior_id": "AA23-319A-P015",
+            "evidence": {
+              "quote": "they delete themselves through the control panel to evade detection.",
+              "pdf_page": 8,
+              "char_start": 17114,
+              "char_end": 17182
+            },
+            "origin": "agent_proposal",
+            "review_status": "draft"
+          },
+          {
+            "action": "use double extortion by demanding payment and threatening to publish exfiltrated data",
+            "object": "victim data",
+            "fact_status": "inferred",
+            "confidence": "medium",
+            "context_note": "The advisory attributes this extortion pattern to Rhysida actors based on cited reporting.",
+            "scope": "extortion",
+            "behavior_id": "AA23-319A-P016",
+            "evidence": {
+              "quote": "double extortion",
+              "pdf_page": 8,
+              "char_start": 17237,
+              "char_end": 17253
+            },
+            "origin": "agent_proposal",
+            "review_status": "draft"
+          },
+          {
+            "action": "direct victims to pay ransom in Bitcoin",
+            "object": "ransom payment",
+            "fact_status": "observed",
+            "confidence": "high",
+            "context_note": "The advisory describes the ransom payment direction given to victims.",
+            "scope": "extortion",
+            "behavior_id": "AA23-319A-P017",
+            "evidence": {
+              "quote": "Rhysida actors direct victims to send ransom payments in Bitcoin",
+              "pdf_page": 8,
+              "char_start": 17399,
+              "char_end": 17463
+            },
+            "origin": "agent_proposal",
+            "review_status": "draft"
+          },
+          {
+            "action": "drop a PDF ransom note",
+            "object": "compromised system",
+            "fact_status": "observed",
+            "confidence": "high",
+            "context_note": "The ransom note includes a unique code and contact instructions, which are not repeated here.",
+            "scope": "ransomware operation",
+            "behavior_id": "AA23-319A-P018",
+            "evidence": {
+              "quote": "Rhysida ransomware drops a ransom note named",
+              "pdf_page": 8,
+              "char_start": 17553,
+              "char_end": 17597
+            },
+            "origin": "agent_proposal",
+            "review_status": "draft"
+          },
+          {
+            "action": "Established VPN access",
+            "object": "victim network VPN",
+            "fact_status": "observed",
+            "confidence": "high",
+            "context_note": "Summary overlaps P001; not evidence of a second VPN incident. Prefer P001 for sampling this VPN procedure.",
+            "scope": "Rhysida activity across reported victims",
+            "behavior_id": "AA23-319A-R001",
+            "evidence": {
+              "quote": "establishing VPN access",
+              "char_start": 8761,
+              "char_end": 8784,
+              "pdf_page": 4
+            },
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "reviewer": "project_lead_via_chat_2026-11-22",
+            "reviewed_from_behavior_ids": [
+              "AA23-319A-P002"
+            ],
+            "annotation_method": "assisted_review_of_agent_proposal",
+            "overlap_with_behavior_ids": [
+              "AA23-319A-P001"
+            ],
+            "training_sampling_status": "exclude_overlapping_summary"
+          }
+        ],
+        "mappings": [
+          {
+            "technique_id": "T1133",
+            "confidence": "high",
+            "rationale": "The report explicitly describes authentication to internal VPN access points, matching use of external remote services.",
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "behavior_id": "AA23-319A-P001",
+            "mapping_id": "AA23-319A-PM001",
+            "technique_name": "External Remote Services",
+            "retrieved_candidate_ids": [
+              "T1133",
+              "T1078",
+              "T1187",
+              "T1650",
+              "T1056.003",
+              "T1499",
+              "T1110",
+              "T1213",
+              "T1210",
+              "T1199",
+              "T1078.004",
+              "T1557.001",
+              "T1589.001",
+              "T1550.001",
+              "T1649",
+              "T1110.001",
+              "T1114.003",
+              "T1078.001",
+              "T1589.002",
+              "T1136.003",
+              "T1556.006",
+              "T1098.001",
+              "T1556",
+              "T1598.003"
+            ],
+            "reviewer": "project_lead_via_chat_2026-11-22",
+            "annotation_method": "assisted_review_of_agent_proposal"
+          },
+          {
+            "technique_id": "T1078",
+            "confidence": "high",
+            "rationale": "Compromised valid credentials were used to authenticate, directly matching Valid Accounts.",
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "behavior_id": "AA23-319A-P001",
+            "mapping_id": "AA23-319A-PM002",
+            "technique_name": "Valid Accounts",
+            "retrieved_candidate_ids": [
+              "T1133",
+              "T1078",
+              "T1187",
+              "T1650",
+              "T1056.003",
+              "T1499",
+              "T1110",
+              "T1213",
+              "T1210",
+              "T1199",
+              "T1078.004",
+              "T1557.001",
+              "T1589.001",
+              "T1550.001",
+              "T1649",
+              "T1110.001",
+              "T1114.003",
+              "T1078.001",
+              "T1589.002",
+              "T1136.003",
+              "T1556.006",
+              "T1098.001",
+              "T1556",
+              "T1598.003"
+            ],
+            "reviewer": "project_lead_via_chat_2026-11-22",
+            "annotation_method": "user_authorized_report_alignment"
+          },
+          {
+            "technique_id": "T1021.001",
+            "confidence": "high",
+            "rationale": "The report explicitly states that the actors created RDP connections for lateral movement, matching Remote Desktop Protocol.",
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "behavior_id": "AA23-319A-P002",
+            "mapping_id": "AA23-319A-PM003",
+            "technique_name": "Remote Desktop Protocol",
+            "retrieved_candidate_ids": [
+              "T1563.002",
+              "T1021",
+              "T1021.001",
+              "T1072",
+              "T1219",
+              "T1187",
+              "T1570",
+              "T1505.005",
+              "T1070.007",
+              "T1098.007",
+              "T1105",
+              "T1003.001",
+              "T1563",
+              "T1133",
+              "T1574.001",
+              "T1572",
+              "T1059.013",
+              "T1049",
+              "T1210",
+              "T1665",
+              "T1021.008",
+              "T1543.003",
+              "T1136.003",
+              "T1040"
+            ],
+            "reviewer": "project_lead_via_chat_2026-11-22",
+            "annotation_method": "user_authorized_report_alignment"
+          },
+          {
+            "technique_id": "T1133",
+            "confidence": "high",
+            "rationale": "The report separately describes establishing VPN access, matching External Remote Services.",
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "behavior_id": "AA23-319A-R001",
+            "mapping_id": "AA23-319A-PM004",
+            "technique_name": "External Remote Services",
+            "retrieved_candidate_ids": [
+              "T1563.002",
+              "T1021",
+              "T1021.001",
+              "T1072",
+              "T1219",
+              "T1187",
+              "T1570",
+              "T1505.005",
+              "T1070.007",
+              "T1098.007",
+              "T1105",
+              "T1003.001",
+              "T1563",
+              "T1133",
+              "T1574.001",
+              "T1572",
+              "T1059.013",
+              "T1049",
+              "T1210",
+              "T1665",
+              "T1021.008",
+              "T1543.003",
+              "T1136.003",
+              "T1040"
+            ],
+            "reviewer": "project_lead_via_chat_2026-11-22",
+            "annotation_method": "assisted_review_of_agent_proposal"
+          },
+          {
+            "technique_id": "T1087.002",
+            "confidence": "high",
+            "rationale": "The report describes reconnaissance on network/domain accounts, directly matching Domain Account discovery.",
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "behavior_id": "AA23-319A-P003",
+            "mapping_id": "AA23-319A-PM005",
+            "technique_name": "Domain Account",
+            "retrieved_candidate_ids": [
+              "T1087",
+              "T1033",
+              "T1528",
+              "T1021",
+              "T1049",
+              "T1482",
+              "T1069.003",
+              "T1598.003",
+              "T1580",
+              "T1590.001",
+              "T1484",
+              "T1550.001",
+              "T1187",
+              "T1548.005",
+              "T1201",
+              "T1591.002",
+              "T1654",
+              "T1087.002",
+              "T1484.002",
+              "T1586.002",
+              "T1564.006",
+              "T1681",
+              "T1098.001",
+              "T1597.002"
+            ],
+            "reviewer": "project_lead_via_chat_2026-11-22",
+            "annotation_method": "user_authorized_report_alignment"
+          },
+          {
+            "technique_id": "T1033",
+            "confidence": "high",
+            "rationale": "The report explicitly states that actors identified logged-in users, matching System Owner/User Discovery.",
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "behavior_id": "AA23-319A-P003",
+            "mapping_id": "AA23-319A-PM006",
+            "technique_name": "System Owner/User Discovery",
+            "retrieved_candidate_ids": [
+              "T1087",
+              "T1033",
+              "T1528",
+              "T1021",
+              "T1049",
+              "T1482",
+              "T1069.003",
+              "T1598.003",
+              "T1580",
+              "T1590.001",
+              "T1484",
+              "T1550.001",
+              "T1187",
+              "T1548.005",
+              "T1201",
+              "T1591.002",
+              "T1654",
+              "T1087.002",
+              "T1484.002",
+              "T1586.002",
+              "T1564.006",
+              "T1681",
+              "T1098.001",
+              "T1597.002"
+            ],
+            "reviewer": "project_lead_via_chat_2026-11-22",
+            "annotation_method": "user_authorized_report_alignment"
+          },
+          {
+            "technique_id": "T1059.001",
+            "confidence": "high",
+            "rationale": "The behavior explicitly describes launching PowerShell ISE before executing a malicious script, supporting PowerShell execution.",
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "behavior_id": "AA23-319A-P004",
+            "mapping_id": "AA23-319A-PM007",
+            "technique_name": "PowerShell",
+            "retrieved_candidate_ids": [
+              "T1546.013",
+              "T1059.007",
+              "T1547.001",
+              "T1564.006",
+              "T1574.011",
+              "T1059.001",
+              "T1546.008",
+              "T1546.012",
+              "T1220",
+              "T1218.011",
+              "T1546.004",
+              "T1574.007",
+              "T1608.004",
+              "T1689",
+              "T1548.003",
+              "T1497.001",
+              "T1546.015",
+              "T1546.016",
+              "T1059",
+              "T1574.005",
+              "T1547.015",
+              "T1553.006",
+              "T1195.001",
+              "T1055.011"
+            ],
+            "reviewer": "project_lead_via_chat_2026-11-22",
+            "annotation_method": "user_authorized_report_alignment"
+          },
+          {
+            "technique_id": "T1021",
+            "confidence": "medium",
+            "rationale": "The report explicitly says PsExec was used for lateral movement and remote execution, supporting the general Remote Services technique. It does not specify the underlying protocol or service mechanism.",
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "behavior_id": "AA23-319A-P005",
+            "mapping_id": "AA23-319A-PM008",
+            "technique_name": "Remote Services",
+            "retrieved_candidate_ids": [
+              "T1021.003",
+              "T1072",
+              "T1677",
+              "T1559.002",
+              "T1210",
+              "T1569.002",
+              "T1570",
+              "T1021.002",
+              "T1588.002",
+              "T1021.005",
+              "T1021",
+              "T1195.001",
+              "T1574.001",
+              "T1105",
+              "T1550.001",
+              "T1564.001",
+              "T1528",
+              "T1187",
+              "T1608.002",
+              "T1546.012",
+              "T1053.002",
+              "T1112",
+              "T1557.001",
+              "T1124"
+            ],
+            "reviewer": "project_lead_via_chat_2026-11-22",
+            "annotation_method": "assisted_review_of_agent_proposal"
+          },
+          {
+            "technique_id": "T1021.004",
+            "confidence": "high",
+            "rationale": "The report explicitly describes PuTTY connections used to remotely connect to systems via SSH, directly matching the SSH sub-technique.",
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "behavior_id": "AA23-319A-P006",
+            "mapping_id": "AA23-319A-PM009",
+            "technique_name": "SSH",
+            "retrieved_candidate_ids": [
+              "T1563.001",
+              "T1021",
+              "T1021.008",
+              "T1098.004",
+              "T1078.001",
+              "T1550.001",
+              "T1021.004",
+              "T1070.007",
+              "T1546.004",
+              "T1552.003",
+              "T1098.001",
+              "T1070.003",
+              "T1563.002",
+              "T1547.001",
+              "T1563",
+              "T1528",
+              "T1564.006",
+              "T1021.003",
+              "T1550.004",
+              "T1547.015",
+              "T1021.007",
+              "T1564.003",
+              "T1095",
+              "T1574.011"
+            ],
+            "reviewer": "project_lead_via_chat_2026-11-22",
+            "annotation_method": "user_authorized_report_alignment"
+          },
+          {
+            "technique_id": "T1003.003",
+            "rationale": "The report explicitly states that actors used ntdsutil to extract and dump NTDS.dit from a domain controller, matching NTDS credential dumping.",
+            "confidence": "high",
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "behavior_id": "AA23-319A-P007",
+            "mapping_id": "AA23-319A-PM010",
+            "technique_name": "NTDS",
+            "retrieved_candidate_ids": [
+              "T1003.003",
+              "T1003.005",
+              "T1556.007",
+              "T1003.002",
+              "T1003.001",
+              "T1484.001",
+              "T1552.001",
+              "T1558.001",
+              "T1003.006",
+              "T1003.008",
+              "T1207",
+              "T1558.005",
+              "T1528",
+              "T1550.003",
+              "T1486",
+              "T1555.003",
+              "T1556.005",
+              "T1558.004",
+              "T1649",
+              "T1484.002",
+              "T1484",
+              "T1003.004",
+              "T1187",
+              "T1222.001"
+            ],
+            "reviewer": "project_lead_via_chat_2026-11-22",
+            "annotation_method": "user_authorized_report_alignment"
+          },
+          {
+            "technique_id": "T1685.005",
+            "rationale": "The report explicitly says actors used wevtutil to clear Windows system, application, and security event logs.",
+            "confidence": "high",
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "behavior_id": "AA23-319A-P008",
+            "mapping_id": "AA23-319A-PM011",
+            "technique_name": "Clear Windows Event Logs",
+            "retrieved_candidate_ids": [
+              "T1685.005",
+              "T1685.001",
+              "T1654",
+              "T1070.008",
+              "T1220",
+              "T1543.003",
+              "T1685",
+              "T1070.007",
+              "T1218.013",
+              "T1218.011",
+              "T1070.003",
+              "T1685.006",
+              "T1685.004",
+              "T1070.006",
+              "T1553.006",
+              "T1082",
+              "T1127.002",
+              "T1218.005",
+              "T1012",
+              "T1027.011",
+              "T1546.012",
+              "T1036.003",
+              "T1690",
+              "T1550.001"
+            ],
+            "reviewer": "project_lead_via_chat_2026-11-22",
+            "annotation_method": "user_authorized_report_alignment"
+          },
+          {
+            "technique_id": "T1059.001",
+            "rationale": "PowerShell event logs identified actors using PowerView, a PowerShell tool, for reconnaissance and credential harvesting.",
+            "confidence": "high",
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "behavior_id": "AA23-319A-P009",
+            "mapping_id": "AA23-319A-PM012",
+            "technique_name": "PowerShell",
+            "retrieved_candidate_ids": [
+              "T1685.005",
+              "T1078.004",
+              "T1070.003",
+              "T1003.001",
+              "T1497.001",
+              "T1195.001",
+              "T1685.001",
+              "T1021",
+              "T1484.002",
+              "T1596.005",
+              "T1087.002",
+              "T1059.001",
+              "T1555",
+              "T1548.005",
+              "T1677",
+              "T1654",
+              "T1552.003",
+              "T1033",
+              "T1598.003",
+              "T1003.005",
+              "T1528",
+              "T1482",
+              "T1555.003",
+              "T1690"
+            ],
+            "reviewer": "project_lead_via_chat_2026-11-22",
+            "annotation_method": "user_authorized_report_alignment"
+          },
+          {
+            "technique_id": "T1087.002",
+            "rationale": "The report describes PowerView use for Windows domain reconnaissance, supporting domain account discovery at medium confidence.",
+            "confidence": "medium",
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "behavior_id": "AA23-319A-P009",
+            "mapping_id": "AA23-319A-PM013",
+            "technique_name": "Domain Account",
+            "retrieved_candidate_ids": [
+              "T1685.005",
+              "T1078.004",
+              "T1070.003",
+              "T1003.001",
+              "T1497.001",
+              "T1195.001",
+              "T1685.001",
+              "T1021",
+              "T1484.002",
+              "T1596.005",
+              "T1087.002",
+              "T1059.001",
+              "T1555",
+              "T1548.005",
+              "T1677",
+              "T1654",
+              "T1552.003",
+              "T1033",
+              "T1598.003",
+              "T1003.005",
+              "T1528",
+              "T1482",
+              "T1555.003",
+              "T1690"
+            ],
+            "reviewer": "project_lead_via_chat_2026-11-22",
+            "annotation_method": "user_authorized_report_alignment"
+          },
+          {
+            "technique_id": "T1486",
+            "rationale": "The report directly states that ransomware encrypts victim data after mapping the network, matching data encryption for impact.",
+            "confidence": "high",
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "behavior_id": "AA23-319A-P012",
+            "mapping_id": "AA23-319A-PM016",
+            "technique_name": "Data Encrypted for Impact",
+            "retrieved_candidate_ids": [
+              "T1486",
+              "T1657",
+              "T1490",
+              "T1027.013",
+              "T1036.010",
+              "T1659",
+              "T1187",
+              "T1588.004",
+              "T1546",
+              "T1555.002",
+              "T1680",
+              "T1681",
+              "T1572",
+              "T1048.001",
+              "T1082",
+              "T1667",
+              "T1679",
+              "T1480.001",
+              "T1548.003",
+              "T1600",
+              "T1027.011",
+              "T1048.002",
+              "T1027.009",
+              "T1573.002"
+            ],
+            "reviewer": "project_lead_via_chat_2026-11-22",
+            "annotation_method": "user_authorized_report_alignment"
+          },
+          {
+            "technique_id": "T1486",
+            "rationale": "The ransomware encrypts targeted victim files, directly matching Data Encrypted for Impact.",
+            "confidence": "high",
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "behavior_id": "AA23-319A-P013",
+            "mapping_id": "AA23-319A-PM017",
+            "technique_name": "Data Encrypted for Impact",
+            "retrieved_candidate_ids": [
+              "T1486",
+              "T1176.001",
+              "T1036.007",
+              "T1195.001",
+              "T1490",
+              "T1505.004",
+              "T1601.001",
+              "T1548.003",
+              "T1222",
+              "T1679",
+              "T1027.009",
+              "T1070.006",
+              "T1137.001",
+              "T1565.003",
+              "T1546.001",
+              "T1574.001",
+              "T1681",
+              "T1187",
+              "T1548.004",
+              "T1036.006",
+              "T1070.010",
+              "T1203",
+              "T1036.008",
+              "T1036.002"
+            ],
+            "reviewer": "project_lead_via_chat_2026-11-22",
+            "annotation_method": "user_authorized_report_alignment"
+          },
+          {
+            "technique_id": "T1070.004",
+            "rationale": "The report describes deleting the ransomware binary after encryption, consistent with File Deletion to remove an artifact.",
+            "confidence": "medium",
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "behavior_id": "AA23-319A-P014",
+            "mapping_id": "AA23-319A-PM018",
+            "technique_name": "File Deletion",
+            "retrieved_candidate_ids": [
+              "T1485.001",
+              "T1485",
+              "T1070.004",
+              "T1490",
+              "T1036.010",
+              "T1070.003",
+              "T1218.014",
+              "T1102.001",
+              "T1556.005",
+              "T1680",
+              "T1486",
+              "T1657",
+              "T1105",
+              "T1681",
+              "T1080",
+              "T1601.001",
+              "T1546.017",
+              "T1053.005",
+              "T1685.005",
+              "T1552.003",
+              "T1070.010",
+              "T1546.014",
+              "T1195.001",
+              "T1659"
+            ],
+            "reviewer": "project_lead_via_chat_2026-11-22",
+            "annotation_method": "user_authorized_report_alignment"
+          },
+          {
+            "technique_id": "T1070.004",
+            "rationale": "The report describes completed binary strings deleting themselves to evade detection, consistent with File Deletion to remove artifacts.",
+            "confidence": "medium",
+            "origin": "team_review",
+            "review_status": "confirmed",
+            "behavior_id": "AA23-319A-P015",
+            "mapping_id": "AA23-319A-PM019",
+            "technique_name": "File Deletion",
+            "retrieved_candidate_ids": [
+              "T1053.005",
+              "T1205",
+              "T1564.014",
+              "T1218.002",
+              "T1485.001",
+              "T1485",
+              "T1222.002",
+              "T1218.011",
+              "T1222",
+              "T1027.010",
+              "T1070.004",
+              "T1578.003",
+              "T1574.005",
+              "T1480.001",
+              "T1055.013",
+              "T1070.010",
+              "T1666",
+              "T1548.002",
+              "T1574.001",
+              "T1027.013",
+              "T1027.015",
+              "T1480",
+              "T1055.001",
+              "T1070.003"
+            ],
+            "reviewer": "project_lead_via_chat_2026-11-22",
+            "annotation_method": "user_authorized_report_alignment"
+          }
+        ],
+        "telemetry": [],
+        "warnings": [
+          "0 unresolved evidence rows are in the review queue.",
+          "Confirmed report-aligned mappings do not confirm linked draft behaviors, duplicate resolution, or fact strength. Filter both statuses for confirmed behavior-mapping training pairs.",
+          "P001 and R001 overlap: do not count as separate VPN incidents; R001 is excluded from independent sampling.",
+          "P010/P011 have accepted behavior descriptions but no accepted mapping.",
+          "P012/P013 remain possible duplicate encryption descriptions; behavior review pending."
+        ],
+        "review_metadata": {
+          "date": "2026-11-22",
+          "reviewer": "project_lead_via_chat_2026-11-22",
+          "method": "Post-prediction report-reference-assisted review; not independent blind annotation.",
+          "source_proposal_sha256": "1cd827969f37fb7bf05b06c59b51f8483b36b25cc169789157eb1fe5166bbbc0",
+          "scope": "Retain exact report IDs and verified revoked-by migration; additional mappings await user adjudication. Behavior statuses unchanged.",
+          "input_hash_note": "Current CRLF input byte hash recorded; source report and proposals unchanged.",
+          "latest_review": "User approved additional mappings review on 2026-11-22; T1133/T1021 retained, T1074.001 removed, P002 split, P011 inference retained."
+        }
+      },
+      "source_file": "data/AA23-319A/AA23-319A/case_handoff_reviewed.json"
+    }
+  ],
+  "runs": [
+    {
+      "id": "demo-run-aa25-01",
+      "report_id": "AA25-266A",
+      "result": {
+        "schema_version": "1.0",
+        "kind": "case_result",
+        "case_id": "AA25-266A",
+        "behavior_ids": [
+          "AA25-266A-G001",
+          "AA25-266A-G002",
+          "AA25-266A-G003",
+          "AA25-266A-G004"
+        ],
+        "coverage_ids": [
+          "AA25-266A-M001-R001-coverage"
+        ],
+        "rule_test_candidate_ids": [
+          "AA25-266A-M001-R001"
+        ],
+        "workflow_status": "partial_with_review",
+        "controller": "model",
+        "review_queue": [
+          {
+            "behavior_id": "AA25-266A-G001",
+            "reason": "Model coverage judgments remain drafts requiring human review.",
+            "status": "pending_human_review"
+          }
+        ],
+        "pending_behavior_ids": [],
+        "unselected_behavior_ids": [
+          "AA25-266A-G002",
+          "AA25-266A-G003",
+          "AA25-266A-G004"
+        ],
+        "generated_rules": {},
+        "budgets": {
+          "steps": 12,
+          "model_calls": 24,
+          "seconds": 600,
+          "behaviors": 1,
+          "search_rounds": 1,
+          "candidates_per_mapping": 1,
+          "sigma_steps": 4,
+          "generation_attempts": 2
+        },
+        "steps_used": 7,
+        "model_calls_used": 9,
+        "items": [
+          {
+            "candidate_id": "AA25-266A-M001-R001",
+            "behavior_id": "AA25-266A-G001",
+            "technique_id": "T1033",
+            "rule_id": "79ce34ca-af29-4d0e-b832-fc1b377020db",
+            "procedure_decision": "matches_procedure",
+            "procedure_review_status": "draft",
+            "dataset_id": "OTRF-LSASS_campaign_06",
+            "sample_test_status": "miss",
+            "matched_event_uids": [],
+            "telemetry": {
+              "compatible_events": 2,
+              "missing_fields": [],
+              "executable": true,
+              "reason": "Conservative union-of-rule-fields check; missing fields may be alternative-branch fields, not all mandatory."
+            }
+          }
+        ],
+        "limitations": [
+          "Workflow completion is not confirmation of model judgments.",
+          "Rule retrieval is not coverage; sample hits do not establish detection of the report incident.",
+          "Time budget is checked between calls, not a hard interruption of an in-flight model/tool call.",
+          "Unselected and pending behaviors are explicitly unprocessed; no whole-report completeness claim.",
+          "Generated rules remain separate draft results; novelty and production effectiveness are unverified."
+        ]
+      },
+      "trace": [
+        {
+          "step": 1,
+          "decision": {
+            "action_id": "AA25-266A-G001:context",
+            "reason": "The case_progress shows that the context search for AA25-266A-G001 is not done (done: false) and the quote is 'whoami'. This indicates that the context needs to be read to proceed. The available action is read_context, which is the correct tool to retrieve the context for this case. Since the search count is 0, we need to initiate the context read to gather necessary information before any further analysis can occur."
+          },
+          "decision_source": "model",
+          "available_action_ids": [
+            "AA25-266A-G001:context"
+          ],
+          "action": {
+            "tool": "read_context",
+            "behavior_id": "AA25-266A-G001"
+          },
+          "observation": {
+            "quote": "whoami",
+            "context": " file named aaa.zip to the /tmp/ directory. \n\n=== PDF PAGE 8 ===\nTLP:CLEAR \nCISA \nPage 8 of 19 | Product ID: AA25-266A \nTLP:CLEAR \n \n \nSubsequently, they enumerated the internal network from GeoServer 1, identifying Secure Shell (SSH) \nlisteners, File Transfer Protocol (FTP) servers, file servers, and web servers  by using the fscan \ntool. (Note: CISA observed endpoint logs that showed the cyber threat actors uploaded fscan to the \ncompromised host and ran it against internal systems.) The actors then attempted to brute force login \ncredentials for the exploited web services to gain remote access, achieve RCE, or move laterally. \nThe cyber threat actors also conducted ping sweeps of several hosts within the organization’s internal \nsubnets using fscan. Their use of the -nobr and -nopoc flags for fscan indicated that this scan \nexcluded brute forcing or vulnerability scanning, respectively. \nSQL Server \nCISA observed the following discovery commands on the organization’s SQL server: \n whoami \n ipconfig /all \n ping -n 1 8.8.8.8 \n systeminfo \n tasklist \n dir c:\\ \n dir c:\\Users \n type c:\\Last.txt \n type c:\\inetpub\\wwwroot \n type c:\\inetpub\\ \n dir c:\\inetpub\\wwwroot \n dir c:\\ \n dir c:\\ifwapps \n dir d:\\ \n dir e:\\ \n net group \"domain admins\" /domain \n type C:\\Windows\\System32\\inetsrv\\config\\applicationHost.config \n dir c:\\ifwapps\\Tier1Utilities \n netstat -ano \n curl \n net user \n tasklist \nGeoServer 2 \nBased on images CISA received of GeoServer 2, CISA observed the bash history of a user that showed the \nuse of Burp Collaborator to execute encoded host and network discovery commands. \n\n=== PDF PAGE 9 ===\nTLP:CLEAR \nCISA \nPage 9 of 19 | Product ID: AA25-266A \nTLP:CLEAR \n \n \nLateral Movement \nIn one instance, the cyber threat actors moved laterally from the Web Server to the SQL Server by enabling \nxp_cmdshell for RCE on GeoServer 1. \nCommand and Control \nThe cyber threat actors used PowerShell and bits admin getfile to download payloads.  \nThey used Stowaway,",
+            "fact_status": "observed"
+          }
+        },
+        {
+          "step": 2,
+          "decision": {
+            "action_id": "AA25-266A-G001:search",
+            "reason": "The case_progress shows that the search has not been completed (searches: 0, done: false) and the quote is 'whoami'. This action is the only available action to proceed with the threat-report analysis. Since the evidence requires a search to be performed and there are no other actions available, executing the search is necessary to gather the required information."
+          },
+          "decision_source": "model",
+          "available_action_ids": [
+            "AA25-266A-G001:search"
+          ],
+          "action": {
+            "tool": "search_rules",
+            "behavior_id": "AA25-266A-G001"
+          },
+          "observation": {
+            "round": 1,
+            "candidate_ids": [
+              "AA25-266A-M001-R001"
+            ],
+            "note": "Tag/text retrieval is not coverage."
+          }
+        },
+        {
+          "step": 3,
+          "decision": {
+            "action_id": "AA25-266A-M001-R001:telemetry",
+            "reason": "The case progress shows a search has been completed with a quote of 'whoami', indicating an active investigation into the 'Whoami.EXE Execution From Privileged Process' candidate. The candidate summary specifies required fields including 'Image', 'OriginalFileName', and 'User', which are critical for understanding the privileged process execution. Since the telemetry tool is available and the case is not yet done, checking telemetry provides immediate context on the process execution without further assumptions. This action aligns with the need to gather evidence for the candidate before proceeding to assess it."
+          },
+          "decision_source": "model",
+          "available_action_ids": [
+            "AA25-266A-M001-R001:assess",
+            "AA25-266A-M001-R001:telemetry"
+          ],
+          "action": {
+            "tool": "check_telemetry",
+            "behavior_id": "AA25-266A-G001",
+            "candidate_id": "AA25-266A-M001-R001"
+          },
+          "observation": {
+            "compatible_events": 2,
+            "missing_fields": [],
+            "executable": true,
+            "reason": "Conservative union-of-rule-fields check; missing fields may be alternative-branch fields, not all mandatory."
+          }
+        },
+        {
+          "step": 4,
+          "decision": {
+            "action_id": "AA25-266A-M001-R001:assess",
+            "reason": "The case progress shows a search has been completed with a quote of 'whoami', indicating a potential threat. The candidate summary specifies a 'Whoami.EXE Execution From Privileged Process' which is a common indicator of privilege escalation or malicious activity. The telemetry indicates the event is compatible with 2 events and has no missing fields, suggesting it's a valid event for assessment. Since the case is not yet done and the available actions include 'assess_candidate', this action is necessary to evaluate the candidate for potential threat reporting."
+          },
+          "decision_source": "model",
+          "available_action_ids": [
+            "AA25-266A-M001-R001:assess",
+            "AA25-266A-M001-R001:test"
+          ],
+          "action": {
+            "tool": "assess_candidate",
+            "behavior_id": "AA25-266A-G001",
+            "candidate_id": "AA25-266A-M001-R001"
+          },
+          "observation": {
+            "coverage_id": "AA25-266A-M001-R001-coverage",
+            "candidate_id": "AA25-266A-M001-R001",
+            "behavior_id": "AA25-266A-G001",
+            "decision": "matches_procedure",
+            "supporting_conditions": [
+              "Rule targets 'whoami.exe' via process creation (matches 'whoami' command)",
+              "User context matches privileged accounts (AUTHORI, AUTORI, TrustedInstaller)",
+              "Rule is active and the behavior is observed"
+            ],
+            "missing_conditions": [],
+            "unknown_conditions": [],
+            "explanation": "The rule's condition requires 'whoami.exe' and privileged user context. The observed behavior shows 'whoami' as the command, which is a common way to invoke 'whoami.exe' in Windows. The user context (AUTHORI/AUTORI/TrustedInstaller) is a known privileged context for this rule. The rule's status is 'test' but it's still valid for detection. The behavior is observed, so it fits the rule.",
+            "review_status": "draft"
+          }
+        },
+        {
+          "step": 5,
+          "decision": {
+            "action_id": "AA25-266A-M001-R001:test",
+            "reason": "The candidate rule AA25-266A-M001-R001 (Whoami.EXE Execution From Privileged Process) has been identified as matching the procedure (coverage_decisions: matches_procedure). The telemetry indicates it's a valid rule with compatible events (2) and no missing fields. Since the rule is already confirmed to match the procedure and the case progress shows a search has been done (searches: 1), the next logical step is to test this rule to validate its effectiveness in detecting the reported incident. Testing is necessary to ensure the rule correctly identifies the incident without false positives or negatives."
+          },
+          "decision_source": "model",
+          "available_action_ids": [
+            "AA25-266A-M001-R001:test"
+          ],
+          "action": {
+            "tool": "test_rule",
+            "behavior_id": "AA25-266A-G001",
+            "candidate_id": "AA25-266A-M001-R001"
+          },
+          "observation": {
+            "candidate_id": "AA25-266A-M001-R001",
+            "dataset_id": "OTRF-LSASS_campaign_06",
+            "status": "miss",
+            "matched_event_uids": [],
+            "events_evaluated": 2,
+            "events_skipped": 0,
+            "unsupported_features": [],
+            "reason": "Evaluated 2 compatible events; skipped 0 others",
+            "engine_version": "sigma-offline-subset-0.1",
+            "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_whoami_execution_from_high_priv_process.yml"
+          }
+        },
+        {
+          "step": 6,
+          "decision": {
+            "action_id": "AA25-266A-G001:review",
+            "reason": "Model coverage judgments remain drafts requiring human review."
+          },
+          "decision_source": "model",
+          "available_action_ids": [
+            "AA25-266A-G001:review"
+          ],
+          "action": {
+            "tool": "request_review",
+            "behavior_id": "AA25-266A-G001",
+            "reason": "Model coverage judgments remain drafts requiring human review."
+          },
+          "observation": {
+            "behavior_id": "AA25-266A-G001",
+            "reason": "Model coverage judgments remain drafts requiring human review.",
+            "status": "pending_human_review"
+          }
+        },
+        {
+          "step": 7,
+          "decision": {
+            "action_id": "finish",
+            "reason": "All evidence indicates the case is resolved with no unresolved work. The case_progress shows done: true for AA25-266A-G001, coverage_decisions confirms matches_procedure, telemetry shows compatible_events and no missing fields, and sample_statuses indicates a miss which is consistent with the resolution. No further actions are needed as the system has completed its analysis."
+          },
+          "decision_source": "model",
+          "available_action_ids": [
+            "finish"
+          ],
+          "action": {
+            "tool": "finish"
+          },
+          "observation": {
+            "status": "completed_with_review"
+          }
+        }
+      ],
+      "candidates": {
+        "schema_version": "1.0",
+        "kind": "rule_candidates",
+        "case_id": "AA25-266A",
+        "ruleset_commit": "05d1031f537e830b76da53bae2400c5814c89165",
+        "items": [
+          {
+            "candidate_id": "AA25-266A-M001-R001",
+            "behavior_id": "AA25-266A-G001",
+            "technique_id": "T1033",
+            "rule_id": "79ce34ca-af29-4d0e-b832-fc1b377020db",
+            "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_whoami_execution_from_high_priv_process.yml",
+            "rule_sha256": "52f8f0ec332a357e6897081b7b36cfa4ce9db1145dedc057fd9853cff345ec88",
+            "title": "Whoami.EXE Execution From Privileged Process",
+            "tags": [
+              "attack.privilege-escalation",
+              "attack.discovery",
+              "attack.t1033"
+            ],
+            "logsource": {
+              "product": "windows",
+              "category": "process_creation",
+              "service": null
+            },
+            "status": "test",
+            "required_fields": [
+              "Image",
+              "OriginalFileName",
+              "User"
+            ],
+            "retrieval_reason": "exact ATT&CK technique tag; detection terms: user, whoami; title terms: whoami; lexical score 12"
+          }
+        ]
+      },
+      "coverage": {
+        "schema_version": "1.0",
+        "kind": "coverage_assessments",
+        "case_id": "AA25-266A",
+        "ruleset_commit": "05d1031f537e830b76da53bae2400c5814c89165",
+        "items": [
+          {
+            "coverage_id": "AA25-266A-M001-R001-coverage",
+            "candidate_id": "AA25-266A-M001-R001",
+            "behavior_id": "AA25-266A-G001",
+            "decision": "matches_procedure",
+            "supporting_conditions": [
+              "Rule targets 'whoami.exe' via process creation (matches 'whoami' command)",
+              "User context matches privileged accounts (AUTHORI, AUTORI, TrustedInstaller)",
+              "Rule is active and the behavior is observed"
+            ],
+            "missing_conditions": [],
+            "unknown_conditions": [],
+            "explanation": "The rule's condition requires 'whoami.exe' and privileged user context. The observed behavior shows 'whoami' as the command, which is a common way to invoke 'whoami.exe' in Windows. The user context (AUTHORI/AUTORI/TrustedInstaller) is a known privileged context for this rule. The rule's status is 'test' but it's still valid for detection. The behavior is observed, so it fits the rule.",
+            "review_status": "draft"
+          }
+        ]
+      },
+      "rule_tests": {
+        "schema_version": "1.0",
+        "kind": "rule_tests",
+        "case_id": "AA25-266A",
+        "items": [
+          {
+            "candidate_id": "AA25-266A-M001-R001",
+            "dataset_id": "OTRF-LSASS_campaign_06",
+            "status": "miss",
+            "matched_event_uids": [],
+            "events_evaluated": 2,
+            "events_skipped": 0,
+            "unsupported_features": [],
+            "reason": "Evaluated 2 compatible events; skipped 0 others",
+            "engine_version": "sigma-offline-subset-0.1",
+            "rule_path": "data/sigma/rules/windows/process_creation/proc_creation_win_whoami_execution_from_high_priv_process.yml"
+          }
+        ]
+      },
+      "display_note": "Controller prose is unverified; display canonical review states and actual tool output."
+    }
+  ],
+  "log_sources": [
+    {
+      "id": "OTRF-LSASS_campaign_06",
+      "name": "OTRF LSASS_campaign_06",
+      "mode": "offline",
+      "status": "readable",
+      "source_path": "data/Security-Datasets/datasets/compound/LSASS_campaign_06/metasploit_outflank-dumpert_lsass_memory_dump.zip",
+      "normalized_file": "artifacts/runs/otrf_lsass_normalized.json",
+      "normalized_sha256": "a4e39284a3990cb17b77bc97fa79d808728706515507147a389f9f4ec3d5d292",
+      "record_count": 33729,
+      "parse_error_count": 0,
+      "time_range": {
+        "start": "2023-09-05T10:43:28.317Z",
+        "end": "2023-09-05T10:50:45.444Z",
+        "basis": "timestamp_raw",
+        "timezone": "UTC if indicated by source; do not infer otherwise"
+      },
+      "event_types": [
+        {
+          "event_id": "10",
+          "record_count": 31522
+        },
+        {
+          "event_id": "11",
+          "record_count": 2130
+        },
+        {
+          "event_id": "1",
+          "record_count": 77
+        }
+      ],
+      "field_catalogues": {
+        "10": [
+          {
+            "name": "CallTrace",
+            "raw_location": "Message 内 CallTrace",
+            "standard_name": "CallTrace",
+            "type": "string",
+            "sample_preview": "C:\\Windows\\SYSTEM32\\ntdll.dll+9d4c4|C:\\Windows\\System32\\KERNELBASE.dll+32ea6|c:\\windows\\system32\\lsm.dll+f58c|c:\\wind…",
+            "present_count": 31522,
+            "nonempty_count": 31522,
+            "missing_count": 0,
+            "total_events": 31522
+          },
+          {
+            "name": "GrantedAccess",
+            "raw_location": "Message 内 GrantedAccess",
+            "standard_name": "GrantedAccess",
+            "type": "string",
+            "sample_preview": "0x1000",
+            "present_count": 31522,
+            "nonempty_count": 31522,
+            "missing_count": 0,
+            "total_events": 31522
+          },
+          {
+            "name": "RuleName",
+            "raw_location": "Message 内 RuleName",
+            "standard_name": "RuleName",
+            "type": "string",
+            "sample_preview": "-",
+            "present_count": 31522,
+            "nonempty_count": 31522,
+            "missing_count": 0,
+            "total_events": 31522
+          },
+          {
+            "name": "SourceImage",
+            "raw_location": "Message 内 SourceImage",
+            "standard_name": "SourceImage",
+            "type": "string",
+            "sample_preview": "C:\\Windows\\system32\\svchost.exe",
+            "present_count": 31522,
+            "nonempty_count": 31522,
+            "missing_count": 0,
+            "total_events": 31522
+          },
+          {
+            "name": "SourceProcessGUID",
+            "raw_location": "Message 内 SourceProcessGUID",
+            "standard_name": "SourceProcessGUID",
+            "type": "string",
+            "sample_preview": "{ec2b781c-7024-64f7-1100-000000000500}",
+            "present_count": 31522,
+            "nonempty_count": 31522,
+            "missing_count": 0,
+            "total_events": 31522
+          },
+          {
+            "name": "SourceProcessId",
+            "raw_location": "Message 内 SourceProcessId",
+            "standard_name": "SourceProcessId",
+            "type": "string",
+            "sample_preview": "908",
+            "present_count": 31522,
+            "nonempty_count": 31522,
+            "missing_count": 0,
+            "total_events": 31522
+          },
+          {
+            "name": "SourceThreadId",
+            "raw_location": "Message 内 SourceThreadId",
+            "standard_name": "SourceThreadId",
+            "type": "string",
+            "sample_preview": "924",
+            "present_count": 31522,
+            "nonempty_count": 31522,
+            "missing_count": 0,
+            "total_events": 31522
+          },
+          {
+            "name": "SourceUser",
+            "raw_location": "Message 内 SourceUser",
+            "standard_name": "SourceUser",
+            "type": "string",
+            "sample_preview": "[脱敏示例]",
+            "present_count": 31522,
+            "nonempty_count": 31522,
+            "missing_count": 0,
+            "total_events": 31522
+          },
+          {
+            "name": "TargetImage",
+            "raw_location": "Message 内 TargetImage",
+            "standard_name": "TargetImage",
+            "type": "string",
+            "sample_preview": "C:\\Windows\\system32\\wermgr.exe",
+            "present_count": 31522,
+            "nonempty_count": 31522,
+            "missing_count": 0,
+            "total_events": 31522
+          },
+          {
+            "name": "TargetProcessGUID",
+            "raw_location": "Message 内 TargetProcessGUID",
+            "standard_name": "TargetProcessGUID",
+            "type": "string",
+            "sample_preview": "{ec2b781c-1178-64f8-9f03-000000000500}",
+            "present_count": 31522,
+            "nonempty_count": 31522,
+            "missing_count": 0,
+            "total_events": 31522
+          },
+          {
+            "name": "TargetProcessId",
+            "raw_location": "Message 内 TargetProcessId",
+            "standard_name": "TargetProcessId",
+            "type": "string",
+            "sample_preview": "3756",
+            "present_count": 31522,
+            "nonempty_count": 31522,
+            "missing_count": 0,
+            "total_events": 31522
+          },
+          {
+            "name": "TargetUser",
+            "raw_location": "Message 内 TargetUser",
+            "standard_name": "TargetUser",
+            "type": "string",
+            "sample_preview": "[脱敏示例]",
+            "present_count": 31522,
+            "nonempty_count": 31522,
+            "missing_count": 0,
+            "total_events": 31522
+          },
+          {
+            "name": "UtcTime",
+            "raw_location": "Message 内 UtcTime",
+            "standard_name": "UtcTime",
+            "type": "string",
+            "sample_preview": "2023-09-06 05:43:28.299",
+            "present_count": 31522,
+            "nonempty_count": 31522,
+            "missing_count": 0,
+            "total_events": 31522
+          }
+        ],
+        "11": [
+          {
+            "name": "CreationUtcTime",
+            "raw_location": "Message 内 CreationUtcTime",
+            "standard_name": "CreationUtcTime",
+            "type": "string",
+            "sample_preview": "2023-09-06 05:43:28.318",
+            "present_count": 2130,
+            "nonempty_count": 2130,
+            "missing_count": 0,
+            "total_events": 2130
+          },
+          {
+            "name": "Image",
+            "raw_location": "Message 内 Image",
+            "standard_name": "Image",
+            "type": "string",
+            "sample_preview": "C:\\Windows\\system32\\wermgr.exe",
+            "present_count": 2130,
+            "nonempty_count": 2130,
+            "missing_count": 0,
+            "total_events": 2130
+          },
+          {
+            "name": "ProcessGuid",
+            "raw_location": "Message 内 ProcessGuid",
+            "standard_name": "ProcessGuid",
+            "type": "string",
+            "sample_preview": "{ec2b781c-1178-64f8-9f03-000000000500}",
+            "present_count": 2130,
+            "nonempty_count": 2130,
+            "missing_count": 0,
+            "total_events": 2130
+          },
+          {
+            "name": "ProcessId",
+            "raw_location": "Message 内 ProcessId",
+            "standard_name": "ProcessId",
+            "type": "string",
+            "sample_preview": "3756",
+            "present_count": 2130,
+            "nonempty_count": 2130,
+            "missing_count": 0,
+            "total_events": 2130
+          },
+          {
+            "name": "RuleName",
+            "raw_location": "Message 内 RuleName",
+            "standard_name": "RuleName",
+            "type": "string",
+            "sample_preview": "-",
+            "present_count": 2130,
+            "nonempty_count": 2130,
+            "missing_count": 0,
+            "total_events": 2130
+          },
+          {
+            "name": "TargetFilename",
+            "raw_location": "Message 内 TargetFilename",
+            "standard_name": "TargetFilename",
+            "type": "string",
+            "sample_preview": "C:\\ProgramData\\Microsoft\\Windows\\WER\\Temp\\d0138c8a-b0c1-4d22-8675-5f4a1b6382e2",
+            "present_count": 2130,
+            "nonempty_count": 2130,
+            "missing_count": 0,
+            "total_events": 2130
+          },
+          {
+            "name": "User",
+            "raw_location": "Message 内 User",
+            "standard_name": "User",
+            "type": "string",
+            "sample_preview": "[脱敏示例]",
+            "present_count": 2130,
+            "nonempty_count": 2130,
+            "missing_count": 0,
+            "total_events": 2130
+          },
+          {
+            "name": "UtcTime",
+            "raw_location": "Message 内 UtcTime",
+            "standard_name": "UtcTime",
+            "type": "string",
+            "sample_preview": "2023-09-06 05:43:28.318",
+            "present_count": 2130,
+            "nonempty_count": 2130,
+            "missing_count": 0,
+            "total_events": 2130
+          }
+        ],
+        "1": [
+          {
+            "name": "CommandLine",
+            "raw_location": "Message 内 CommandLine",
+            "standard_name": "CommandLine",
+            "type": "string",
+            "sample_preview": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --profile-directory=Default",
+            "present_count": 77,
+            "nonempty_count": 77,
+            "missing_count": 0,
+            "total_events": 77
+          },
+          {
+            "name": "Company",
+            "raw_location": "Message 内 Company",
+            "standard_name": "Company",
+            "type": "string",
+            "sample_preview": "Microsoft Corporation",
+            "present_count": 77,
+            "nonempty_count": 77,
+            "missing_count": 0,
+            "total_events": 77
+          },
+          {
+            "name": "CurrentDirectory",
+            "raw_location": "Message 内 CurrentDirectory",
+            "standard_name": "CurrentDirectory",
+            "type": "string",
+            "sample_preview": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\",
+            "present_count": 77,
+            "nonempty_count": 77,
+            "missing_count": 0,
+            "total_events": 77
+          },
+          {
+            "name": "Description",
+            "raw_location": "Message 内 Description",
+            "standard_name": "Description",
+            "type": "string",
+            "sample_preview": "Microsoft Edge",
+            "present_count": 77,
+            "nonempty_count": 77,
+            "missing_count": 0,
+            "total_events": 77
+          },
+          {
+            "name": "FileVersion",
+            "raw_location": "Message 内 FileVersion",
+            "standard_name": "FileVersion",
+            "type": "string",
+            "sample_preview": "92.0.902.67",
+            "present_count": 77,
+            "nonempty_count": 77,
+            "missing_count": 0,
+            "total_events": 77
+          },
+          {
+            "name": "Hashes",
+            "raw_location": "Message 内 Hashes",
+            "standard_name": "Hashes",
+            "type": "string",
+            "sample_preview": "SHA1=FA9E8B7FB10473A01B8925C4C5B0888924A1147C,MD5=AD8536C7440638D40156E883AC25086E,SHA256=73D84D249F16B943D1D3F9DD9E5…",
+            "present_count": 77,
+            "nonempty_count": 77,
+            "missing_count": 0,
+            "total_events": 77
+          },
+          {
+            "name": "Image",
+            "raw_location": "Message 内 Image",
+            "standard_name": "Image",
+            "type": "string",
+            "sample_preview": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+            "present_count": 77,
+            "nonempty_count": 77,
+            "missing_count": 0,
+            "total_events": 77
+          },
+          {
+            "name": "IntegrityLevel",
+            "raw_location": "Message 内 IntegrityLevel",
+            "standard_name": "IntegrityLevel",
+            "type": "string",
+            "sample_preview": "Medium",
+            "present_count": 77,
+            "nonempty_count": 77,
+            "missing_count": 0,
+            "total_events": 77
+          },
+          {
+            "name": "LogonGuid",
+            "raw_location": "Message 内 LogonGuid",
+            "standard_name": "LogonGuid",
+            "type": "string",
+            "sample_preview": "{ec2b781c-4748-64f7-408e-070000000000}",
+            "present_count": 77,
+            "nonempty_count": 77,
+            "missing_count": 0,
+            "total_events": 77
+          },
+          {
+            "name": "LogonId",
+            "raw_location": "Message 内 LogonId",
+            "standard_name": "LogonId",
+            "type": "string",
+            "sample_preview": "0x78E40",
+            "present_count": 77,
+            "nonempty_count": 77,
+            "missing_count": 0,
+            "total_events": 77
+          },
+          {
+            "name": "OriginalFileName",
+            "raw_location": "Message 内 OriginalFileName",
+            "standard_name": "OriginalFileName",
+            "type": "string",
+            "sample_preview": "msedge.exe",
+            "present_count": 77,
+            "nonempty_count": 77,
+            "missing_count": 0,
+            "total_events": 77
+          },
+          {
+            "name": "ParentCommandLine",
+            "raw_location": "Message 内 ParentCommandLine",
+            "standard_name": "ParentCommandLine",
+            "type": "string",
+            "sample_preview": "C:\\Windows\\Explorer.EXE",
+            "present_count": 77,
+            "nonempty_count": 77,
+            "missing_count": 0,
+            "total_events": 77
+          },
+          {
+            "name": "ParentImage",
+            "raw_location": "Message 内 ParentImage",
+            "standard_name": "ParentImage",
+            "type": "string",
+            "sample_preview": "C:\\Windows\\explorer.exe",
+            "present_count": 77,
+            "nonempty_count": 77,
+            "missing_count": 0,
+            "total_events": 77
+          },
+          {
+            "name": "ParentProcessGuid",
+            "raw_location": "Message 内 ParentProcessGuid",
+            "standard_name": "ParentProcessGuid",
+            "type": "string",
+            "sample_preview": "{ec2b781c-47a5-64f7-7400-000000000500}",
+            "present_count": 77,
+            "nonempty_count": 77,
+            "missing_count": 0,
+            "total_events": 77
+          },
+          {
+            "name": "ParentProcessId",
+            "raw_location": "Message 内 ParentProcessId",
+            "standard_name": "ParentProcessId",
+            "type": "string",
+            "sample_preview": "3660",
+            "present_count": 77,
+            "nonempty_count": 77,
+            "missing_count": 0,
+            "total_events": 77
+          },
+          {
+            "name": "ParentUser",
+            "raw_location": "Message 内 ParentUser",
+            "standard_name": "ParentUser",
+            "type": "string",
+            "sample_preview": "[脱敏示例]",
+            "present_count": 77,
+            "nonempty_count": 77,
+            "missing_count": 0,
+            "total_events": 77
+          },
+          {
+            "name": "ProcessGuid",
+            "raw_location": "Message 内 ProcessGuid",
+            "standard_name": "ProcessGuid",
+            "type": "string",
+            "sample_preview": "{ec2b781c-1182-64f8-a203-000000000500}",
+            "present_count": 77,
+            "nonempty_count": 77,
+            "missing_count": 0,
+            "total_events": 77
+          },
+          {
+            "name": "ProcessId",
+            "raw_location": "Message 内 ProcessId",
+            "standard_name": "ProcessId",
+            "type": "string",
+            "sample_preview": "5964",
+            "present_count": 77,
+            "nonempty_count": 77,
+            "missing_count": 0,
+            "total_events": 77
+          },
+          {
+            "name": "Product",
+            "raw_location": "Message 内 Product",
+            "standard_name": "Product",
+            "type": "string",
+            "sample_preview": "Microsoft Edge",
+            "present_count": 77,
+            "nonempty_count": 77,
+            "missing_count": 0,
+            "total_events": 77
+          },
+          {
+            "name": "RuleName",
+            "raw_location": "Message 内 RuleName",
+            "standard_name": "RuleName",
+            "type": "string",
+            "sample_preview": "-",
+            "present_count": 77,
+            "nonempty_count": 77,
+            "missing_count": 0,
+            "total_events": 77
+          },
+          {
+            "name": "TerminalSessionId",
+            "raw_location": "Message 内 TerminalSessionId",
+            "standard_name": "TerminalSessionId",
+            "type": "string",
+            "sample_preview": "1",
+            "present_count": 77,
+            "nonempty_count": 77,
+            "missing_count": 0,
+            "total_events": 77
+          },
+          {
+            "name": "User",
+            "raw_location": "Message 内 User",
+            "standard_name": "User",
+            "type": "string",
+            "sample_preview": "[脱敏示例]",
+            "present_count": 77,
+            "nonempty_count": 77,
+            "missing_count": 0,
+            "total_events": 77
+          },
+          {
+            "name": "UtcTime",
+            "raw_location": "Message 内 UtcTime",
+            "standard_name": "UtcTime",
+            "type": "string",
+            "sample_preview": "2023-09-06 05:43:30.317",
+            "present_count": 77,
+            "nonempty_count": 77,
+            "missing_count": 0,
+            "total_events": 77
+          }
+        ]
+      },
+      "sample_events": [
+        {
+          "event_uid": "OTRF-LSASS_campaign_06:L1547",
+          "event_code": 10,
+          "channel": "Microsoft-Windows-Sysmon/Operational",
+          "host": "MKT01.pandalab.com",
+          "timestamp_raw": "2023-09-05T10:43:28.317Z",
+          "raw_ref": "data/Security-Datasets/datasets/compound/LSASS_campaign_06/metasploit_outflank-dumpert_lsass_memory_dump.zip#L1547",
+          "logsource": {
+            "product": "windows",
+            "category": "process_access",
+            "service": "sysmon"
+          }
+        }
+      ],
+      "limitations": [
+        "Public attack-simulation data; no per-event production benignness claim.",
+        "Field catalogue inferred from current sample, not a guaranteed collection schema."
+      ]
+    },
+    {
+      "id": "OTRF-BITS-download",
+      "name": "OTRF BITS download",
+      "mode": "offline",
+      "status": "readable",
+      "source_path": "data/Security-Datasets/datasets/atomic/windows/defense_evasion/host/cmd_bitsadmin_download_psh_script.zip",
+      "normalized_file": "artifacts/runs/rule-generation-bits-fixture-v5/events.json",
+      "normalized_sha256": "2b8f5f7a8b7c2d80354160fc339b2661b2618a121ab65227ad0e9f9bfd89e825",
+      "record_count": 2,
+      "parse_error_count": 0,
+      "time_range": {
+        "start": "2020-10-23T02:36:43.547Z",
+        "end": "2020-10-23T02:36:43.590Z",
+        "basis": "timestamp_raw",
+        "timezone": "UTC if indicated by source; do not infer otherwise"
+      },
+      "event_types": [
+        {
+          "event_id": "1",
+          "record_count": 2
+        }
+      ],
+      "field_catalogues": {
+        "1": [
+          {
+            "name": "CommandLine",
+            "raw_location": "Message 内 CommandLine",
+            "standard_name": "CommandLine",
+            "type": "string",
+            "sample_preview": "bitsadmin.exe  /transfer /Download /priority Foreground https://raw.githubusercontent.com/redcanaryco/atomic-red-team…",
+            "present_count": 2,
+            "nonempty_count": 2,
+            "missing_count": 0,
+            "total_events": 2
+          },
+          {
+            "name": "Company",
+            "raw_location": "Message 内 Company",
+            "standard_name": "Company",
+            "type": "string",
+            "sample_preview": "Microsoft Corporation",
+            "present_count": 2,
+            "nonempty_count": 2,
+            "missing_count": 0,
+            "total_events": 2
+          },
+          {
+            "name": "CurrentDirectory",
+            "raw_location": "Message 内 CurrentDirectory",
+            "standard_name": "CurrentDirectory",
+            "type": "string",
+            "sample_preview": "C:\\Users\\wardog\\",
+            "present_count": 2,
+            "nonempty_count": 2,
+            "missing_count": 0,
+            "total_events": 2
+          },
+          {
+            "name": "Description",
+            "raw_location": "Message 内 Description",
+            "standard_name": "Description",
+            "type": "string",
+            "sample_preview": "BITS administration utility",
+            "present_count": 2,
+            "nonempty_count": 2,
+            "missing_count": 0,
+            "total_events": 2
+          },
+          {
+            "name": "FileVersion",
+            "raw_location": "Message 内 FileVersion",
+            "standard_name": "FileVersion",
+            "type": "string",
+            "sample_preview": "7.8.18362.1 (WinBuild.160101.0800)",
+            "present_count": 2,
+            "nonempty_count": 2,
+            "missing_count": 0,
+            "total_events": 2
+          },
+          {
+            "name": "Hashes",
+            "raw_location": "Message 内 Hashes",
+            "standard_name": "Hashes",
+            "type": "string",
+            "sample_preview": "SHA1=282DA9EE622F01CC63352E53FDC3D4A75CEEB6FD,MD5=A23A7A6B6F8E1A5D913EA119F5F2ED1A,SHA256=EAAE8536D554D0E86D8540A8B34…",
+            "present_count": 2,
+            "nonempty_count": 2,
+            "missing_count": 0,
+            "total_events": 2
+          },
+          {
+            "name": "Image",
+            "raw_location": "Message 内 Image",
+            "standard_name": "Image",
+            "type": "string",
+            "sample_preview": "C:\\Windows\\System32\\bitsadmin.exe",
+            "present_count": 2,
+            "nonempty_count": 2,
+            "missing_count": 0,
+            "total_events": 2
+          },
+          {
+            "name": "IntegrityLevel",
+            "raw_location": "Message 内 IntegrityLevel",
+            "standard_name": "IntegrityLevel",
+            "type": "string",
+            "sample_preview": "High",
+            "present_count": 2,
+            "nonempty_count": 2,
+            "missing_count": 0,
+            "total_events": 2
+          },
+          {
+            "name": "LogonGuid",
+            "raw_location": "Message 内 LogonGuid",
+            "standard_name": "LogonGuid",
+            "type": "string",
+            "sample_preview": "{39e4a257-f1ac-5f8b-d961-0c0000000000}",
+            "present_count": 2,
+            "nonempty_count": 2,
+            "missing_count": 0,
+            "total_events": 2
+          },
+          {
+            "name": "LogonId",
+            "raw_location": "Message 内 LogonId",
+            "standard_name": "LogonId",
+            "type": "string",
+            "sample_preview": "0xC61D9",
+            "present_count": 2,
+            "nonempty_count": 2,
+            "missing_count": 0,
+            "total_events": 2
+          },
+          {
+            "name": "OriginalFileName",
+            "raw_location": "Message 内 OriginalFileName",
+            "standard_name": "OriginalFileName",
+            "type": "string",
+            "sample_preview": "bitsadmin.exe",
+            "present_count": 2,
+            "nonempty_count": 2,
+            "missing_count": 0,
+            "total_events": 2
+          },
+          {
+            "name": "ParentCommandLine",
+            "raw_location": "Message 内 ParentCommandLine",
+            "standard_name": "ParentCommandLine",
+            "type": "string",
+            "sample_preview": "\"C:\\windows\\system32\\cmd.exe\" ",
+            "present_count": 2,
+            "nonempty_count": 2,
+            "missing_count": 0,
+            "total_events": 2
+          },
+          {
+            "name": "ParentImage",
+            "raw_location": "Message 内 ParentImage",
+            "standard_name": "ParentImage",
+            "type": "string",
+            "sample_preview": "C:\\Windows\\System32\\cmd.exe",
+            "present_count": 2,
+            "nonempty_count": 2,
+            "missing_count": 0,
+            "total_events": 2
+          },
+          {
+            "name": "ParentProcessGuid",
+            "raw_location": "Message 内 ParentProcessGuid",
+            "standard_name": "ParentProcessGuid",
+            "type": "string",
+            "sample_preview": "{39e4a257-79ed-5f92-6e17-000000000700}",
+            "present_count": 2,
+            "nonempty_count": 2,
+            "missing_count": 0,
+            "total_events": 2
+          },
+          {
+            "name": "ParentProcessId",
+            "raw_location": "Message 内 ParentProcessId",
+            "standard_name": "ParentProcessId",
+            "type": "string",
+            "sample_preview": "10044",
+            "present_count": 2,
+            "nonempty_count": 2,
+            "missing_count": 0,
+            "total_events": 2
+          },
+          {
+            "name": "ProcessGuid",
+            "raw_location": "Message 内 ProcessGuid",
+            "standard_name": "ProcessGuid",
+            "type": "string",
+            "sample_preview": "{39e4a257-79fb-5f92-7117-000000000700}",
+            "present_count": 2,
+            "nonempty_count": 2,
+            "missing_count": 0,
+            "total_events": 2
+          },
+          {
+            "name": "ProcessId",
+            "raw_location": "Message 内 ProcessId",
+            "standard_name": "ProcessId",
+            "type": "string",
+            "sample_preview": "9260",
+            "present_count": 2,
+            "nonempty_count": 2,
+            "missing_count": 0,
+            "total_events": 2
+          },
+          {
+            "name": "Product",
+            "raw_location": "Message 内 Product",
+            "standard_name": "Product",
+            "type": "string",
+            "sample_preview": "Microsoft® Windows® Operating System",
+            "present_count": 2,
+            "nonempty_count": 2,
+            "missing_count": 0,
+            "total_events": 2
+          },
+          {
+            "name": "RuleName",
+            "raw_location": "Message 内 RuleName",
+            "standard_name": "RuleName",
+            "type": "string",
+            "sample_preview": "-",
+            "present_count": 2,
+            "nonempty_count": 2,
+            "missing_count": 0,
+            "total_events": 2
+          },
+          {
+            "name": "TerminalSessionId",
+            "raw_location": "Message 内 TerminalSessionId",
+            "standard_name": "TerminalSessionId",
+            "type": "string",
+            "sample_preview": "2",
+            "present_count": 2,
+            "nonempty_count": 2,
+            "missing_count": 0,
+            "total_events": 2
+          },
+          {
+            "name": "User",
+            "raw_location": "Message 内 User",
+            "standard_name": "User",
+            "type": "string",
+            "sample_preview": "[脱敏示例]",
+            "present_count": 2,
+            "nonempty_count": 2,
+            "missing_count": 0,
+            "total_events": 2
+          },
+          {
+            "name": "UtcTime",
+            "raw_location": "Message 内 UtcTime",
+            "standard_name": "UtcTime",
+            "type": "string",
+            "sample_preview": "2020-10-23 06:36:43.542",
+            "present_count": 2,
+            "nonempty_count": 2,
+            "missing_count": 0,
+            "total_events": 2
+          }
+        ]
+      },
+      "sample_events": [
+        {
+          "event_uid": "OTRF-BITS-download:L118",
+          "event_code": 1,
+          "channel": "Microsoft-Windows-Sysmon/Operational",
+          "host": "WORKSTATION5",
+          "timestamp_raw": "2020-10-23T02:36:43.547Z",
+          "raw_ref": "data/Security-Datasets/datasets/atomic/windows/defense_evasion/host/cmd_bitsadmin_download_psh_script.zip#L118",
+          "logsource": {
+            "product": "windows",
+            "category": "process_creation",
+            "service": "sysmon"
+          }
+        }
+      ],
+      "limitations": [
+        "Public attack-simulation data; no per-event production benignness claim.",
+        "Field catalogue inferred from current sample, not a guaranteed collection schema."
+      ]
+    }
+  ],
+  "knowledge_assets": [
+    {
+      "id": "attack-enterprise",
+      "type": "attack",
+      "domain": "enterprise",
+      "version": "20.0",
+      "path": "data/attack/enterprise-attack-20.0.json",
+      "sha256": "81113ba98afa2928f3dcff62022539f7ce30c315c32e14422f11ff95ce534352",
+      "status": "available",
+      "update_mode": "read_only_fixed"
+    },
+    {
+      "id": "sigmahq",
+      "type": "sigma",
+      "commit": "05d1031f537e830b76da53bae2400c5814c89165",
+      "path": "data/sigma",
+      "status": "available",
+      "update_mode": "read_only_fixed"
+    }
+  ]
+}
+;
