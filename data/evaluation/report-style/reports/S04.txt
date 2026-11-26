@@ -1,0 +1,11 @@
+Public library workstation
+Synthetic incident advisory for evaluation
+
+Summary
+A public library investigated an alert after a routine maintenance window. The workstation was reimaged before the endpoint logs were collected.
+
+Technical Details and Timeline
+13:25 UTC — During the follow-up interview, an analyst said tasklist might have been used during the session. The statement was attributed to a recollection; no transcript was preserved.
+
+Detection Evidence and Limitations
+The investigation could not corroborate the reported command from process logs, console history, or other artifacts.

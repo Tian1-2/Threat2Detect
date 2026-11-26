@@ -1,0 +1,12 @@
+Regional office support host
+Synthetic incident advisory for evaluation
+
+Summary
+The regional office reviewed an unexpected remote support session on a Windows workstation.
+
+Technical Details and Timeline
+19:03 UTC — The endpoint process-creation record captured Image=whoami.exe. The collection profile omitted original filename metadata.
+19:05 UTC — A separate file-creation record contained the same basename.
+
+Detection Evidence and Limitations
+The process-creation and file-creation records are separate event types. The collection profile and timestamps were verified from the export.

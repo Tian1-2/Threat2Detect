@@ -1,0 +1,12 @@
+Distribution center endpoint
+Synthetic incident advisory for evaluation
+
+Summary
+The security team received a case note from an isolated Windows endpoint at a distribution site.
+
+Technical Details and Timeline
+04:08 UTC — A console transcript in the ticket records the command tasklist.
+04:16 UTC — The team requested endpoint process telemetry for the same interval.
+
+Detection Evidence and Limitations
+The console transcript was available for review. The process-event retention window had expired, so no corresponding process events could be evaluated.
